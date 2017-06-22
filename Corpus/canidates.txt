@@ -1,0 +1,80 @@
+Für Split-100
+
+– all counts DECOW16A-NANO
+– for F_wo and F_w "1st hit in doc"
+– all N1 monosyllabic
+– condition on F_wo and F_w: both < 10 and diff =< 5:
+
+N2-COLL/NCOLL
+
+		PQuot	F_wo	F_w	cond	le
+Badkooperation	0.98401700	0	0	coll	=er
+Badeingang	0.98401700	0	0	indiv	=er
+Wegzusammelegung	0.34460415	0	0	coll	e
+Wegbiegung	0.34460415	0	1	indiv	e
+Brettbündel	0.45619727	0	0	coll	er
+Brettbemalung	0.45619727	0	0	indiv	er
+Schwertsammlung	0.20263783	0	1	coll	er
+Schwertpolitur	0.20263783	0	0	indiv	er
+
+Hausbündnis	0.21190723	0	0	coll	=er
+Häuserakustik	0.21190723	0	0	indiv	=er
+Bildschwemme	0.53142041	0	2	coll	er
+Bildregion	0.53142041	0	0	indiv	er
+
+
+N2-PL
+
+
+		PQuot	F_wo	F_w	rectC	cond	le
+Hausabbruch	0.21190723	0	5	y	p	=er
+Kraftstärke	0.5575868	0	0	n	p	=e
+Grabbuchung	0.5313495	0	0	y	s	=er
+Punktfarbe	0.2778716	0	0	n	s	e
+Blattanalyse	0.5334598	0	0	y	p	=er
+Bettlänge	0.28060752	7	3	n	p	en
+Lastberechnung	0.8331451	3	0	y	s	en
+Hemdgröße	0.5650076	0	2	n	s	?
+
+
+
+
+
+
+
+
+
+
+
+COLL
+
+OHNE/MIT-Freqs aus DECOW16A
+ALLE NPs im Singular einbauen!
+
+		OHNE	MIT
+Badkooperation	1	7	Münster hat wegen einer neuen Badkooperation jetzt ein Ticket für alle Stadtbäder.
+Handpaar	8	61	Im Dunkeln legte sich ein Handpaar auf die Schatulle mit den Diamanten.
+Hundhorde	0	9	Mit viel Gebell sah Jana eine Hundhorde von Weitem nahem.
+Hausbündnis	0	6	Für jeden Kiez sorgt ein eigenes Hausbündnis für faire Mieten.
+Liederaustausch	2	0	In der europäischen Kultur gab es einen regen Liederaustausch im Mittelalter.
+Würmerhaufen	21	2	Zu seinem Erstaunen fand der Inspektor einen Würmerhaufen hinter der Hütte
+Wegezusammenlegung	0	0	Dank einer Wegezusammenlegung ändern sich die Wanderrouten um Graz.
+Kinderplenum	0	17	Oskars Kita richtet ab Juni ein Kinderplenum ein, das mitbestimmen darf.
+
+
+
+NCOLL
+
+Bädereingang	27	1	Am Freibad gab es neben dem Bädereingang bis vor Kurzem einen Kiosk.
+Händering	11	1	Laura trägt an der rechten Hand einen Händering seit sie erwachsen ist.
+Hundeklavier	0	7	Noras Freund hat ein Hundeklavier konstruiert.
+Häuserakustik	0	4	In Müllers Bungalow ist die Häuserakustik sehr auffällig.
+Liedauszug	5	0	Aus Zeitgründen konnte nur ein Liedauszug gesungen werden.
+Wurmangst	0	0	Angler leiden meistens nicht an Wurmangst oder Wasserphobie.
+Wegveränderung	1	0	Für einen Pfad hat die Kurverwaltung eine Wegveränderung vorgenommen.
+Kindkur	0	0	Nach ihrer Bronchitis hat Elena eine Kindkur verschrieben bekommen.
+
+
+
+
+

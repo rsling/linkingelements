@@ -1,0 +1,140 @@
+
+
+STATISTICS OUTPUT FOR
+"Inflection within compounds: on the plural-marking function of linking elements in German"
+
+********************
+* COLLECTIVE MODEL *
+********************
+
+******************************************************************
+Family:  c("BEINF", "Beta Inflated") 
+
+Call:  gamlss(formula = realRatingProp ~ cond + cs(prodQuotN1) +      random(participant), family = BEINF, data = obs.coll) 
+
+Fitting method: RS() 
+
+------------------------------------------------------------------
+Mu link function:  logit
+Mu Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     -0.4718     0.1832  -2.575   0.0107 *  
+condIndividual  -1.2768     0.1866  -6.842 9.11e-11 ***
+cs(prodQuotN1)   1.6869     0.3130   5.390 1.96e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+Sigma link function:  logit
+Sigma Coefficients:
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept) -0.16660    0.09136  -1.824   0.0697 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+Nu link function:  log 
+Nu Coefficients:
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  -0.3962     0.1524  -2.599     0.01 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+Tau link function:  log 
+Tau Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -0.8662     0.1777  -4.875  2.2e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+NOTE: Additive smoothing terms exist in the formulas: 
+ i) Std. Error for smoothers are for the linear effect only. 
+ii) Std. Error for the linear terms maybe are not accurate. 
+------------------------------------------------------------------
+No. of observations in the fit:  224 
+Degrees of Freedom for the fit:  22.16654
+      Residual Deg. of Freedom:  201.8335 
+                      at cycle:  6 
+ 
+Global Deviance:     391.4777 
+            AIC:     435.8108 
+            SBC:     511.4351 
+******************************************************************
+                 Estimate Std. Error   t value     Pr(>|t|)
+(Intercept)    -0.4718226 0.18324395 -2.574833 1.074440e-02
+condIndividual -1.2767885 0.18659740 -6.842478 9.112516e-11
+cs(prodQuotN1)  1.6868963 0.31297632  5.389853 1.957500e-07
+(Intercept)    -0.1666026 0.09136217 -1.823540 6.970075e-02
+(Intercept)    -0.3961647 0.15242931 -2.599006 1.003955e-02
+(Intercept)    -0.8661672 0.17767388 -4.875039 2.199178e-06
+
+
+
+****************
+* PLURAL MODEL *
+****************
+
+******************************************************************
+Family:  c("BEINF", "Beta Inflated") 
+
+Call:  gamlss(formula = realRatingProp ~ cond + cs(prodQuotN1) +      random(participant), family = BEINF, data = obs.pl) 
+
+Fitting method: RS() 
+
+------------------------------------------------------------------
+Mu link function:  logit
+Mu Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    -1.08349    0.18109  -5.983 1.01e-08 ***
+condSingular    0.09206    0.16666   0.552  0.58133    
+cs(prodQuotN1)  1.27982    0.40070   3.194  0.00163 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+Sigma link function:  logit
+Sigma Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.38688    0.08071  -4.794 3.21e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+Nu link function:  log 
+Nu Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -0.4875     0.1439  -3.389 0.000847 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+Tau link function:  log 
+Tau Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -1.900      0.246  -7.723 5.53e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+------------------------------------------------------------------
+NOTE: Additive smoothing terms exist in the formulas: 
+ i) Std. Error for smoothers are for the linear effect only. 
+ii) Std. Error for the linear terms maybe are not accurate. 
+------------------------------------------------------------------
+No. of observations in the fit:  224 
+Degrees of Freedom for the fit:  26.05661
+      Residual Deg. of Freedom:  197.9434 
+                      at cycle:  6 
+ 
+Global Deviance:     307.8991 
+            AIC:     360.0123 
+            SBC:     448.9082 
+******************************************************************
+                  Estimate Std. Error    t value     Pr(>|t|)
+(Intercept)    -1.08348867 0.18109202 -5.9830834 1.009690e-08
+condSingular    0.09205593 0.16666087  0.5523548 5.813285e-01
+cs(prodQuotN1)  1.27981977 0.40070247  3.1939403 1.633064e-03
+(Intercept)    -0.38687824 0.08070738 -4.7935919 3.212220e-06
+(Intercept)    -0.48747822 0.14385594 -3.3886555 8.474900e-04
+(Intercept)    -1.89974809 0.24597883 -7.7232179 5.526283e-13

@@ -1,0 +1,59 @@
+sentence	idx	block	n1	n2	opt1	opt2	subExp	prodQuotN1	fNoLe	fLe	cond	govComp
+Münster hat wegen einer neuen __________ jetzt ein einziges Wochenticket für alle Stadtbäder.	1	1	Bad	Kooperation	Badkooperation	Bäderkooperation	coll	0.984017	0	0	coll	n
+Neben dem __________ in Lankwitz gab es bis vor kurzem noch einen Kiosk.	2	2	Bad	Eingang	Badeingang	Bädereingang	coll	0.984017	2	0	indiv	n
+Dank einer __________ ändern sich einige Wanderrouten um Graz.	3	1	Weg	Zusammenlegung	Wegzusammenlegung	Wegezusammenlegung	coll	0.34460415	0	0	coll	n
+Auf seinem üblichen Wanderweg wurde Marcel von einer neuen __________ überrascht.	4	2	Weg	Beschriftung	Wegbeschriftung	Wegebeschriftung	coll	0.34460415	0	0	indiv	n
+Judith kam mit einem __________ unter dem Arm aus dem Baumarkt.	5	1	Brett	Bündel	Brettbündel	Bretterbündel	coll	0.45619727	0	0	coll	n
+Svenja gab Leon das Stück Holz, damit er einen korrekten __________ machen konnte.	6	2	Brett	Schliff	Brettschliff	Bretterschliff	coll	0.45619727	1	0	indiv	n
+Chris besitzt eine große __________ .	7	1	Schwert	Sammlung	Schwertsammlung	Schwertersammlung	coll	0.20263783	0	1	coll	n
+Nach dem Fechtunfall hatte Jonas einen __________ auf dem linken Oberarm.	8	2	Schwert	Abdruck	Schwertabdruck	Schwerterabdruck	coll	0.20263783	0	0	indiv	n
+Wegen der Gentrifizierung in Berlin gibt es zahlreiche __________ .	9	1	Haus	Abbrüche	Hausabbrüche	Häuserabbrüche	pl	0.21190723	5	1	pl	y
+In einem physikalischen Experiment hat Max verschiedene __________ gemessen.	10	2	Kraft	Stärke	Kraftstärken	Kräftestärken	pl	0.5575868	0	0	pl	n
+Die Düsseldorfer Friedhofsverwaltung hat heute erst eine __________ bearbeitet.	11	1	Grab	Buchung	Grabbuchung	Gräberbuchung	pl	0.5313495	0	0	sg	y
+Für jedes Pixel seines Bildschirmkunstwerks hat Jonas gesondert eine __________ festgelegt.	12	2	Punkt	Farbe	Punktfarbe	Punktefarbe	pl	0.2778716	0	0	sg	n
+In einer Biologie-Studie führt Johanna viele __________ durch.	13	1	Blatt	Analyse	Blattanalysen	Blätteranalysen	pl	0.5334598	0	0	pl	y
+Bevor sie zu Ikea fuhren, haben Anne, Oskar und Leon alle möglichen __________ berechnet.	14	2	Bett	Länge	Bettlängen	Bettenlängen	pl	0.28060752	7	3	pl	n
+Für die Verladung eines LKWs in den Airbus mussten die Techniker eine __________ durchführen.	15	1	Last	Berechnung	Lastberechnung	Lastenberechnung	pl	0.8331451	3	1	sg	y
+Yannick hat ein Hemd mit einem besonderen __________ anfertigen lassen.	16	2	Hemd	Schlitz	Hemdschlitz	Hemdenschlitz	pl	0.5650076	0	0	sg	n
+Gute Qualität hat __________ Preis.	17	1	x	x	seinen	ihren	x	0	0	0	x	x
+Svens Feuer __________ noch einmal kurz aufgeflammt.	18	2	x	x	ist	hat	x	0	0	0	x	x
+Im Urlaub __________ ich jeden Tag bei einem alten Wrack getaucht.	19	1	x	x	bin	habe	x	0	0	0	x	x
+Im Urlaub __________ ich jeden Tag zu einem alten Wrack getaucht.	20	2	x	x	bin	habe	x	0	0	0	x	x
+Die Fans __________ Fabian die Bude eingerannt.	21	1	x	x	sind	haben	x	0	0	0	x	x
+Teilnehmen kann nur, wer schon mindestens drei Marathons gelaufen __________ .	22	2	x	x	ist	hat	x	0	0	0	x	x
+Die Gruppe __________ kurz vor dem Gipfel umgedreht.	23	1	x	x	ist	hat	x	0	0	0	x	x
+Am Ende von Cindys Party sah man am Horizont schon den __________ der aufgehenden Sonne	24	1	x	x	Lichtschein	Licht-Schein	x	0	0	0	x	x
+Die moderne Kindererziehung ist durch ein starkes __________ gekennzeichnet.	25	2	x	x	Sicherheits-Denken	Sicherheitsdenken	x	0	0	0	x	x
+Benjamin ruft seinen Freund an, weil er eine Frage zum __________ hat.	26	2	x	x	Bergsteigen	Berg Steigen	schreib	0	0	0	x	x
+Lara trat zur Seite, um __________.	27	1	x	x	platzzumachen	Platz zu machen	schreib	0	0	0	x	x
+Maria hat einen Kopfhörer gekauft, nachdem sie ihn __________ hatte.	28	1	x	x	probegehört	Probe gehört	schreib	0	0	0	x	x
+Kim sah sich das Tennisspiel an, solange sie am __________ war.	29	1	x	x	Teetrinken	Tee trinken	schreib	0	0	0	x	x
+Melanie mag Fußball, weil es ein Sport zum __________ ist.	30	1	x	x	Spaßhaben	Spaß haben	schreib	0	0	0	x	x
+Sarah ging auf den Spielplatz, um __________.	31	2	x	x	seilzuspringen	Seil zu springen	schreib	0	0	0	x	x
+Leon konnte nur deshalb gewinnen, weil Johanna ihm __________ hat.	32	2	x	x	mutgemacht	Mut gemacht	schreib	0	0	0	x	x
+Simone hört ein Hörbuch, während sie am __________ ist.	33	2	x	x	Bogenschießen	Bogen schießen	schreib	0	0	0	x	x
+Er wurde trotz des bekannten Skandals  __________.	34	1	x	x	wieder gewählt	wiedergewählt	x	0	0	0	x	x
+Unter keinen Umständen können  __________ vor Dezember stattfinden.	35	2	x	x	Neuwahlen	Neu-Wahlen	x	0	0	0	x	x
+Sie verlassen wegen  __________ die Wohnung.	36	1	x	x	dem Wetter	des Wetters	x	0	0	0	x	x
+Die Gäste suchen die Wohnung des Herrn __________.	37	2	x	x	Gantenbein	Gantenbeins	x	0	0	0	x	x
+Die Teilnehmerinnen wussten überwiegend nicht, was  __________ ist.	38	1	x	x	Tupper-Ware	Tupperware	x	0	0	0	x	x
+Außer  __________ kann ich leider nichts mitbringen.	39	2	x	x	dem Essen	das Essen	x	0	0	0	x	x
+In einer Studie wurde jetzt  __________, dass Aspirin nicht so gut wirkt wie gedacht.	40	1	x	x	bewiesen	nachgewiesen	x	0	0	0	x	x
+Jetzt ist genau die richtige Zeit, um  __________ umzusetzen.	41	2	x	x	Nadel-Hölzer	Nadelhölzer	x	0	0	0	x	x
+Im Fernrohr sahen wir den roten  __________ ganz deutlich.	42	1	x	x	Planet	Planeten	x	0	0	0	x	x
+Die Autos beider  __________ Fahrer wurden verschrottet.	43	2	x	x	beteiligter	beteiligten	x	0	0	0	x	x
+Die Kinder fuhren mit  __________ unzureichenden Helmen zur Schule.	44	1	x	x	solch	solchen	x	0	0	0	x	x
+Wir  __________ das Auto dem Mann mehr als gerne.	45	2	x	x	übergaben	überließen	x	0	0	0	x	x
+Es waren nur kleinere Delikte,  __________ sie überführt wurden.	46	1	x	x	deren	derer	x	0	0	0	x	x
+Frederick beobachtete einen Einbruch, konnte aber im __________ niemanden erkennen.	47	2	x	x	Mondschein	Mondschimmer	x	0	0	0	x	x
+Kinder sollen sich auf dem __________ sicher fühlen können.	48	1	x	x	Gehweg	Fußgängerweg	x	0	0	0	x	x
+Nora hätte sich beim Einsteigen beinah an der __________ verletzt.	49	2	x	x	Wagentür	Autotür	x	0	0	0	x	x
+Verglichen mit Ampeln sind __________ sicherer, aber teurer.	50	1	x	x	Straßentunnel	Unterführungen	x	0	0	0	x	x
+Man darf im Büro nicht beim __________ erwischt werden.	51	2	x	x	Nichtstun	Nichtsmachen	x	0	0	0	x	x
+Beim Lernen einer Sprache gibt es oft erhebliche phonetische __________ .	52	1	x	x	Anfangschwierigkeiten	Anfangsschwierigkeiten	x	0	0	0	x	x
+Ullis Hund sprang um uns herum vor __________ .	53	2	x	x	Wiedersehensfreude	Wiedersehenfreude	x	0	0	0	x	x
+Bei der Einreise in viele Länder muss man __________ dabei haben.	54	1	x	x	Einreisevisa	Einreisevisen	x	0	0	0	x	x
+Maria und Jenny haben __________ Bilder von ihren Familienurlauben gezeigt.	55	2	x	x	sich gegenseitig	einander	x	0	0	0	x	x
+Auf __________ wird nur ein sehr geringes Pfand erhoben.	56	1	x	x	Biersflaschen	Bierflaschen	x	0	0	0	x	x
+Manche Menschen essen tatsächlich gerne ab und zu eine __________ .	57	2	x	x	Tüte Suppe	Tütensuppe	x	0	0	0	x	x
+Im Magisterstudium musste man mehr __________ schreiben als im BA-Studium.	58	1	x	x	Seminarsarbeiten	Seminararbeiten	x	0	0	0	x	x

@@ -1,0 +1,23 @@
+To find candidates for split-100 task:
+
+1:[ compana="[A-ZÄÖÜ][a-zäöüß]+([bpdtgk]|ch)_\+=?(er|en|e)_[A-ZÄÖÜ][a-zäöüß]+" & morph!="pl" ] & f(1.word)<5
+
+1:[ compana="[BCDFGHJKLMNPQRSTVWXZ][cdfghjklmnpqrstvwxz]*[aeiouäöü]+[cdfghjklmnpqrstvwxz]*([bpdtgk]|ch)_\+=?(er|en|e)_[A-ZÄÖÜ][a-zäöüß]+" & morph!="pl" ] & f(1.word)<5
+
+
+To look for N1 (fixed) plus N2 (free) w/ and w/o LE:
+
+1:[compana="Haus(\+=er)?_[A-Zäöü][^_]+"] & f(1.lemma) < 3
+
+
+To check frequencies w/ and w/o LE (both N fixed):
+
+1:[compana="Haus(\+=er)?_Abbruch"] 
+
+
+Get Type-Frequency for N1 w/ and w/o LE
+
+[compana="Sack_\+=e_[A-ZÄÖÜ][^_]+"]
+[compana="Sack_[A-ZÄÖÜ][^_]+"]
+
+=> Count by compana, save list, run 'wc -l' on file.
