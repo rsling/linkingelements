@@ -13,15 +13,16 @@ library(lattice)
 
 rm(list = ls())
 cat("\014")
-graphics.off()
+# graphics.off()
 set.seed(48267)
 
 
 ### OPTIONS ###
 
-setwd("~/Linguistics/Incubator/Fugen/Split/Rlinkexp")
+setwd("~/Workingcopies/Linkingelements/Split/Rlinkexp")
 paper.title     <- "Inflection within compounds: on the plural-marking function of linking elements in German"
-save.persistent <- F
+paper.authors   <- "Roland Schäfer & Elizabeth Pankratz"
+save.persistent <- T
 data.dir        <- '../data/'
 out.dir         <- 'output/'
 
@@ -29,7 +30,7 @@ out.dir         <- 'output/'
 ### INIT ###
 
 if (save.persistent) sink(paste0(out.dir, "results.txt"), append = F)
-cat('\n\nSTATISTICS OUTPUT FOR\n"', paper.title, '"\n\n', sep="")
+cat('\n\nSTATISTICS OUTPUT FOR\n"', paper.title, '"\n', paper.authors,'\n\n', sep="")
 if (save.persistent) sink()
 
 
@@ -126,7 +127,7 @@ if (save.persistent) dev.off()
 ### BETA GAMMs ###
 
 # Collective GAMM.
-model.coll <- gamlss(realRatingProp ~ cond + cs(prodQuotN1) + random(participant), data = obs.coll, family=BEINF)
+model.coll <- gamlss(realRatingProp ~ cond + prodQuotN1 + random(participant), data = obs.coll, family=BEINF)
 
 if (save.persistent) sink(paste0(out.dir, "results.txt"), append = T)
 cat("********************\n")
@@ -141,7 +142,7 @@ if (save.persistent) dev.off()
 
 
 # Plural GAMM.
-model.pl <- gamlss(realRatingProp ~ cond + cs(prodQuotN1) + random(participant), data = obs.pl, family=BEINF)
+model.pl <- gamlss(realRatingProp ~ cond + prodQuotN1 + random(participant), data = obs.pl, family=BEINF)
 
 if (save.persistent) sink(paste0(out.dir, "results.txt"), append = T)
 cat("\n\n\n****************\n")
