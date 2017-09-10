@@ -1,2 +1,2 @@
 # linkingelements
-Data and paper: Schäfer &amp; Pankratz (in prep.) Inflection within compounds: on the plural-marking function of linking elements in German
+Data and paper: Schäfer &amp; Pankratz (in prep.) Linking elements in German can have plural semantics 
