@@ -1,0 +1,13 @@
+\subsection{Corpus study}
+\label{sec:corpusstudy}
+
+\citet{GelmanHill2006}
+
+\begin{align}
+  y=         & \alpha+\beta_1\cdot x_1    \label{eq:corpusmodel} \\
+  \alpha\sim & \mathcal{N}(\mu, \sigma^2) \label{eq:corpusmodeldist} 
+\end{align}
+
+<<>>=
+x <- 1
+@
