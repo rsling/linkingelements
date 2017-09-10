@@ -1,3 +1,8 @@
+% !Rnw root = ../leglossa.Rnw
+<<setupcorpus, cache=FALSE, echo=FALSE, include=FALSE, results='asis'>>=
+opts_knit$set(self.contained=FALSE)
+@
+
 \subsection{Corpus study}
 \label{sec:corpusstudy}
 
@@ -5,7 +10,7 @@
 
 \begin{align}
   y=         & \alpha+\beta_1\cdot x_1    \label{eq:corpusmodel} \\
-  \alpha\sim & \mathcal{N}(\mu, \sigma^2) \label{eq:corpusmodeldist} 
+  \alpha\sim & \mathcal{N}(\mu, \sigma^2) \label{eq:corpusmodeldist}
 \end{align}
 
 <<>>=

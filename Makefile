@@ -1,22 +1,22 @@
 FIGUREDIR = figures
 CACHEDIR = cache
 
-pdf: linkingelements.bbl linkingelements.pdf 
+pdf: leglossa.bbl leglossa.pdf 
 
 all: pod cover
 
-complete: index linkingelements.pdf
+complete: index leglossa.pdf
 
-index:  linkingelements.snd
+index:  leglossa.snd
  
-linkingelements.pdf: linkingelements.aux
-	xelatex linkingelements 
+leglossa.pdf: leglossa.aux
+	xelatex leglossa 
 
-linkingelements.aux: linkingelements.tex $(wildcard local*.tex)
-	xelatex -no-pdf linkingelements 
+leglossa.aux: leglossa.tex $(wildcard local*.tex)
+	xelatex -no-pdf leglossa 
 
 # Before the XeTeX make begins, we need to make a TeX file from a Rnw file.
-linkingelements.tex: linkingelements.Rnw $(wildcard sections/*.Rnw) $(wildcard sections/*.tex)
+leglossa.tex: leglossa.Rnw $(wildcard sections/*.Rnw) $(wildcard sections/*.tex)
 	Rscript \
 	  -e "library(knitr)" \
 	  -e "knitr::knit('$<','$@')"
@@ -26,32 +26,32 @@ linkingelements.tex: linkingelements.Rnw $(wildcard sections/*.Rnw) $(wildcard s
 	Rscript -e "Sweave('$^', driver=Rtangle())"
 
 # Create only the book.
-linkingelements.bbl: linkingelements.tex linkingelements.bib  
-	xelatex -no-pdf linkingelements
-	biber linkingelements
+leglossa.bbl: leglossa.tex leglossa.bib  
+	xelatex -no-pdf leglossa
+	biber leglossa
 
 
-linkingelements.snd: linkingelements.bbl
-	touch linkingelements.adx linkingelements.sdx linkingelements.ldx
-	sed -i s/.*\\emph.*// linkingelements.adx 
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' linkingelements.sdx
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' linkingelements.adx
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' linkingelements.ldx
+leglossa.snd: leglossa.bbl
+	touch leglossa.adx leglossa.sdx leglossa.ldx
+	sed -i s/.*\\emph.*// leglossa.adx 
+	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' leglossa.sdx
+	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' leglossa.adx
+	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' leglossa.ldx
 # 	python3 fixindex.py
-# 	mv mainmod.adx linkingelements.adx
-	makeindex -o linkingelements.and linkingelements.adx
-	makeindex -o linkingelements.lnd linkingelements.ldx
-	makeindex -o linkingelements.snd linkingelements.sdx 
-	xelatex linkingelements 
+# 	mv mainmod.adx leglossa.adx
+	makeindex -o leglossa.and leglossa.adx
+	makeindex -o leglossa.lnd leglossa.ldx
+	makeindex -o leglossa.snd leglossa.sdx 
+	xelatex leglossa 
  
 
 clean:
-	rm -f *.bak *~ *.backup *.tmp \
+	rm -f leglossa.tex leglossa-concordance.tex *.bcf *.bak *~ *.backup *.tmp \
 	*.adx *.and *.idx *.ind *.ldx *.lnd *.sdx *.snd *.rdx *.rnd *.wdx *.wnd \
 	*.log *.blg *.ilg \
 	*.aux *.toc *.cut *.out *.tpm *.bbl *-blx.bib *_tmp.bib \
 	*.glg *.glo *.gls *.wrd *.wdv *.xdv *.mw *.clr \
-	*.run.xml linkingelements.tex linkingelements.pgs linkingelements.bcf \
+	*.run.xml leglossa.tex leglossa.pgs leglossa.bcf \
 	sections/*aux sections/*~ sections/*.bak sections/*.backup \
 	langsci/*/*aux langsci/*/*~ langsci/*/*.bak langsci/*/*.backup \
 	cache/* figures/* cache*.*

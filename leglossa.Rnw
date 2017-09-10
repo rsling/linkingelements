@@ -1,11 +1,11 @@
 \documentclass[biblatex, charis, linguex]{glossa}
 
-\bibliography{linkingelements} 
+\bibliography{leglossa}
 
-\usepackage{sectsty} 
+\usepackage{sectsty}
 \allsectionsfont{\normalfont\sffamily\bfseries}
 \subsectionfont{\normalfont\sffamily\bfseries\itshape}
-\let\B\relax 
+\let\B\relax
 \let\T\relax
 \usepackage[linguistics]{forest}
 
@@ -59,13 +59,13 @@
 \title{Linking elements in German can have plural semantics}
 
 \author{
-  \spauthor{Roland Schäfer\\ 
+  \spauthor{Roland Schäfer\\
   \institute{\small Deutsche und niederländische Philologie, Freie Universität Berlin}\\
   \small{Habelschwerdter Allee 45, 14195 Berlin\\
   roland.schaefer@fu-berlin.de}
   }
   \AND
-  \spauthor{Elizabeth Pankratz\\ 
+  \spauthor{Elizabeth Pankratz\\
   \institute{\small Institut für deutsche Sprache und Linguistik, Humboldt Universität Berlin}\\
   \small{Dorotheenstraße 24, 10117 Berlin\\
   epankrat@ualberta.ca}
