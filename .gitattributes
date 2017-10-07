@@ -1,0 +1,4 @@
+Data/Database/compounds/compounds+.csv filter=lfs diff=lfs merge=lfs -text
+Data/Database/compounds/compounds+s.csv filter=lfs diff=lfs merge=lfs -text
+Data/Database/compounds/decow16ax_comps.txt filter=lfs diff=lfs merge=lfs -text
+Data/Database/compounds/decow16ax_comps_counts.txt filter=lfs diff=lfs merge=lfs -text
