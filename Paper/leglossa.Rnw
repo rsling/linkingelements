@@ -124,8 +124,8 @@ render_listings()
 \section*{Acknowledgments}
 
 We would like to thank (in alphabetical order) Ulrike Sayatz for valuable discussions and comments.
-Furthermore, we thank Ulrike Sayatz for helping us to recruit the participants for the experiments.
-We are fully responsible for all residual adequacies, errors, and omissions.
+Furthermore, we thank Ulrike Sayatz for helping us recruit the participants for the experiments.
+We are fully responsible for all residual inadequacies, errors, and ommissions.
 Roland Schäfer's work on this project was funded in part by the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
 
 \printbibliography
