@@ -1,0 +1,113 @@
+Abgott
+Altertum
+ Arbeitsamt
+ Auwald
+Bad
+Balg
+Band
+ Beiwort
+Besitztum
+Blatt
+Buch
+Dach
+Denkmal
+Dorf
+ Drehbuch
+ Dreirad
+Einhorn
+Erbgut
+ Fachmann
+ Fahrrad
+Fass
+ Finanzamt
+ Flachmann
+ Fließband
+ Förderband
+ Gefach
+ Gefolgsmann
+Gehalt
+Gemach
+ Gemeingut
+Geschmack
+Gewand
+Glas
+Gott
+Grab
+Gras
+Gut
+ Hampelmann
+ Handbuch
+Haupt
+ Hauptmann
+Haus
+Heiligtum
+ Hochhaus
+Holz
+Horn
+Hospital
+Huhn
+Irrtum
+Kalb
+ Kaufhaus
+ Kaufmann
+ Kennwort
+Korn
+ Krankenhaus
+Kraut
+ Kulturgut
+Lamm
+Land
+ Lehramt
+ Lehrbuch
+Loch
+ Mahl
+Mann
+ Massengut
+Maul
+ Möbelhaus
+ Motorrad
+Mund
+ Nashorn
+ Obmann
+ Passwort
+Pfand
+ Postfach
+Rad
+Rand
+ Rathaus
+ Rebhuhn
+ Regenwald
+Ross
+ Sachbuch
+ Schlagloch
+ Schlagwort
+ Schließfach
+Schloss
+ Schlupfloch
+ Schlüsselwort
+ Sozialamt
+Spital
+ Sprichwort
+ Standesamt
+ Stichwort
+Strauch
+ Stückgut
+ Tagebuch
+Tal
+ Tonband
+ Treibhaus
+ Truthuhn
+Tuch
+Unkraut
+Volk
+ Vorblatt
+ Vorland
+ Vormund
+Wald
+ Warenhaus
+ Weihnachtsmann
+ Weistum
+Wort
+Wurm
+ Zahnrad
+ Zweirad
