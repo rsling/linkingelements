@@ -3,7 +3,7 @@ Abend
 Abgas
 Abgleich
 Abgriff
- Abhaeng
+-Abhaeng
 Abort
 Abrieb
 Abruf
@@ -23,26 +23,26 @@ Aggregat
 Akkord
 Akkusativ
 Akteur
- Akut
+-Akut
 Akzent
 Alarm
- Aliment
- Alk
+Aliment
+-Alk
 Alkohol
- Alraun
+-Alraun
 Amateur
 Amethyst
 Amin
 Amphetamin
 Amulett
- Anfaeng
+-Anfaeng
 Angebot
 Angriff
-Angst
- Anhaeng
-Anhalt
- Anhydrid
- Anhydrit
+-Angst
+-Anhaeng
+-Anhalt
+-Anhydrid
+-Anhydrit
 Anrecht
 Anreiz
 Anruf
@@ -50,24 +50,24 @@ Anspiel
 Anteil
 Antigen
 Antrieb
- Anwaelt
+-Anwaelt
 Apparat
 Aquarell
- Arbeitsplaetz
+-Arbeitsplaetz
 Archiv
 Argument
 Arm
- Arsch
+-Arsch
 Arsenal
 Artefakt
- Aryl
-Arzt
-Asant
+-Aryl
+-Arzt
+-Asant
 Asbest
 Aspekt
 Asphalt
-Ast
- Asyl
+-Ast
+-Asyl
 Atom
 Attribut
 Aufenthalt
@@ -77,7 +77,7 @@ Auftakt
 Aufwind
 Ausdruck
 Ausgleich
- Aushaeng
+-Aushaeng
 Auspuff
 Ausruf
 Ausschnitt
@@ -87,20 +87,20 @@ Ausweg
 Ausweis
 Automobil
 Avatar
- Axt
- Baell
- Baend
- Baess
- Baeum
-Bahnsteig
+-Axt
+-Baell
+-Baend
+-Baess
+-Baeum
+-Bahnsteig
 Bajonett
 Balkon
 Ballett
 Bankett
 Barsch
 Basar
- Baumwart
- Bauwerk
+-Baumwart
+-Bauwerk
 Bedarf
 Bedürfnis
 Beet
@@ -112,25 +112,25 @@ Begräbnis
 Beil
 Bein
 Beispiel
- Beitraeg
+-Beitraeg
 Belang
 Beleg
 Bereich
 Berg
- Bergwerk
+-Bergwerk
 Bericht
 Beruf
 Bescheid
- Beschlaeg
- Bespiel
- Bestaend
-Bestandteil
+-Beschlaeg
+-Bespiel
+-Bestaend
+-Bestandteil
 Besteck
 Besuch
 Betrieb
 Beweis
 Bezirk
- Bezueg
+-Bezueg
 Bier
 Bildschirm
 Billett
@@ -139,29 +139,29 @@ Biotop
 Biss
 Blech
 Blei
- Bleistift
+-Bleistift
 Blick
 Blitz
- Blockwart
- Bo
- Boeck
+-Blockwart
+-Bo
+-Boeck
 Boot
 Bord
 Boss
 Boykott
- Braeut
+-Braeut
 Brei
 Brief
 Brot
- Bueg
- Buend
- Bürgerkrieg
- Bürgerrecht
+-Bueg
+-Buend
+-Bürgerkrieg
+-Bürgerrecht
 Charakter
 Cholesterin
 Coiffeur
 Dachs
- Daemm
+-Daemm
 Dank
 Defekt
 Defizit
@@ -169,10 +169,10 @@ Deich
 Dekan
 Dekanat
 Dekret
- Delfin
+-Delfin
 Delikt
 Delir
- Delphin
+-Delphin
 Derivat
 Derwisch
 Destillat
@@ -184,7 +184,7 @@ Dieb
 Dienst
 Dienstag
 Diktat
- Dill
+-Dill
 Ding
 Diplom
 Dispens
@@ -196,34 +196,34 @@ Dolch
 Dom
 Donnerstag
 Dorsch
- Draeht
+-Draeht
 Dramolett
 Drangsal
 Dress
 Drill
- Drohbrief
+-Drohbrief
 Dromedar
 Druck
- Drueck
- Dual
+-Drueck
+-Dual
 Duett
 Duplikat
 Durchschnitt
-Dutzend
- Eckwert
+-Dutzend
+-Eckwert
 Edikt
 Effekt
- Ehepaar
+-Ehepaar
 Eid
 Eingriff
 Einkauf
- Einkuenft
+-Einkuenft
 Einruf
 Einschnitt
 Einspiel
 Einstieg
 Eintritt
- Eiweiß
+-Eiweiß
 Ekzem
 Elastomer
 Elch
@@ -236,7 +236,7 @@ Endoskop
 Entgelt
 Entscheid
 Enzym
- Erdöl
+-Erdöl
 Ereignis
 Erfolg
 Erfordernis
@@ -244,45 +244,45 @@ Ergebnis
 Erkenntnis
 Erlebnis
 Erlös
-Ersatzteil
-Erwerb
+-Ersatzteil
+-Erwerb
 Erz
 Erzeugnis
 Exemplar
 Exkrement
-Expedit
+-Expedit
 Experiment
 Exponat
 Export
 Extrakt
-Extremwert
+-Extremwert
 Exzerpt
 Exzess
 Fabrikat
- Fachkraeft
- Faeust
-Fahrzeug
- Fallschirm
-Falsifikat
- Farbstoff
+-Fachkraeft
+-Faeust
+-Fahrzeug
+-Fallschirm
+-Falsifikat
+-Farbstoff
 Farn
 Fasan
 Fasching
 Faun
- Feierabend
- Feiertag
+-Feierabend
+-Feiertag
 Feind
 Fell
 Ferment
 Ferrit
- Festspiel
- Festtag
+-Festspiel
+-Festtag
 Fett
- Feuerwerk
- Feuerzeug
+-Feuerwerk
+-Feuerzeug
 Film
 Filz
- Fingerzeig
+-Fingerzeig
 Firn
 Fisch
 Fittich
@@ -291,8 +291,8 @@ Fjord
 Flaneur
 Flausch
 Flor
- Flueg
- Flugzeug
+-Flueg
+-Flugzeug
 Flur
 Flüchtling
 Format
@@ -302,20 +302,20 @@ Fortschritt
 Fragment
 Freitag
 Freund
- Friseur
- Frisör
- Fruecht
+-Friseur
+-Frisör
+-Fruecht
 Frühjahr
 Frühling
- Fuechs
- Fueß
- Fund
+-Fuechs
+-Fueß
+-Fund
 Fundament
 Funktionär
 Fähnrich
- Gaeng
- Gaens
- Gaest
+-Gaeng
+-Gaens
+-Gaest
 Garn
 Gas
 Gau
@@ -323,7 +323,7 @@ Gebein
 Gebet
 Gebiet
 Gebot
- Geburtstag
+-Geburtstag
 Gebüsch
 Gedeck
 Gedicht
@@ -333,8 +333,8 @@ Geflecht
 Gefängnis
 Gefäß
 Gefühl
- Gegenspiel
- Geheimdienst
+-Gegenspiel
+-Geheimdienst
 Geheimnis
 Gehirn
 Gehsteig
@@ -348,7 +348,7 @@ Gelüst
 Genom
 Gepard
 Gericht
- Geruecht
+-Geruecht
 Gerät
 Geräusch
 Gerücht
@@ -362,7 +362,7 @@ Geschäft
 Geschöpf
 Geschütz
 Gesetz
- Gesichtspunkt
+-Gesichtspunkt
 Gesims
 Gespann
 Gespinst
@@ -379,49 +379,49 @@ Gewehr
 Gewerk
 Gewicht
 Gewinn
- Gewuerz
+-Gewuerz
 Gewächs
- Gewürz
+-Gewürz
 Geysir
 Geäst
 Gift
- Gips
+-Gips
 Gleis
 Glykol
 Gneis
 Gnom
 Golf
- Gottesdienst
+-Gottesdienst
 Grad
 Grafit
- Gramm
+-Gramm
 Granit
 Graphit
 Grat
 Greif
 Greis
-Grieß
+-Grieß
 Griff
- Gruend
- Grueß
- Grundgesetz
- Grundstück
+-Gruend
+-Grueß
+-Grundgesetz
+-Grundstück
 Gurt
 Haar
- Haehn
- Haend
- Haeng
+-Haehn
+-Haend
+-Haeng
 Haff
 Hai
 Hain
- Halbjahr
+-Halbjahr
 Halm
 Halogen
- Handschuh
- Handwerk
+-Handschuh
+-Handwerk
 Harz
 Haushalt
- Hauswart
+-Hauswart
 Hecht
 Heer
 Heft
@@ -433,42 +433,42 @@ Hering
 Hieb
 Hindernis
 Hinspiel
- Hinterhalt
+-Hinterhalt
 Hinweis
 Hirn
 Hirsch
 Histamin
 Histogramm
- Hochdruck
- Hoef
- Hoerspiel
+-Hochdruck
+-Hoef
+-Hoerspiel
 Honig
 Honorar
- Hopp
+-Hopp
 Horizont
 Hormon
 Horoskop
 Horst
 Hort
- Hueb
- Huet
+-Hueb
+-Huet
 Huf
 Hund
- Hundert
+-Hundert
 Hurrikan
 Hydrat
 Hypnotiseur
- Höft
- Höhepunkt
- Hörspiel
+-Höft
+-Höhepunkt
+-Hörspiel
 Idol
 Imam
 Imbiss
- Impfstoff
+-Impfstoff
 Implantat
 Import
 Impuls
- Indol
+-Indol
 Ingenieur
 Inhalt
 Inserat
@@ -478,9 +478,9 @@ Integral
 Internat
 Intervall
 Jahr
- Jahrhundert
- Jahrtausend
- Jahrzehnt
+-Jahrhundert
+-Jahrtausend
+-Jahrzehnt
 Jasmin
 Joch
 Jubilar
@@ -488,15 +488,15 @@ Jux
 Kabinett
 Kamel
 Kamin
- Kampfhund
- Kanael
+-Kampfhund
+-Kanael
 Kanton
 Kapitular
 Kaplan
 Karst
 Kartell
 Kaschmir
- Kassier
+-Kassier
 Kastell
 Katalog
 Katamaran
@@ -516,27 +516,27 @@ Kiez
 Kinn
 Kitt
 Kitz
- Klaeng
+-Klaeng
 Klaps
- Klartext
+-Klartext
 Klecks
- Klettersteig
+-Klettersteig
 Klientel
 Klon
 Klops
- Klump
+-Klump
 Knack
 Knast
 Knecht
 Knick
 Kniff
 Knirps
- Knoepf
- Knorz
- Knotenpunkt
- Koech
- Koepf
- Kohlehydrat
+-Knoepf
+-Knorz
+-Knotenpunkt
+-Koech
+-Koepf
+Kohlehydrat
 Koloss
 Kombinat
 Komitat
@@ -562,9 +562,9 @@ Konzept
 Konzern
 Konzert
 Kostüm
- Kraeft
- Kraftstoff
- Kraftwerk
+-Kraeft
+-Kraftstoff
+-Kraftwerk
 Kranich
 Krawall
 Krebs
@@ -574,28 +574,28 @@ Kreuz
 Krieg
 Kristall
 Krokodil
- Kueh
+-Kueh
 Kult
 Kumpan
- Kunststoff
- Kunstwerk
+-Kunststoff
+-Kunstwerk
 Kurier
 Kurs
- Kurzfilm
+-Kurzfilm
 Käfig
 König
- Königreich
+-Königreich
 Kürassier
 Labor
 Labyrinth
 Lachs
 Lack
- Laeus
+-Laeus
 Laib
 Laich
 Laminat
- Landraet
- Landtag
+-Landraet
+-Landtag
 Lauch
 Legat
 Legionär
@@ -604,7 +604,7 @@ Lehm
 Lehrling
 Leim
 Lemming
- Leserbrief
+-Leserbrief
 Liebling
 Lift
 Limit
@@ -613,43 +613,43 @@ Lokal
 Los
 Lot
 Luchs
- Lueft
+-Lueft
 Lymphom
- Längsschnitt
+-Längsschnitt
 Löss
 Maar
 Maat
- Machwerk
- Maecht
- Maegd
- Maerkt
- Maeus
+-Machwerk
+-Maecht
+-Maegd
+-Maerkt
+-Maeus
 Magazin
 Magnet
 Mais
- Mal
+-Mal
 Mandat
 Manuskript
 Marmor
- Massiv
- Matsch
- Maus
- Maß
+-Massiv
+-Matsch
+-Maus
+-Maß
 Medikament
 Meer
 Megaphon
- Mehl
+-Mehl
 Mehrwert
- Meisterwerk
+-Meisterwerk
 Menhir
- Menschenrecht
- Menu
+-Menschenrecht
+-Menu
 Menuett
 Meridian
 Merkmal
 Metall
 Meteorit
- Metz
+-Metz
 Mikrophon
 Mikroskop
 Millionär
@@ -677,42 +677,42 @@ Monteur
 Monument
 Mord
 Motiv
- Motorboot
+-Motorboot
 Multiplex
 Musketier
 Muslim
 Musselin
 Myom
 Mär
- Möchtegern
+-Möchtegern
 Mönch
 Nachmittag
 Nachruf
- Nachschlagewerk
+-Nachschlagewerk
 Nachteil
 Nachweis
 Nagetier
- Namenstag
+-Namenstag
 Negativ
 Netz
- Netzwerk
+-Netzwerk
 Neuling
 Neuron
- Nilpferd
- Nimmersatt
+-Nilpferd
+-Nimmersatt
 Nitrosamin
- Nobelpreis
- Noet
+-Nobelpreis
+-Noet
 Notar
- Nährstoff
+-Nährstoff
 Objekt
 Objektiv
- Odermennig
- Offizial
+-Odermennig
+-Offizial
 Offizier
 Oktan
 Okular
- Olefin
+-Olefin
 Omelett
 Onkogen
 Opal
@@ -733,15 +733,15 @@ Paladin
 Pamphlet
 Paneel
 Papier
- Paradeis
- Paradies
+-Paradeis
+-Paradies
 Parfüm
 Park
 Parlament
- Parteitag
- Parvenu
+-Parteitag
+-Parvenu
 Passagier
- Passiv
+-Passiv
 Pastell
 Patent
 Pedal
@@ -764,37 +764,37 @@ Phenol
 Phenyl
 Pheromon
 Phonem
- Phonogerät
+-Phonogerät
 Phosphat
 Phthalat
 Phänomen
 Phönix
- Piep
+-Piep
 Pigment
 Pikett
 Pils
 Pilz
 Pinguin
 Pionier
- Plaetz
+-Plaetz
 Plagiat
 Plakat
- Platzwart
+-Platzwart
 Plural
- Plüsch
- Poett
+-Plüsch
+-Poett
 Pokal
- Polier
+-Polier
 Polyamid
 Polygon
 Polymer
 Polysaccharid
 Polyurethan
- Popelin
+-Popelin
 Portal
 Postulat
- Potential
- Potenzial
+-Potential
+-Potenzial
 Preis
 Problem
 Produkt
@@ -803,10 +803,10 @@ Profit
 Programm
 Projekt
 Projektil
- Proll
+-Proll
 Prolog
 Prospekt
- Prost
+-Prost
 Prostaglandin
 Protein
 Protest
@@ -820,23 +820,23 @@ Pseudonym
 Puls
 Pulsar
 Punkt
- Pup
- Putz
+-Pup
+-Putz
 Quadrat
 Quarz
- Querschnitt
+-Querschnitt
 Quirl
- Radikal
- Raeng
- Raenk
- Raet
- Rain
+-Radikal
+-Raeng
+-Raenk
+-Raet
+-Rain
 Rapport
 Raumschiff
 Recht
- Rechteck
+-Rechteck
 Redakteur
- Reep
+-Reep
 Referat
 Reflex
 Regal
@@ -844,7 +844,7 @@ Regisseur
 Reglement
 Regress
 Reh
- Reich
+-Reich
 Reim
 Reiz
 Rekord
@@ -857,30 +857,30 @@ Resultat
 Rezept
 Rezidiv
 Rhizom
- Ried
- Riet
+-Ried
+-Riet
 Riff
- Rigips
+-Rigips
 Ring
 Riss
 Ritt
 Ritual
 Rohling
 Rohr
- Rohstoff
+-Rohstoff
 Roman
- Rost
- Rotwein
- Rotz
+-Rost
+-Rotwein
+-Rotz
 Rubin
- Ruf
+-Ruf
 Rückruf
- Rücksitz
- Rückweg
- Rülps
- Saeck
- Saeft
- Saetz
+-Rücksitz
+-Rückweg
+-Rülps
+-Saeck
+-Saeft
+-Saetz
 Sakrament
 Salat
 Salut
@@ -888,19 +888,19 @@ Salz
 Samstag
 Saphir
 Sarkophag
- Sauerteig
+-Sauerteig
 Saxophon
 Schadstoff
 Schaf
 Schakal
 Schalk
- Scharlach
+-Scharlach
 Scharnier
 Schauspiel
 Scheich
 Schein
 Scheit
- Schelf
+-Schelf
 Schelm
 Scherz
 Schicksal
@@ -908,29 +908,29 @@ Schiff
 Schild
 Schilf
 Schirm
- Schiss
- Schlagzeug
+-Schiss
+-Schlagzeug
 Schleim
- Schlick
- Schlips
- Schlittschuh
+-Schlick
+-Schlips
+-Schlittschuh
 Schlitz
 Schlot
 Schluck
- Schluempf
- Schluess
- Schluff
- Schmack
- Schmalz
- Schmaus
+-Schluempf
+-Schluess
+-Schluff
+-Schmack
+-Schmalz
+-Schmaus
 Schmetterling
- Schmied
- Schmiss
+-Schmied
+-Schmiss
 Schornstein
- Schraenk
+-Schraenk
 Schrei
 Schreiberling
- Schreibtisch
+-Schreibtisch
 Schrein
 Schrieb
 Schritt
@@ -938,70 +938,70 @@ Schuh
 Schwall
 Schweif
 Schwein
- Schwermetall
- Schwerpunkt
+-Schwermetall
+-Schwerpunkt
 Schädling
- Schäferhund
+-Schäferhund
 Schützling
 Sediment
 Segment
 Seil
 Sekret
 Sekretär
- Selbstbehalt
- Selbstmord
+-Selbstbehalt
+-Selbstmord
 Semaphor
 Seminar
 Senat
 Sieb
 Sieg
- Siel
+-Siel
 Signal
 Silberling
- Sims
+-Sims
 Sinn
 Sitz
 Skalar
 Skandal
- Skat
+-Skat
 Skelett
 Sketch
 Skript
- Sog
- Sold
- Solitär
+-Sog
+-Sold
+-Solitär
 Sonett
 Sonntag
 Sortiment
- Spaen
+-Spaen
 Specht
 Speer
 Spiel
- Spielfilm
- Spielzeug
+-Spielfilm
+-Spielzeug
 Spieß
 Spind
 Spion
 Splint
- Splitt
- Spruech
- Spürhund
- Staatssekretär
- Stadtteil
- Stadtwerk
- Staedt
- Staehl
- Staemm
- Staend
- Standort
- Standpunkt
+-Splitt
+-Spruech
+-Spürhund
+-Staatssekretär
+-Stadtteil
+-Stadtwerk
+-Staedt
+-Staehl
+-Staemm
+-Staend
+-Standort
+-Standpunkt
 Star
 Stativ
 Steckling
 Steg
 Steig
 Stein
- Steinmetz
+-Steinmetz
 Steiß
 Stern
 Steroid
@@ -1010,63 +1010,63 @@ Stiel
 Stier
 Stift
 Stil
- Stimmrecht
- Stockwerk
- Stoeck
+-Stimmrecht
+-Stockwerk
+-Stoeck
 Stoff
 Strategem
 Strauß
 Streit
- Streitkraeft
- Stress
+-Streitkraeft
+-Stress
 Strich
- Strick
+-Strick
 Stroboskop
 Strolch
- Stueck
- Stuehl
- Stups
+-Stueck
+-Stuehl
+-Stups
 Stück
- Stützpunkt
+-Stützpunkt
 Subjekt
 Substrat
 Suizid
 Sulfonamid
- Sund
+-Sund
 Superlativ
- Supernova
+-Supernova
 Supplement
 Surrogat
 Symbol
 Symptom
 Synonym
 System
- Sägewerk
+-Sägewerk
 Sämling
 Säugling
- Taenz
+-Taenz
 Tag
 Takt
 Talent
- Talg
- Tambour
+-Talg
+-Tambour
 Tarif
- Tau
- Tauchboot
- Tausch
- Tausend
- Teich
- Teig
+-Tau
+-Tauchboot
+-Tausch
+-Tausend
+-Teich
+-Teig
 Teil
- Telefon
- Telephon
+-Telefon
+-Telephon
 Teleskop
 Telomer
 Temperament
 Tensid
- Tenu
+-Tenu
 Teppich
- Term
+-Term
 Termin
 Terpentin
 Testament
@@ -1074,39 +1074,39 @@ Testat
 Testosteron
 Text
 Thermoplast
- Thron
- Tiefdruck
- Tiefpunkt
+-Thron
+-Tiefdruck
+-Tiefpunkt
 Tier
 Tisch
- Titan
- Tod
- Toen
- Toepf
+-Titan
+-Tod
+-Toen
+-Toepf
 Tor
- Torf
- Torwart
- Traeum
- Trakt
+-Torf
+-Torwart
+-Traeum
+-Trakt
 Traktat
 Trampolin
- Transit
+-Transit
 Transparent
 Transport
 Trapez
 Tribun
 Tribut
- Trickfilm
- Trieb
- Triebwerk
+-Trickfilm
+-Trieb
+-Triebwerk
 Tritt
 Triumph
 Troll
 Trottoir
 Tumor
 Turnier
- Twist
- Umhaeng
+-Twist
+-Umhaeng
 Umlaut
 Umstieg
 Umtrieb
@@ -1118,16 +1118,16 @@ Unterschied
 Urlaub
 Urteil
 Vampir
- Vantage
+-Vantage
 Ventil
- Verbaend
+-Verbaend
 Verbot
 Verdeck
 Verdienst
 Verein
 Vergleich
 Verhältnis
- Verkaeuf
+-Verkaeuf
 Verlag
 Verlies
 Verlust
@@ -1143,64 +1143,64 @@ Vitamin
 Vlies
 Vokal
 Vordruck
- Vorhaeng
- Vorhalt
+-Vorhaeng
+-Vorhalt
 Vorjahr
 Vormittag
- Vorort
- Vorschlaeg
- Vorsitz
- Vortag
+-Vorort
+-Vorschlaeg
+-Vorsitz
+-Vortag
 Vorteil
 Vorurteil
- Vorweis
+-Vorweis
 Voyeur
 Vulkan
- Völkerrecht
- Waend
- Waid
+-Völkerrecht
+-Waend
+-Waid
 Wal
- Walm
- Wanderweg
- Warp
- Wechselkurs
+-Walm
+-Wanderweg
+-Warp
+-Wechselkurs
 Weg
- Wegerich
- Wehr
+-Wegerich
+-Wehr
 Wein
- Weinberg
- Wellness
- Wels
- Weltrekord
+-Weinberg
+-Wellness
+-Wels
+-Weltrekord
 Werk
- Werkzeug
+-Werkzeug
 Wert
- Wertpapier
- Wettbewerb
+-Wertpapier
+-Wettbewerb
 Wicht
- Wiederspiel
- Wildschwein
- Wink
- Wirbeltier
- Wirkstoff
+-Wiederspiel
+-Wildschwein
+-Wink
+-Wirbeltier
+-Wirkstoff
 Wirt
 Witz
- Wohnmobil
- Wuensch
- Zaehn
- Zaeun
- Zain
- Zeitvertreib
+-Wohnmobil
+-Wuensch
+-Zaehn
+-Zaeun
+-Zain
+-Zeitvertreib
 Zelt
- Zeremoniell
+-Zeremoniell
 Zertifikat
 Zeugnis
 Ziel
 Zitat
- Zoepf
+-Zoepf
 Zugriff
 Zuschnitt
- Zuspiel
+-Zuspiel
 Zuverdienst
 Zweck
 Zweig
@@ -1208,10 +1208,10 @@ Zwerg
 Zwilling
 Zyklon
 Zytokin
- Äbt
- Ängst
- Ärzt
- Äst
+-Äbt
+-Ängst
+-Ärzt
+-Äst
 Öl
 Östrogen
 Übergriff

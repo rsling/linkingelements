@@ -1,33 +1,33 @@
 Abgott
 Altertum
- Arbeitsamt
- Auwald
+-Arbeitsamt
+-Auwald
 Bad
 Balg
 Band
- Beiwort
+-Beiwort
 Besitztum
 Blatt
 Buch
 Dach
 Denkmal
 Dorf
- Drehbuch
- Dreirad
+-Drehbuch
+-Dreirad
 Einhorn
 Erbgut
- Fachmann
- Fahrrad
+-Fachmann
+-Fahrrad
 Fass
- Finanzamt
- Flachmann
- Fließband
- Förderband
- Gefach
- Gefolgsmann
+-Finanzamt
+-Flachmann
+-Fließband
+-Förderband
+-Gefach
+-Gefolgsmann
 Gehalt
 Gemach
- Gemeingut
+-Gemeingut
 Geschmack
 Gewand
 Glas
@@ -35,79 +35,79 @@ Gott
 Grab
 Gras
 Gut
- Hampelmann
- Handbuch
+-Hampelmann
+-Handbuch
 Haupt
- Hauptmann
+-Hauptmann
 Haus
 Heiligtum
- Hochhaus
+-Hochhaus
 Holz
 Horn
 Hospital
 Huhn
 Irrtum
 Kalb
- Kaufhaus
- Kaufmann
- Kennwort
+-Kaufhaus
+-Kaufmann
+-Kennwort
 Korn
- Krankenhaus
+-Krankenhaus
 Kraut
- Kulturgut
+-Kulturgut
 Lamm
 Land
- Lehramt
- Lehrbuch
+-Lehramt
+-Lehrbuch
 Loch
- Mahl
+-Mahl
 Mann
- Massengut
+-Massengut
 Maul
- Möbelhaus
- Motorrad
+-Möbelhaus
+-Motorrad
 Mund
- Nashorn
- Obmann
- Passwort
+-Nashorn
+-Obmann
+-Passwort
 Pfand
- Postfach
+-Postfach
 Rad
 Rand
- Rathaus
- Rebhuhn
- Regenwald
+-Rathaus
+-Rebhuhn
+-Regenwald
 Ross
- Sachbuch
- Schlagloch
- Schlagwort
- Schließfach
+-Sachbuch
+-Schlagloch
+-Schlagwort
+-Schließfach
 Schloss
- Schlupfloch
- Schlüsselwort
- Sozialamt
+-Schlupfloch
+-Schlüsselwort
+-Sozialamt
 Spital
- Sprichwort
- Standesamt
- Stichwort
+-Sprichwort
+-Standesamt
+-Stichwort
 Strauch
- Stückgut
- Tagebuch
+-Stückgut
+-Tagebuch
 Tal
- Tonband
- Treibhaus
- Truthuhn
+-Tonband
+-Treibhaus
+-Truthuhn
 Tuch
 Unkraut
 Volk
- Vorblatt
- Vorland
- Vormund
+-Vorblatt
+-Vorland
+-Vormund
 Wald
- Warenhaus
- Weihnachtsmann
- Weistum
+-Warenhaus
+-Weihnachtsmann
+-Weistum
 Wort
 Wurm
- Zahnrad
- Zweirad
+-Zahnrad
+-Zweirad

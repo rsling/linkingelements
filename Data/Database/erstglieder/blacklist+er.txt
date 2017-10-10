@@ -1,88 +1,88 @@
 Abbild
 Amt
- Baed
- Baend
+-Baed
+-Baend
 Biest
 Bild
- Blaett
+-Blaett
 Brett
- Buech
- Denkmael
+-Buech
+-Denkmael
 Ding
- Doerf
+-Doerf
 Ei
- Faess
+-Faess
 Feld
- Findelkind
- Fischerei
- Gehaelt
+-Findelkind
+-Fischerei
+-Gehaelt
 Geist
 Geld
 Gemüt
 Geschlecht
 Gesicht
 Gespenst
- Glaes
+-Glaes
 Glied
- Goett
- Graeb
- Graes
- Guet
- Haeus
- Handbuech
- Hochhaeus
- Hoelz
- Hoern
- Huehn
- Kaelb
- Kennwoert
+-Goett
+-Graeb
+-Graes
+-Guet
+-Haeus
+-Handbuech
+-Hochhaeus
+-Hoelz
+-Hoern
+-Huehn
+-Kaelb
+-Kennwoert
 Kind
- Kindergeld
+-Kindergeld
 Kleid
- Kleinkind
- Kleinstkind
+-Kleinkind
+-Kleinstkind
 Koern
- Kraeut
- Laemm
- Laend
- Landei
+-Kraeut
+-Laemm
+-Laend
+-Landei
 Leib
 Licht
 Lid
 Lied
- Loech
- Maenn
+-Loech
+-Maenn
 Mitglied
 Nest
- Passwoert
- Pfaend
- Poltergeist
- Postfaech
- Raed
- Raend
- Regiment
+-Passwoert
+-Pfaend
+-Poltergeist
+-Postfaech
+-Raed
+-Raend
+-Regiment
 Rind
- Rücklicht
+-Rücklicht
 Schild
- Schlagloech
- Schlagwoert
- Schloess
- Schwarzgeld
+-Schlagloech
+-Schlagwoert
+-Schloess
+-Schwarzgeld
 Schwert
- Standesaemt
- Stueckguet
- Tael
+-Standesaemt
+-Stueckguet
+-Tael
 Umfeld
 Ungeist
 Viech
- Voelk
+-Voelk
 Vorbild
 Vorfeld
- Waeld
- Wechselgeld
+-Waeld
+-Wechselgeld
 Weib
- Weichei
- Weltbild
- Woert
- Wuerm
- Ämt
+-Weichei
+-Weltbild
+-Woert
+-Wuerm
+-Ämt
