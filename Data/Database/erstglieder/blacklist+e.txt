@@ -634,7 +634,7 @@ Marmor
 -Massiv
 -Matsch
 -Maus
--Maß
+Maß
 Medikament
 Meer
 Megaphon
@@ -832,7 +832,7 @@ Quirl
 -Raet
 -Rain
 Rapport
-Raumschiff
+-Raumschiff
 Recht
 -Rechteck
 Redakteur
@@ -851,7 +851,7 @@ Rekord
 Relikt
 Report
 Reservat
-Reservoir
+-Reservoir
 Rest
 Resultat
 Rezept
