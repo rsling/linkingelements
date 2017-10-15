@@ -1,5 +1,5 @@
 Abbild
-Amt
+-Amt
 -Baed
 -Baend
 Biest
@@ -41,7 +41,7 @@ Kind
 Kleid
 -Kleinkind
 -Kleinstkind
-Koern
+-Koern
 -Kraeut
 -Laemm
 -Laend
