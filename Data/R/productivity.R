@@ -1,15 +1,12 @@
 rm(list = ls())
 
-script.path <- '~/Workingcopies/Linkingelements/Data/R'
-data.path   <- paste0(script.path, '/../Database/')
+data.path   <- '../Database/'
 
 lwd <- 3
 lty <- 1:10
 col <- 1:10
 
 my.colors = colorRampPalette(c("yellow", "black"))(100)
-
-setwd(script.path)
 
 source('load.R')
 
@@ -104,10 +101,9 @@ analyses.full <- list(
   n   = NULL, Ue  = NULL, Uer = NULL
 )
 
-max.plottable <- 200
+max.plottable <- 100
 
-#for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) {
-for (le in c('Ue')) {
+for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) {
   .n1s <- merge(productivities[[le]], productivities$no, by = 'N1')
   colnames(.n1s) <- c('N1',
                       paste('With', colnames(productivities$er), sep = '_')[-1],
@@ -131,13 +127,14 @@ for (le in c('Ue')) {
   .prod.without.max <- max(.n1s$Without_Ppot)
   .prod.without.min <- min(.n1s$Without_Ppot)
 
-  #par(mar=c(5.1, 4.1, 4.1, 8.1), xpd=TRUE)
+  .le.name <- ifelse(startsWith(le, 'U'), paste0('=', substr(le, 2, nchar(le))), paste0('-', le))
+
   plot(.n1s[,"With_Ppot"]~.n1s[,"Without_Ppot"], type="n",
-       main = paste0("Productivity (pot.) of N1 with -", le, " and -0"),
-       xlim = c(.prod.with.min*0.9, .prod.with.max*1.1),
-       ylim = c(.prod.without.min*0.9, .prod.without.max*1.1),
-       ylab = "P[pot](N1+0) (log axis)",
-       xlab = paste0("P[pot](N1+", le, ") (log axis)"),
+       main = paste0("Potential productivity P of N1 with ", .le.name, " and -0"),
+       xlim = c(.prod.with.min*0.75, .prod.with.max*1.25),
+       ylim = c(.prod.without.min*0.75, .prod.without.max*1.25),
+       ylab = "P[pot](N1-0)",
+       xlab = paste0("P[pot](N1", .le.name, ")"),
        log = "xy"
        )
   for (n in 1:nrow(.n1s)) {
