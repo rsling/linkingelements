@@ -7,6 +7,8 @@ lwd <- 3
 lty <- 1:10
 col <- 1:10
 
+my.colors = colorRampPalette(c("yellow", "black"))(100)
+
 setwd(script.path)
 
 source('load.R')
@@ -90,37 +92,60 @@ for (le in names(productivities)) {
 }
 
 
-# prod.er <- lapply(as.character(fhapax$er$N1), function(noun) {productivity(fhapax, ftoken, 'er', noun)})
-# prod.er <- data.frame(
-#   N1           = as.character(get.list.elem(prod.er, 1)),
-#   Ppot         = as.numeric(get.list.elem(prod.er, 2)),
-#   PexpLE       = as.numeric(get.list.elem(prod.er, 3)),
-#   PexpCompound = as.numeric(get.list.elem(prod.er, 4)),
-#   PexpCorpus   = as.numeric(get.list.elem(prod.er, 5))
-# )
-# prod.er <- merge(prod.er, ftype$er, by = "N1", all.x = T)
-# prod.er <- merge(prod.er, ftoken$er, by = "N1", all.x = T)
-# prod.er <- merge(prod.er, fhapax$er, by = "N1", all.x = T)
-# colnames(prod.er)[6:8] <- c('Ftype', 'Ftoken', 'Fhapax')
-# prod.er <- prod.er[order(prod.er$Ppot, decreasing = T),]
+map.log <-  function(x, x.max, to.max = 2) {
+  log(x)/log(x.max)*(to.max)
+}
 
 
+# Get N1s used with and without LE.
 
+analyses.full <- list(
+  e   = NULL, en  = NULL, er  = NULL,
+  n   = NULL, Ue  = NULL, Uer = NULL
+)
 
+max.plottable <- 200
 
-#
-# plot(ftoken[['no']]$F~ftype[['no']]$F, type="p", lwd = lwd, lty = lty[1], col = col[1],
-#      ylim = c(1, 3400000),
-#      main = "Type & token frequency of N1",
-#      xlab = "type frequency",
-#      ylab = "token frequency")
-# points(ftoken[['s']]$F~ftype[['s']]$F, type="p", lwd = lwd, lty = lty[2], col = col[2])
-# points(ftoken[['e']]$F~ftype[['e']]$F, type="p", lwd = lwd, lty = lty[3], col = col[3])
-# points(ftoken[['en']]$F~ftype[['en']]$F, type="p", lwd = lwd, lty = lty[4], col = col[4])
-# points(ftoken[['er']]$F~ftype[['er']]$F, type="p", lwd = lwd, lty = lty[5], col = col[5])
-# points(ftoken[['n']]$F~ftype[['n']]$F, type="p", lwd = lwd, lty = lty[6], col = col[6])
-# points(ftoken[['Ue']]$F~ftype[['Ue']]$F, type="p", lwd = lwd, lty = lty[7], col = col[7])
-# points(ftoken[['Uer']]$F~ftype[['Uer']]$F, type="p", lwd = lwd, lty = lty[8], col = col[8])
-# legend('topleft', lwd = lwd, col = col, lty = lty,
-#         legend = c("0", "-s", "-e", "-en", "-er", "-n", "=e", "=er"))
+#for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) {
+for (le in c('Ue')) {
+  .n1s <- merge(productivities[[le]], productivities$no, by = 'N1')
+  colnames(.n1s) <- c('N1',
+                      paste('With', colnames(productivities$er), sep = '_')[-1],
+                      paste('Without', colnames(productivities$er), sep = '_')[-1]
+                      )
 
+  # Add to persistent list.
+  analyses.full[[le]] <- .n1s
+
+  # Reduce number of plottables if too many.
+  if (nrow(.n1s) > max.plottable) {
+    .n1s <- .n1s[sample(1:nrow(.n1s), max.plottable, replace = F),]
+    .reduced <- T
+  } else .reduced <- F
+
+  # For font size, get maximum token frequency and mapping freq -> font size.
+  .fto.max          <- max(.n1s$With_Ftoken)
+  .fty.max          <- max(.n1s$With_Ftype)
+  .prod.with.max    <- max(.n1s$With_Ppot)
+  .prod.with.min    <- min(.n1s$With_Ppot)
+  .prod.without.max <- max(.n1s$Without_Ppot)
+  .prod.without.min <- min(.n1s$Without_Ppot)
+
+  #par(mar=c(5.1, 4.1, 4.1, 8.1), xpd=TRUE)
+  plot(.n1s[,"With_Ppot"]~.n1s[,"Without_Ppot"], type="n",
+       main = paste0("Productivity (pot.) of N1 with -", le, " and -0"),
+       xlim = c(.prod.with.min*0.9, .prod.with.max*1.1),
+       ylim = c(.prod.without.min*0.9, .prod.without.max*1.1),
+       ylab = "P[pot](N1+0) (log axis)",
+       xlab = paste0("P[pot](N1+", le, ") (log axis)"),
+       log = "xy"
+       )
+  for (n in 1:nrow(.n1s)) {
+    text(.n1s[n,"With_Ppot"], .n1s[n,"Without_Ppot"],
+         cex = map.log(.n1s[n,"With_Ftoken"], .fto.max),
+         labels = .n1s[n, "N1"],
+         col = my.colors[round(map.log(.n1s[n,"With_Ftype"], .fty.max, 100), 0)],
+         srt = sample(-90:90, 1)
+         )
+  }
+}
