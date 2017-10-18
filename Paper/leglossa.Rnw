@@ -55,10 +55,10 @@
 \lstset{style=Rstyle}
 
 \pdfauthor{Roland Schaefer and Elizabeth Pankratz}
-\pdftitle{Linking elements in German can have plural semantics}
+\pdftitle{Function vs. interpretability of compound linking elements in German}
 \pdfkeywords{probabilistic grammar, compounding, linking elements, split-100 experiments, corpus data, German}
 
-\title{Linking elements in German can have plural semantics}
+\title{Function vs.\ interpretability of compound linking elements in German}
 
 \author{
   \spauthor{Roland Schäfer\\
@@ -70,7 +70,7 @@
   \spauthor{Elizabeth Pankratz\\
   \institute{\small Institut für deutsche Sprache und Linguistik, Humboldt Universität Berlin}\\
   \small{Dorotheenstraße 24, 10117 Berlin\\
-  epankrat@ualberta.ca}
+  pankrate@student.hu-berlin.de}
   }
 }
 

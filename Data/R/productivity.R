@@ -1,16 +1,9 @@
 rm(list = ls())
-data.path   <- '../Database/'
 source('functions.R')
-source('load.R')
 
-
-# Clean the basic lists (pre-loaded data).
-nouns <- clean.dfs.by.blacklist(nouns, blacklists, "N1")
-ftype <- clean.dfs.by.blacklist(ftype, blacklists, "N1")
-ftoken <- clean.dfs.by.blacklist(ftoken, blacklists, "N1")
-fhapax <- clean.dfs.by.blacklist(fhapax, blacklists, "N1")
-compounds <- clean.dfs.by.blacklist(compounds, blacklists, "N1")
-
+load("RData/fhapax.RData")
+load("RData/ftoken.RData")
+load("RData/ftype.RData")
 
 productivities <- list(
   no  = NULL, e   = NULL, en  = NULL, er  = NULL,
@@ -34,9 +27,10 @@ for (le in names(productivities)) {
   productivities[[le]] <- .locprod
 }
 
+dir.create('./RData', showWarnings = F)
+save(list = "productivities", file = "RData/productivities.RData", compress = "bzip2")
 
 # Make complete data frames.
-
 analyses.full <- list(
   e   = NULL, en  = NULL, er  = NULL,
   n   = NULL, Ue  = NULL, Uer = NULL
@@ -46,6 +40,6 @@ for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) {
   analyses.full[[le]] <- make.full.analysis(le, productivities)
 }
 
-save(list = "analyses.full", file = "analyses.full.RData")
+save(list = "analyses.full", file = "RData/analyses.full.RData", compress = "bzip2")
 
 

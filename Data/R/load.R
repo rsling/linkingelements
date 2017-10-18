@@ -1,3 +1,6 @@
+rm(list = ls())
+source('functions.R')
+data.path   <- '../Database/'
 
 nouns <- list(
   no  = read.csv2(paste0(data.path, 'erstglieder/erstglieder+.txt'),
@@ -119,3 +122,23 @@ blacklists <- list(
   Uen = read.csv2(paste0(data.path, 'erstglieder/real_blacklist+Uer.txt'),
                   sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1"))
 )
+
+# Clean the basic lists (pre-loaded data).
+nouns <- clean.dfs.by.blacklist(nouns, blacklists, "N1")
+ftype <- clean.dfs.by.blacklist(ftype, blacklists, "N1")
+ftoken <- clean.dfs.by.blacklist(ftoken, blacklists, "N1")
+fhapax <- clean.dfs.by.blacklist(fhapax, blacklists, "N1")
+compounds <- clean.dfs.by.blacklist(compounds, blacklists, "N1")
+
+# Load big noun frequency data base.
+noun.frequencies <- read.csv2(paste0(data.path, 'compounds/decow16ax_nouns_counts.csv'),
+                              sep = ' ', header = FALSE, col.names = c("N", "F"))
+
+dir.create('./RData', showWarnings = F)
+save(list = "nouns", file = "RData/nouns.RData", compress = "bzip2")
+save(list = "fhapax", file = "RData/fhapax.RData", compress = "bzip2")
+save(list = "ftoken", file = "RData/ftoken.RData", compress = "bzip2")
+save(list = "ftype", file = "RData/ftype.RData", compress = "bzip2")
+save(list = "compounds", file = "RData/compounds.RData", compress = "bzip2")
+save(list = "blacklists", file = "RData/blacklists.RData", compress = "bzip2")
+save(list = "noun.frequencies", file = "RData/noun.frequencies.RData", compress = "bzip2")
