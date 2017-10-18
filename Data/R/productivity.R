@@ -4,6 +4,7 @@ source('functions.R')
 load("RData/fhapax.RData")
 load("RData/ftoken.RData")
 load("RData/ftype.RData")
+load("RData/nouns.RData")
 
 productivities <- list(
   no  = NULL, e   = NULL, en  = NULL, er  = NULL,
@@ -11,7 +12,7 @@ productivities <- list(
   )
 
 for (le in names(productivities)) {
-  .locprod <- lapply(as.character(fhapax[[le]]$N1), function(noun) {productivity(fhapax, ftoken, le, noun)})
+  .locprod <- lapply(as.character(ftype[[le]]$N1), function(noun) {productivity(fhapax, ftoken, le, noun)})
   .locprod <- data.frame(
     N1           = as.character(get.list.elem(.locprod, 1)),
     Ppot         = as.numeric(get.list.elem(.locprod, 2)),

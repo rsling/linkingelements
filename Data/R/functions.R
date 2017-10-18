@@ -29,7 +29,7 @@ clean.dfs.by.blacklist <- function(lst, blacklst, column) {
 
 
 # Function to calculate productivity measures. See Baayen (2009[HSK]).
-productivity <- function(fhapax, ftoken, LE, N1, HX.TOTAL = 95*10^6) {
+productivity <- function(fhapax, ftoken, LE, N1, HX.TOTAL = 28366825) {  # HX.TOTAL is for DECOW16AX, cleansed.
   .fto <- ftoken[[LE]][which(ftoken[[LE]]['N1'] == N1),'F']
   .fhx <- fhapax[[LE]][which(fhapax[[LE]]['N1'] == N1),'F']
   .fhx.total <- sum(as.numeric(fhapax[[LE]][, 'F']))
@@ -47,11 +47,13 @@ productivity <- function(fhapax, ftoken, LE, N1, HX.TOTAL = 95*10^6) {
 }
 
 make.full.analysis <-  function(le, prods) {
-  .n1s <- merge(prods[[le]], prods$no, by = 'N1')
+  .n1s <- merge(prods[[le]], prods$no, by = 'N1', all.x = T)
   colnames(.n1s) <- c('N1',
                       paste('With', colnames(prods[[le]]), sep = '_')[-1],
                       paste('Without', colnames(prods[[le]]), sep = '_')[-1]
   )
+  # Especially hapax counts may be 0, leading to NAs after merge. Make 0.
+  .n1s[is.na(.n1s)] <- 0
   .n1s
 }
 
@@ -60,9 +62,18 @@ map.log <-  function(x, x.max, to.max = 2) {
   log(x)/log(x.max)*(to.max)
 }
 
-plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, norm.xax = NULL, norm.yax = NULL) {
 
+
+plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, norm.xax = NULL, norm.yax = NULL, zero.floor = NULL) {
   .n1s <- analyses[[le]]
+
+  # Remove/deal with elements with 0 productivity.
+  if (is.null(zero.floor) | !is.numeric(zero.floor)) {
+    .n1s <- .n1s[-c(which(.n1s$With_Ppot == 0 | .n1s$Without_Ppot == 0)), ]
+  } else {
+    .n1s[which(.n1s$With_Ppot == 0), 'With_Ppot'] <- zero.floor
+    .n1s[which(.n1s$Without_Ppot == 0), 'Without_Ppot'] <- zero.floor
+  }
 
   # Reduce number of plottables if too many.
   if (max.plottable > 0 & nrow(.n1s) > max.plottable) {
@@ -97,8 +108,8 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, nor
        main = paste0("Productivity of N1 with ", .le.name, .subtitle),
        xlim = .xlim,
        ylim = .ylim,
-       ylab = "without linking element",
-       xlab = paste0("with ", .le.name, " linking element"),
+       ylab = "P without linking element",
+       xlab = paste0("P with ", .le.name, " linking element"),
        log = "xy"
   )
   for (n in 1:nrow(.n1s)) {
