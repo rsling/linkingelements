@@ -108,8 +108,8 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, nor
        main = paste0("Productivity of N1 with ", .le.name, .subtitle),
        xlim = .xlim,
        ylim = .ylim,
-       ylab = "P without linking element",
-       xlab = paste0("P with ", .le.name, " linking element"),
+       ylab = "P(N1) without linking element",
+       xlab = paste0("P(N1) with ", .le.name, " linking element"),
        log = "xy"
   )
   for (n in 1:nrow(.n1s)) {
@@ -119,11 +119,25 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, nor
              cex = map.log(.n1s[n,"With_Ftype"], .fty.max.with, 4),
              col = my.colors[round(map.log(.n1s[n,"Without_Ftype"], .fty.max.without, 100), 0)]
       )
-      legend("topleft", legend = c(paste0("fty=1;1"), paste0("fty=", .fty.max.with, ";", .fty.max.without)),
+      legend("topleft",
+             legend = c(paste0("f = 1; 1"),
+                        paste0("f = ", .fty.max.with, "; 1"),
+                        paste0("f = 1; ", .fty.max.without),
+                        paste0("f = ", .fty.max.with, "; ", .fty.max.without)
+                        ),
              pch = 20,
-             col = c(my.colors[round(map.log(2, .fty.max.without, 100), 0)],
-                     my.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)]),
-             pt.cex = c(1, map.log(.fty.max.with, .fty.max.with, 4)),
+             col = c(
+                 my.colors[round(map.log(2, .fty.max.without, 100), 0)],
+                 my.colors[round(map.log(2, .fty.max.without, 100), 0)],
+                 my.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)],
+                 my.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)]
+               ),
+             pt.cex = c(
+                 0.2,
+                 map.log(.fty.max.with, .fty.max.with, 4),
+                 0.2,
+                 map.log(.fty.max.with, .fty.max.with, 4)
+               ),
              cex = 0.8,
              bty = "n"
       )
