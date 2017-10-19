@@ -13,7 +13,7 @@ frequencydata.full <- list(
 )
 
 
-for (le in les[1]) {
+for (le in les) {
   frequencydata.full[[le]] <-
     merge(all.x = T,
       merge(all.x = T,

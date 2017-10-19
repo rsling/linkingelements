@@ -4,6 +4,13 @@ get.list.elem <- function(l, n){
   sapply(l, `[`, n)
 }
 
+# Check whether a value lies in a range.
+in.range <- function(x, low, high, inc.low = T, inc.high =T) {
+  .op.low  <- ifelse(inc.low,  function(x,y) { x >= y }, function(x,y) { x > y })
+  .op.high <- ifelse(inc.high, function(x,y) { x <= y }, function(x,y) { x < y })
+  .op.low(x, low) & .op.high(x, high)
+}
+
 
 # Function to get rid of blacklisted N1s in single df.
 clean.df.by.blacklist <- function(df, blacklist, column) {
