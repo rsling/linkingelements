@@ -229,8 +229,8 @@ Strom	2
 Spielraum	2
 Sitzplatz	2
 Schaum	2
-Rucksack	2
 Rücklauf	2
+Rucksack	2
 Rausch	2
 Pfeffersack	2
 Pfahl	2
@@ -259,6 +259,8 @@ Abschluss	2
 Abschaum	2
 Abgrund	2
 Abfall	2
+Überhang	1
+Übergang	1
 Zwischenstand	1
 Zwang	1
 Zuschuss	1
@@ -274,8 +276,6 @@ Umschlag	1
 Umgang	1
 Umfang	1
 Umbruch	1
-Überhang	1
-Übergang	1
 Trog	1
 Supermarkt	1
 Sumpf	1
