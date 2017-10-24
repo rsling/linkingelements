@@ -4,6 +4,13 @@ get.list.elem <- function(l, n){
   sapply(l, `[`, n)
 }
 
+
+# Calculate frequency band from raw f and f_max.
+frequency.band <- function(f, f.max) {
+  log(f.max/f, base = 2)+0.5
+}
+
+
 # Check whether a value lies in a range.
 in.range <- function(x, low, high, inc.low = T, inc.high =T) {
   .op.low  <- ifelse(inc.low,  function(x,y) { x >= y }, function(x,y) { x > y })
