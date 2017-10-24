@@ -240,6 +240,8 @@ Abschaum	2
 Absatz	2
 Abgrund	2
 Abfall	2
+Überhang	1
+Übergang	1
 Zwischenstand	1
 Zwang	1
 Zustand	1
@@ -256,8 +258,6 @@ Verbund	1
 Umschlag	1
 Umfang	1
 Umbruch	1
-Überhang	1
-Übergang	1
 Supermarkt	1
 Sumpf	1
 Sucht	1
@@ -269,9 +269,9 @@ Schwank	1
 Schorf	1
 Schnaps	1
 Schaum	1
-Rucksack	1
 Rückflug	1
 Rückfall	1
+Rucksack	1
 Rausch	1
 Notstand	1
 Notfall	1
