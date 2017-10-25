@@ -1,4 +1,5 @@
 rm(list = ls())
+set.seed(183)
 source('functions.R')
 
 load("RData/fhapax.RData")
@@ -8,7 +9,8 @@ load("RData/nouns.RData")
 
 productivities <- list(
   no  = NULL, e   = NULL, en  = NULL, er  = NULL,
-  n   = NULL, s   = NULL, Ue  = NULL, Uer = NULL
+  n   = NULL, s   = NULL, Ue  = NULL, Uer = NULL,
+  U = NULL
   )
 
 for (le in names(productivities)) {
@@ -34,10 +36,11 @@ save(list = "productivities", file = "RData/productivities.RData", compress = "b
 # Make complete data frames.
 analyses.full <- list(
   e   = NULL, en  = NULL, er  = NULL,
-  n   = NULL, Ue  = NULL, Uer = NULL
+  n   = NULL, Ue  = NULL, Uer = NULL,
+  U   = NULL
 )
 
-for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) {
+for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en', 'U')) {
   analyses.full[[le]] <- make.full.analysis(le, productivities)
 }
 

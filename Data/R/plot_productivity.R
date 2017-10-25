@@ -1,4 +1,5 @@
 rm(list = ls())
+set.seed(238)
 source('functions.R')
 load("RData/analyses.full.RData")
 
@@ -16,16 +17,16 @@ if (plot.wordcloud) {
   if (save.persistently) {
     dir.create('./Plots', showWarnings = F)
     pdf("Plots/productivity_wordcloud.pdf")
-    par(mfrow=c(2,3))
+    par(mfrow=c(3,3))
   }
 
   .args <- list(analyses      = analyses.full,
                 dots          = F,
-                max.plottable = 50,
-                norm.xax      = c(10^-4,1),
-                norm.yax      = c(10^-6,1),
+                max.plottable = 10,
+                norm.xax      = c(10^-3, 1),
+                norm.yax      = c(10^-3, 2),
                 zero.floor    = NULL)
-  for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) do.call(plot.productivities, c(list(le = le), .args))
+  for (le in c('e', 'Ue', 'U', 'er', 'Uer', 'EMPTY_PLOT', 'n', 'en')) do.call(plot.productivities, c(list(le = le), .args))
   if (save.persistently) {
     par(mfrow=c(1,1))
     dev.off()
@@ -37,15 +38,15 @@ if (plot.dotcloud) {
   if (save.persistently) {
     dir.create('./Plots', showWarnings = F)
     pdf("Plots/productivity_dots.pdf")
-    par(mfrow=c(2,3))
+    par(mfrow=c(3,3))
   }
   .args <- list(analyses      = analyses.full,
                 dots          = T,
                 max.plottable = -1,
-                norm.xax      = c(10^-4, 1.5),
-                norm.yax      = c(10^-7, 1.5),
-                zero.floor    = 10^-7)
-  for (le in c('e', 'Ue', 'er', 'Uer', 'n', 'en')) do.call(plot.productivities, c(list(le = le), .args))
+                norm.xax      = c(10^-3, 1),
+                norm.yax      = c(10^-3, 2),
+                zero.floor    = NULL)
+  for (le in c('e', 'Ue', 'U', 'er', 'Uer', 'EMPTY_PLOT', 'n', 'en')) do.call(plot.productivities, c(list(le = le), .args))
   if (save.persistently) {
     par(mfrow=c(1,1))
     dev.off()

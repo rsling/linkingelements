@@ -1,12 +1,34 @@
 rm(list = ls())
+set.seed(827)
 source('functions.R')
+
+dir.create('./Results', showWarnings = F)
 
 load("RData/analyses.full.RData")
 load("RData/noun.frequencies.RData")
 
-les <- c('e', 'Ue', 'er', 'Uer', 'n', 'en')
-rescue.fband         <- 7           # N1 with prod. w/o LE = 0 but frequency band lower than this will be included.
-n1asn1.typfreq.lim   <- 100         # Minimal type frequency of N1 as N1 in compounds.
+# Items in original corpus study:
+original <- list(
+  U   = data.frame(N1 = c("Mutter", "Vater", "Apfel", "Nagel", "Vogel")),
+  Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball")),
+  Uer = data.frame(N1 = c("Buch", "Haus", "Bad", "Rad", "Schloss", "Wurm")),
+  e   = data.frame(N1 = c("Hund", "Gerät", "Weg", "Geschenk", "Produkt", "Brief")),
+  er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert")),
+  n   = data.frame(N1 = c("Sonne", "Kunde", "Auge", "Bauer", "Katze", "Gitarre")),
+  en  = data.frame(N1 = c("Frau", "Person", "Student", "Ohr", "Dämon", "Bett"))
+)
+
+# Stimuli:
+stimuli <- list(
+  Uer = data.frame(N1 = c("Haus", "Bad", "Grab", "Blatt")),
+  Ue  = data.frame(N1 = c("Kraft")),
+  e   = data.frame(N1 = c("Weg", "Punkt")),
+  er  = data.frame(N1 = c("Brett", "Schwert")),
+  en  = data.frame(N1 = c("Bett", "Last", "Hemd"))
+)
+
+les <- c('e', 'Ue', 'U', 'er', 'Uer', 'n', 'en')
+n1asn1.typfreq.lim   <- 50          # Minimal type frequency of N1 as N1 in compounds.
 n1itself.tokfreq.lim <- 15          # Maximal frequency band of N1 as independent word.
 decow16a.highest.f   <- 258507195   # Freq. of "und" in DECOW16A = most frequent word. For frequency bands.
 
@@ -15,6 +37,7 @@ corpus.candidates <- list(
   n   = NULL, Ue  = NULL, Uer = NULL
 )
 
+par(mfrow=c(3,3))
 for (le in les) {
 
   # First, get N1 frequency data as free word.
@@ -23,23 +46,43 @@ for (le in les) {
   analyses.full[[le]]$N1alone_Fband <- round(frequency.band(analyses.full[[le]]$N1alone_Ftoken, decow16a.highest.f), 0)
 
   .cands <- analyses.full[[le]][which(
-                                      analyses.full[[le]]$With_Ftype    >= n1asn1.typfreq.lim &
-                                      analyses.full[[le]]$Without_Ftype >= n1asn1.typfreq.lim &
-                                      analyses.full[[le]]$With_Ppot     != 0 &
-                                      (analyses.full[[le]]$Without_Ppot != 0 | analyses.full[[le]]$N1alone_Fband < rescue.fband) &
-                                      analyses.full[[le]]$With_Ppot     != 1 &
-                                      analyses.full[[le]]$Without_Ppot  != 1 &
-                                      analyses.full[[le]]$N1alone_Fband <= n1itself.tokfreq.lim
+                                      analyses.full[[le]]$With_Ftype      >= n1asn1.typfreq.lim
+                                      & analyses.full[[le]]$Without_Ftype >= n1asn1.typfreq.lim
+                                      & analyses.full[[le]]$With_Ppot     != 0
+                                      & analyses.full[[le]]$Without_Ppot  != 0
+                                      & analyses.full[[le]]$With_Ppot     != 1
+                                      & analyses.full[[le]]$Without_Ppot  != 1
+                                      & analyses.full[[le]]$N1alone_Fband <= n1itself.tokfreq.lim
       ), ]
   corpus.candidates[[le]] <- .cands
-
-  # For debugging.
-  # plot(corpus.candidates[[le]]$With_Ppot~corpus.candidates[[le]]$Without_Ppot, log="xy", main = paste0(le, '\n', nrow(corpus.candidates[[le]])))
-  print(as.character(corpus.candidates[[le]]$N1))
 }
 
 save(list = "analyses.full", file = "RData/analyses.full.plus.RData", compress = "bzip2")
+save(list = "corpus.candidates", file = "RData/corpus.candidates.RData", compress = "bzip2")
 
-# TODO: (1) Get N1 frequency and use only reasonably frequent N1s.
-# (2) Exclude mass nouns and collectives as N1.
-# (3) Remaining N1s are candidates for corpus study.
+
+# Get info for already existing data.
+
+# Old corpus study.
+les <- c('e', 'Ue', 'U', 'er', 'Uer', 'n', 'en')
+corpus.old <- NULL
+for (le in les) {
+  .this <- merge(original[[le]], corpus.candidates[[le]], by = "N1", all.x = T)
+  .this$LE <- paste0("+", le.name(le))
+  # .this$LE <- le
+  if (is.null(corpus.old)) corpus.old <- .this
+  else corpus.old <- rbind(corpus.old, .this)
+}
+write.table(corpus.old, file = "Results/corpus.old.csv", quote = F, sep = "\t", row.names = F)
+
+# Split-100.
+les <- c("Uer", "Ue", "e", "er", "en")
+stimuli.data <- NULL
+for (le in les) {
+  .this <- merge(stimuli[[le]], corpus.candidates[[le]], by = "N1", all.x = T)
+  .this$LE <- paste0("+", le.name(le))
+  # .this$LE <- le
+  if (is.null(stimuli.data)) stimuli.data <- .this
+  else stimuli.data <- rbind(stimuli.data, .this)
+}
+write.table(stimuli.data, file = "Results/stimuli.csv", quote = F, sep = "\t", row.names = F)

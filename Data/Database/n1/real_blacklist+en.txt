@@ -3,6 +3,7 @@ Achterbahn
 Adoptor
 Adorant
 Adressant
+Affekt
 Aggregat
 Altlast
 Billion

@@ -1,11 +1,12 @@
 rm(list = ls())
+set.seed(429)
 source('functions.R')
 
 load("RData/analyses.full.RData")
 load("RData/noun.frequencies.RData")
 load("RData/compounds.RData")
 
-les <- c('e', 'Ue', 'er', 'Uer', 'n', 'en')
+les <- c('e', 'Ue', 'er', 'Uer', 'n', 'en', 'U')
 
 frequencydata.full <- list(
   e   = NULL, en  = NULL, er  = NULL,
@@ -29,13 +30,3 @@ for (le in les) {
 
 save(list = "frequencydata.full", file = "RData/frequencydata.full.RData", compress = "bzip2")
 
-# plot(0, type="n", xlim=c(0.00001,1), ylim=c(0.00001,1), log="xy")
-# for (i in 1:length(les)) {
-#   .le <- les[i]
-#   .tytor <- data.frame(With = analyses.full[[.le]]$With_Ftype/analyses.full[[.le]]$With_Ftoken,
-#                        Without = analyses.full[[.le]]$Without_Ftype/analyses.full[[.le]]$With_Ftoken
-#                        )
-#   points(.tytor[order(.tytor$With),1]~.tytor[order(.tytor$With),2],
-#        lty = 17+i,
-#        col = i)
-# }

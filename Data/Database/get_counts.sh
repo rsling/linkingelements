@@ -43,7 +43,7 @@ get_tokens() {
 get_all() {
   get_hapax
   get_types
-#  get_tokens
+  get_tokens
 }
 
 echo

@@ -72,13 +72,23 @@ make.full.analysis <-  function(le, prods) {
 }
 
 
-map.log <-  function(x, x.max, to.max = 2) {
+map.log <-  function(x, x.max, to.max = 1.5) {
   log(x)/log(x.max)*(to.max)
 }
 
 
 
-plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, norm.xax = NULL, norm.yax = NULL, zero.floor = NULL) {
+le.name <- function(le) {
+  ifelse(startsWith(le, 'U'), paste0('=', substr(le, 2, nchar(le))), paste0('-', le))
+}
+
+
+plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
+                                norm.xax = NULL, norm.yax = NULL, zero.floor = NULL) {
+  if (le == "EMPTY_PLOT") {
+    plot.new()
+    return()
+  }
   .n1s <- analyses[[le]]
 
   # Remove/deal with elements with 0 productivity.
@@ -116,7 +126,7 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, nor
     .ylim <- c(.prod.without.min*0.75, .prod.without.max*1.25)
   }
 
-  .le.name <- ifelse(startsWith(le, 'U'), paste0('=', substr(le, 2, nchar(le))), paste0('-', le))
+  .le.name <- le.name(le)
 
   plot(.n1s[,"With_Ppot"]~.n1s[,"Without_Ppot"], type="n",
        main = paste0("Productivity of N1 with ", .le.name, .subtitle),
@@ -153,7 +163,8 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100, nor
                  map.log(.fty.max.with, .fty.max.with, 4)
                ),
              cex = 0.8,
-             bty = "n"
+             #bty = "n"
+             bg = "lightgray"
       )
     } else {
       text(.n1s[n,"With_Ppot"], .n1s[n,"Without_Ppot"],
