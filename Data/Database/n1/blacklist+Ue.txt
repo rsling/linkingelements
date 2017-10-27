@@ -9,7 +9,7 @@ Absatz
 Abschaum
 Abschluss
 Abstand
-Altbestand
+-Altbestand
 Anfang
 Anflug
 Anhang
@@ -19,7 +19,7 @@ Anschluss
 Anspruch
 Antrag
 Anwalt
-Arbeitsplatz
+-Arbeitsplatz
 Aufsatz
 -Aufschluss
 Aufstand
@@ -36,7 +36,7 @@ Auswuchs
 Auszug
 Bach
 -Bahnhof
-Balg
+-Balg
 Ball
 -Band
 Bank
@@ -71,7 +71,7 @@ Damm
 Dampf
 Darm
 Draht
-Druck
+-Druck
 Duft
 Dunst
 Eifersucht
@@ -331,10 +331,10 @@ Zufluss
 Zug
 Zugang
 Zunft
-Zusammenhang
+-Zusammenhang
 Zusatz
 Zuschlag
 Zuschuss
 Zustand
 Zwang
-Zwischenstand
+-Zwischenstand

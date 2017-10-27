@@ -1,10 +1,14 @@
 Abluft
+Altbestand
+Arbeitsplatz
 Aufschluss
 Bahnhof
+Balg
 Band
 Bauplatz
 Bug
 Christbaum
+Druck
 Fachkraft
 Fahrgast
 Fledermaus
@@ -55,3 +59,5 @@ Studiengang
 Studienplatz
 Studienrat
 Supermarkt
+Zusammenhang
+Zwischenstand
