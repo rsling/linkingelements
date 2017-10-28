@@ -4,6 +4,7 @@ Baend
 Blaett
 Buech
 Denkmael
+Ding
 Doerf
 Faess
 Findelkind

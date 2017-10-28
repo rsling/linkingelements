@@ -6039,9 +6039,9 @@ Hand	Aufleger	2
 Hand	Attrappe	2
 Hals	Recke	2
 Gruß	Seite	2
-Grund	Suche	2
 Grundsatz	Katalog	2
 Grundsatz	Ernst	2
+Grund	Suche	2
 Grund	Nein	2
 Grund	Mitglied	2
 Grund	Berg	2
@@ -7818,6 +7818,7 @@ Stamm	Bild	1
 Stall	Haus	1
 Stall	Burger	1
 Stall	Bau	1
+Stadtplan	Programm	1
 Stadt	Zwilling	1
 Stadt	Zuzug	1
 Stadt	Zuwachs	1
@@ -7991,7 +7992,6 @@ Stadt	Plünderer	1
 Stadt	Plünderei	1
 Stadt	Platz	1
 Stadt	Planspiel	1
-Stadtplan	Programm	1
 Stadt	Planet	1
 Stadt	Plakette	1
 Stadt	Plakat	1
@@ -8547,6 +8547,7 @@ Schwarm	Zug	1
 Schwarm	Rakete	1
 Schwanz	Vergleich	1
 Schwanz	Tanz	1
+Schwank	Macher	1
 Schwan	Trikot	1
 Schwan	Treffer	1
 Schwan	Spieler	1
@@ -8556,7 +8557,6 @@ Schwan	Plage	1
 Schwan	Mark	1
 Schwan	Land	1
 Schwan	Küken	1
-Schwank	Macher	1
 Schwan	Jagd	1
 Schwan	Hasser	1
 Schwan	Fehler	1
@@ -9146,8 +9146,8 @@ Nuss	Büschel	1
 Nuss	Baum	1
 Nuss	Angebot	1
 Notstand	Regime	1
-Not	Spirale	1
 Notfall	Stand	1
+Not	Spirale	1
 Not	Burg	1
 Napf	Spüle	1
 Naht	Winde	1
@@ -9155,13 +9155,13 @@ Naht	Werden	1
 Naht	Nähe	1
 Naht	Kitt	1
 Nahkampf	Reinheit	1
+Nachtrag	Werden	1
 Nacht	Wind	1
 Nacht	Wandrer	1
 Nacht	Trip	1
 Nacht	Trauer	1
 Nacht	Stunde	1
 Nacht	Reigen	1
-Nachtrag	Werden	1
 Nacht	Killer	1
 Nacht	Gruft	1
 Nacht	Geruch	1
@@ -10091,6 +10091,7 @@ Kunst	Projekt	1
 Kunst	Hierarchie	1
 Kunst	Begriff	1
 Kunst	Ansicht	1
+Kühlschrank	Markt	1
 Kuh	Zins	1
 Kuh	Weiher	1
 Kuh	Treiber	1
@@ -10107,7 +10108,6 @@ Kuh	Rennen	1
 Kuh	Ranschluß	1
 Kuh	Ranordnung	1
 Kuh	Putz	1
-Kühlschrank	Markt	1
 Kuh	Lenker	1
 Kuh	Leben	1
 Kuh	Klüngel	1
@@ -11001,6 +11001,8 @@ Gruß	Hallo	1
 Gruß	Dank	1
 Gruß	Aus	1
 Gruß	August	1
+Grundsatz	Papier	1
+Grundsatz	Jemand	1
 Grund	Zentrum	1
 Grund	Zeit	1
 Grund	Wissen	1
@@ -11009,8 +11011,6 @@ Grund	Team	1
 Grund	Sucherei	1
 Grund	Sucher	1
 Grund	Stück	1
-Grundsatz	Papier	1
-Grundsatz	Jemand	1
 Grund	Sammlung	1
 Grund	Sammeln	1
 Grund	Recht	1

@@ -32,6 +32,7 @@ Motorrad
 Nashorn
 Obmann
 Passwort
+Pfand
 Postfach
 Rathaus
 Rebhuhn
@@ -51,6 +52,7 @@ Tagebuch
 Tonband
 Treibhaus
 Truthuhn
+Unkraut
 Vorblatt
 Vorland
 Vormund

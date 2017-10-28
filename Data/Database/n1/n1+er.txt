@@ -1,6 +1,5 @@
 Abbild
 Amt
-Ämt
 Baed
 Baend
 Biest
@@ -86,3 +85,4 @@ Weichei
 Weltbild
 Woert
 Wuerm
+Ämt

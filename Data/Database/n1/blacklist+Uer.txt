@@ -70,7 +70,7 @@ Mund
 -Nashorn
 -Obmann
 -Passwort
-Pfand
+-Pfand
 -Postfach
 Rad
 Rand
@@ -98,7 +98,7 @@ Tal
 -Treibhaus
 -Truthuhn
 Tuch
-Unkraut
+-Unkraut
 Volk
 -Vorblatt
 -Vorland

@@ -71,7 +71,7 @@ if (save.persistently) {
 }
 par(mfrow=c(3,3))
 for (le in les) {
-  # For debugging.
+  .le.name <- le.name(le)
   plot(corpus.candidates[[le]]$Without_Ppot ~ corpus.candidates[[le]]$With_Ppot,
        log="xy",
        pch = 20,
