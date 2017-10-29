@@ -289,7 +289,7 @@ Fittich
 Fjell
 Fjord
 Flaneur
-Flausch
+-Flausch
 Flor
 -Flueg
 -Flugzeug
@@ -748,8 +748,8 @@ Pedal
 Pelz
 Peptid
 Periskop
-Perlit
-Peroxid
+-Perlit
+-Peroxid
 Pestizid
 Pfad
 Pfeil
@@ -758,10 +758,10 @@ Pferch
 Pferd
 Pfiff
 Pfifferling
-Pfund
+-Pfund
 Phantom
-Phenol
-Phenyl
+-Phenol
+-Phenyl
 Pheromon
 Phonem
 -Phonogerät
@@ -772,7 +772,7 @@ Phönix
 -Piep
 Pigment
 Pikett
-Pils
+-Pils
 Pilz
 Pinguin
 Pionier
@@ -883,8 +883,8 @@ Rückruf
 -Saetz
 Sakrament
 Salat
-Salut
-Salz
+-Salut
+-Salz
 Samstag
 Saphir
 Sarkophag
@@ -1013,7 +1013,7 @@ Stil
 -Stimmrecht
 -Stockwerk
 -Stoeck
-Stoff
+-Stoff
 Strategem
 Strauß
 Streit
