@@ -4,10 +4,13 @@ Liebling	6255
 Dauer	5894
 Standard	5355
 Mini	5221
+Sprache	5130
 Holz	5098
 Leben	5062
 Arbeit	4973
 Kultur	4958
+Schule	4872
+Farbe	4817
 Stadt	4740
 Kunst	4685
 Grund	4684
@@ -84,6 +87,7 @@ Computer	3315
 Hand	3306
 Papier	3295
 Pseudo	3289
+Ende	3275
 Theater	3257
 Verkehr	3248
 Garten	3247
@@ -93,6 +97,7 @@ Training	3202
 Wunsch	3200
 Basis	3197
 Feuer	3183
+Erde	3183
 Körper	3177
 Umwelt	3158
 Nacht	3139
@@ -200,6 +205,7 @@ Zukunft	2525
 Macht	2524
 Baby	2518
 Ring	2508
+Grenze	2506
 Profi	2498
 Meister	2497
 Hotel	2490
@@ -224,6 +230,7 @@ Drachen	2416
 Engel	2415
 Wettbewerb	2405
 Gemeinschaft	2404
+Kontrolle	2396
 Kino	2396
 Hobby	2395
 Fuß	2395
@@ -407,6 +414,7 @@ Lohn	1843
 Konzert	1841
 Bahnhof	1841
 Tor	1839
+Zelle	1836
 Gesicht	1834
 Rahmen	1831
 Anschluss	1831
@@ -429,6 +437,7 @@ Mannschaft	1795
 Europa	1792
 Motorrad	1785
 Zufall	1776
+Hochschule	1776
 Laser	1772
 Verlag	1771
 Einstieg	1771
@@ -457,6 +466,7 @@ Gründung	1732
 Leitung	1730
 Therapie	1729
 Pilz	1728
+Wochenende	1726
 Jubiläum	1725
 Blatt	1725
 Angebot	1725
@@ -543,6 +553,7 @@ Golf	1594
 Rauch	1585
 Unterhaltung	1581
 Grafik	1581
+Wolle	1578
 Erziehung	1578
 Dampf	1577
 Rekord	1576
@@ -619,6 +630,7 @@ Uni	1476
 Zwilling	1474
 Kaiser	1474
 Nachfolge	1471
+Sache	1470
 Klinik	1470
 Sieger	1468
 Bibel	1467
@@ -709,6 +721,7 @@ Händler	1366
 Handwerk	1365
 Kammer	1363
 Mörder	1362
+Ecke	1360
 Bein	1360
 Überwachung	1353
 Möbel	1353
@@ -749,6 +762,7 @@ Vermögen	1300
 Währung	1299
 Orchester	1298
 Gipfel	1298
+Elbe	1298
 Gebiet	1297
 Fitness	1295
 Elite	1295
@@ -771,6 +785,7 @@ Siedlung	1281
 Kuh	1281
 Becken	1281
 Ingenieur	1280
+Hitze	1280
 Bett	1280
 Medizin	1278
 Fest	1276
@@ -923,6 +938,7 @@ Rumpf	1142
 Rentner	1142
 Harz	1140
 Verbraucher	1139
+Stimme	1139
 Moor	1138
 Hunger	1138
 Schall	1137
@@ -957,7 +973,6 @@ Geräusch	1121
 Tag	1120
 Persönlichkeit	1120
 Kaninchen	1120
-Hitze	1120
 Geist	1118
 Sensor	1117
 Navigation	1117
@@ -1067,6 +1082,7 @@ Sucht	1052
 Wirkung	1050
 Vers	1050
 Code	1047
+Baumwolle	1047
 Abstimmung	1047
 Wartung	1046
 Bericht	1046
@@ -1139,12 +1155,14 @@ Wild	1004
 Käfer	1004
 Pulver	1003
 Hund	1002
+Adresse	1002
 Vulkan	1001
 Gesinnung	1001
 Institut	1000
 Partnerschaft	999
 Pionier	998
 Leber	998
+Kirche	998
 Strahlung	997
 Retro	997
 Nachmittag	996
@@ -1172,6 +1190,7 @@ Masse	983
 Clan	983
 Wehrmacht	982
 Ziegel	981
+Strafe	981
 Fraktion	981
 Wende	980
 Strömung	980
@@ -1348,6 +1367,7 @@ Helfer	887
 Dokumentation	886
 Herkunft	885
 Vorstellung	884
+Pfarre	884
 Kommerz	884
 Ruhe	883
 Tumor	882
@@ -1372,6 +1392,7 @@ Krieger	873
 Aufzug	873
 Anbau	873
 Sau	872
+Rache	872
 Plakat	872
 Membran	871
 Fächer	871
@@ -1520,6 +1541,7 @@ Zugriff	816
 Vorrat	816
 Talent	816
 Stoß	816
+Pappe	816
 Mantel	815
 Lava	815
 Hang	815
@@ -1554,6 +1576,7 @@ Level	805
 Zentrum	804
 Transformation	804
 Support	804
+Spirale	804
 Feier	804
 Kies	803
 Applikation	803
@@ -1592,6 +1615,7 @@ Korb	792
 Recherche	791
 Diamant	791
 Umsetzung	790
+Münze	790
 Resonanz	789
 Jahrgang	789
 Fund	789
@@ -1657,6 +1681,7 @@ Spionage	766
 Hardcore	766
 Galerie	766
 Effizienz	766
+Achse	766
 Vernunft	765
 Situation	765
 Weinberg	763
@@ -1701,6 +1726,7 @@ Harmonie	753
 Korruption	752
 Gefecht	751
 Akustik	751
+Fähre	750
 Konfiguration	749
 Bekleidung	749
 Projektion	748
@@ -1732,7 +1758,6 @@ Donner	741
 Identifikation	740
 Fastnacht	740
 Shopping	739
-Rache	739
 Mehrheit	739
 Züchter	738
 Flirt	738
@@ -1759,8 +1784,10 @@ Drehbuch	731
 Aktivierung	731
 Kamel	729
 Stabilität	728
+Quelle	728
 Kraftstoff	728
 Keks	728
+Hüfte	728
 Graben	728
 Marsch	727
 Linux	727
@@ -1859,6 +1886,7 @@ Cluster	696
 Monopol	695
 Spalt	694
 Hochdruck	694
+Filiale	694
 Expedition	694
 Krokodil	693
 Datum	693
@@ -1866,6 +1894,7 @@ Vorbild	692
 Segler	692
 Pol	692
 Neuro	692
+Kirsche	692
 Torwart	691
 Telekommunikation	691
 Kleinstadt	691
@@ -1949,6 +1978,7 @@ Tandem	672
 Regatta	672
 Tötung	671
 Spur	671
+Mitte	671
 Lehrgang	671
 Latex	671
 Explosion	671
@@ -2189,6 +2219,7 @@ Kapsel	602
 Hydro	602
 Fokus	602
 Fax	602
+Buße	602
 Rechteck	601
 Gau	601
 Umgang	600
@@ -2226,6 +2257,7 @@ Gewinde	592
 Dokument	592
 Öffentlichkeit	591
 Pegel	591
+Krone	591
 Empfehlung	591
 Campus	591
 Kritiker	590
@@ -2272,6 +2304,7 @@ Austritt	581
 Quecksilber	579
 Bedürfnis	579
 Tochter	578
+Palme	578
 Vorteil	577
 Klatsch	577
 Übersicht	576
@@ -2282,6 +2315,7 @@ Kilometer	576
 Grundsatz	576
 Dünger	576
 Zertifizierung	575
+Mühle	575
 Gemüt	575
 Vertretung	574
 Semester	574
@@ -2450,6 +2484,7 @@ Bereitschaft	534
 Pfarrer	533
 Mathematik	533
 Gerüst	533
+Rebe	532
 Fahrgast	532
 Verkleidung	531
 Spindel	531
@@ -2591,6 +2626,7 @@ Essig	502
 Bann	502
 Attribut	502
 Reduktion	501
+Perspektive	501
 Greif	501
 Fruchtbarkeit	501
 Fluch	501
@@ -2745,6 +2781,7 @@ Lehrbuch	472
 Verdacht	471
 Spoiler	471
 Manöver	471
+Himbeere	471
 Benutzung	471
 Beerdigung	471
 Auszahlung	471
@@ -2785,6 +2822,7 @@ Schreiber	465
 Reporter	464
 Jod	464
 Zirkel	463
+Schande	463
 Mörtel	463
 Härte	463
 Creme	463
@@ -2997,7 +3035,6 @@ Auferstehung	429
 Aktionär	429
 Abschnitt	429
 Laich	428
-Elbe	428
 Dienstag	428
 Techniker	427
 Repression	427
@@ -3314,6 +3351,7 @@ Stürmer	383
 Sample	383
 Pfeiler	383
 Opium	383
+Lokomotive	383
 Automatisierung	383
 Nitrat	382
 Imbiss	382
@@ -3363,6 +3401,7 @@ Gemälde	377
 Eiter	377
 Bon	377
 Loyalität	376
+Leute	376
 Leerlauf	376
 Gesetzgebung	376
 Football	376
@@ -3405,7 +3444,9 @@ Puder	371
 Ortung	371
 Mops	371
 Knaller	371
+Klette	371
 Gebiss	371
+Ehre	371
 Chemo	371
 Bestrahlung	371
 Patchwork	370
@@ -3542,6 +3583,7 @@ Kompass	354
 Fond	354
 Tournee	353
 Strang	353
+Stammzelle	353
 Pfirsich	353
 Petition	353
 Percussion	353
@@ -3588,6 +3630,7 @@ Patenschaft	349
 Minderheit	349
 Millennium	349
 Kurier	349
+Brombeere	349
 Zorn	348
 Täuschung	348
 Schoß	348
@@ -3767,6 +3810,7 @@ Pappel	331
 Nachtrag	331
 Konfession	331
 Gebäck	331
+Bagatelle	331
 Ausreise	331
 Anklage	331
 Zirkulation	330
@@ -3812,7 +3856,6 @@ Schnorchel	326
 Sabbat	326
 Rheuma	326
 Resistenz	326
-Mitte	326
 Koordinierung	326
 Guthaben	326
 Föhn	326
@@ -3828,6 +3871,7 @@ Picknick	325
 Pasta	325
 Netzhaut	325
 Frankreich	325
+Auge	325
 Abt	325
 Triumph	324
 Popcorn	324
@@ -3954,6 +3998,7 @@ Thunfisch	309
 Symmetrie	309
 Stimulation	309
 Mitgliedschaft	309
+Lakritze	309
 Impfstoff	309
 Hohlraum	309
 Heer	309
@@ -3975,6 +4020,7 @@ Veilchen	307
 Solidar	307
 Prostata	307
 Lehramt	307
+Kehle	307
 Infusion	307
 Hirse	307
 Cholesterin	307
@@ -4064,11 +4110,13 @@ Positiv	299
 Popo	299
 Kontinuität	299
 Fassung	299
+Fachhochschule	299
 Experiment	299
 Eintracht	299
 Benefiz	299
 Ständer	298
 Neutralität	298
+Lymphe	298
 Kühlung	298
 Institution	298
 Fünfer	298
@@ -4121,6 +4169,7 @@ Stockwerk	292
 Rachen	292
 Oxidation	292
 Kür	292
+Kunde	292
 Karo	292
 Hobbit	292
 Durchfall	292
@@ -4303,7 +4352,6 @@ Kirchweih	276
 Kenntnis	276
 Instruktion	276
 Historiker	276
-Farbe	276
 Erpressung	276
 Almosen	276
 Abfindung	276
@@ -4350,6 +4398,7 @@ Anarcho	273
 Aerosol	273
 Abwesenheit	273
 Wachtel	272
+Violine	272
 Upgrade	272
 Trampolin	272
 Reinheit	272
@@ -4415,6 +4464,7 @@ Papyrus	267
 Migräne	267
 Kutter	267
 Kasino	267
+Heidelbeere	267
 Furcht	267
 Erlaubnis	267
 Drainage	267
@@ -4947,8 +4997,6 @@ Hasch	228
 Füller	228
 Flößer	228
 Firmware	228
-Erde	228
-Ende	228
 Dill	228
 Zuhälter	227
 Vorverkauf	227
@@ -5042,6 +5090,7 @@ Shell	222
 Reifung	222
 Phyto	222
 Kodierung	222
+Gefälle	222
 Filtration	222
 Dinner	222
 Diktat	222
@@ -5068,7 +5117,6 @@ Opa	220
 Nation	220
 Meteor	220
 Machbarkeit	220
-Leute	220
 Lektorat	220
 Krim	220
 Knack	220
@@ -5203,7 +5251,6 @@ Päckchen	212
 Patronat	212
 Omega	212
 Lesung	212
-Kunde	212
 Irak	212
 Hain	212
 Ermüdung	212
@@ -5256,7 +5303,6 @@ Entfremdung	209
 Disziplinierung	209
 Bankett	209
 Ägypten	208
-Wolle	208
 Wechselwirkung	208
 Waage	208
 Ventilation	208
@@ -5330,7 +5376,6 @@ Revue	204
 Raffinerie	204
 Pakt	204
 Lepra	204
-Kirche	204
 Imitation	204
 Eingewöhnung	204
 Durchblutung	204
@@ -5385,6 +5430,7 @@ Deflation	201
 Besserung	201
 Abkühlung	201
 Xenon	200
+Volkshochschule	200
 Verleumdung	200
 Stengel	200
 Smiley	200
@@ -5413,6 +5459,7 @@ Prim	199
 Mixer	199
 Irrtum	199
 Flausch	199
+Flamme	199
 Diaspora	199
 Bodden	199
 Bios	199
@@ -5437,6 +5484,7 @@ Anlieferung	198
 Wiederstand	197
 Verdünnung	197
 Operator	197
+Kutsche	197
 Kreuzigung	197
 Jux	197
 Journal	197
@@ -5765,6 +5813,7 @@ Beregnung	181
 Überlagerung	180
 Verdichter	180
 Umluft	180
+Traufe	180
 Terrarium	180
 Tausend	180
 Schwall	180
@@ -5922,6 +5971,7 @@ Motel	173
 Laboratorium	173
 Küster	173
 Kerbe	173
+Johannisbeere	173
 Essenz	173
 Erektion	173
 Büßer	173
@@ -5942,7 +5992,6 @@ Nummer	172
 Leidenschaft	172
 Kittel	172
 Inserat	172
-Gefälle	172
 Entschlüsselung	172
 Einteilung	172
 Berner	172
@@ -6158,7 +6207,6 @@ Verwirklichung	161
 Verifizierung	161
 Tampon	161
 Ster	161
-Schule	161
 Rückschlag	161
 Rigg	161
 Polder	161
@@ -6206,6 +6254,7 @@ Phoenix	159
 Obstbau	159
 Konditor	159
 Höhe	159
+Fuhre	159
 Dispo	159
 Blender	159
 Beuge	159
@@ -6240,7 +6289,6 @@ Prägung	157
 Pluto	157
 Pfleger	157
 Pattern	157
-Pappe	157
 Monsun	157
 Konsortial	157
 Knöllchen	157
@@ -6272,6 +6320,7 @@ Mokka	156
 Memorial	156
 Margarine	156
 Kresse	156
+Kommune	156
 Heber	156
 Gesuch	156
 Fuehrung	156
@@ -6293,7 +6342,6 @@ Schadenersatz	155
 Pheromon	155
 Palladium	155
 Meerrettich	155
-Kommune	155
 Komiker	155
 Koka	155
 Klezmer	155
@@ -6323,6 +6371,7 @@ Nachtisch	154
 Maskierung	154
 Kontor	154
 Kontinent	154
+Kette	154
 Kassa	154
 Kaper	154
 Jacht	154
@@ -6369,6 +6418,7 @@ Enttäuschung	153
 Einberufung	153
 Dessous	153
 Collie	153
+Beere	153
 Visitation	152
 Thrombose	152
 Schlecker	152
@@ -6473,6 +6523,7 @@ Legalisierung	148
 Leckage	148
 Konsumtion	148
 Kleist	148
+Kathedrale	148
 Hörnchen	148
 Helix	148
 Gestirn	148
@@ -6543,7 +6594,6 @@ Spezies	145
 Spektakel	145
 Sigma	145
 Reservoir	145
-Quelle	145
 Quarzit	145
 Polyamid	145
 Perforation	145
@@ -6602,7 +6652,6 @@ Panzerung	143
 Pandemie	143
 Osteoporose	143
 Nuckel	143
-Mühle	143
 Milliardär	143
 Klärwerk	143
 Kiebitz	143
@@ -6653,7 +6702,6 @@ Cheerleader	142
 Betonung	142
 Bekenner	142
 Bakelit	142
-Auge	142
 Wulst	141
 Wiedereingliederung	141
 Vorwurf	141
@@ -6689,6 +6737,7 @@ Wart	140
 Sintflut	140
 Rüpel	140
 Rasur	140
+Preiselbeere	140
 Pier	140
 Muffel	140
 Leckerchen	140
@@ -6869,12 +6918,10 @@ Genick	134
 Flatrate	134
 Disziplinar	134
 Anwärter	134
-Wochenende	133
 Weiblichkeit	133
 Volley	133
 Verwesung	133
 Student	133
-Sprache	133
 Sperber	133
 Raspel	133
 Radieschen	133
@@ -6967,6 +7014,7 @@ Dentin	131
 Bräutigam	131
 Boy	131
 Blockierung	131
+Birne	131
 Befähigung	131
 Baguette	131
 Ausübung	131
@@ -7419,6 +7467,7 @@ Leutnant	117
 Kroatien	117
 Koax	117
 Kellerei	117
+Kapelle	117
 Fundus	117
 Formaldehyd	117
 Festnahme	117
@@ -7743,6 +7792,7 @@ Glöckchen	109
 Glätte	109
 Ginseng	109
 Gewichtheber	109
+Gallerte	109
 Ekzem	109
 Desintegration	109
 Brücke	109
@@ -8060,6 +8110,7 @@ Verabredung	100
 Umdrehung	100
 Tönung	100
 Thorium	100
+Sülze	100
 Sozietät	100
 Schlot	100
 Rüge	100
@@ -8677,7 +8728,6 @@ Malawi	86
 Libyen	86
 Laune	86
 Kontokorrent	86
-Kette	86
 Kerner	86
 Interviewer	86
 Intensivierung	86
@@ -8733,6 +8783,7 @@ Hauswart	85
 Hauruck	85
 Harnisch	85
 Grenzer	85
+Geleise	85
 Gegenüber	85
 Furt	85
 Exodus	85
@@ -8780,7 +8831,6 @@ Majolika	84
 Küfer	84
 Kursus	84
 Kräftigung	84
-Krone	84
 Krokant	84
 Kompostierung	84
 Kohlendioxyd	84
@@ -8893,6 +8943,7 @@ Eurythmie	82
 Eros	82
 Erhitzung	82
 Dynamisierung	82
+Delikatesse	82
 Cricket	82
 Butzen	82
 Bombardierung	82
@@ -8936,7 +8987,6 @@ Haller	81
 Gentleman	81
 Gehorsamkeit	81
 Fänger	81
-Fähre	81
 Fuhrwerk	81
 Einwendung	81
 Einsetzung	81
@@ -9595,6 +9645,7 @@ Looping	70
 Landnahme	70
 Klump	70
 Höhepunkt	70
+Huefte	70
 Henne	70
 Handschuhfach	70
 Handelskammer	70
@@ -9800,6 +9851,7 @@ Versklavung	66
 Verortung	66
 Umlenkung	66
 Trizeps	66
+Treppe	66
 Transmutation	66
 Symposion	66
 Strähnchen	66
@@ -9882,7 +9934,6 @@ Libero	65
 Lasagne	65
 Kuvert	65
 Kumulation	65
-Kontrolle	65
 Kontribution	65
 Keimling	65
 Kebab	65
@@ -10023,6 +10074,7 @@ Numerierung	63
 Neuverschuldung	63
 Nachrücker	63
 Mächtigkeit	63
+Muenze	63
 Memoiren	63
 Manometer	63
 Manchester	63
@@ -10204,7 +10256,6 @@ Gemenge	61
 Gefach	61
 Freischärler	61
 Egoismus	61
-Ecke	61
 Drescher	61
 Diva	61
 Dispens	61
@@ -10232,6 +10283,7 @@ Tableau	60
 Säumnis	60
 Strebe	60
 Sputnik	60
+Spinnwebe	60
 Seine	60
 Schreber	60
 Schnulli	60
@@ -10345,7 +10397,6 @@ Kieselgur	59
 Kafka	59
 Höfling	59
 Humanismus	59
-Grenze	59
 Gleichgültigkeit	59
 Galaxis	59
 Feme	59
@@ -10397,7 +10448,6 @@ Rinde	58
 Rhodium	58
 Reaktivität	58
 Pulli	58
-Perspektive	58
 Pax	58
 Oxyd	58
 Nachführung	58
@@ -10437,7 +10487,6 @@ Akkomodation	58
 Übersteuerung	57
 Zusammengehörigkeit	57
 Zuechter	57
-Zelle	57
 Wahrhaftigkeit	57
 Wache	57
 Vaseline	57
@@ -10445,7 +10494,6 @@ Umhang	57
 Trub	57
 Talkum	57
 Subjektivierung	57
-Strafe	57
 Stefan	57
 Snob	57
 Schmauch	57
@@ -10578,7 +10626,6 @@ Häkchen	56
 Häcksler	56
 Hofrat	56
 Germanisierung	56
-Geleise	56
 Fröhlichkeit	56
 Fortifikation	56
 Ferne	56
@@ -10707,7 +10754,6 @@ Tessiner	54
 Taste	54
 Symbolisierung	54
 Supernova	54
-Stimme	54
 Sommelier	54
 Sigel	54
 Schonzeit	54
@@ -10727,7 +10773,6 @@ Mullah	54
 Merowinger	54
 Mayonnaise	54
 Korsika	54
-Klette	54
 Kilt	54
 Katharer	54
 Kadmium	54
@@ -11118,6 +11163,7 @@ Verschneidung	49
 Vermummung	49
 Verhältnismäßigkeit	49
 Verfüllung	49
+Vene	49
 Tempera	49
 Taubheit	49
 Stroemung	49
@@ -11194,7 +11240,6 @@ Anthrax	49
 Annährung	49
 Andeutung	49
 Agilität	49
-Adresse	49
 Abweisung	49
 Abreinigung	49
 Überbevölkerung	48
@@ -11213,7 +11258,6 @@ Vorbesitzer	48
 Vigilanz	48
 Vergewisserung	48
 Verdammnis	48
-Vene	48
 Umhüllung	48
 Trägerschaft	48
 Toetung	48
@@ -11274,6 +11318,7 @@ Gasometer	48
 Gallium	48
 Fahrlässigkeit	48
 Extremwert	48
+Einöde	48
 Ecstasy	48
 Chloroform	48
 Bulgarien	48
@@ -11442,6 +11487,7 @@ Herde	46
 Herakles	46
 Heider	46
 Hampelmann	46
+Glatze	46
 Giganto	46
 Gibbon	46
 Gewährung	46
@@ -11459,7 +11505,6 @@ Duodez	46
 Dingi	46
 Demarkation	46
 Cabaret	46
-Buße	46
 Bosheit	46
 Bangkok	46
 Bandoneon	46
@@ -11628,6 +11673,7 @@ Notversorgung	44
 Nepomuk	44
 Nachschulung	44
 Mündel	44
+Muehle	44
 Moench	44
 Liguster	44
 Konstruktor	44
@@ -11866,7 +11912,6 @@ Karfunkel	42
 Kandelaber	42
 Journalistik	42
 Hymen	42
-Hochschule	42
 Haupterwerb	42
 Hanger	42
 Gregor	42
@@ -11941,7 +11986,6 @@ Scorpions	41
 Schluff	41
 Schaber	41
 Samson	41
-Sache	41
 Rücktransport	41
 Rübe	41
 Robbe	41
@@ -12007,7 +12051,6 @@ Biennale	41
 Benefit	41
 Bemerkung	41
 Belüfter	41
-Bagatelle	41
 Avis	41
 Aversion	41
 Auswechslung	41
@@ -12085,7 +12128,6 @@ Linksaußen	40
 Lektor	40
 Leihe	40
 Legastheniker	40
-Lakritze	40
 Kunder	40
 Konsekration	40
 Komsomol	40
@@ -12100,7 +12142,6 @@ Hamam	40
 Glücklichkeit	40
 Geranium	40
 Fundamentalismus	40
-Flamme	40
 Fallout	40
 Errichter	40
 Entminung	40
@@ -12641,7 +12682,6 @@ Unterlage	35
 Typologie	35
 Tröster	35
 Trödler	35
-Treppe	35
 Trafik	35
 Thaler	35
 Telekinese	35
@@ -12812,7 +12852,6 @@ Tonne	34
 Temperierung	34
 Teint	34
 Tapezierer	34
-Sülze	34
 Surfboard	34
 Strunk	34
 Stricker	34
@@ -13050,7 +13089,6 @@ Antiaggression	33
 Anglistik	33
 Amid	33
 Adaptierung	33
-Achse	33
 Abtastung	33
 Abhandlung	33
 Überwinder	32
@@ -13161,7 +13199,6 @@ Bietung	32
 Bejahung	32
 Beißer	32
 Begradigung	32
-Baumwolle	32
 Banja	32
 Bahamas	32
 Bagdad	32
@@ -13400,7 +13437,6 @@ Passierschein	30
 Papeterie	30
 Orchestrierung	30
 Narr	30
-Münze	30
 Mytho	30
 Mitverantwortung	30
 Missgunst	30
@@ -13683,7 +13719,6 @@ Schnupfer	28
 Schnitzerei	28
 Schlingel	28
 Schleuse	28
-Schande	28
 Schabernack	28
 Salicyl	28
 Rüster	28
@@ -13737,7 +13772,6 @@ Kauderwelsch	28
 Jazzer	28
 Inventarisation	28
 Inkongruenz	28
-Hüfte	28
 Härchen	28
 Hälter	28
 Hygienisierung	28
@@ -13862,7 +13896,6 @@ Rhesus	27
 Revisionismus	27
 Replizierung	27
 Reder	27
-Rebe	27
 Rakete	27
 Ragtime	27
 Rabbi	27
@@ -14031,7 +14064,6 @@ Stratifikation	26
 Stenographie	26
 Stampfer	26
 Spiritual	26
-Spirale	26
 Spicker	26
 Spastiker	26
 Sozialverträglichkeit	26
@@ -14059,7 +14091,6 @@ Pneumokokken	26
 Pianoforte	26
 Pharmakologie	26
 Perchlorat	26
-Palme	26
 Obliegenheit	26
 Obhut	26
 Nitrosamin	26
@@ -14575,6 +14606,7 @@ Umorientierung	23
 Umbesetzung	23
 Täufling	23
 Tätowierer	23
+Tuere	23
 Troika	23
 Trademark	23
 Toepfer	23
@@ -14645,6 +14677,7 @@ Lochung	23
 Litoral	23
 Laterne	23
 Kumulierung	23
+Krücke	23
 Kredenz	23
 Korrumpierung	23
 Katholizismus	23
@@ -15100,6 +15133,7 @@ Flanke	21
 Fixierer	21
 Festakt	21
 Feinabstimmung	21
+Experte	21
 Esser	21
 Ergiebigkeit	21
 Erder	21
@@ -15128,7 +15162,7 @@ Demoskopie	21
 Deindustrialisierung	21
 Bonze	21
 Bonifizierung	21
-Birne	21
+Blesse	21
 Bezauberung	21
 Bewicklung	21
 Bettchen	21
@@ -15323,7 +15357,6 @@ Fissur	20
 Feminisierung	20
 Feller	20
 Fanatismus	20
-Experte	20
 Errungenschaft	20
 Erfuellung	20
 Entkolonialisierung	20
@@ -15498,7 +15531,6 @@ Melodram	19
 Markiertheit	19
 Manhattan	19
 Lätzchen	19
-Lymphe	19
 Luminal	19
 Lorelei	19
 Logistiker	19
@@ -15868,7 +15900,7 @@ Vorpommern	17
 Vormauer	17
 Vorkenntnis	17
 Vorführer	17
-Violine	17
+Vogelkunde	17
 Vinifikation	17
 Vielfältigkeit	17
 Verzeigung	17
@@ -16005,7 +16037,6 @@ Klaustrophobie	17
 Kasernierung	17
 Karthager	17
 Karre	17
-Kapelle	17
 Iodid	17
 Invokation	17
 Infantilisierung	17
@@ -16147,7 +16178,6 @@ Wichser	16
 Wellenlänge	16
 Wallung	16
 Vollstreckbarkeit	16
-Vogelkunde	16
 Voegel	16
 Vierziger	16
 Verzinnung	16
@@ -16387,6 +16417,7 @@ Berufstätigkeit	16
 Belang	16
 Befahrbarkeit	16
 Beaufschlagung	16
+Ballade	16
 Ausuferung	16
 Austräger	16
 Ausschreitung	16
@@ -16548,7 +16579,6 @@ Plebs	15
 Pietismus	15
 Phlegma	15
 Pflasterung	15
-Pfarre	15
 Personifikation	15
 Permission	15
 Parasit	15
@@ -16605,12 +16635,10 @@ Kogge	15
 Knoter	15
 Knickerbocker	15
 Kliniker	15
-Kirsche	15
 Kippe	15
 Keyboarder	15
 Kerze	15
 Kenntnisnahme	15
-Kehle	15
 Kasachstan	15
 Karde	15
 Karambolage	15
@@ -16705,7 +16733,6 @@ Begebung	15
 Befahrer	15
 Bearbeit	15
 Beamtung	15
-Ballade	15
 Bajazzo	15
 Babysitting	15
 Ausscheider	15
@@ -16913,7 +16940,6 @@ Lothringer	14
 Literarisierung	14
 Lebemann	14
 Kuwait	14
-Kutsche	14
 Kugler	14
 Krakeel	14
 Koreaner	14
@@ -17136,6 +17162,7 @@ Temperenz	13
 Tektonik	13
 Südtiroler	13
 Stützer	13
+Stute	13
 Straflosigkeit	13
 Stopfer	13
 Stieber	13
@@ -17249,7 +17276,6 @@ Löwchen	13
 Löber	13
 Lupfer	13
 Luftikus	13
-Lokomotive	13
 Lexiko	13
 Leiblichkeit	13
 Langweiligkeit	13
@@ -17373,7 +17399,6 @@ Begründer	13
 Begrueßung	13
 Begebenheit	13
 Befindung	13
-Beere	13
 Bedingtheit	13
 Bakterio	13
 Axiom	13
@@ -17721,7 +17746,6 @@ Gradierwerk	12
 Gote	12
 Globalität	12
 Glaube	12
-Glatze	12
 Gesetzmäßigkeit	12
 Gesetzlichkeit	12
 Gesetzbuch	12
@@ -18021,6 +18045,7 @@ Ordinarium	11
 Oktagon	11
 Okay	11
 Offroader	11
+Nymphe	11
 Nonplusultra	11
 Neutrum	11
 Neuentwicklung	11
@@ -18086,7 +18111,6 @@ Kleinadel	11
 Klaffer	11
 Kitter	11
 Kation	11
-Kathedrale	11
 Katarrh	11
 Katalonien	11
 Karrer	11
@@ -18567,7 +18591,6 @@ Hochamt	10
 Hinzuziehung	10
 Hinterfüllung	10
 Hinduismus	10
-Himbeere	10
 Hausmeier	10
 Hamen	10
 Haarling	10
@@ -18590,6 +18613,7 @@ Fristigkeit	10
 Frisoer	10
 Friedfertigkeit	10
 Fremdgefährdung	10
+Fregatte	10
 Frauenschaft	10
 Fratze	10
 Fortsatz	10
@@ -18959,7 +18983,6 @@ Onkogen	9
 Oktavierung	9
 Okkasion	9
 Obligatorium	9
-Nymphe	9
 None	9
 Nobilität	9
 Niete	9
@@ -19115,7 +19138,6 @@ Fortspinnung	9
 Fontaine	9
 Flüchter	9
 Flanker	9
-Filiale	9
 Fiche	9
 Feinfühligkeit	9
 Famulus	9
@@ -19415,7 +19437,6 @@ Triptychon	8
 Tribun	8
 Treuhandschaft	8
 Treiben	8
-Traufe	8
 Transferierung	8
 Trallala	8
 Tilger	8
@@ -19434,7 +19455,6 @@ Tablettierung	8
 Sylvaner	8
 Supremat	8
 Stücker	8
-Stute	8
 Stueckgut	8
 Studierzimmer	8
 Stubenreinheit	8
@@ -19709,7 +19729,6 @@ Gegenrichtung	8
 Gegenhalter	8
 Gazelle	8
 Gamet	8
-Gallerte	8
 Gabardine	8
 Fährte	8
 Fraternität	8
@@ -19806,7 +19825,6 @@ Böcker	8
 Burundi	8
 Buergerrecht	8
 Buendel	8
-Brombeere	8
 Briefchen	8
 Braue	8
 Brauchstum	8
@@ -20040,7 +20058,6 @@ Strukturalismus	7
 Stoeckchen	7
 Stechen	7
 Standarte	7
-Stammzelle	7
 Spätaufsteher	7
 Spießigkeit	7
 Spasmus	7
@@ -20374,7 +20391,6 @@ Farbigkeit	7
 Fanger	7
 Faksimilierung	7
 Fahrkarte	7
-Fachhochschule	7
 Facettierung	7
 Exzentriker	7
 Extremität	7
@@ -20912,6 +20928,7 @@ Pedell	6
 Pausierung	6
 Patscher	6
 Patriarchalisierung	6
+Parzelle	6
 Parese	6
 Parasitologie	6
 Pantheismus	6
@@ -21881,7 +21898,6 @@ Mutwilligkeit	5
 Mutator	5
 Musterer	5
 Muffe	5
-Muehle	5
 Motodrom	5
 Morphogenese	5
 Monstrum	5
@@ -21931,7 +21947,6 @@ Käcker	5
 Kunststückchen	5
 Kunstfertigkeit	5
 Kulturisation	5
-Krücke	5
 Kränzer	5
 Krume	5
 Kriminialität	5
@@ -21974,7 +21989,6 @@ Jährlichkeit	5
 Jurist	5
 Judaismus	5
 Johannisfeuer	5
-Johannisbeere	5
 Jenseitigkeit	5
 Januskopf	5
 Irregularität	5
@@ -22354,6 +22368,7 @@ Attestierung	5
 Attestation	5
 Astronautik	5
 Assonanz	5
+Asiate	5
 Arrivierung	5
 Arrangierung	5
 Aristokratie	5
@@ -22482,6 +22497,7 @@ Zerrbild	4
 Zerklüftung	4
 Zerkleinerer	4
 Zentrifugierung	4
+Zeitgenosse	4
 Zehrer	4
 Zampano	4
 Zaire	4
@@ -22767,7 +22783,6 @@ Staker	4
 Splitterung	4
 Spleen	4
 Spiritualisierung	4
-Spinnwebe	4
 Spießrutenlauf	4
 Spezifik	4
 Spezalisierung	4
@@ -23484,6 +23499,7 @@ Einschuldung	4
 Einschreiber	4
 Einschichtung	4
 Einrollung	4
+Einoede	4
 Einnutzung	4
 Einlizenzierung	4
 Einleuchtung	4
@@ -23876,7 +23892,6 @@ Zerfällung	3
 Zerdehnung	3
 Zerbrechung	3
 Zensurierung	3
-Zeitgenosse	3
 Zaubrer	3
 Zarge	3
 Zappler	3
@@ -24028,7 +24043,6 @@ Vorabprüfung	3
 Voluntarismus	3
 Vollzieher	3
 Vollmundigkeit	3
-Volkshochschule	3
 Vierhunderter	3
 Vierfachdetektion	3
 Verächtlichkeit	3
@@ -24482,7 +24496,6 @@ Produktivierung	3
 Privatisation	3
 Prischen	3
 Primadonna	3
-Preiselbeere	3
 Pranke	3
 Prallheit	3
 Praktizierung	3
@@ -24529,7 +24542,6 @@ Pausback	3
 Pathophysiologie	3
 Patentschaft	3
 Passivum	3
-Parzelle	3
 Parze	3
 Partnerschaftschaft	3
 Partizipierung	3
@@ -24784,6 +24796,7 @@ Kueste	3
 Kuerschner	3
 Krötchen	3
 Kröner	3
+Kruecke	3
 Kristallographie	3
 Krischen	3
 Krimino	3
@@ -24966,7 +24979,6 @@ Herpetologie	3
 Heroe	3
 Herbstzeitlose	3
 Herablassung	3
-Heidelbeere	3
 Hebebühne	3
 Hauung	3
 Haufigkeit	3
@@ -25082,7 +25094,6 @@ Futurologie	3
 Futuristik	3
 Futtrer	3
 Funktionierung	3
-Fuhre	3
 Fugung	3
 Fuffziger	3
 Fueller	3
@@ -27649,6 +27660,7 @@ Geschmeiß	2
 Geschlechtlichkeit	2
 Gesamtwirtschaftlichkeit	2
 Genosseschaft	2
+Genosse	2
 Genierung	2
 Genero	2
 Generikum	2
@@ -27720,7 +27732,6 @@ Freistoß	2
 Freigebigkeit	2
 Freienwalder	2
 Freiberuflichkeit	2
-Fregatte	2
 Franzose	2
 Fraglichkeit	2
 Fotothek	2
@@ -33045,7 +33056,6 @@ Kräftigkeit	1
 Krächzer	1
 Kryptogramm	1
 Krummheit	1
-Kruecke	1
 Kropper	1
 Kritzler	1
 Kristaller	1
@@ -33981,7 +33991,6 @@ Geobiologie	1
 Genuese	1
 Genter	1
 Genossenschaftlichkeit	1
-Genosse	1
 Genosschen	1
 Genfer	1
 Geneto	1
@@ -34803,7 +34812,6 @@ Ekelhaftigkeit	1
 Eisung	1
 Eislinger	1
 Einöder	1
-Einöde	1
 Einzündung	1
 Einzählung	1
 Einzuschuechterung	1
@@ -34898,7 +34906,6 @@ Einpicker	1
 Einpeitschung	1
 Einpauker	1
 Einpacker	1
-Einoede	1
 Einnutzer	1
 Einneigung	1
 Einnehmung	1
@@ -35557,7 +35564,6 @@ Blutigkeit	1
 Blueter	1
 Blondinchen	1
 Blinzeler	1
-Blesse	1
 Blaublütigkeit	1
 Blasiertheit	1
 Blaschen	1

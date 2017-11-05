@@ -19,7 +19,7 @@ get_n1() {
   cat compounds/decow16ax_comps_counts.txt |
     grep "\s${noun}${snippet}${noun}$" |
     sed 's/^\s*[0-9]\+\s\([^_]\+\)_.\+$/\1/' |
-    sort -T . -S 4G --compress-program=gzip |
+    sort -T . -S 8G --compress-program=gzip |
     uniq |
   cat > n1/n1${suffix}.txt
 }
@@ -52,7 +52,7 @@ get_n1_NP() {
   cat compounds/decow16ax_comps.txt |
     grep "^${noun}${snippet}${noun}$" |
     grep -o "^${noun}" |
-    sort -T . -S 4G --compress-program=gzip |
+    sort -T . -S 8G --compress-program=gzip |
     uniq |
   cat > n1/n1${suffix}.txt
 }
@@ -64,9 +64,9 @@ get_compounds_NP() {
   cat compounds/decow16ax_comps.txt |
   grep "^${noun}${snippet}${noun}$" |
   sed "s/${snippet}/	/" |
-  sort -T . -S 2G --compress-program=gzip |
+  sort -T . -S 4G --compress-program=gzip |
   uniq -c |
-  sort -T . -S 2G --compress-program=gzip -n -r |
+  sort -T . -S 4G --compress-program=gzip -n -r |
   sed "s/^\s*\([0-9]\+\)\s\+\(${noun}\)	\(${noun}\)$/\2	\3	\1/" |
   cat > compounds/compounds${suffix}.csv
 }

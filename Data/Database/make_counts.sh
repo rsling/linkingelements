@@ -101,7 +101,7 @@ do_it() {
   
   echo
   echo "NOTE: Getting the counts for 'NOT PLURAL' takes exceptionally long!"
-  snippet='\(_(e)_+s_\|_+s_\|_\|-e\)'
+  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\)'
   suffix='+NP'
   get_all
 }
