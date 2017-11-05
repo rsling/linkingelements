@@ -10,13 +10,17 @@ load("RData/noun.frequencies.RData")
 # Items in corpus study:
 corpus.items <- list(
   U   = data.frame(N1 = c("Mutter", "Vater", "Apfel", "Nagel", "Vogel")),
-  Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball")),
+  Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball", "Vorgang")),
   Uer = data.frame(N1 = c("Buch", "Haus", "Bad", "Rad", "Schloss", "Wurm")),
-  e   = data.frame(N1 = c("Hund", "Gerät", "Weg", "Geschenk", "Produkt", "Brief")),
+  e   = data.frame(N1 = c("Hund", "Gerät", "Weg", "Geschenk", "Produkt", "Brief",
+                          "Gebot", "Instrument", "Kerl", "Exponat", "Kompliment", "Umstieg")),
   er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert")),
-  n   = data.frame(N1 = c("Sonne", "Kunde", "Auge", "Bauer", "Katze", "Gitarre")),
-  en  = data.frame(N1 = c("Frau", "Person", "Ohr", "Bett", "Dämon")) # Removed 'Student' bec. it's a weak noun.
+  n   = data.frame(N1 = c("Sonne", "Kunde", "Auge", "Bauer", "Katze", "Gitarre",
+                          "Ausrede", "Hüfte", "Wunde")),
+  en  = data.frame(N1 = c("Frau", "Person", "Ohr", "Bett", "Dämon",
+                          "Bucht", "Forderung", "Möglichkeit", "Portion", "Praktik", "Universität"))
 )
+
 
 # Stimuli:
 stimuli <- list(

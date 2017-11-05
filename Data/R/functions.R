@@ -18,7 +18,6 @@ in.range <- function(x, low, high, inc.low = T, inc.high =T) {
   .op.low(x, low) & .op.high(x, high)
 }
 
-
 # Function to get rid of blacklisted N1s in single df.
 clean.df.by.blacklist <- function(df, blacklist, column) {
   .blacked <- which(df[,column] %in% blacklist[,column])

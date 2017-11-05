@@ -6,7 +6,7 @@ set -u
 SERVER="https://www.webcorpora.org/projectdata/decowcompounds/"
 LOCAL="Database/compounds/"
 LOCALR="R/RData/"
-FILES=( "compounds+.csv.gz" "compounds+s.csv.gz" "decow16ax_comps.txt.gz" "decow16ax_comps_counts.txt.gz" "decow16ax_nouns_counts.csv.gz" )
+FILES=( "compounds+.csv.gz" "compounds+s.csv.gz" "compounds+NP.csv.gz" "decow16ax_comps.txt.gz" "decow16ax_comps_counts.txt.gz" "decow16ax_nouns_counts.csv.gz")
 RFILES=( "noun.frequencies.RData" )
 
 for f in ${FILES[@]}

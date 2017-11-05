@@ -4,7 +4,7 @@ source('functions.R')
 data.path   <- '../Database/'
 
 nouns <- list(
-  no  = read.csv2(paste0(data.path, 'n1/n1+.txt'),
+  no  = read.csv2(paste0(data.path, 'n1/n1+NP.txt'),
                   header = FALSE, col.names = c("N1")),
   e   = read.csv2(paste0(data.path, 'n1/n1+e.txt'),
                   header = FALSE, col.names = c("N1")),
@@ -26,7 +26,7 @@ nouns <- list(
 
 
 fhapax <- list(
-  no  = read.csv2(paste0(data.path, 'fhapax/fhapax+.csv'),
+  no  = read.csv2(paste0(data.path, 'fhapax/fhapax+NP.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
   e   = read.csv2(paste0(data.path, 'fhapax/fhapax+e.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
@@ -48,7 +48,7 @@ fhapax <- list(
 
 
 ftoken <- list(
-  no  = read.csv2(paste0(data.path, 'ftoken/ftoken+.csv'),
+  no  = read.csv2(paste0(data.path, 'ftoken/ftoken+NP.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
   e   = read.csv2(paste0(data.path, 'ftoken/ftoken+e.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
@@ -70,7 +70,7 @@ ftoken <- list(
 
 
 ftype <- list(
-  no  = read.csv2(paste0(data.path, 'ftype/ftype+.csv'),
+  no  = read.csv2(paste0(data.path, 'ftype/ftype+NP.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
   e   = read.csv2(paste0(data.path, 'ftype/ftype+e.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
@@ -92,7 +92,7 @@ ftype <- list(
 
 
 compounds <- list(
-  no  = read.csv2(paste0(data.path, 'compounds/compounds+.csv'),
+  no  = read.csv2(paste0(data.path, 'compounds/compounds+NP.csv'),
                   sep = "\t", colClasses = c("character", "character", "integer"), header = FALSE, col.names = c("N1", "N2", "F")),
   e   = read.csv2(paste0(data.path, 'compounds/compounds+e.csv'),
                   sep = "\t", colClasses = c("character", "character", "integer"), header = FALSE, col.names = c("N1", "N2", "F")),
