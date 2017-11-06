@@ -13,7 +13,7 @@ corpus.items <- list(
   Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball", "Vorgang")),
   Uer = data.frame(N1 = c("Buch", "Haus", "Bad", "Rad", "Schloss", "Wurm")),
   e   = data.frame(N1 = c("Hund", "Gerät", "Weg", "Geschenk", "Produkt", "Brief",
-                          "Gebot", "Instrument", "Kerl", "Exponat", "Kompliment", "Umstieg")),
+                          "Instrument", "Kerl", "Exponat", "Kompliment", "Umstieg")),
   er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert")),
   n   = data.frame(N1 = c("Sonne", "Kunde", "Auge", "Bauer", "Katze", "Gitarre",
                           "Ausrede", "Hüfte", "Wunde")),
@@ -103,7 +103,7 @@ write.table(stimuli.data, file = "Results/stimuli.csv", quote = F, sep = "\t", r
 #     ),"N1"])
 # }
 # lapply(new.sample, write, "Results/new.sample.txt", append=TRUE, ncolumns=1000)
-
+#
 # New ones:
 # new.sample <- list(
 #   Ue  = data.frame(N1 = c("Vorgang")),
