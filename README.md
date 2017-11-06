@@ -2,15 +2,11 @@
 
 **Roland Schäfer¹ & Elizabeth Pankratz² (2017/2018)**
 
-¹Freie Universität Berlin
+¹Freie Universität Berlin, ²Humboldt Universität zu Berlin
 
-²Humboldt Universität zu Berlin
-
-**Paper website  http://rolandschaefer.net/?p=1532**
-
-**Data storage   https://github.com/rsling/linkingelements**
-
-**Contact email  mail@rolandschaefer.net**
+- **Paper website  http://rolandschaefer.net/?p=1532**
+- **Data storage   https://github.com/rsling/linkingelements**
+- **Contact email  mail@rolandschaefer.net**
 
 This is the README file for data package and paper LaTeX/knitr sources.
 
