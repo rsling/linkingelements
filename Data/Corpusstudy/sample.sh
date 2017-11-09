@@ -4,12 +4,12 @@ set -e
 set -u
 
 HEADER="DocURL	DocID	SentID	LC	Match	RC	N2Num	N2Typ	N1Lemma	N1Pl	LE"
-SAMPLE="200"
+SAMPLE="400"
 TMP="/tmp/__concordance__"
 
 for f in $(ls ./Queries/Output/*.csv.gz)
 do
-  outfile="Annotations2/$(basename ${f} '.gz')"
+  outfile="Concordances/$(basename ${f} '.gz')"
   itemname="$(basename ${f} '.csv.gz')"
   
   echo
