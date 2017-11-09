@@ -10,15 +10,21 @@ load("RData/noun.frequencies.RData")
 # Items in corpus study:
 corpus.items <- list(
   U   = data.frame(N1 = c("Mutter", "Vater", "Apfel", "Nagel", "Vogel")),
-  Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball", "Vorgang")),
+  Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball")),
   Uer = data.frame(N1 = c("Buch", "Haus", "Bad", "Rad", "Schloss", "Wurm")),
   e   = data.frame(N1 = c("Hund", "Gerät", "Weg", "Geschenk", "Produkt", "Brief",
-                          "Instrument", "Kerl", "Exponat", "Kompliment", "Umstieg")),
-  er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert")),
+                          "Instrument",
+                          "Element", "Geräusch", "Zitat")),
+  er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert",
+                          "Loch", "Strauch")),
   n   = data.frame(N1 = c("Sonne", "Kunde", "Auge", "Bauer", "Katze", "Gitarre",
-                          "Ausrede", "Hüfte", "Wunde")),
+                          "Hüfte",
+                          "Kommune", "Horde",
+                          "Birne", "Schwester")),
   en  = data.frame(N1 = c("Frau", "Person", "Ohr", "Bett", "Dämon",
-                          "Bucht", "Forderung", "Möglichkeit", "Portion", "Praktik", "Universität"))
+                          "Bucht", "Portion", "Universität",
+                          "Mehrheit", "Projektor",
+                          "Hemd", "Nation", "Eigenschaft"))
 )
 
 
@@ -90,34 +96,3 @@ for (le in les) {
   else stimuli.data <- rbind(stimuli.data, .this)
 }
 write.table(stimuli.data, file = "Results/stimuli.csv", quote = F, sep = "\t", row.names = F)
-
-# Now sample some more N1s for second wave of corpus study.
-# We manually selected from the list generated like so:
-# new.sample <- list()
-# for (le in c("e", "Ue", "U", "er", "Uer", "n", "en")) {
-#   new.sample[[le]] <- as.character(analyses.full[[le]][which(
-#     in.range(analyses.full[[le]]$With_Ppot, 0.1, 0.7)
-#     & in.range(analyses.full[[le]]$Without_Ppot, 0.1, 0.7)
-#     & in.range(analyses.full[[le]]$With_Ftype/analyses.full[[le]]$Without_Ftype, 0.25, 4)
-#     & in.range(analyses.full[[le]]$N1alone_Fband, 5, 13)
-#     ),"N1"])
-# }
-# lapply(new.sample, write, "Results/new.sample.txt", append=TRUE, ncolumns=1000)
-#
-# New ones:
-# new.sample <- list(
-#   Ue  = data.frame(N1 = c("Vorgang")),
-#   e   = data.frame(N1 = c("Gebot", "Instrument", "Kerl", "Exponat", "Kompliment", "Umstieg")),
-#   n   = data.frame(N1 = c("Ausrede", "Hüfte", "Wunde")),
-#   en  = data.frame(N1 = c("Bucht", "Forderung", "Möglichkeit", "Portion", "Praktik", "Universität"))
-# )
-#
-# NOTE: All items were added to corpus.items
-
-
-# We add them to the old ones, creating new list.
-# full.sample <- corpus.items
-# for (le in c("Ue", "e", "n", "en")) {
-#   full.sample[[le]] <- rbind(full.sample[[le]], new.sample[[le]])
-# }
-# lapply(full.sample, write, "Results/full.sample.txt", append=TRUE, ncolumns=1000)
