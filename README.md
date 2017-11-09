@@ -32,14 +32,24 @@ This is the README file for data package and paper LaTeX/knitr sources.
 3. To see how we did the data generation for the corpus study
    and creation of stimuli, check the following file:
 ```
-   Data/R/all.R
+   Data/R/corpus.data.R
 ```
-4. To check how we analysed the split-100 experiment in R, see
+4. To check how we analysed the (manually annotated) corpus data
+   in R, see this file:
+```
+   Data/R/corpus.analyse.R
+```
+5. To check how we analysed the split-100 experiment in R, see
    this file:
 ```
-   Data/Split/Rlinkexp/Analyse.R
+   Data/R/split100.analyse.R
 ```
-5. To see how we integrated the data into the main paper, see
+6. The data from the experiment (including PsychPy files), which are
+   analysed by the script in step 5 is located in
+```
+   Data/Split100/
+```
+7. To see how we integrated the data into the main paper, see
    the knitr sources including the make file:
 ```
    Paper/leglossa.Rnw
