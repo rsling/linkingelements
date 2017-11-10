@@ -39,6 +39,12 @@ This is the README file for data package and paper LaTeX/knitr sources.
 ```
    Data/R/corpus.analyse.R
 ```
+   There is a large number of original query results (also
+   downloaded by Data/get_bigfiles.sh, see 1) in
+```
+   Data/Corpusstudy/Queries/Output/
+```
+
 5. To check how we analysed the split-100 experiment in R, see
    this file:
 ```
@@ -55,3 +61,6 @@ This is the README file for data package and paper LaTeX/knitr sources.
    Paper/leglossa.Rnw
    Paper/Makefile
 ```
+   Notice that it was not feasible to include the whole data generation
+   and analysis process in the knitr file. Compiling the document
+   would have taken hours.

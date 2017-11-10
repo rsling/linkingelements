@@ -74,6 +74,7 @@ Festtag
 Feuerwerk
 Feuerzeug
 Fingerzeig
+Flausch
 Flueg
 Flugzeug
 Friseur
@@ -186,12 +187,19 @@ Offizial
 Olefin
 Oval
 Paradeis
+Paradies
 Park
 Parteitag
 Parvenu
 Passiv
+Perlit
+Peroxid
+Pfund
+Phenol
+Phenyl
 Phonogerät
 Piep
+Pils
 Plaetz
 Platzwart
 Plüsch
@@ -229,6 +237,8 @@ Rülps
 Saeck
 Saeft
 Saetz
+Salut
+Salz
 Sauerteig
 Schalk
 Scharlach
@@ -279,6 +289,7 @@ Steinmetz
 Stimmrecht
 Stockwerk
 Stoeck
+Stoff
 Streitkraeft
 Stress
 Strick

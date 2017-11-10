@@ -734,7 +734,7 @@ Pamphlet
 Paneel
 Papier
 -Paradeis
-Paradies
+-Paradies
 Parfüm
 -Park
 Parlament
