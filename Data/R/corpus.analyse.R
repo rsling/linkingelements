@@ -53,17 +53,18 @@ t.plot$colors <- my.colors[round(t.plot$p.sidak*100, 0)]
 if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
   dotchart(t.plot$phi,
            xlim=c(-0.1, +0.5),
-           labels = t.plot$lemma,
+           #labels = t.plot$lemma,
+           labels = paste0(t.plot$lemma, "(p=", round(t.plot$p.sidak, 3), ")"),
            pch = 19,
-           cex=0.8,
+           cex=0.75,
            cex.axis = 5,
            gcolor = "black",
            groups = t.plot$link,
            color = t.plot$colors,
            main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
            xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (B=", num.reps, ")"),
-           sub = "(Note: p-values for colour-coding were corrected for GWE using Sidak's method)"
+           sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
            )
-  abline(v = 0.2, col = "lightgray", lty = 2, lwd=3)
+  abline(v = 0.2, col = "lightgray", lty = 3, lwd=2)
   legend("topright", legend = c("p=0", "p=0.5", "p=1"), col = c(my.colors[1], my.colors[50], my.colors[100]), pch=19, bg = "white")
 if (save.persistently) dev.off()
