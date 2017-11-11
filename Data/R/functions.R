@@ -5,6 +5,21 @@ get.list.elem <- function(l, n){
 }
 
 
+# Sidak correction for p values.
+adjust.p.sidak <- function(p, m) { 1-(1-p)^m }
+
+
+# Maps 0..1 to colors from a given ramp with 100 colors logarithmically.
+map.my.ramp <- function(p.between.0.and.1, my.color.ramp.with.100.colors) {
+  if (p.between.0.and.1 == 0)
+    my.color.ramp.with.100.colors[1]
+  else {
+    .col.idx <- round(log(p.between.0.and.1, base = 10)*-50, 0)+1
+    if (.col.idx > 100) .col.idx <- 100
+    my.color.ramp.with.100.colors[.col.idx]
+  }
+}
+
 # Calculate frequency band from raw f and f_max.
 frequency.band <- function(f, f.max) {
   log(f.max/f, base = 2)+0.5
@@ -69,6 +84,8 @@ make.full.analysis <-  function(le, prods) {
   .n1s[is.na(.n1s)] <- 0
   .n1s
 }
+
+
 
 
 map.log <-  function(x, x.max, to.max = 1.5) {
@@ -175,3 +192,4 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
     }
   }
 }
+
