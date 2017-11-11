@@ -7,7 +7,7 @@ source('functions.R')
 
 in.file           <- '../Corpusstudy/Concordance.csv'
 plot.dir          <- './Plots/'
-save.persistently <- F
+save.persistently <- T
 alpha.nominal     <- 0.05
 monte.carlo       <- T
 num.reps          <- 10000
@@ -48,6 +48,8 @@ for (i in 1:m) {
 t.plot        <- tests.per.lemma[order(tests.per.lemma$phi, decreasing = F),]
 t.plot$link   <- as.factor(t.plot$link)
 t.plot$colors <- unlist(lapply(t.plot$p.sidak, function(x) map.my.ramp(x, my.colors)))
+
+save(list = "t.plot", file = "RData/t.plot.RData", compress = "bzip2")
 
 if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
   dotchart(t.plot$phi,
