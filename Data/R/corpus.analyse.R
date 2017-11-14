@@ -1,8 +1,6 @@
 rm(list = ls())
 set.seed(109)
 
-library(multtest)
-
 source('functions.R')
 
 in.file           <- '../Corpusstudy/Concordance.csv'
@@ -47,9 +45,7 @@ for (i in 1:m) {
 
 t.plot        <- tests.per.lemma[order(tests.per.lemma$phi, decreasing = F),]
 t.plot$link   <- as.factor(t.plot$link)
-t.plot$colors <- unlist(lapply(t.plot$p.sidak, function(x) map.my.ramp(x, my.colors)))
-
-save(list = "t.plot", file = "RData/t.plot.RData", compress = "bzip2")
+save(list = c("num.reps", "t.plot"), file = "RData/t.plot.RData", compress = "bzip2")
 
 if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
   dotchart(t.plot$phi,
@@ -60,7 +56,7 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
            cex.axis = 5,
            gcolor = "black",
            groups = t.plot$link,
-           color = t.plot$colors,
+           color = unlist(lapply(t.plot$p.sidak, function(x) map.my.ramp(x, my.colors))),
            main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
            xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (B=", num.reps, ")"),
            sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"

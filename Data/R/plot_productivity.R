@@ -25,7 +25,8 @@ if (plot.wordcloud) {
                 max.plottable = 10,
                 norm.xax      = c(10^-3, 1),
                 norm.yax      = c(10^-3, 2),
-                zero.floor    = NULL)
+                zero.floor    = NULL,
+                the.colors    = my.colors)
   for (le in c('e', 'Ue', 'U', 'er', 'Uer', 'EMPTY_PLOT', 'n', 'en')) do.call(plot.productivities, c(list(le = le), .args))
   if (save.persistently) {
     par(mfrow=c(1,1))
@@ -45,7 +46,8 @@ if (plot.dotcloud) {
                 max.plottable = -1,
                 norm.xax      = c(10^-3, 1),
                 norm.yax      = c(10^-3, 2),
-                zero.floor    = NULL)
+                zero.floor    = NULL,
+                the.colors    = my.colors)
   for (le in c('e', 'Ue', 'U', 'er', 'Uer', 'EMPTY_PLOT', 'n', 'en')) do.call(plot.productivities, c(list(le = le), .args))
   if (save.persistently) {
     par(mfrow=c(1,1))

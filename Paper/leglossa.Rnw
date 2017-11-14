@@ -68,7 +68,7 @@
   }
   \AND
   \spauthor{Elizabeth Pankratz\\
-  \institute{\small Institut für deutsche Sprache und Linguistik, Humboldt Universität Berlin}\\
+  \institute{\small Deutsche Sprache und Linguistik, Humboldt Universität zu Berlin}\\
   \small{Dorotheenstraße 24, 10117 Berlin\\
   pankrate@student.hu-berlin.de}
   }
@@ -90,7 +90,12 @@ opts_chunk$set(cache.path='cache/',
 
 
 render_listings()
-path.rdata <- ""
+
+my.root = '~/Workingcopies/Linkingelements/Paper/'
+path.rdata <- "../Data/R/RData/"
+source('../Data/R/functions.R')
+
+require(gamlss)
 @
 
 \sffamily
@@ -113,6 +118,8 @@ path.rdata <- ""
 \section{Experiments}
 \label{sec:experiments}
 
+<<child="sections/data.Rnw">>=
+@
 
 <<child="sections/corpusstudy.Rnw">>=
 @

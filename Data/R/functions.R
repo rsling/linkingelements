@@ -100,7 +100,8 @@ le.name <- function(le) {
 
 
 plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
-                                norm.xax = NULL, norm.yax = NULL, zero.floor = NULL) {
+                                norm.xax = NULL, norm.yax = NULL, zero.floor = NULL,
+                                the.colors) {
   if (le == "EMPTY_PLOT") {
     plot.new()
     return()
@@ -157,7 +158,7 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
       points(.n1s[n,"With_Ppot"], .n1s[n,"Without_Ppot"],
              pch = 20,
              cex = map.log(.n1s[n,"With_Ftype"], .fty.max.with, 4),
-             col = my.colors[round(map.log(.n1s[n,"Without_Ftype"], .fty.max.without, 100), 0)]
+             col = the.colors[round(map.log(.n1s[n,"Without_Ftype"], .fty.max.without, 100), 0)]
       )
       legend("topleft",
              legend = c(paste0("f = 1; 1"),
@@ -167,10 +168,10 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
                         ),
              pch = 20,
              col = c(
-                 my.colors[round(map.log(2, .fty.max.without, 100), 0)],
-                 my.colors[round(map.log(2, .fty.max.without, 100), 0)],
-                 my.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)],
-                 my.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)]
+                 the.colors[round(map.log(2, .fty.max.without, 100), 0)],
+                 the.colors[round(map.log(2, .fty.max.without, 100), 0)],
+                 the.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)],
+                 the.colors[round(map.log(.fty.max.without, .fty.max.without, 100), 0)]
                ),
              pt.cex = c(
                  0.2,
@@ -186,7 +187,7 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
       text(.n1s[n,"With_Ppot"], .n1s[n,"Without_Ppot"],
            cex = map.log(.n1s[n,"With_Ftype"], .fty.max.with),
            labels = .n1s[n, "N1"],
-           col = my.colors[round(map.log(.n1s[n,"Without_Ftype"], .fty.max.without, 100), 0)],
+           col = the.colors[round(map.log(.n1s[n,"Without_Ftype"], .fty.max.without, 100), 0)],
            srt = sample(-90:90, 1)
       )
     }

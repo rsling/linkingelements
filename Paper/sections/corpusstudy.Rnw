@@ -6,3 +6,55 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Corpus study}
 \label{sec:corpusstudy}
 
+
+<<corpusselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
+par(mfrow=c(3,3))
+for (le in les) {
+  .le.name <- le.name(le)
+  plot(corpus.candidates[[le]]$Without_Ppot ~ corpus.candidates[[le]]$With_Ppot,
+       log="xy",
+       pch = 20,
+       cex = 1,
+       col = "darkorange",
+       xlim = c(0.001, 1),
+       ylim = c(0.001, 1),
+       main = paste0("Cand. for corpus study: ", .le.name),
+       xlab = paste0("Productivity with ", .le.name),
+       ylab = paste0("Productivity without ", .le.name)
+  )
+  .orig <- which(corpus.candidates[[le]]$N1 %in% corpus.items[[le]]$N1)
+  points(corpus.candidates[[le]][.orig,]$Without_Ppot ~ corpus.candidates[[le]][.orig,]$With_Ppot,
+         pch = 17,
+         cex = 1.5,
+         col = "darkgreen"
+  )
+  # Make blank space in plot.
+  if (le == "Uer") plot.new()
+}
+par(mfrow=c(1,1))
+@
+
+<<corpuseffects, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+load(paste0(my.root, path.rdata, "t.plot.RData"))
+corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
+dotchart(t.plot$phi,
+         xlim=c(-0.1, +0.5),
+         labels = paste0(t.plot$lemma, "(p=", round(t.plot$p.sidak, 3), ")"),
+         pch = 19,
+         cex=0.75,
+         cex.axis = 5,
+         gcolor = "black",
+         groups = t.plot$link,
+         color = unlist(lapply(t.plot$p.sidak, function(x) map.my.ramp(x, corpuseffects.colors))),
+         main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
+         xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (B=", num.reps, ")"),
+         sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
+         )
+abline(v = 0.2, col = "lightgray", lty = 3, lwd=2)
+legend("topright", title = "p-values",
+       legend = c("0", "0.05", "0.1", "0.5", "1"),
+       col = c(corpuseffects.colors[100], corpuseffects.colors[65], corpuseffects.colors[50], corpuseffects.colors[16], corpuseffects.colors[1]),
+       pch=19, bg = "white")
+@
+

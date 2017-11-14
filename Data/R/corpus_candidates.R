@@ -67,16 +67,14 @@ for (le in les) {
   corpus.candidates[[le]] <- .cands
 }
 
-save(list = "analyses.full", file = "RData/analyses.full.plus.RData", compress = "bzip2")
-save(list = "corpus.candidates", file = "RData/corpus.candidates.RData", compress = "bzip2")
 
 
 # Get info for already existing data.
 
 # Corpus study.
-les <- c('e', 'Ue', 'U', 'er', 'Uer', 'n', 'en')
+les.corpus <- c('e', 'Ue', 'U', 'er', 'Uer', 'n', 'en')
 corpus.study <- NULL
-for (le in les) {
+for (le in les.corpus) {
   .this <- merge(corpus.items[[le]], corpus.candidates[[le]], by = "N1", all.x = T)
   .this$LE <- paste0("+", le.name(le))
   # .this$LE <- le
@@ -86,9 +84,9 @@ for (le in les) {
 write.table(corpus.study, file = "Results/corpus.study.csv", quote = F, sep = "\t", row.names = F)
 
 # Split-100.
-les <- c("Uer", "Ue", "e", "er", "en")
+les.split100 <- c("Uer", "Ue", "e", "er", "en")
 stimuli.data <- NULL
-for (le in les) {
+for (le in les.split100) {
   .this <- merge(stimuli[[le]], corpus.candidates[[le]], by = "N1", all.x = T)
   .this$LE <- paste0("+", le.name(le))
   # .this$LE <- le
@@ -96,3 +94,8 @@ for (le in les) {
   else stimuli.data <- rbind(stimuli.data, .this)
 }
 write.table(stimuli.data, file = "Results/stimuli.csv", quote = F, sep = "\t", row.names = F)
+
+
+
+save(list = "analyses.full", file = "RData/analyses.full.plus.RData", compress = "bzip2")
+save(list = c("les", "les.corpus", "les.split100", "corpus.items", "stimuli", "corpus.candidates"), file = "RData/corpus.candidates.RData", compress = "bzip2")

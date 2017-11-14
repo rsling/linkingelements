@@ -7,3 +7,69 @@ opts_knit$set(self.contained=FALSE)
 \label{sec:split100experiment}
 
 
+<<experimentselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+# load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
+par(mfrow=c(3,3))
+for (le in les) {
+  .le.name <- le.name(le)
+  plot(corpus.candidates[[le]]$Without_Ppot ~ corpus.candidates[[le]]$With_Ppot,
+       log="xy",
+       pch = 20,
+       cex = 1,
+       col = "orange",
+       xlim = c(0.001, 1),
+       ylim = c(0.001, 1),
+       main = paste0("Stimuli for split-100: ", .le.name),
+       xlab = paste0("Productivity with ", .le.name),
+       ylab = paste0("Productivity without ", .le.name)
+  )
+  .orig <- which(corpus.candidates[[le]]$N1 %in% stimuli[[le]]$N1)
+  points(corpus.candidates[[le]][.orig,]$Without_Ppot ~ corpus.candidates[[le]][.orig,]$With_Ppot,
+         pch = 15,
+         cex = 1.5,
+         col = "blue"
+  )
+  # Make blank space in plot.
+  if (le == "Uer") plot.new()
+}
+par(mfrow=c(1,1))
+@
+
+
+<<conditions, fig.pos="H", fig.height=8, fig.cap="Distribution of Split-100 responses by conditions", echo=FALSE>>=
+load(paste0(my.root, path.rdata, "observations.RData"))
+par(mfrow=c(1,2))
+plot(obs.coll$realRating~obs.coll$cond,
+     col = "gold",
+     main = "Collective N2",
+     xlab = "Condition", ylab = "Split-100 responses",
+     frame = F)
+plot(obs.pl$realRating~obs.pl$cond,
+     col = "gold",
+     main = "Plural N2",
+     xlab = "Condition", ylab = "Split-100 responses",
+     frame = F)
+par(mfrow=c(1,1))
+@
+
+
+<<participants, fig.pos="H", fig.height=8, fig.cap="Distribution of individual Split-100 responses by conditions", echo=FALSE>>=
+par(mfrow=c(2,1))
+plot(obs.coll$realRating~obs.coll$participant,
+     las = 2, col = "gold",
+     main = "Collective N2: distribution of responses",
+     xlab = "Participant ID", ylab = "Split-100 responses",
+     frame = F)
+plot(obs.pl$realRating~obs.pl$participant,
+     las = 2, col = "gold",
+     main = "Plural N2: distribution of responses",
+     xlab = "Participant ID", ylab = "Split-100 responses",
+     frame = F)
+par(mfrow=c(1,1))
+@
+
+
+<<betainfl, message=FALSE, warning=FALSE, results='hide', error=FALSE, echo=FALSE>>=
+model.coll   <- gamlss(realRatingProp ~ cond + random(participant), data = obs.coll, family=BEINF)
+model.coll.0 <- gamlss(realRatingProp ~        random(participant), data = obs.coll, family=BEINF)
+@
