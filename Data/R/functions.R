@@ -194,3 +194,16 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
   }
 }
 
+# A faster BOBYQA optimizer.
+library(nloptr)
+defaultControl <- list(algorithm="NLOPT_LN_BOBYQA",xtol_rel=1e-6,maxeval=1e5)
+nloptwrap2 <- function(fn,par,lower,upper,control=list(),...) {
+  for (n in names(defaultControl))
+    if (is.null(control[[n]])) control[[n]] <- defaultControl[[n]]
+    res <- nloptr(x0=par,eval_f=fn,lb=lower,ub=upper,opts=control,...)
+    with(res,list(par=solution,
+                  fval=objective,
+                  feval=iterations,
+                  conv=if (status>0) 0 else status,
+                  message=message))
+}
