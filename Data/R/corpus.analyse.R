@@ -3,7 +3,6 @@ set.seed(109)
 
 source('functions.R')
 
-# in.file           <- '../Corpusstudy/Concordance.csv'
 in.file           <- '../Corpusstudy/Concordance.full.csv'
 plot.dir          <- './Plots/'
 save.persistently <- F
@@ -159,6 +158,6 @@ print(VarCorr(le.glmm.vivs))
 
 
 # Check consistency for some N2s:
-# conc[grep('hospiz', conc$Match), c("Match", "N2Typ")]
+conc[grep('händler', conc$Match), c("Match", "N2Typ")]
 
 
