@@ -5,7 +5,7 @@ source('functions.R')
 
 in.file           <- '../Corpusstudy/Concordance.full.csv'
 plot.dir          <- './Plots/'
-save.persistently <- T
+save.persistently <- F
 alpha.nominal     <- 0.05
 monte.carlo       <- T
 num.reps          <- 10000
@@ -76,7 +76,7 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
            groups = t.plot$link,
            color = unlist(lapply(t.plot$p.sidak.strict, function(x) map.my.ramp(x, my.colors))),
            main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
-           xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (B=", num.reps, ")")
+           xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (", num.reps, " repititions)")
            ,sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
            )
 
