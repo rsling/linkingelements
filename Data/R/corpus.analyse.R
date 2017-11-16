@@ -5,18 +5,17 @@ source('functions.R')
 
 in.file           <- '../Corpusstudy/Concordance.full.csv'
 plot.dir          <- './Plots/'
-save.persistently <- F
+save.persistently <- T
 alpha.nominal     <- 0.05
 monte.carlo       <- T
 num.reps          <- 10000
 my.colors         <- colorRampPalette(c("orange", "darkgreen"))(100)
 
-### DO NOT MODIFY PAST THIS LINE ###
+### DO NOT MODIFY ANYTHING PAST THIS LINE ###
 
 conc = read.csv2(in.file, header = T, sep = "\t", quote = "")
 
 # We make two different "independent" variables: Coll vs. Rest and Coll+Konvc vs. Rest.
-# as.factor(ifelse(as.character(conc$N2Typ) == "Konvc", "Coll", ifelse(as.character(conc$N2Typ) == "Q", "Ind", as.character(conc$N2Typ))))
 conc$N2TypLax <- conc$N2Typ
 levels(conc$N2TypLax) <- c("Coll", "Ind", "Coll", "Ind")
 conc$N2TypStrict <- conc$N2Typ
@@ -64,43 +63,64 @@ t.plot$link   <- as.factor(t.plot$link)
 save(list = c("num.reps", "t.plot"), file = "RData/t.plot.RData", compress = "bzip2")
 
 if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
+
+  # The dots are in fact invisible (pch="") so we can draw freely later.
   dotchart(t.plot$phi.strict,
            xlim=c(-0.2, +0.6),
-           labels = paste0(t.plot$lemma, "(p=", round(t.plot$p.sidak.strict, 3), ")"),
-           pch = 16,
+           # labels = paste0(t.plot$lemma, "(p=", round(t.plot$p.sidak.strict, 3), ")"),
+           labels = t.plot$lemma,
+           pch = "",
            cex=0.75,
            cex.axis = 5,
            gcolor = "black",
            groups = t.plot$link,
            color = unlist(lapply(t.plot$p.sidak.strict, function(x) map.my.ramp(x, my.colors))),
            main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
-           xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (B=", num.reps, ")"),
-           sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
+           xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (B=", num.reps, ")")
+           ,sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
            )
-  abline(v = 0.2, col = "lightgray", lty = 3, lwd=2)
-  legend("topright", title = "p-values",
-         legend = c("0", "0.05", "0.1", "0.5", "1"),
-         col = c(my.colors[100], my.colors[65], my.colors[50], my.colors[16], my.colors[1]),
-         pch=19, bg = "white",
-         cex = 1.0
-         )
 
+  abline(v = seq(-0.2, 0.6, 0.2), col = "lightgray", lty = 1, lwd=1)
+
+  # Now add first level to dotchart on top of verticl lines.
+  # Unfortunately not supported by built-in function.
+  this.y <- 1
+  for (l in rev(levels(t.plot$link))) {
+
+    .t.subplot <- t.plot[which(t.plot$link == l),]
+    for (n1 in 1:nrow(.t.subplot)) {
+      points(.t.subplot[n1, "phi.strict"], this.y,
+             pch = 16,
+             col = map.my.ramp(.t.subplot$p.sidak.strict[n1], my.colors)
+      )
+      this.y <- this.y + 1
+    }
+    this.y <- this.y + 2
+  }
 
   # Now add second level to dotchart. Unfortunately not supported by built-in function.
   this.y <- 1
   for (l in rev(levels(t.plot$link))) {
 
     .t.subplot <- t.plot[which(t.plot$link == l),]
-    # .t.subplot <- .t.subplot[dim(.t.subplot)[1]:1,]
     for (n1 in 1:nrow(.t.subplot)) {
       points(.t.subplot[n1, "phi.lax"], this.y,
              pch = 1,
+             cex = 1.3,
              col = map.my.ramp(.t.subplot$p.sidak.lax[n1], my.colors)
       )
       this.y <- this.y + 1
     }
     this.y <- this.y + 2
   }
+
+
+  legend("topright", title = "p-values",
+         legend = c("0", "0.05", "0.1", "0.5", "1"),
+         col = c(my.colors[100], my.colors[65], my.colors[50], my.colors[16], my.colors[1]),
+         pch=19, bg = "white",
+         cex = 1.0
+         )
   legend("topleft",
         legend = c("strict", "lax"),
         title = "Annotation",
@@ -158,6 +178,6 @@ print(VarCorr(le.glmm.vivs))
 
 
 # Check consistency for some N2s:
-conc[grep('händler', conc$Match), c("Match", "N2Typ")]
+conc[grep('spalte', conc$Match), c("Match", "N2Typ")]
 
 
