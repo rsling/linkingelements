@@ -8,7 +8,7 @@ plot.dir          <- './Plots/'
 save.persistently <- F
 alpha.nominal     <- 0.05
 monte.carlo       <- T
-num.reps          <- 10000
+num.reps          <- 5000
 my.colors         <- colorRampPalette(c("orange", "darkgreen"))(100)
 
 ### DO NOT MODIFY ANYTHING PAST THIS LINE ###
@@ -56,11 +56,36 @@ for (i in 1:m) {
   tests.per.lemma[i, "phi.strict"]     <- sqrt(as.numeric(.the.test.strict$statistic)/sum(.the.table.strict)) * sign(.the.test.strict$residuals[1,1]) * -1
   tests.per.lemma[i, "p.sidak.lax"]    <- adjust.p.sidak(as.numeric(.the.test.lax$p.value), m)
   tests.per.lemma[i, "p.sidak.strict"] <- adjust.p.sidak(as.numeric(.the.test.strict$p.value), m)
+  # tests.per.lemma[i, "p.sidak.lax"]    <- p.adjust(as.numeric(.the.test.lax$p.value), method = "hoch", n = m)
+  # tests.per.lemma[i, "p.sidak.strict"] <- p.adjust(as.numeric(.the.test.strict$p.value), method = "hoch", n = m)
 }
 
 t.plot        <- tests.per.lemma[order(tests.per.lemma$phi.strict, decreasing = F),]
 t.plot$link   <- as.factor(t.plot$link)
 save(list = c("num.reps", "t.plot"), file = "RData/t.plot.RData", compress = "bzip2")
+
+# Show how strong Sidak's correction kicks in!
+if (save.persistently) pdf(paste0(plot.dir, "sidak.pdf"))
+options(scipen=999)
+plot(t.plot[order(t.plot$p.raw.strict), "p.sidak.strict"]~t.plot[order(t.plot$p.raw.strict), "p.raw.strict"],
+    ylim = c(-0.05, 1.05),
+     log = "x",
+     pch = 20,
+     cex = 3,
+     lty = 1,
+     col = "darkgreen",
+     xlab = "Uncorrected p-values (log scale)",
+     ylab = "p-values with Sidak's correction",
+     main = paste0("The effect of Sidak's correction for group-wise error\n(",
+                   nrow(t.plot), " single tests in group)")
+     )
+points(t.plot[order(t.plot$p.raw.strict), "p.sidak.lax"]~t.plot[order(t.plot$p.raw.strict), "p.raw.lax"],
+       pch = 22,
+       cex = 3,
+       col = "darkorange"
+)
+options(scipen=0)
+if (save.persistently) dev.off()
 
 if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
 
@@ -106,7 +131,7 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
     for (n1 in 1:nrow(.t.subplot)) {
       points(.t.subplot[n1, "phi.lax"], this.y,
              pch = 1,
-             cex = 1.3,
+             cex = 1.7,
              col = map.my.ramp(.t.subplot$p.sidak.lax[n1], my.colors)
       )
       this.y <- this.y + 1
