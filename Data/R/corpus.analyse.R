@@ -102,7 +102,7 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
            color = unlist(lapply(t.plot$p.sidak.strict, function(x) map.my.ramp(x, my.colors))),
            main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
            xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (", num.reps, " repititions)")
-           ,sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
+           ,sub = paste0("[Note: p-values for colour-coding were corrected for GWE (m=", nrow(t.plot) ,") using Sidak's method.]")
            )
 
   abline(v = seq(-0.2, 0.6, 0.2), col = "lightgray", lty = 1, lwd=1)
