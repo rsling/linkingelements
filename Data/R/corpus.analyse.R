@@ -8,7 +8,8 @@ plot.dir          <- './Plots/'
 save.persistently <- F
 alpha.nominal     <- 0.05
 monte.carlo       <- T
-num.reps          <- 5000
+num.reps          <- 10000
+plot.corr.effect  <- F
 my.colors         <- colorRampPalette(c("orange", "darkgreen"))(100)
 
 ### DO NOT MODIFY ANYTHING PAST THIS LINE ###
@@ -28,12 +29,15 @@ cl.sidak    <- (1-alpha.nominal)^(1/m)
 tests.per.lemma <- data.frame(
   lemma          = rep(NA, m),
   link           = rep(NA, m),
+  n              = rep(0, m),
   p.raw.lax      = rep(1, m),
   p.raw.strict   = rep(1, m),
   phi.lax        = rep(0, m),
   phi.strict     = rep(0, m),
   p.sidak.lax    = rep(1, m),
-  p.sidak.strict = rep(1, m)
+  p.sidak.strict = rep(1, m),
+  p.hoch.lax     = rep(1, m),
+  p.hoch.strict  = rep(1, m)
 )
 
 for (i in 1:m) {
@@ -50,42 +54,55 @@ for (i in 1:m) {
 
   tests.per.lemma[i, "lemma"]          <- .n1
   tests.per.lemma[i, "link"]           <- .le
+  tests.per.lemma[i, "n"]              <- sum(.the.table.lax)
   tests.per.lemma[i, "p.raw.lax"]      <- as.numeric(.the.test.lax$p.value)
   tests.per.lemma[i, "p.raw.strict"]   <- as.numeric(.the.test.strict$p.value)
   tests.per.lemma[i, "phi.lax"]        <- sqrt(as.numeric(.the.test.lax$statistic)/sum(.the.table.lax)) * sign(.the.test.lax$residuals[1,1]) * -1
   tests.per.lemma[i, "phi.strict"]     <- sqrt(as.numeric(.the.test.strict$statistic)/sum(.the.table.strict)) * sign(.the.test.strict$residuals[1,1]) * -1
   tests.per.lemma[i, "p.sidak.lax"]    <- adjust.p.sidak(as.numeric(.the.test.lax$p.value), m)
   tests.per.lemma[i, "p.sidak.strict"] <- adjust.p.sidak(as.numeric(.the.test.strict$p.value), m)
-  # tests.per.lemma[i, "p.sidak.lax"]    <- p.adjust(as.numeric(.the.test.lax$p.value), method = "hoch", n = m)
-  # tests.per.lemma[i, "p.sidak.strict"] <- p.adjust(as.numeric(.the.test.strict$p.value), method = "hoch", n = m)
+  tests.per.lemma[i, "p.hoch.lax"]     <- p.adjust(as.numeric(.the.test.lax$p.value), method = "hoch", n = m)
+  tests.per.lemma[i, "p.hoch.strict"]  <- p.adjust(as.numeric(.the.test.strict$p.value), method = "hoch", n = m)
 }
 
 t.plot        <- tests.per.lemma[order(tests.per.lemma$phi.strict, decreasing = F),]
 t.plot$link   <- as.factor(t.plot$link)
-save(list = c("num.reps", "t.plot"), file = "RData/t.plot.RData", compress = "bzip2")
+
+# Get order of LE by their tendency to appear w/ plural LE.
+le.means         <- aggregate(x = tests.per.lemma$phi.strict, by = list(tests.per.lemma$link), FUN = mean.harm)
+le.group.order   <- order(le.means$x, decreasing = T)
+le.group.ordered <- le.means$Group.1[le.group.order]
+t.plot$link <- factor(t.plot$link, levels = le.group.ordered)
+
+# Save for later use in paper.
+save(list = c("num.reps", "t.plot", "le.means"), file = "RData/t.plot.RData", compress = "bzip2")
 
 # Show how strong Sidak's correction kicks in!
-if (save.persistently) pdf(paste0(plot.dir, "sidak.pdf"))
-options(scipen=999)
-plot(t.plot[order(t.plot$p.raw.strict), "p.sidak.strict"]~t.plot[order(t.plot$p.raw.strict), "p.raw.strict"],
-    ylim = c(-0.05, 1.05),
-     log = "x",
-     pch = 20,
-     cex = 3,
-     lty = 1,
-     col = "darkgreen",
-     xlab = "Uncorrected p-values (log scale)",
-     ylab = "p-values with Sidak's correction",
-     main = paste0("The effect of Sidak's correction for group-wise error\n(",
-                   nrow(t.plot), " single tests in group)")
-     )
-points(t.plot[order(t.plot$p.raw.strict), "p.sidak.lax"]~t.plot[order(t.plot$p.raw.strict), "p.raw.lax"],
-       pch = 22,
-       cex = 3,
-       col = "darkorange"
-)
-options(scipen=0)
-if (save.persistently) dev.off()
+if (plot.corr.effect) {
+  if (save.persistently) pdf(paste0(plot.dir, "sidak.pdf"))
+    options(scipen=999)
+    plot(t.plot[order(t.plot$p.raw.strict), "p.sidak.strict"]~t.plot[order(t.plot$p.raw.strict), "p.raw.strict"],
+        ylim = c(-0.05, 1.05),
+         log = "x",
+         pch = 20,
+         cex = 3,
+         lty = 1,
+         col = "darkgreen",
+         xlab = "Uncorrected p-values (log scale)",
+         ylab = "p-values with Sidak's correction",
+         main = paste0("The effect of Sidak's correction for group-wise error\n(",
+                       nrow(t.plot), " single tests in group)")
+         )
+    points(t.plot[order(t.plot$p.raw.strict), "p.sidak.lax"]~t.plot[order(t.plot$p.raw.strict), "p.raw.lax"],
+           pch = 22,
+           cex = 3,
+           col = "darkorange"
+    )
+    options(scipen=0)
+  if (save.persistently) dev.off()
+}
+
+
 
 if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
 
@@ -140,13 +157,13 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
   }
 
 
-  legend("topright", title = "p-values",
+  legend("right", title = "p-values",
          legend = c("0", "0.05", "0.1", "0.5", "1"),
          col = c(my.colors[100], my.colors[65], my.colors[50], my.colors[16], my.colors[1]),
          pch=19, bg = "white",
          cex = 1.0
          )
-  legend("topleft",
+  legend("bottomright",
         legend = c("strict", "lax"),
         title = "Annotation",
         bg = "white",

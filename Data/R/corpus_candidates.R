@@ -11,18 +11,14 @@ load("RData/noun.frequencies.RData")
 corpus.items <- list(
   U   = data.frame(N1 = c("Mutter", "Vater", "Apfel", "Nagel", "Vogel")),
   Ue  = data.frame(N1 = c("Stadt", "Hand", "Zahn", "Ball")),
-  Uer = data.frame(N1 = c("Buch", "Haus", "Bad", "Rad", "Schloss", "Wurm")),
+  Uer = data.frame(N1 = c("Buch", "Haus", "Bad", "Rad", "Schloss", "Wurm", "Loch")),
   e   = data.frame(N1 = c("Hund", "Gerät", "Weg", "Geschenk", "Produkt", "Brief",
                           "Element", "Geräusch", "Zitat")),
-  er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert",
-                          "Loch")),
+  er  = data.frame(N1 = c("Kind", "Bild", "Ei", "Lied", "Brett", "Schwert")),
   n   = data.frame(N1 = c("Sonne", "Kunde", "Auge", "Bauer", "Katze", "Gitarre",
-                          "Kommune",
-                          "Birne", "Schwester")),
+                          "Kommune", "Birne", "Schwester")),
   en  = data.frame(N1 = c("Frau", "Person", "Ohr", "Bett", "Dämon",
-                          "Bucht", "Portion",
-                          "Mehrheit", "Projektor",
-                          "Hemd", "Nation", "Eigenschaft"))
+                          "Bucht", "Projektor", "Hemd", "Nation", "Eigenschaft"))
 )
 
 

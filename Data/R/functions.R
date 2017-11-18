@@ -9,6 +9,12 @@ get.list.elem <- function(l, n){
 adjust.p.sidak <- function(p, m) { 1-(1-p)^m }
 
 
+# Harmonic mean.
+mean.harm <- function(v) {
+  1/mean(1/v)
+}
+
+
 # Maps 0..1 to colors from a given ramp with 100 colors logarithmically.
 map.my.ramp <- function(p.between.0.and.1, my.color.ramp.with.100.colors) {
   if (p.between.0.and.1 == 0)
