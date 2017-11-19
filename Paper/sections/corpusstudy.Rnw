@@ -35,72 +35,72 @@ for (le in les) {
 par(mfrow=c(1,1))
 @
 
-<<corpuseffects, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+<<corpuseffects, fig.pos="H", fig.height=10, fig.cap="Scatterplot of p-values", echo=FALSE>>=
 load(paste0(my.root, path.rdata, "t.plot.RData"))
 corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
-  # The dots are in fact invisible (pch="") so we can draw freely later.
-  dotchart(t.plot$phi.strict,
-           xlim=c(-0.2, +0.6),
-           # labels = paste0(t.plot$lemma, "(p=", round(t.plot$p.sidak.strict, 3), ")"),
-           labels = t.plot$lemma,
-           pch = "",
-           cex=0.75,
-           cex.axis = 5,
-           gcolor = "black",
-           groups = t.plot$link,
-           color = unlist(lapply(t.plot$p.sidak.strict, function(x) map.my.ramp(x, corpuseffects.colors))),
-           main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
-           xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (", num.reps, " repititions)")
-           ,sub = "[Note: p-values for colour-coding were corrected for GWE using Sidak's method.]"
-           )
 
-  abline(v = seq(-0.2, 0.6, 0.2), col = "lightgray", lty = 1, lwd=1)
-
-  # Now add first level to dotchart on top of verticl lines.
-  # Unfortunately not supported by built-in function.
-  this.y <- 1
-  for (l in rev(levels(t.plot$link))) {
-
-    .t.subplot <- t.plot[which(t.plot$link == l),]
-    for (n1 in 1:nrow(.t.subplot)) {
-      points(.t.subplot[n1, "phi.strict"], this.y,
-             pch = 16,
-             col = map.my.ramp(.t.subplot$p.sidak.strict[n1], corpuseffects.colors)
-      )
-      this.y <- this.y + 1
-    }
-    this.y <- this.y + 2
-  }
-
-  # Now add second level to dotchart. Unfortunately not supported by built-in function.
-  this.y <- 1
-  for (l in rev(levels(t.plot$link))) {
-
-    .t.subplot <- t.plot[which(t.plot$link == l),]
-    for (n1 in 1:nrow(.t.subplot)) {
-      points(.t.subplot[n1, "phi.lax"], this.y,
-             pch = 1,
-             cex = 1.3,
-             col = map.my.ramp(.t.subplot$p.sidak.lax[n1], corpuseffects.colors)
-      )
-      this.y <- this.y + 1
-    }
-    this.y <- this.y + 2
-  }
-
-
-  legend("topright", title = "p-values",
-         legend = c("0", "0.05", "0.1", "0.5", "1"),
-         col = c(corpuseffects.colors[100], corpuseffects.colors[65], corpuseffects.colors[50], corpuseffects.colors[16], corpuseffects.colors[1]),
-         pch=19, bg = "white",
-         cex = 1.0
+# The dots are in fact invisible (pch="") so we can draw freely later.
+dotchart(t.plot$phi.strict,
+         xlim=c(-0.2, +0.6),
+         labels = t.plot$lemma,
+         pch = "",
+         cex=0.75,
+         cex.axis = 5,
+         gcolor = "black",
+         groups = t.plot$link,
+         color = unlist(lapply(t.plot$p.sidak.strict, function(x) map.my.ramp(x, corpuseffects.colors))),
+         main = "Signed effect strength for the use of N1 with\npluralic linking element if N2 favours plural semantics on N1",
+         xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (", num.reps, " repititions)")
+         ,sub = paste0("[Note: p-values for colour-coding were corrected for GWE (m=", nrow(t.plot) ,") using Sidak's method.]")
          )
-  legend("topleft",
-        legend = c("strict", "lax"),
-        title = "Annotation",
-        bg = "white",
-        pch = c(16,1),
-        cex = 1.0
-        )
+
+abline(v = seq(-0.2, 0.6, 0.2), col = "lightgray", lty = 1, lwd=1)
+
+# Now add first level to dotchart on top of verticl lines.
+# Unfortunately not supported by built-in function.
+this.y <- 1
+for (l in rev(levels(t.plot$link))) {
+
+  .t.subplot <- t.plot[which(t.plot$link == l),]
+  for (n1 in 1:nrow(.t.subplot)) {
+    points(.t.subplot[n1, "phi.strict"], this.y,
+           pch = 16,
+           col = map.my.ramp(.t.subplot$p.sidak.strict[n1], corpuseffects.colors)
+    )
+    this.y <- this.y + 1
+  }
+  this.y <- this.y + 2
+}
+
+# Now add second level to dotchart. Unfortunately not supported by built-in function.
+this.y <- 1
+for (l in rev(levels(t.plot$link))) {
+
+  .t.subplot <- t.plot[which(t.plot$link == l),]
+  for (n1 in 1:nrow(.t.subplot)) {
+    points(.t.subplot[n1, "phi.lax"], this.y,
+           pch = 1,
+           cex = 1.7,
+           col = map.my.ramp(.t.subplot$p.sidak.lax[n1], corpuseffects.colors)
+    )
+    this.y <- this.y + 1
+  }
+  this.y <- this.y + 2
+}
+
+
+legend("right", title = "p-values",
+       legend = c("0", "0.05", "0.1", "0.5", "1"),
+       col = c(corpuseffects.colors[100], corpuseffects.colors[65], corpuseffects.colors[50], corpuseffects.colors[16], corpuseffects.colors[1]),
+       pch=19, bg = "white",
+       cex = 1.0
+       )
+legend("bottomright",
+      legend = c("strict", "lax"),
+      title = "Annotation",
+      bg = "white",
+      pch = c(16,1),
+      cex = 1.0
+      )
 @
 

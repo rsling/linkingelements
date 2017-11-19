@@ -60,10 +60,10 @@ for (le in les) {
       ), ]
   corpus.candidates[[le]] <- .cands
 }
+par(mfrow=c(1,1))
 
 
-
-# Get info for already existing data.
+# Extract info for the candidates.
 
 # Corpus study.
 les.corpus <- c('e', 'Ue', 'U', 'er', 'Uer', 'n', 'en')
@@ -71,7 +71,6 @@ corpus.study <- NULL
 for (le in les.corpus) {
   .this <- merge(corpus.items[[le]], corpus.candidates[[le]], by = "N1", all.x = T)
   .this$LE <- paste0("+", le.name(le))
-  # .this$LE <- le
   if (is.null(corpus.study)) corpus.study <- .this
   else corpus.study <- rbind(corpus.study, .this)
 }
@@ -83,7 +82,6 @@ stimuli.data <- NULL
 for (le in les.split100) {
   .this <- merge(stimuli[[le]], corpus.candidates[[le]], by = "N1", all.x = T)
   .this$LE <- paste0("+", le.name(le))
-  # .this$LE <- le
   if (is.null(stimuli.data)) stimuli.data <- .this
   else stimuli.data <- rbind(stimuli.data, .this)
 }

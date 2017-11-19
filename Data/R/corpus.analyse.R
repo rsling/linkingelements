@@ -31,7 +31,9 @@ tests.per.lemma <- data.frame(
   link           = rep(NA, m),
   n              = rep(0, m),
   p.raw.lax      = rep(1, m),
+  smooth.lax     = rep(F, m),
   p.raw.strict   = rep(1, m),
+  smooth.strict  = rep(F, m),
   phi.lax        = rep(0, m),
   phi.strict     = rep(0, m),
   p.sidak.lax    = rep(1, m),
@@ -44,17 +46,24 @@ for (i in 1:m) {
   .n1 <- levels(conc$N1Lemma)[i]
   .le <- le.name(as.character(conc[head(which(conc$N1Lemma == levels(conc$N1Lemma)[i]), n = 1), "N1Pl"]))
 
+  # In ONE case ("Sonne"), we have a zero marginal and need to smooth.
   .the.table.lax <- table(conc[which(conc$N1Lemma == .n1),]$LE, conc[which(conc$N1Lemma == .n1),]$N2TypLax)
-  .the.table.lax <- .the.table.lax + 1
+  if (0 %in% c(margin.table(.the.table.lax, c(1)), margin.table(.the.table.lax, c(2)))) {
+    .the.table.lax <- .the.table.lax + 1
+    tests.per.lemma[i, "smooth.lax"] <- T
+  }
   .the.test.lax  <- chisq.test(.the.table.lax, simulate.p.value = monte.carlo, B = num.reps)
 
   .the.table.strict <- table(conc[which(conc$N1Lemma == .n1),]$LE, conc[which(conc$N1Lemma == .n1),]$N2TypStrict)
-  .the.table.strict <- .the.table.strict + 1
+  if (0 %in% c(margin.table(.the.table.strict, c(1)), margin.table(.the.table.strict, c(2)))) {
+    .the.table.strict <- .the.table.strict + 1
+    tests.per.lemma[i, "smooth.strict"] <- T
+  }
   .the.test.strict  <- chisq.test(.the.table.strict, simulate.p.value = monte.carlo, B = num.reps)
 
   tests.per.lemma[i, "lemma"]          <- .n1
   tests.per.lemma[i, "link"]           <- .le
-  tests.per.lemma[i, "n"]              <- sum(.the.table.lax)
+  tests.per.lemma[i, "n"]              <- ifelse(tests.per.lemma[i, "smooth.lax"], sum(.the.table.strict)-4, sum(.the.table.strict))
   tests.per.lemma[i, "p.raw.lax"]      <- as.numeric(.the.test.lax$p.value)
   tests.per.lemma[i, "p.raw.strict"]   <- as.numeric(.the.test.strict$p.value)
   tests.per.lemma[i, "phi.lax"]        <- sqrt(as.numeric(.the.test.lax$statistic)/sum(.the.table.lax)) * sign(.the.test.lax$residuals[1,1]) * -1
@@ -140,7 +149,8 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
     this.y <- this.y + 2
   }
 
-  # Now add second level to dotchart. Unfortunately not supported by built-in function.
+  # Now add second level to dotchart.
+  # Unfortunately not supported by built-in function.
   this.y <- 1
   for (l in rev(levels(t.plot$link))) {
 
@@ -155,8 +165,6 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
     }
     this.y <- this.y + 2
   }
-
-
   legend("right", title = "p-values",
          legend = c("0", "0.05", "0.1", "0.5", "1"),
          col = c(my.colors[100], my.colors[65], my.colors[50], my.colors[16], my.colors[1]),
@@ -170,7 +178,6 @@ if (save.persistently) pdf(paste0(plot.dir, "phi.pdf"))
         pch = c(16,1),
         cex = 1.0
         )
-
 if (save.persistently) dev.off()
 
 
