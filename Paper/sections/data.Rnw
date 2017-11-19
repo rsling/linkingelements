@@ -1,13 +1,49 @@
 % !Rnw root = ../leglossa.Rnw
-<<setupdata, cache=FALSE, echo=FALSE, include=FALSE, results='asis'>>=
+<<setupdata, cache=FALSE, include=FALSE, results='asis'>>=
 opts_knit$set(self.contained=FALSE)
+@
+
+<<loaddata>>=
+load(paste0(my.root, path.rdata, "analyses.full.RData"))
 @
 
 \subsection{Database and productivity assessment}
 \label{sec:databaseandproductivityassessment}
 
-<<proddots, fig.pos="H", fig.height=8, fig.cap="Productivity P of first elements by their plural class", echo=FALSE>>=
-load(paste0(my.root, path.rdata, "analyses.full.RData"))
+For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we chose a set of first elements (N1s) to be examined more thoroughly and ultimately also a set of compounds to be used as stimuli in the split-100 experiment.
+The total number of candidates for first elements and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, we first created a very large database of nominal compounds in German from the DECOW16A web corpus \parencite{SchaeferBildhauer2018}.%
+\footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus will be made publicly available.}
+In the corpus, nominal compounds come with automatically generated high-quality analysis created using SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and prost-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.
+While it became clear during our analysis that the automatic analyser makes some errors and is not very good at disambiguating at least some types of ambiguous compounds, it is clear that the quality is more than sufficient for the kind of large-scale pre-analaysis we performed.
+At each step, we made sure through manual checks that the data which we actually used for the studies were clean.
+
+<<results="asis">>=
+aggregate.le <- function(df) {
+  list(
+    n1s       = nrow(df),
+    types.w   = sum(df$With_Ftype),
+    types.wo  = sum(df$Without_Ftype)
+  )
+}
+le.aggregated <- sapply(analyses.full, aggregate.le)
+colnames(le.aggregated) <- unname(sapply(colnames(le.aggregated), le.name))
+rownames(le.aggregated) <- c("N1 types", "N+N types with PLE", "N+N types without PLE")
+
+le.aggregated.xt <- xtable(formatC(t(le.aggregated), format="d", big.mark=","), booktabs = T,
+                           caption = "Type frequencies in N+N compounds in DECOW16A grouped by pluralic linking elements (PLE)",
+                           label = "tab:typeoverview")
+align(le.aggregated.xt) <- c("l", rep("r", 3))
+
+print(le.aggregated.xt, floating = T, booktabs = T, rotate.colnames = F)
+@
+
+First of all, as argued in Section~\ref{sec:linkingelementsingerman}, we restricted our study to N+N compounds.
+All figures reported in the remainder of this paper relate to a database reduced to such compounds.
+In Table~\ref{tab:typeoverview}, we show the type frequencies of first elements (N1) as well as compounds formed with those N1s, grouped by the different linking elements.
+We provide both the type count of N+N compounds with the pluralic linking element (PLE) in the second column and without it in the third column.
+The types without PLE are those with no linking element, deletion, or with the non-pluralic linking element \textit{-s} (see Section~\ref{sec:linkingelementsingerman}).
+
+<<proddots, fig.pos="H", fig.height=8, fig.cap="Productivity P of first elements by their plural class">>=
 productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
 par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,

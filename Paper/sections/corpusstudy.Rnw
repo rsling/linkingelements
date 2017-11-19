@@ -1,5 +1,5 @@
 % !Rnw root = ../leglossa.Rnw
-<<setupcorpus, cache=FALSE, echo=FALSE, include=FALSE, results='asis'>>=
+<<setupcorpus, cache=FALSE, include=FALSE, results='asis'>>=
 opts_knit$set(self.contained=FALSE)
 @
 
@@ -7,7 +7,7 @@ opts_knit$set(self.contained=FALSE)
 \label{sec:corpusstudy}
 
 
-<<corpusselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+<<corpusselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values">>=
 load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 par(mfrow=c(3,3))
 for (le in les) {
@@ -35,7 +35,7 @@ for (le in les) {
 par(mfrow=c(1,1))
 @
 
-<<corpuseffects, fig.pos="H", fig.height=10, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+<<corpuseffects, fig.pos="H", fig.height=10, fig.cap="Scatterplot of p-values">>=
 load(paste0(my.root, path.rdata, "t.plot.RData"))
 corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
 

@@ -1,5 +1,5 @@
 % !Rnw root = ../leglossa.Rnw
-<<setupsplit, cache=FALSE, echo=FALSE, include=FALSE, results='asis'>>=
+<<setupsplit, cache=FALSE, include=FALSE, results='asis'>>=
 opts_knit$set(self.contained=FALSE)
 @
 
@@ -7,7 +7,7 @@ opts_knit$set(self.contained=FALSE)
 \label{sec:split100experiment}
 
 
-<<experimentselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values", echo=FALSE>>=
+<<experimentselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values">>=
 # load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 par(mfrow=c(3,3))
 for (le in les) {
@@ -36,7 +36,7 @@ par(mfrow=c(1,1))
 @
 
 
-<<conditions, fig.pos="H", fig.height=8, fig.cap="Distribution of Split-100 responses by conditions", echo=FALSE>>=
+<<conditions, fig.pos="H", fig.height=6, fig.cap="Distribution of Split-100 responses by conditions">>=
 load(paste0(my.root, path.rdata, "observations.RData"))
 par(mfrow=c(1,2))
 plot(obs.coll$realRating~obs.coll$cond,
@@ -53,7 +53,7 @@ par(mfrow=c(1,1))
 @
 
 
-<<participants, fig.pos="H", fig.height=8, fig.cap="Distribution of individual Split-100 responses by conditions", echo=FALSE>>=
+<<participants, fig.pos="H", fig.height=6, fig.cap="Distribution of individual Split-100 responses by conditions">>=
 par(mfrow=c(2,1))
 plot(obs.coll$realRating~obs.coll$participant,
      las = 2, col = "gold",
@@ -69,7 +69,7 @@ par(mfrow=c(1,1))
 @
 
 
-<<betainfl, message=FALSE, warning=FALSE, results='hide', error=FALSE, echo=FALSE>>=
+<<betainfl, message=FALSE, warning=FALSE, results='hide', error=FALSE>>=
 model.coll   <- gamlss(realRatingProp ~ cond + random(participant), data = obs.coll, family=BEINF)
 model.coll.0 <- gamlss(realRatingProp ~        random(participant), data = obs.coll, family=BEINF)
 @

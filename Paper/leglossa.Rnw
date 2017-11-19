@@ -33,6 +33,7 @@
 \definecolor{lsGuidelinesGray}{cmyk}{0,0.04,0,0.45}
 
 \usepackage{listings}
+\usepackage{booktabs}
 
 % Set listing style. knitr uses RStyle style. Which you have to know...
 \definecolor{listingbackground}{gray}{0.95}
@@ -74,6 +75,8 @@
   }
 }
 
+\addbibresource{rs.bib}
+
 \begin{document}
 
 << setup, cache=FALSE, echo=FALSE, include=FALSE, results='asis'>>=
@@ -86,7 +89,8 @@ opts_chunk$set(cache.path='cache/',
                fig.align='center', comment ="",
                background='#F7F7F7',
                tidy=FALSE,
-               formatR.arrow = TRUE)
+               formatR.arrow = TRUE,
+               echo=FALSE)
 
 
 render_listings()
@@ -96,6 +100,7 @@ path.rdata <- "../Data/R/RData/"
 source('../Data/R/functions.R')
 
 require(gamlss)
+require(xtable)
 @
 
 \sffamily

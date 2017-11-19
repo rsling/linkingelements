@@ -7,6 +7,7 @@ require(beanplot)
 require(gamlss)
 require(plyr)
 library(lattice)
+require(ordinal)
 
 rm(list = ls())
 set.seed(48267)
@@ -139,20 +140,61 @@ if (save.persistently) dev.off()
 
 
 # Plural GAMM.
-model.pl <- gamlss(realRatingProp ~ cond + prodQuotN1 + random(participant), data = obs.pl, family=BEINF)
+model.pl <- gamlss(realRatingProp ~ cond + random(participant), data = obs.pl, family=BEINF)
+model.pl.0 <- gamlss(realRatingProp ~ random(participant), data = obs.pl, family=BEINF)
 
 if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
 cat("\n\n\n PLURAL MODEL \n\n")
 print(summary(model.pl))
+print(summary(model.pl.0))
 if (save.persistently) sink()
 
 if (save.persistently) pdf(paste0(out.dir, "pl_model_diag.pdf"))
 plot(model.pl)
 if (save.persistently) dev.off()
 
-library(ordinal)
+### ORDINAL MODEL ###
 
-model.coll.clmm <- clmm(Ratings5p ~ cond + (1 | participant), data = obs.coll, link="logit",
-           Hess = TRUE, method="ucminf", threshold = "equidistant")
-model.coll.clmm <- clmm(Ratings5p ~ (1 | participant), data = obs.coll, link="logit",
+# Coll
+
+model.coll.clmm  <- clmm(Ratings5p ~ cond + (1 | participant), data = obs.coll, link="logit",
                         Hess = TRUE, method="ucminf", threshold = "equidistant")
+model.coll.clmm.0 <- clmm(Ratings5p ~ 1 + (1 | participant), data = obs.coll, link="logit",
+                        Hess = TRUE, method="ucminf", threshold = "equidistant")
+
+if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
+  cat("\n\n### ORDINAL MODEL: COLL ###\n")
+  print(summary(model.coll.clmm))
+  cat("\n\n Comparing model w/ and w/o main factor.\n")
+  print(anova(model.coll.clmm, model.coll.clmm.0))
+if (save.persistently) dev.off()
+
+if (save.persistently) pdf(paste0(out.dir, "5point.coll.pdf"))
+  plot(obs.coll$Ratings5p ~ obs.coll$cond,
+       main = "Distribution of linearly discretised Responses\nfor collective/non-collective conditions",
+       ylab = "Rating",
+       xlab = "Condition"
+       )
+if (save.persistently) dev.off()
+
+# Pl
+
+model.pl.clmm  <- clmm(Ratings5p ~ cond + (1 | participant), data = obs.pl, link="logit",
+                         Hess = TRUE, method="ucminf", threshold = "equidistant")
+model.pl.clmm.0 <- clmm(Ratings5p ~ 1 + (1 | participant), data = obs.pl, link="logit",
+                          Hess = TRUE, method="ucminf", threshold = "equidistant")
+
+if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
+  cat("\n\n### ORDINAL MODEL ###\n")
+  print(summary(model.pl.clmm))
+  cat("\n\n Comparing model w/ and w/o main factor.\n")
+  print(anova(model.pl.clmm, model.pl.clmm.0))
+if (save.persistently) dev.off()
+
+if (save.persistently) pdf(paste0(out.dir, "5point.pl.pdf"))
+  plot(obs.pl$Ratings5p ~ obs.pl$cond,
+       main = "Distribution of linearly discretised Responses\nfor plural/singular conditions",
+       ylab = "Rating",
+       xlab = "Condition"
+       )
+if (save.persistently) dev.off()
