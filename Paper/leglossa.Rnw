@@ -138,7 +138,8 @@ require(xtable)
 
 We would like to thank (in alphabetical order) Ulrike Sayatz for valuable discussions and comments.
 Furthermore, we thank Ulrike Sayatz for helping us recruit the participants for the experiments.
-We are fully responsible for all residual inadequacies, errors, and ommissions.
+Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
+We are, of course, fully responsible for all residual inadequacies, errors, and ommissions.
 Roland Schäfer's work on this project was funded in part by the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
 
 \printbibliography
