@@ -12,10 +12,16 @@ require(ordinal)
 rm(list = ls())
 set.seed(48267)
 
-save.persistently <- F
+save.persistently <- T
 data.dir          <- '../Split100/data/'
 out.dir           <- 'Results/'
-graphics.dir      <- 'Plots/'
+plot.dir          <- 'Plots/'
+out.file          <- 'corpus_results.txt'
+
+### DO NOT CHANGE ANYTHING OAST THIS LINE! ###
+
+dir.create(out.dir, showWarnings = F)
+dir.create(plot.dir, showWarnings = F)
 
 load("RData/analyses.full.RData")
 analyses.full <- rbind(analyses.full[["e"]],
@@ -79,7 +85,7 @@ save(list = c("obs", "obs.coll", "obs.pl"), file = "RData/observations.RData", c
 
 ### DESCRIPTIVE PLOTS ###
 
-if (save.persistently) pdf(paste0(out.dir, "descriptive_by_condition.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "descriptive_by_condition.pdf"))
 par(mfrow=c(1,2))
 plot(obs.coll$realRating~obs.coll$cond,
      col = "gold",
@@ -93,7 +99,7 @@ plot(obs.pl$realRating~obs.pl$cond,
      frame = F)
 if (save.persistently) dev.off()
 
-if (save.persistently) pdf(paste0(out.dir, "descriptive_by_participant.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "descriptive_by_participant.pdf"))
 par(mfrow=c(2,1))
 plot(obs.coll$realRating~obs.coll$participant,
      las = 2, col = "gold",
@@ -108,7 +114,7 @@ plot(obs.pl$realRating~obs.pl$participant,
 if (save.persistently) dev.off()
 
 par(mfrow=c(1,1))
-if (save.persistently) pdf(paste0(out.dir, "descriptive_distribution.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "descriptive_distribution.pdf"))
 plot(density(obs.pl$realRating),
      col = "darkgreen", lwd = 3, lty = 3, bty = "n",
      ylim = c(0, 0.02), xlim = c(0,100),
@@ -124,17 +130,16 @@ if (save.persistently) dev.off()
 ### BETA GAMMs ###
 
 # Collective GAMM.
-# model.coll <- gamlss(realRatingProp ~ cond + scale(With_Ppot) * scale(Without_Ppot) + random(as.factor(n1)) + random(participant), data = obs.coll, family=BEINF)
 model.coll <- gamlss(realRatingProp ~ cond + random(participant), data = obs.coll, family=BEINF)
 model.coll.0 <- gamlss(realRatingProp ~ random(participant), data = obs.coll, family=BEINF)
 
-if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
+if (save.persistently) sink(paste0(out.dir, out.file), append = T)
 cat("\n\n\n COLLECTIVE MODEL \n\n")
 print(summary(model.coll))
 print(summary(model.coll.0))
 if (save.persistently) sink()
 
-if (save.persistently) pdf(paste0(out.dir, "coll_model_diag.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "coll_model_diag.pdf"))
 plot(model.coll)
 if (save.persistently) dev.off()
 
@@ -143,13 +148,13 @@ if (save.persistently) dev.off()
 model.pl <- gamlss(realRatingProp ~ cond + random(participant), data = obs.pl, family=BEINF)
 model.pl.0 <- gamlss(realRatingProp ~ random(participant), data = obs.pl, family=BEINF)
 
-if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
+if (save.persistently) sink(paste0(out.dir, out.file), append = T)
 cat("\n\n\n PLURAL MODEL \n\n")
 print(summary(model.pl))
 print(summary(model.pl.0))
 if (save.persistently) sink()
 
-if (save.persistently) pdf(paste0(out.dir, "pl_model_diag.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "pl_model_diag.pdf"))
 plot(model.pl)
 if (save.persistently) dev.off()
 
@@ -162,14 +167,14 @@ model.coll.clmm  <- clmm(Ratings5p ~ cond + (1 | participant), data = obs.coll, 
 model.coll.clmm.0 <- clmm(Ratings5p ~ 1 + (1 | participant), data = obs.coll, link="logit",
                         Hess = TRUE, method="ucminf", threshold = "equidistant")
 
-if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
+if (save.persistently) sink(paste0(out.dir, out.file), append = T)
   cat("\n\n### ORDINAL MODEL: COLL ###\n")
   print(summary(model.coll.clmm))
   cat("\n\n Comparing model w/ and w/o main factor.\n")
   print(anova(model.coll.clmm, model.coll.clmm.0))
-if (save.persistently) dev.off()
+if (save.persistently) sink()
 
-if (save.persistently) pdf(paste0(out.dir, "5point.coll.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "5point.coll.pdf"))
   plot(obs.coll$Ratings5p ~ obs.coll$cond,
        main = "Distribution of linearly discretised Responses\nfor collective/non-collective conditions",
        ylab = "Rating",
@@ -184,14 +189,14 @@ model.pl.clmm  <- clmm(Ratings5p ~ cond + (1 | participant), data = obs.pl, link
 model.pl.clmm.0 <- clmm(Ratings5p ~ 1 + (1 | participant), data = obs.pl, link="logit",
                           Hess = TRUE, method="ucminf", threshold = "equidistant")
 
-if (save.persistently) sink(paste0(out.dir, "results.txt"), append = T)
+if (save.persistently) sink(paste0(out.dir, out.file), append = T)
   cat("\n\n### ORDINAL MODEL ###\n")
   print(summary(model.pl.clmm))
   cat("\n\n Comparing model w/ and w/o main factor.\n")
   print(anova(model.pl.clmm, model.pl.clmm.0))
-if (save.persistently) dev.off()
+if (save.persistently) sink()
 
-if (save.persistently) pdf(paste0(out.dir, "5point.pl.pdf"))
+if (save.persistently) pdf(paste0(plot.dir, "5point.pl.pdf"))
   plot(obs.pl$Ratings5p ~ obs.pl$cond,
        main = "Distribution of linearly discretised Responses\nfor plural/singular conditions",
        ylab = "Rating",

@@ -2,10 +2,12 @@ rm(list = ls())
 set.seed(827)
 source('functions.R')
 
-dir.create('./Results', showWarnings = F)
+out.dir <- 'Results/'
 
 load("RData/analyses.full.RData")
 load("RData/noun.frequencies.RData")
+
+dir.create(out.dir, showWarnings = F)
 
 # Items in corpus study:
 corpus.items <- list(
@@ -74,7 +76,7 @@ for (le in les.corpus) {
   if (is.null(corpus.study)) corpus.study <- .this
   else corpus.study <- rbind(corpus.study, .this)
 }
-write.table(corpus.study, file = "Results/corpus.study.csv", quote = F, sep = "\t", row.names = F)
+write.table(corpus.study, file = paste0(out.dir, "corpus_candidates.csv"), quote = F, sep = "\t", row.names = F)
 
 # Split-100.
 les.split100 <- c("Uer", "Ue", "e", "er", "en")
@@ -85,9 +87,10 @@ for (le in les.split100) {
   if (is.null(stimuli.data)) stimuli.data <- .this
   else stimuli.data <- rbind(stimuli.data, .this)
 }
-write.table(stimuli.data, file = "Results/stimuli.csv", quote = F, sep = "\t", row.names = F)
+write.table(stimuli.data, file = paste0(out.dir, "split100_stimuli.csv"), quote = F, sep = "\t", row.names = F)
 
 
 
 save(list = "analyses.full", file = "RData/analyses.full.plus.RData", compress = "bzip2")
-save(list = c("les", "les.corpus", "les.split100", "corpus.items", "stimuli", "corpus.candidates"), file = "RData/corpus.candidates.RData", compress = "bzip2")
+save(list = c("les", "les.corpus", "les.split100", "corpus.items", "stimuli", "corpus.candidates",
+              "corpus.study", "stimuli.data"), file = "RData/corpus.candidates.RData", compress = "bzip2")

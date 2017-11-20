@@ -5,11 +5,12 @@ source('functions.R')
 
 in.file           <- '../Corpusstudy/Concordance.full.csv'
 plot.dir          <- './Plots/'
-save.persistently <- F
+out.dir           <- './Results/'
+save.persistently <- T
 alpha.nominal     <- 0.05
 monte.carlo       <- T
 num.reps          <- 10000
-plot.corr.effect  <- F
+plot.corr.effect  <- T
 my.colors         <- colorRampPalette(c("orange", "darkgreen"))(100)
 
 ### DO NOT MODIFY ANYTHING PAST THIS LINE ###
@@ -211,6 +212,7 @@ le.glmm.0 <- glmer(LE~N2TypLax+(1|N1Lemma),
                    control=glmerControl(optimizer="nloptwrap2", optCtrl=list(maxfun=2e5))
                    )
 
+if (save.persistently) sink(paste0(out.dir, "corpus_results.txt"))
 cat("\n\nComparing model with additional factors\n")
 print(anova(le.glmm, le.glmm.0))
 
@@ -223,10 +225,6 @@ le.glmm.vivs <- glmer(LE~N2TypLax+(1+N2TypLax|N1Lemma),
                       )
 
 cat("\n\nVariance-covariance in VIVS model\n")
-print(VarCorr(le.glmm.vivs))
-
-
-# Check consistency for some N2s:
-conc[grep('spalte', conc$Match), c("Match", "N2Typ")]
-
+print(lme4::VarCorr(le.glmm.vivs))
+if (save.persistently) sink()
 
