@@ -55,6 +55,11 @@
   }
 \lstset{style=Rstyle}
 
+\newcommand{\ie}{i.\,e.,\ }
+\newcommand{\Ie}{I.\,e.,\ }
+%\newcommand{\eg}{e.\,g.,\ }
+\newcommand{\Eg}{E.\,g.,\ }
+
 \pdfauthor{Roland Schaefer and Elizabeth Pankratz}
 \pdftitle{Function vs. interpretability of compound linking elements in German}
 \pdfkeywords{probabilistic grammar, compounding, linking elements, split-100 experiments, corpus data, German}
@@ -76,6 +81,7 @@
 }
 
 \addbibresource{rs.bib}
+% \addbibresource{leglossa_biber.bib} % Generate using: biber leglossa --output_format bibtex
 
 \begin{document}
 
@@ -101,6 +107,11 @@ source('../Data/R/functions.R')
 
 require(gamlss)
 require(xtable)
+@
+
+<<loaddata>>=
+load(paste0(my.root, path.rdata, "analyses.full.RData")) # Basic frequency and productivity data.
+load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpus study. Funny file name.
 @
 
 \sffamily

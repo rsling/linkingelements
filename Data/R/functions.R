@@ -1,4 +1,8 @@
 
+# Format numbers for use in running text.
+nice.float <- function(x) formatC(x, format="f", big.mark=",", digits = 3)
+nice.int <- function(n) formatC(n, format="d", big.mark=",")
+
 # Helper functions.
 get.list.elem <- function(l, n){
   sapply(l, `[`, n)
@@ -107,7 +111,10 @@ le.name <- function(le) {
 
 plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
                                 norm.xax = NULL, norm.yax = NULL, zero.floor = NULL,
-                                the.colors) {
+                                the.colors,
+                                main.chunk = "Productivity of N1 with ",
+                                ylab.chunk = "P(N1) without linking element",
+                                xlab.chunk = "P(N1) with linking element") {
   if (le == "EMPTY_PLOT") {
     plot.new()
     return()
@@ -152,11 +159,11 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
   .le.name <- le.name(le)
 
   plot(.n1s[,"With_Ppot"]~.n1s[,"Without_Ppot"], type="n",
-       main = paste0("Productivity of N1 with ", .le.name, .subtitle),
+       main = paste0(main.chunk, .le.name, .subtitle),
        xlim = .xlim,
        ylim = .ylim,
-       ylab = "P(N1) without linking element",
-       xlab = paste0("P(N1) with ", .le.name, " linking element"),
+       ylab = ylab.chunk,
+       xlab = xlab.chunk,
        log = "xy"
   )
   for (n in 1:nrow(.n1s)) {
@@ -187,7 +194,7 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
                ),
              cex = 0.8,
              #bty = "n"
-             bg = "lightgray"
+             bg = "white"
       )
     } else {
       text(.n1s[n,"With_Ppot"], .n1s[n,"Without_Ppot"],

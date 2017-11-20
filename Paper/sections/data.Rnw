@@ -3,27 +3,22 @@
 opts_knit$set(self.contained=FALSE)
 @
 
-<<loaddata>>=
-load(paste0(my.root, path.rdata, "analyses.full.RData"))
-@
+\subsection{Corpus choice}
+\label{sec:corpuschoice}
 
 \subsection{Database and productivity assessment}
 \label{sec:databaseandproductivityassessment}
 
-For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we chose a set of first elements (N1s) to be examined more thoroughly and ultimately also a set of compounds to be used as stimuli in the split-100 experiment.
-The total number of candidates for first elements and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, we first created a very large database of nominal compounds in German from the DECOW16A web corpus \parencite{SchaeferBildhauer2018}.%
-\footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus will be made publicly available.}
-In the corpus, nominal compounds come with automatically generated high-quality analysis created using SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and prost-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
-\footnote{For each nominal compound, an analysis such as \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
-Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element comes with an umlaut on the first element.}
-While it became clear during our work that the automatic analyser makes some errors and sometimes fails in disambiguating some ambiguous compounds, it is clear that the quality is more than sufficient for the kind of large-scale pre-analaysis we performed.
-At each step, we made sure through manual checks that the data which we actually used for the studies were clean.
+For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first elements (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
+However, the total number of candidates for first elements and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, we first created a very large database of nominal compounds in German from the DECOW16A web corpus \parencite{SchaeferBildhauer2018}.%
+\footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available.}
+In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and prost-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
+\footnote{The analyses are formatted like \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
+Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first element.}
+While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality is more than sufficient for the kind of large-scale pre-analaysis we performed.
+At each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.
 
-First of all, as argued in Section~\ref{sec:linkingelementsingerman}, we restricted our study to N+N compounds.
-All figures reported in the remainder of this paper relate to a database reduced to such compounds.
-We began extracted all
-
-<<results="asis">>=
+<<>>=
 aggregate.le <- function(df) {
   list(
     n1s       = nrow(df),
@@ -33,21 +28,46 @@ aggregate.le <- function(df) {
 }
 le.aggregated <- sapply(analyses.full, aggregate.le)
 colnames(le.aggregated) <- unname(sapply(colnames(le.aggregated), le.name))
-rownames(le.aggregated) <- c("N1 types", "N+N types with PLE", "N+N types without PLE")
+rownames(le.aggregated) <- c("N1 types", "N1+N types with PLE", "N1+N types without PLE")
+@
 
-le.aggregated.xt <- xtable(formatC(t(le.aggregated), format="d", big.mark=","), booktabs = T,
-                           caption = "Type frequencies in N+N compounds in DECOW16A grouped by pluralic linking elements (PLE)",
+First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restricted our study to N+N compounds.
+In the remainder of this paper, we exclusively refer to the database reduced to such compounds.
+We began by extracting all N+N compounds and all first elements (N1s).
+For each of the pluralic linking elements (PLE), we generated exhaustive lists of the N1s occuring with it which fulfil the criteria mentioned in Section~\ref{sec:linkingelementsingerman} (prominently: no mass nouns, no weak masculine nouns).%
+\footnote{The lists of these N1s were extracted automatically but were checked for erroneous entries manually.
+Both the first author of this paper and a student assistant checked the entire list in order to increase the precision.}
+In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which take PLEs.
+Then, for each N1 we counted the numbers of compound types containing it, the number of compound tokens containing it, and the number of compound hapax legomena containing it (\ie those compounds containing the N1 which occur only once in the corpus).
+Since we are interested in the alternation between N1s used with PLEs and without them (either without any linking element, with deletion, or with a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds without pluralic linking element (NPLE).
+Table~\ref{tab:typeoverview} shows the aggregated type frequencies for the different linking elements.
+
+<<results="asis">>=
+le.aggregated.xt <- t(le.aggregated)
+le.aggregated.xt <- le.aggregated.xt[order(unlist(le.aggregated.xt[,'N1 types']), decreasing = T),]
+le.aggregated.xt <- xtable(formatC(le.aggregated.xt, format="d", big.mark=","), booktabs = T,
+                           caption = "Type frequencies of first elements (N1) in N+N compounds grouped by pluralic linking elements (PLE)",
                            label = "tab:typeoverview")
 align(le.aggregated.xt) <- c("l", rep("r", 3))
-
 print(le.aggregated.xt, floating = T, booktabs = T, rotate.colnames = F)
 @
 
-In Table~\ref{tab:typeoverview}, we show the type frequencies of first elements as well as compounds formed with those N1s, grouped by the different linking elements.
-We provide both the type count of N+N compounds with the pluralic linking element (PLE) in the second column and without it in the third column.
-The types without PLE are those with no linking element, deletion, or with the non-pluralic linking element \textit{-s} (see Section~\ref{sec:linkingelementsingerman}).
+As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types, respectively.
+While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.
 
-<<proddots, fig.pos="H", fig.height=8, fig.cap="Productivity P of first elements by their plural class">>=
+While the type and token frequencies of N1s with PLE and NPLE are informative, we considered a comparison of their productivity with PLE and NPLE even more relevant for making decisions regarding the corpus sample and selection of stimuli.
+Therefore, we calculated measures of productivity for each N1 with PLE and NPLE.
+This measure was supposed to capture the probability that the given N1 would form a new compound with PLE and NPLE, and the \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902,906--907]{Baayen2009}.
+The potential productivity is appropriate for our purpose because compounds tend to get lexicalised either with PLE or with NPLE, and it would not make much sense to examine an alternation with N1s which occur very often in lexicalised compounds.
+As specified in (\ref{eq:prod}), the potential productivity $Prod$ is simply the number of the hapax legomena compounds with $N1_{le}$ divided by the token frequency of compounds with $N1_{le}$, where $le$ stands for either PLE or NPLE.
+The interpretation of $Prod$ is intuitive, as it is $0$ when there is not a single hapax legomenon in the corpus (no productivity whatsoever), and it is $1$ if all tokens are hapax legomena (maximal productivity).
+It can be regarded as a proportion and its range is therefore $[0,1]$.
+
+\begin{equation}\label{eq:prod}
+Prod(\mathrm{N1})=\frac{f_{Hapax}(\mathrm{N1}_{le})}{f_{Token}(\mathrm{N1}_{le})}
+\end{equation}
+
+<<proddots, fig.pos="H", fig.height=8, fig.cap="Comparisons of the potential productivity Prod() of first elements, grouped by their PLE; colors and sizes encode the type frequencies with PLE and NPLE">>=
 productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
 par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,
@@ -56,9 +76,24 @@ par(mfrow=c(3,3))
               norm.xax      = c(10^-3, 1),
               norm.yax      = c(10^-3, 2),
               zero.floor    = NULL,
-              the.colors    = productivitydots.colors)
-for (le in c('e', 'Ue', 'U', 'er', 'Uer', 'EMPTY_PLOT', 'n', 'en'))
+              the.colors    = productivitydots.colors,
+              main.chunk = "",
+              ylab.chunk = "Prod(N1) with NPLE",
+              xlab.chunk = "Prod(N1) with PLE")
+for (le in c('n', 'en', 'EMPTY_PLOT', 'e', 'Ue', 'EMPTY_PLOT', 'Uer', 'er', 'U'))
   do.call(plot.productivities, c(list(le = le), .args))
 par(mfrow=c(1,1))
 @
+
+Figure~\ref{fig:proddots} shows the results of the productivity analyses for all chosen N1s.%
+\footnote{It was pointed out that the analysis of productivity is marred by the low quality of automatic annotation in \textcite{EvertLuedeling2001} (a point reiterated in \citealt[907]{Baayen2009}).
+Our analysis relies on the automatically generated annotaions by the SMOR tool and COW tool chain.
+However, the list of N1 candidates was meticulously cleaned manually, as stated above.
+Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words.
+Finally, the N1s which were chosen for the studies presented in Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment} were manually checked again.
+In the annotation of the \Sexpr{nice.int(sum(t.plot$n))} corpus exemplars, any systematic misanalysis would have shown.
+This actually happened for the N1 \textit{Beere} `berry', where the concordance for NPLE contained mostly erroneously analysed words and proper names, and \textit{Beere} was subsequently excluded from further steps.
+We can thus be sure that the analyses which we interpret relative to our theoretical hypotheses are accurate and not distorted by problems of automatic annotation.
+}
+
 
