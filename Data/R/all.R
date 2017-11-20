@@ -14,4 +14,10 @@ system.time(source('frequency_all.R'))            #    2m 48s
 system.time(source('corpus_candidates.R'))        #    1m  3s
 system.time(source('plot_selections.R'))          # <      1s
 
+# Run these to replicate the analysis of the corpus study and
+# the split-100 experiment:
+
+system.time(source('corpus_analyse.R'))           # <      1s
+system.time(source('split100_analyse.R'))         # <      1s
+
 # TOTAL RUNTIME                                     > 10m
