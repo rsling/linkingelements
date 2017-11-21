@@ -1,6 +1,6 @@
 
 # Format numbers for use in running text.
-nice.float <- function(x) formatC(x, format="f", big.mark=",", digits = 3)
+nice.float <- function(x, d = 3) formatC(x, format="f", big.mark=",", digits = d)
 nice.int <- function(n) formatC(n, format="d", big.mark=",")
 
 # Helper functions.
