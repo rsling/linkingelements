@@ -101,12 +101,14 @@ opts_chunk$set(cache.path='cache/',
 
 render_listings()
 
-my.root = '~/Workingcopies/Linkingelements/Paper/'
-path.rdata <- "../Data/R/RData/"
-source('../Data/R/functions.R')
-
 require(gamlss)
 require(xtable)
+
+source('../Data/R/functions.R')
+
+my.root = '~/Workingcopies/Linkingelements/Paper/'
+path.rdata <- "../Data/R/RData/"
+prod.plot.order <- c('n', 'en', 'EMPTY_PLOT', 'e', 'Ue', 'EMPTY_PLOT', 'Uer', 'er', 'U')
 @
 
 <<loaddata>>=

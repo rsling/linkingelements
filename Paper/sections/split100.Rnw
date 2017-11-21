@@ -7,10 +7,17 @@ opts_knit$set(self.contained=FALSE)
 \label{sec:split100experiment}
 
 
-<<experimentselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values">>=
+<<experimentselection, fig.pos="htb!", fig.height=8, fig.cap="Scatterplot of p-values">>=
 # load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 par(mfrow=c(3,3))
-for (le in les) {
+for (le in prod.plot.order) {
+
+  # Make blank space in plot.
+  if (le == "EMPTY_PLOT") {
+    plot.new()
+    next
+  }
+
   .le.name <- le.name(le)
   plot(corpus.candidates[[le]]$Without_Ppot ~ corpus.candidates[[le]]$With_Ppot,
        log="xy",
@@ -29,14 +36,12 @@ for (le in les) {
          cex = 1.5,
          col = "blue"
   )
-  # Make blank space in plot.
-  if (le == "Uer") plot.new()
 }
 par(mfrow=c(1,1))
 @
 
 
-<<conditions, fig.pos="H", fig.height=6, fig.cap="Distribution of Split-100 responses by conditions">>=
+<<conditions, fig.pos="htb!", fig.height=6, fig.cap="Distribution of Split-100 responses by conditions">>=
 load(paste0(my.root, path.rdata, "observations.RData"))
 par(mfrow=c(1,2))
 plot(obs.coll$realRating~obs.coll$cond,
@@ -53,7 +58,7 @@ par(mfrow=c(1,1))
 @
 
 
-<<participants, fig.pos="H", fig.height=6, fig.cap="Distribution of individual Split-100 responses by conditions">>=
+<<participants, fig.pos="htb!", fig.height=6, fig.cap="Distribution of individual Split-100 responses by conditions">>=
 par(mfrow=c(2,1))
 plot(obs.coll$realRating~obs.coll$participant,
      las = 2, col = "gold",

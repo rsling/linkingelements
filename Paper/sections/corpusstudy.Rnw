@@ -7,10 +7,17 @@ opts_knit$set(self.contained=FALSE)
 \label{sec:corpusstudy}
 
 
-<<corpusselection, fig.pos="H", fig.height=8, fig.cap="Scatterplot of p-values">>=
+<<corpusselection, fig.pos="htb!", fig.height=8, fig.cap="Scatterplot of p-values">>=
 load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 par(mfrow=c(3,3))
-for (le in les) {
+for (le in prod.plot.order) {
+
+  # Make blank space in plot.
+  if (le == "EMPTY_PLOT") {
+    plot.new()
+    next
+  }
+
   .le.name <- le.name(le)
   plot(corpus.candidates[[le]]$Without_Ppot ~ corpus.candidates[[le]]$With_Ppot,
        log="xy",
@@ -29,13 +36,11 @@ for (le in les) {
          cex = 1.5,
          col = "darkgreen"
   )
-  # Make blank space in plot.
-  if (le == "Uer") plot.new()
 }
 par(mfrow=c(1,1))
 @
 
-<<corpuseffects, fig.pos="H", fig.height=10, fig.cap="Scatterplot of p-values">>=
+<<corpuseffects, fig.pos="htb!", fig.height=10, fig.cap="Scatterplot of p-values">>=
 load(paste0(my.root, path.rdata, "t.plot.RData"))
 corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
 
