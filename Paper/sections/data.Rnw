@@ -3,10 +3,13 @@
 opts_knit$set(self.contained=FALSE)
 @
 
-\subsection{Corpus choice}
+\subsection{Data}
+\label{sec:data}
+
+\subsubsection{Corpus choice}
 \label{sec:corpuschoice}
 
-\subsection{Database and productivity assessment}
+\subsubsection{Database and productivity assessment}
 \label{sec:databaseandproductivityassessment}
 
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first elements (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
