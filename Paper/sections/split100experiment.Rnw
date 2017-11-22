@@ -3,7 +3,7 @@
 opts_knit$set(self.contained=FALSE)
 @
 
-\subsection{Split-100 experiment}
+\section{Split-100 experiment}
 \label{sec:split100experiment}
 
 

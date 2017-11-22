@@ -49,7 +49,7 @@ for (le in les) {
   # First, get N1 frequency data as free word.
   analyses.full[[le]] <- merge(x = analyses.full[[le]], y = noun.frequencies, by.x = 'N1', by.y = 'N', all.x = T)
   colnames(analyses.full[[le]])[colnames(analyses.full[[le]]) == "F"] <- "N1alone_Ftoken"
-  analyses.full[[le]]$N1alone_Fband <- round(frequency.band(analyses.full[[le]]$N1alone_Ftoken, decow16a.highest.f), 0)
+  analyses.full[[le]]$N1alone_Fband <- frequency.band(analyses.full[[le]]$N1alone_Ftoken, decow16a.highest.f)
 
   .cands <- analyses.full[[le]][which(
                                       analyses.full[[le]]$With_Ftype      >= n1asn1.typfreq.lim
@@ -93,4 +93,6 @@ write.table(stimuli.data, file = paste0(out.dir, "split100_stimuli.csv"), quote 
 
 save(list = "analyses.full", file = "RData/analyses.full.plus.RData", compress = "bzip2")
 save(list = c("les", "les.corpus", "les.split100", "corpus.items", "stimuli", "corpus.candidates",
-              "corpus.study", "stimuli.data"), file = "RData/corpus.candidates.RData", compress = "bzip2")
+              "corpus.study", "stimuli.data", "n1asn1.typfreq.lim", "n1itself.tokfreq.lim", "decow16a.highest.f"),
+     file = "RData/corpus.candidates.RData", compress = "bzip2")
+

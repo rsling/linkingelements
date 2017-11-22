@@ -3,13 +3,42 @@
 opts_knit$set(self.contained=FALSE)
 @
 
-\subsection{Corpus study}
+\section{Corpus study}
 \label{sec:corpusstudy}
 
-As explained in Section~\ref{}
+\subsection{Queries}
+\label{sec:queries}
+
+As explained in Section~\ref{sec:linkingelementsingerman}, we try to determine whether two distinct factors increase the probability that N1 in an N1+N2 compound occurs with a pluralic linking element given that N1 alternates between a pluralic and a non-pluralic link.
+The first potential factor is a plural on the whole compound (formally on N2).
+The second factor is whether a semantic relation between N1 and N2 holds which forces N1 to have plural semantics.
+Therefore, we had to manually annotate corpus exemplars containing N+N compounds for whether they were plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
+Before turning to this annotation process in Section~\ref{sec:annotation}, this section describes how we extracted and prepared a concordance for the manual annotation.
+
+First, a selection of N1s was needed which represents the population of N1s well with regard to their productivities with PL and NPL, and a set of criteria was devised to make sure that that was the case.
+We required that the potential productivity score with PL and NPL be $0$ or $1$, which excluded many very rare words.
+Furthermore, only N1s were used which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL.
+In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewehere, only N1s with a minimal token frequency outside of compounds were used.
+To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
+The frequency class $c$ of a word $w$ increases with the word's token frequency $f_{token}(w)$, but the frequency class takes into account the frequency of the most frequent word ($f_{token}^{max}$) in the corpus as well as the power law distribution of word frequencies.%
+\footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
+It is given by (\ref{eq:frequencyclass}).
+
+\begin{equation}
+  \label{eq:frequencyclass}
+  c(w) = \left\lfloor{0.5 - log_2\left({\frac{f_{token}(w)}{f_{token}^{max}}}\right)}\right\rfloor
+\end{equation}
+
+The most frequent word in DECOW16A is \textit{und} `and' with $f_{token}(und)=\Sexpr{nice.int(decow16a.highest.f)}$.
+Relative to this, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f_{token}=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f_{token}=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f_{token}=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
+
+From the set of N1s which fulfilled the given criteria, we sampled between five and ten per pluralic linking element.
+Sampling was a manual process, and it was made sure that the nouns were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
+In Figure~\ref{fig:corpusselection}, which is parallel to Figure~\ref{fig:proddots}, the small dots each represent an N1 which fulfils the selection criteria.
+The triangles mark those which were actually chosen for the corpus study.
+It is immediately obvious that the sample represents the overall spectrum of productivity quite well.
 
 <<corpusselection, fig.pos="htb!", fig.height=8, fig.cap="Scatterplot of p-values">>=
-load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 par(mfrow=c(3,3))
 for (le in prod.plot.order) {
 
@@ -41,8 +70,34 @@ for (le in prod.plot.order) {
 par(mfrow=c(1,1))
 @
 
+The queries to retrieve exemplars of compounds containing the chosen fifty N1s were made in DECOW16A using Python through the RStudio Server interface provided by the COW project.%
+\footnote{See \url{https://www.webcorpora.org}.
+The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
+For each N1, we made one query searching for compounds containing it with PL and one (otherwise identical) query searching for compounds containing it with NPL.
+Since at least some context is often needed to disambiguate the meaning of the compounds and their constituents, the whole sentence containing each compound as well as one sentence to the left and one sentence to the right were exported.
+Duplicate sentences were removed by setting the appropriate parameter in the COW project's Python wrappers for making queries.
+Additionally, we performed deduplication on the compounds inasmuch as we only allowed one instance of each compound word form to pass.
+Otherwise, highly frequent and typically lexicalised compounds would have accounted for the best part of the concordances.
+By allowing different word forms of the same compound into the concordances, however, singular and plural forms of the same compound might still be contained in it.
+In addition to the literal exemplar in its context, we extracted the corresponding document URL, the unique COW16 ID of that document, and the sentence ID.
+With the COW16 ID and the sentence ID, each exemplar can be located in the DECOW16A corpus for full reproducibility.
+Finally, it should be noticed that we extracted all exemplars matching the query, making random sub-samples for annotation.%
+\footnote{The full query results are also included in the data package which accompanies this paper.}
+
+\subsection{Annotation}
+\label{sec:annotation}
+
+From each of the query results of the fifty N1s described in Section~\ref{sec:queries}, we annotated approximately one hundred cases with PL and one hundred with NPL.
+Due to some minor cleanups in the quality control process, the final sample size is not exactly $10,000$ but $\Sexpr{nice.int(sum(t.plot$n))}$.
+
+%\footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
+%Furthermore, all annotations were made by the second author of this paper and a student assistant, but they were also by the first author, in order to minimise the amount of human annotation errors.}
+
+
+\subsection{Results}
+\label{sec:results}
+
 <<corpuseffects, fig.pos="htb!", fig.height=10, fig.cap="Scatterplot of p-values">>=
-load(paste0(my.root, path.rdata, "t.plot.RData"))
 corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
 
 # The dots are in fact invisible (pch="") so we can draw freely later.

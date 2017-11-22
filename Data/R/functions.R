@@ -32,7 +32,7 @@ map.my.ramp <- function(p.between.0.and.1, my.color.ramp.with.100.colors) {
 
 # Calculate frequency band from raw f and f_max.
 frequency.band <- function(f, f.max) {
-  log(f.max/f, base = 2)+0.5
+  floor(log(f.max/f, base = 2)+0.5)
 }
 
 

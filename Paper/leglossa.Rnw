@@ -8,6 +8,7 @@
 \let\B\relax
 \let\T\relax
 \usepackage[linguistics]{forest}
+\usepackage{amsmath}
 
 \definecolor{lsLightBlue}{cmyk}{0.6,0.05,0.05,0}
 \definecolor{lsMidBlue}{cmyk}{0.75,0.15,0,0}
@@ -112,8 +113,9 @@ prod.plot.order <- c('n', 'en', 'EMPTY_PLOT', 'e', 'Ue', 'EMPTY_PLOT', 'Uer', 'e
 @
 
 <<loaddata>>=
-load(paste0(my.root, path.rdata, "analyses.full.RData")) # Basic frequency and productivity data.
+load(paste0(my.root, path.rdata, "analyses.full.plus.RData")) # Basic frequency and productivity data.
 load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpus study. Funny file name.
+load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 @
 
 \sffamily
@@ -131,8 +133,6 @@ load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpu
 
 \include{sections/probabilisticgrammar}
 \include{sections/linkingelementsingerman}
-\section{Experiments}
-\label{sec:experiments}
 
 <<child="sections/data.Rnw">>=
 @
