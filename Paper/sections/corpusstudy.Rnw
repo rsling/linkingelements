@@ -12,11 +12,11 @@ opts_knit$set(self.contained=FALSE)
 As explained in Section~\ref{sec:linkingelementsingerman}, we try to determine whether two distinct factors increase the probability that N1 in an N1+N2 compound occurs with a pluralic linking element given that N1 alternates between a pluralic and a non-pluralic link.
 The first potential factor is a plural on the whole compound (formally on N2).
 The second factor is whether a semantic relation between N1 and N2 holds which forces N1 to have plural semantics.
-Therefore, we had to manually annotate corpus exemplars containing N+N compounds for whether they were plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
+Therefore, we had to manually annotate corpus exemplars containing N+N compounds for whether they are plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
 Before turning to this annotation process in Section~\ref{sec:annotation}, this section describes how we extracted and prepared a concordance for the manual annotation.
 
-First, a selection of N1s was needed which represents the population of N1s well with regard to their productivities with PL and NPL, and a set of criteria was devised to make sure that that was the case.
-We required that the potential productivity score with PL and NPL be $0$ or $1$, which excluded many very rare words.
+First, a selection of N1s was required which represents the population of N1s well with regard to their productivities with PL and NPL, and a set of criteria was devised to make sure that that was the case.
+We required that the potential productivity score with PL and NPL not be $0$ or $1$, which excluded many very rare words.
 Furthermore, only N1s were used which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL.
 In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewehere, only N1s with a minimal token frequency outside of compounds were used.
 To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
@@ -70,7 +70,7 @@ for (le in prod.plot.order) {
 par(mfrow=c(1,1))
 @
 
-The queries to retrieve exemplars of compounds containing the chosen fifty N1s were made in DECOW16A using Python through the RStudio Server interface provided by the COW project.%
+The queries by which we retrieved the exemplars of compounds containing the chosen fifty N1s were made in DECOW16A using Python through the RStudio Server interface provided by the COW project.%
 \footnote{See \url{https://www.webcorpora.org}.
 The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
 For each N1, we made one query searching for compounds containing it with PL and one (otherwise identical) query searching for compounds containing it with NPL.
@@ -88,11 +88,20 @@ Finally, it should be noticed that we extracted all exemplars matching the query
 \label{sec:annotation}
 
 From each of the query results of the fifty N1s described in Section~\ref{sec:queries}, we annotated approximately one hundred cases with PL and one hundred with NPL.
-Due to some minor cleanups in the quality control process, the final sample size is not exactly $10,000$ but $\Sexpr{nice.int(sum(t.plot$n))}$.
+Due to some minor cleanups in the quality control process, the final sample size is not exactly $n=10,000$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
 
-%\footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
-%Furthermore, all annotations were made by the second author of this paper and a student assistant, but they were also by the first author, in order to minimise the amount of human annotation errors.}
+Annotating singular and plural was trivial, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate.
+Such cases were diascarded and not used for the study.%\
+\footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
+Furthermore, the basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author, in order to minimise the amount of human annotation errors.}
 
+Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate.
+A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kindergruppe} `group of children'.
+Even metaphorical collectives are usually not problematic, for example \textit{Regen} `rain' in compounds like \textit{Zitateregen} `rain of quotations'.
+Another major group are reciprocal such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räderwechsel} `swapping of tyres'.
+
+
+% Finally, we excluded verbalised infinitives ()
 
 \subsection{Results}
 \label{sec:results}
