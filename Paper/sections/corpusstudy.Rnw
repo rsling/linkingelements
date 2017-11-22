@@ -6,6 +6,7 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Corpus study}
 \label{sec:corpusstudy}
 
+As explained in Section~\ref{}
 
 <<corpusselection, fig.pos="htb!", fig.height=8, fig.cap="Scatterplot of p-values">>=
 load(paste0(my.root, path.rdata, "corpus.candidates.RData"))

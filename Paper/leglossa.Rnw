@@ -130,9 +130,7 @@ load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpu
 \rmfamily
 
 \include{sections/probabilisticgrammar}
-
-\include{sections/linkingelements}
-
+\include{sections/linkingelementsingerman}
 \section{Experiments}
 \label{sec:experiments}
 
@@ -142,7 +140,7 @@ load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpu
 <<child="sections/corpusstudy.Rnw">>=
 @
 
-<<child="sections/split100.Rnw">>=
+<<child="sections/split100experiment.Rnw">>=
 @
 
 \include{sections/discussion}
