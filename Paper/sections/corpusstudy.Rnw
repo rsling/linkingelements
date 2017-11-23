@@ -95,13 +95,19 @@ Such cases were diascarded and not used for the study.%\
 \footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
 Furthermore, the basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author, in order to minimise the amount of human annotation errors.}
 
-Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate.
-A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kindergruppe} `group of children'.
+Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of such N2s.
+A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kindergruppe} `group of children' or \textit{Armee} `army' as in \textit{Bauernarmee} `army of peasants'.
 Even metaphorical collectives are usually not problematic, for example \textit{Regen} `rain' in compounds like \textit{Zitateregen} `rain of quotations'.
 Another major group are reciprocal such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räderwechsel} `swapping of tyres'.
+Similar to these are N2s such as \textit{Distanz} `distance' as in \textit{Lochdistanz} `distance between (the) holes', which were annotated as plural-inducing N2s if it became clear from the context that a distance \textit{between} several objects was referenced.
+Many other types of N2s also required annotators to take the context into account.
+Compounds with N2s like \textit{System} `system' as in \textit{Elementesystem} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
 
-
-% Finally, we excluded verbalised infinitives ()
+In addition to these clear-cut cases there was a second group of compounds in which the plural-inducing quality of the N2 was evemn more strongly context-dependent.
+Most prominently, the N2 denotes a container of some sort.
+Examples include \textit{Äpfellager} `storage for apples', \textit{Briefekatalog} `catalogue of letters', and \textit{Liederbuch} `book of songs\slash songbook'.
+In essence, this second large group contains compounds where the N2 might theoretically denote a container etc.\ for just one object, both world knowledge and the context exclude this possibility beyond doubt.
+In the analysis of the final sample we present the results for only the first, clear-cut cases and the results of both the clear-cut and the extended cases separately under le labels of \textit{strict annotation} (only the clear-cut cases) and \textit{lax annotation} (including extended cases).
 
 \subsection{Results}
 \label{sec:results}
