@@ -20,7 +20,7 @@ We required that the potential productivity score with PL and NPL not be $0$ or 
 Furthermore, only N1s were used which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL.
 In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewehere, only N1s with a minimal token frequency outside of compounds were used.
 To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
-The frequency class $c$ of a word $w$ increases with the word's token frequency $f_{token}(w)$, but the frequency class takes into account the frequency of the most frequent word ($f_{token}^{max}$) in the corpus as well as the power law distribution of word frequencies.%
+The frequency class $c$ of a word $w$ increases with the word's token frequency $f_{token}(w)$, but calculation of the frequency class relates an individual word's token frequency to the frequency of the most frequent word in the corpus ($f_{token}^{max}$) as well as the power law distribution of word frequencies.%
 \footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
 It is given by (\ref{eq:frequencyclass}).
 
