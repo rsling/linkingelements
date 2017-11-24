@@ -41,20 +41,20 @@ par(mfrow=c(1,1))
 @
 
 
-<<conditions, fig.pos="htb!", fig.height=6, fig.cap="Distribution of Split-100 responses by conditions">>=
-load(paste0(my.root, path.rdata, "observations.RData"))
+<<conditions, fig.pos="htb!", fig.height=4, fig.cap="Distribution of Split-100 responses by conditions">>=
 par(mfrow=c(1,2))
-plot(obs.coll$realRating~obs.coll$cond,
+vioplot(obs.coll[which(obs.coll$cond == "Collective"),]$realRating,
+        obs.coll[which(obs.coll$cond == "Individual"),]$realRating,
      col = "gold",
-     main = "Collective N2",
-     xlab = "Condition", ylab = "Split-100 responses",
-     frame = F)
-plot(obs.pl$realRating~obs.pl$cond,
+     names = c("Pl.-ind.", "Not pl.-ind.")
+     )
+vioplot(obs.pl[which(obs.pl$cond == "Singular"),]$realRating,
+        obs.pl[which(obs.pl$cond == "Plural"),]$realRating,
      col = "gold",
-     main = "Plural N2",
-     xlab = "Condition", ylab = "Split-100 responses",
-     frame = F)
+     names = c("Singular", "Plural")
+     )
 par(mfrow=c(1,1))
+title("Distribution of split-100 ratings")
 @
 
 
@@ -70,6 +70,19 @@ plot(obs.pl$realRating~obs.pl$participant,
      main = "Plural N2: distribution of responses",
      xlab = "Participant ID", ylab = "Split-100 responses",
      frame = F)
+
+#
+# Violin plot version. Unreadable.
+#
+# resp.parts <- lapply(levels(obs.coll$participant),
+#                      function(p) {obs.coll[which(obs.coll$participant==p), "realRating"]}
+#                      )
+# do.call(vioplot, c(unname(resp.parts), col='white', colMed = "darkred"))
+# resp.parts <- lapply(levels(obs.pl$participant),
+#                      function(p) {obs.pl[which(obs.pl$participant==p), "realRating"]}
+#                      )
+# do.call(vioplot, c(unname(resp.parts), col='white', colMed = "darkred"))
+
 par(mfrow=c(1,1))
 @
 

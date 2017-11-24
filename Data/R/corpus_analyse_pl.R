@@ -6,7 +6,7 @@ source('functions.R')
 in.file           <- '../Corpusstudy/Concordance.full.csv'
 plot.dir          <- './Plots/'
 out.dir           <- './Results/'
-save.persistently <- F
+save.persistently <- T
 alpha.nominal     <- 0.05
 monte.carlo       <- T
 num.reps          <- 10000

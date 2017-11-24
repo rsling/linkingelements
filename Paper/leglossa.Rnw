@@ -104,8 +104,10 @@ render_listings()
 
 require(gamlss)
 require(xtable)
+require(vioplot)
 
 source('../Data/R/functions.R')
+source('../Data/R/vioplot2.R')
 
 my.root = '~/Workingcopies/Linkingelements/Paper/'
 path.rdata <- "../Data/R/RData/"
@@ -115,7 +117,9 @@ prod.plot.order <- c('n', 'en', 'EMPTY_PLOT', 'e', 'Ue', 'EMPTY_PLOT', 'Uer', 'e
 <<loaddata>>=
 load(paste0(my.root, path.rdata, "analyses.full.plus.RData")) # Basic frequency and productivity data.
 load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpus study. Funny file name.
+load(paste0(my.root, path.rdata, "p.plot.RData"))        # Analysis of the corpus study. Funny file name.
 load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
+load(paste0(my.root, path.rdata, "observations.RData"))
 @
 
 \sffamily

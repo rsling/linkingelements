@@ -76,9 +76,18 @@ Prod(\mathrm{N1})=\frac{f_{hapax}(\mathrm{N1}_{le})}{f_{token}(\mathrm{N1}_{le})
 The interpretation of $Prod$ is intuitive, as it is $0$ when there is not a single hapax legomenon in the corpus (no productivity whatsoever), and it is $1$ if all tokens are hapax legomena (maximal productivity).
 It can be regarded as a proportion, and its range is therefore $[0,1]$.
 
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=]{images/proddots_tmp}
+\end{center}
+\caption{Comparisons of the potential productivity (Prod) of first constituents, grouped by their PL; colors and sizes encode the type frequencies with PL and NPL}
+\label{fig:proddots}
+\end{figure}
+
+
 <<proddots, fig.pos="htb!", fig.height=8, fig.cap="Comparisons of the potential productivity (Prod) of first constituents, grouped by their PL; colors and sizes encode the type frequencies with PL and NPL">>=
 productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
-par(mfrow=c(3,3))
+# par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,
               dots          = T,
               max.plottable = -1,
@@ -89,9 +98,9 @@ par(mfrow=c(3,3))
               main.chunk = "",
               ylab.chunk = "Prod(N1) with NPL",
               xlab.chunk = "Prod(N1) with PL")
-for (le in prod.plot.order)
-  do.call(plot.productivities, c(list(le = le), .args))
-par(mfrow=c(1,1))
+# for (le in prod.plot.order)
+#   do.call(plot.productivities, c(list(le = le), .args))
+# par(mfrow=c(1,1))
 @
 
 Figure~\ref{fig:proddots} shows the results of the productivity analyses for all chosen N1s.%

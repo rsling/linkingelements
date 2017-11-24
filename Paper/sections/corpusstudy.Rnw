@@ -112,6 +112,48 @@ In the analysis of the final sample we present the results for only the first, c
 \subsection{Results}
 \label{sec:results}
 
+As stated in Section~\ref{sec:linkingelementsingerman}, we derived two operationalisable working hypotheses from our substantive hypothesis that there is a connection between pluralic links and plural interpretations of N1.
+Before we turn to reporting the results, we now explain very briefly our position on data analysis and so-called \textit{hypothesis testing}.
+The most widely used statistical system is \textit{Null Hypothesis Significance Testing} (NHST).
+It attempts to substantiate the existence of effects (such as a positive connection between plurality and pluralic linking elements) by conducting experiments in which the effect is measured in some way.
+Then, it is calculated how likely it was \textit{before the experiment was conducted} to obtain the actual measurements if there is actually \textit{no} effect (the \textit{null hypothesis} or just the \textit{null}).
+If this probability is lower than a certain threshold (usually called the \textit{alpha level}), the null hypothesis is \textit{rejected}, which is taken as evidence that there is a true effect.
+This approach is riddled with conceptual problems and has led to the promotion of of bad scientific practice.
+
+
+<<differenceplcoll, fig.pos="htb!", fig.height=8, fig.cap="Distribution of signed Cramérs v scores for the number condition and the plural-inducing condition">>=
+plot(x=NULL, y=NULL,
+     xlim = c(0.5, 1.5),
+     ylim=c(-0.5, 0.6),
+     type="n", ann=FALSE, axes=F)
+axis(1, at=c(0.85, 1.15), tick = F,
+     labels=c("Number", "Pl. ind."))
+axis(2)
+abline(h = 0, lwd = 2, lty = 2, col = "darkgray")
+vioplot2(p.plot$phi,
+         frame = F,
+         at = 1,
+         side = "left",
+         col = "gold",
+         add = T)
+vioplot2(t.plot$phi.lax,
+         at = 1,
+         side = "right",
+         col = "white",
+         add = T)
+vioplot2(t.plot$phi.strict,
+         at = 1,
+         side = "right",
+         col = "orange",
+         add = T)
+title("Signed effect strengths\nin number and plural induction conditions",
+      xlab = "Condition")
+legend("bottomright", fill = c("white", "orange"),
+       legend = c("lax anno.", "strict anno."),
+       box.lty=0,
+       cex = 1)
+@
+
 <<corpuseffects, fig.pos="htb!", fig.height=10, fig.cap="Scatterplot of p-values">>=
 corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
 
@@ -179,4 +221,16 @@ legend("bottomright",
       cex = 1.0
       )
 @
+
+
+
+
+
+
+
+
+
+
+
+
 
