@@ -35,7 +35,7 @@ aggregate.le <- function(df) {
 }
 le.aggregated <- sapply(analyses.full, aggregate.le)
 colnames(le.aggregated) <- unname(sapply(colnames(le.aggregated), le.name))
-rownames(le.aggregated) <- c("N1 types", "N1+N types with PL", "N1+N types without PL")
+rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 @
 
 First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N+N compounds.

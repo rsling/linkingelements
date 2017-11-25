@@ -8,7 +8,7 @@ plot.dir          <- './Plots/'
 out.dir           <- './Results/'
 save.persistently <- T
 alpha.nominal     <- 0.05
-monte.carlo       <- T
+monte.carlo       <- F
 num.reps          <- 10000
 plot.corr.effect  <- F
 my.colors         <- colorRampPalette(c("orange", "darkgreen"))(100)
