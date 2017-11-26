@@ -104,7 +104,7 @@ productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
 @
 
 Figure~\ref{fig:proddots} shows the results of the productivity analyses for all chosen N1s.%
-\footnote{It was pointed out that the analysis of productivity is marred by the low quality of automatic annotation in \textcite{EvertLuedeling2001} -- a point reiterated in \textcite[907]{Baayen2009}.
+\footnote{It was pointed out that the analysis of productivity is tainted by the low quality of automatic annotation in \textcite{EvertLuedeling2001} -- a point reiterated in \textcite[907]{Baayen2009}.
 Our analysis relies on the automatically generated annotaions by the SMOR tool and COW tool chain.
 However, the list of N1 candidates was meticulously cleaned manually, as stated above.
 Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words.
