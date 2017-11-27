@@ -51,7 +51,7 @@ Table~\ref{tab:typeoverview} shows the aggregated type frequencies for the diffe
 <<results="asis">>=
 le.aggregated.xt <- t(le.aggregated)
 le.aggregated.xt <- le.aggregated.xt[order(unlist(le.aggregated.xt[,'N1 types']), decreasing = T),]
-le.aggregated.xt <- xtable(formatC(le.aggregated.xt, format="d", big.mark=","), booktabs = T,
+le.aggregated.xt <- xtable(nice.int(le.aggregated.xt), booktabs = T,
                            caption = "Type frequencies of first constituents (N1) in N+N compounds grouped by pluralic linking elements (PL)",
                            label = "tab:typeoverview")
 align(le.aggregated.xt) <- c("l", rep("r", 3))
@@ -85,7 +85,7 @@ It can be regarded as a proportion, and its range is therefore $[0,1]$.
 \end{figure}
 
 
-<<proddots, fig.pos="htb!", fig.height=8, fig.cap="Comparisons of the potential productivity (Prod) of first constituents, grouped by their PL; colors and sizes encode the type frequencies with PL and NPL">>=
+<<proddots, fig.pos="htb!", fig.height=8, fig.cap="Comparisons of the potential productivity (Prod) of first constituents, grouped by their PL; colours and sizes encode the type frequencies with PL and NPL">>=
 productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
 # par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,
@@ -124,7 +124,7 @@ Examples include \textit{Ikonostase} (pl.\ \textit{Ikonostasen}) `iconostasis', 
 
 For N1s with \textit{-e} and \textit{=w}, and even more so for those with \textit{=er}, \textit{-er}, and \textit{=}, the overall pattern seems to be that the productivitiy scores with PL are spread out between $0$ and $1$.
 However, there are virtually no N1s in these classes which show a very high productivity (much higher than $0.1$) with NPL.
-The type frequencies are, however, still quite high for both PL and NPL, as reflected in the color and the size of the dots.
+The type frequencies are, however, still quite high for both PL and NPL, as reflected in the colour and the size of the dots.
 For \textit{=er}, for example, the 25th and 75th percentiles of the token frequencies with PL are at \Sexpr{nice.int(quantile(analyses.full$Uer$With_Ftype, probs = 0.25))} and \Sexpr{nice.int(quantile(analyses.full$Uer$With_Ftype, probs = 0.75))} types, respectively.
 With NPL, they are at \Sexpr{nice.int(quantile(analyses.full$Uer$Without_Ftype, probs = 0.25))} and \Sexpr{nice.int(quantile(analyses.full$Uer$Without_Ftype, probs = 0.75))} types.
 In Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we use the data described here to create informed selections of items for further study.

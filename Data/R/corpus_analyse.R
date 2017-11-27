@@ -85,7 +85,7 @@ le.group.ordered <- le.means$Group.1[le.group.order]
 t.plot$link <- factor(t.plot$link, levels = le.group.ordered)
 
 # Save for later use in paper.
-save(list = c("num.reps", "t.plot", "le.means"), file = "RData/t.plot.RData", compress = "bzip2")
+save(list = c("conc", "num.reps", "t.plot", "le.means"), file = "RData/t.plot.RData", compress = "bzip2")
 
 # Show how strong Sidak's correction kicks in!
 if (plot.corr.effect) {

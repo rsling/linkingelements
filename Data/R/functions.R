@@ -9,6 +9,16 @@ get.list.elem <- function(l, n){
 }
 
 
+# Effect sizes for chi square tests.
+cramer.v <- function(chisq) {
+  unname(sqrt(chisq$statistic/(sum(chisq$observed)*min(dim(chisq$observed)-1))))
+}
+
+cohen.w <- function(chisq) {
+  cramer.v(chisq) * sqrt(min(dim(chisq$observed)-1))
+}
+
+
 # Sidak correction for p values.
 adjust.p.sidak <- function(p, m) { 1-(1-p)^m }
 

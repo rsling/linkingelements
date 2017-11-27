@@ -107,6 +107,7 @@ render_listings()
 require(gamlss)
 require(xtable)
 require(vioplot)
+require(pwr)
 
 source('../Data/R/functions.R')
 source('../Data/R/vioplot2.R')
@@ -149,7 +150,7 @@ load(paste0(my.root, path.rdata, "observations.RData"))
 <<child="sections/split100experiment.Rnw">>=
 @
 
-\include{sections/discussion}
+\include{sections/functionandinterpretation}
 
 \section*{Acknowledgments}
 
