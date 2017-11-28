@@ -19,39 +19,6 @@ We then tried to find for each N1 some semantically appropriate N2s which clearl
 Finally, we checked the frequencies of the N1+N2 combinations with PL and NPL in the corpus because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be a cyclic one because compounds meeting the desired criteria were difficult to find.
 
-%<<experimentselection, fig.pos="htb!", fig.height=8, fig.cap="Selection of the N1s for the split-100 experiment (squares) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
-<<experimentselection, fig.pos="htb!", fig.height=8, fig.show='hide', message=FALSE, warning=FALSE, results='hide', error=FALSE>>=
-par(mfrow=c(3,3))
-for (le in prod.plot.order) {
-
-  # Make blank space in plot.
-  if (le == "EMPTY_PLOT") {
-    plot.new()
-    next
-  }
-
-  .le.name <- le.name(le)
-  plot(corpus.candidates[[le]]$Without_Ppot ~ corpus.candidates[[le]]$With_Ppot,
-       log="xy",
-       pch = 20,
-       cex = 1,
-       col = "orange",
-       xlim = c(0.001, 1),
-       ylim = c(0.001, 1),
-       main = paste0("Stimuli for split-100: ", .le.name),
-       xlab = paste0("Productivity with ", .le.name),
-       ylab = paste0("Productivity without ", .le.name)
-  )
-  .orig <- which(corpus.candidates[[le]]$N1 %in% stimuli[[le]]$N1)
-  points(corpus.candidates[[le]][.orig,]$Without_Ppot ~ corpus.candidates[[le]][.orig,]$With_Ppot,
-         pch = 15,
-         cex = 1.5,
-         col = "blue"
-  )
-}
-par(mfrow=c(1,1))
-@
-
 <<results='asis'>>=
 exp.ppots <- as.data.frame(
   matrix(

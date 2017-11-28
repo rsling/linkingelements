@@ -46,17 +46,6 @@ Both the first author of this paper and a student assistant checked the entire l
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types containing it, the number of compound tokens containing it, and the number of compound hapax legomena containing it (\ie those compounds containing the N1 which occur only once in the corpus).
 Since we are interested in the alternation between N1s used with PLs and without them (either without any linking element, with deletion, or with a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a non-pluralic link (NPL).
-%Table~\ref{tab:typeoverview} shows the aggregated type frequencies for the different linking elements.
-
-<<results="hide">>=
-le.aggregated.xt <- t(le.aggregated)
-le.aggregated.xt <- le.aggregated.xt[order(unlist(le.aggregated.xt[,'N1 types']), decreasing = T),]
-le.aggregated.xt <- xtable(nice.int(le.aggregated.xt), booktabs = T,
-                           caption = "Type frequencies of first constituents (N1) in N+N compounds grouped by pluralic linking elements (PL)",
-                           label = "tab:typeoverview")
-align(le.aggregated.xt) <- c("l", rep("r", 3))
-print(le.aggregated.xt, floating = T, booktabs = T, rotate.colnames = F)
-@
 
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types, respectively.
 While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.
