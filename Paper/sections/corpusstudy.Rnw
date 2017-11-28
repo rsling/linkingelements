@@ -20,17 +20,17 @@ We required that the potential productivity score with PL and NPL not be $0$ or 
 Furthermore, only N1s were used which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL.
 In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewehere, only N1s with a minimal token frequency outside of compounds were used.
 To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
-The frequency class $c$ of a word $w$ increases with the word's token frequency $f_{token}(w)$, but calculation of the frequency class relates an individual word's token frequency to the frequency of the most frequent word in the corpus ($f_{token}^{max}$) as well as the power law distribution of word frequencies.%
+The frequency class $c$ of a word $w$ increases with the word's token frequency $f(w)$, but calculation of the frequency class relates an individual word's token frequency to the frequency of the most frequent word in the corpus ($f^{max}$) as well as the power law distribution of word frequencies.%
 \footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
 It is given by (\ref{eq:frequencyclass}).
 
 \begin{equation}
   \label{eq:frequencyclass}
-  c(w) = \left\lfloor{0.5 - log_2\left({\frac{f_{token}(w)}{f_{token}^{max}}}\right)}\right\rfloor
+  c(w) = \left\lfloor{0.5 - log_2\left({\frac{f(w)}{f^{max}}}\right)}\right\rfloor
 \end{equation}
 
-The most frequent word in DECOW16A is \textit{und} `and' with $f_{token}(und)=\Sexpr{nice.int(decow16a.highest.f)}$.
-Relative to this, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f_{token}=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f_{token}=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f_{token}=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
+The most frequent word in DECOW16A is \textit{und} `and' with $f(und)=\Sexpr{nice.int(decow16a.highest.f)}$.
+Relative to this, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
 
 From the set of N1s which fulfilled the given criteria, we sampled between five and ten per pluralic linking element.
 Sampling was a manual process, and it was made sure that the nouns were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.

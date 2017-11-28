@@ -9,18 +9,18 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Design}
 \label{sub:design}
 
-The experiment was designed to find out how strongly native speakers of German prefer a pluralic link in one of the two conditions (internal or external plural).
+The experiment was designed to examine how strongly native speakers of German prefer a pluralic link in the two conditions (internal or external plural).
 A split-100 task was chosen because it is claimed that it allows participants to make subtler judgements compared to a binary forced-choice task (\citealt{FordBresnan2013}, \citealt{VerhoevenTemme2017}).
 In a split-100 task, subjects are offered two options (in the case at hand a compound with PL or NPL) and they can weigh their preference for either of them, assigning values between 100;0 (clear preference for option one) and 0;100 (clear preference for option two) to the tuple of options.
 
 The choice of stimuli was guided by the exploratory data analysis described in Section~\ref{sec:data}.
-First of all, we chose N1s which have a similar productivity with PL and NPL.
+First of all, we chose N1s which have roughly equal productivity with PL and NPL.
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
 Finally, we checked the frequencies of the N1+N2 combinations with PL and NPL in the corpus because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be a cyclic one because compounds meeting the desired criteria were difficult to find.
 
-%<<experimentselection, fig.pos="htb!", fig.height=8, fig.cap="Selection of N1 for the stimuli in the split-100 experiment in the context of all possible candidates", fig.show='hide', message=FALSE, warning=FALSE, results='hide', error=FALSE>>=
-<<experimentselection, fig.pos="htb!", fig.height=8, fig.cap="Selection of the N1s for the split-100 experiment (squares) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
+%<<experimentselection, fig.pos="htb!", fig.height=8, fig.cap="Selection of the N1s for the split-100 experiment (squares) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
+<<experimentselection, fig.pos="htb!", fig.height=8, fig.show='hide', message=FALSE, warning=FALSE, results='hide', error=FALSE>>=
 par(mfrow=c(3,3))
 for (le in prod.plot.order) {
 
@@ -61,7 +61,7 @@ exp.ppots <- as.data.frame(
     )
   )
 stims.freqs <- cbind(stims.freqs, exp.ppots)
-colnames(stims.freqs)[c(11,12)] <- c("Prod-PL", "Prod-NPL")
+colnames(stims.freqs)[c(11,12)] <- c("Pp-PL", "Pp-NPL")
 
 stims.freqs$LE        <- le.name(as.character(stims.freqs$LE))
 stims.freqs$FbandNPL  <- nice.int(frequency.band(stims.freqs$FtokenNPL))
@@ -72,12 +72,12 @@ stims.freqs$Condition <- c(rep("Int", 8), rep("Ext", 8))
 stims.freqs$FbandNPL <- ifelse(stims.freqs$FbandNPL == "NA", "--", stims.freqs$FbandNPL)
 stims.freqs$FbandPL <- ifelse(stims.freqs$FbandPL == "NA", "--", stims.freqs$FbandPL)
 
-stims.tab <- stims.freqs[, c("N1", "LE", "N2", "Prod-PL", "Prod-NPL", "FbandPL", "FbandNPL", "AbsFDiff", "Gloss")]
-stims.tab[, c("Prod-PL")] <- nice.float(stims.tab[, c("Prod-PL")])
-stims.tab[, c("Prod-NPL")] <- nice.float(stims.tab[, c("Prod-NPL")])
+stims.tab <- stims.freqs[, c("N1", "LE", "N2", "Pp-PL", "Pp-NPL", "FbandPL", "FbandNPL", "AbsFDiff", "Gloss")]
+stims.tab[, c("Pp-PL")] <- nice.float(stims.tab[, c("Pp-PL")])
+stims.tab[, c("Pp-NPL")] <- nice.float(stims.tab[, c("Pp-NPL")])
 colnames(stims.tab)[c(6,7,8)] <- c("c-PL", "c-NPL", "Delta-f")
 stims.xt <- xtable(stims.tab,
-             caption = "Selection of stimuli for split-100 experiment; Prod-PL and Prod-NPL are the potential productivities of the N1 with PL and NPL, respectively; c-PL and c-NPL are the frequency bands of the compound with PL and NPL, respectively; Delta-f is the difference in raw token frquency f(PL)-f(NPL)",
+             caption = "Selection of stimuli for split-100 experiment; Pp-PL and Pp-NPL are the potential productivities of the N1 with PL and NPL, respectively; c-PL and c-NPL are the frequency bands of the compound with PL and NPL, respectively; Delta-f is the difference in raw token frequency between the compound with PL and NPL",
              label = "tab:stimuli")
 align(stims.xt) <- c("r", rep("l", 3), rep("r", 5), "l")
 print(stims.xt,
