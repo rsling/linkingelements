@@ -35,6 +35,7 @@
 
 \usepackage{listings}
 \usepackage{booktabs}
+\usepackage{rotating}
 
 % Set listing style. knitr uses RStyle style. Which you have to know...
 \definecolor{listingbackground}{gray}{0.95}
@@ -115,6 +116,10 @@ source('../Data/R/vioplot2.R')
 my.root = '~/Workingcopies/Linkingelements/Paper/'
 path.rdata <- "../Data/R/RData/"
 prod.plot.order <- c('n', 'en', 'EMPTY_PLOT', 'e', 'Ue', 'EMPTY_PLOT', 'Uer', 'er', 'U')
+
+decow.tokens <- 19835843151
+decow.words  <- 15687969372
+decow.docs   <- 17116160
 @
 
 <<loaddata>>=
@@ -123,6 +128,7 @@ load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpu
 load(paste0(my.root, path.rdata, "p.plot.RData"))        # Analysis of the corpus study. Funny file name.
 load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
 load(paste0(my.root, path.rdata, "observations.RData"))
+stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), header = T, sep = "\t", row.names = NULL)
 @
 
 \sffamily
@@ -158,7 +164,7 @@ We would like to thank (in alphabetical order) Ulrike Sayatz for valuable discus
 Furthermore, we thank Ulrike Sayatz for helping us recruit the participants for the experiments.
 Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
 We are, of course, fully responsible for all residual inadequacies, errors, and ommissions.
-Roland Schäfer's work on this project was funded in part by the \textit{Deutsche Forschungsgemeinschaft} (DFG, personal grant SCHA1916/1-1).
+Roland Schäfer's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1).
 
 \printbibliography
 

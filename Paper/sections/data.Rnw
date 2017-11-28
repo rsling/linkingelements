@@ -46,9 +46,9 @@ Both the first author of this paper and a student assistant checked the entire l
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types containing it, the number of compound tokens containing it, and the number of compound hapax legomena containing it (\ie those compounds containing the N1 which occur only once in the corpus).
 Since we are interested in the alternation between N1s used with PLs and without them (either without any linking element, with deletion, or with a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a non-pluralic link (NPL).
-Table~\ref{tab:typeoverview} shows the aggregated type frequencies for the different linking elements.
+%Table~\ref{tab:typeoverview} shows the aggregated type frequencies for the different linking elements.
 
-<<results="asis">>=
+<<results="hide">>=
 le.aggregated.xt <- t(le.aggregated)
 le.aggregated.xt <- le.aggregated.xt[order(unlist(le.aggregated.xt[,'N1 types']), decreasing = T),]
 le.aggregated.xt <- xtable(nice.int(le.aggregated.xt), booktabs = T,
@@ -65,7 +65,7 @@ To be clear, we look at first constituents which at least sometimes occur with a
 While the type and token frequencies of N1s with PL and NPL are informative, a comparison of their productivity with PL and NPL is equally important for making decisions regarding the corpus sample and selection of stimuli.
 Therefore, we calculated measures of productivity for each N1 with PL and NPL.
 This measure was supposed to capture the probability that the given N1 would form a new compound with PL and NPL.
-The \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902,906--907]{Baayen2009}.
+The \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902, see also 906--907]{Baayen2009}.
 The potential productivity is appropriate for our purpose because some or even many compounds might be lexicalised either with PL or with NPL, and it would not make much sense to examine an alternation with N1s which occur mostly in lexicalised compounds.
 As specified in (\ref{eq:prod}), the potential productivity $Prod$ is simply the number of the hapax legomena compounds with $\mathrm{N1}_{le}$ divided by the token frequency of compounds with $\mathrm{N1}_{le}$, where $le$ stands for either PL or NPL.
 
@@ -85,7 +85,7 @@ It can be regarded as a proportion, and its range is therefore $[0,1]$.
 \end{figure}
 
 
-<<proddots, fig.pos="htb!", fig.height=8, fig.cap="Comparisons of the potential productivity (Prod) of first constituents, grouped by their PL; colours and sizes encode the type frequencies with PL and NPL">>=
+<<proddots, fig.pos="htb!", fig.height=8, fig.cap="Comparisons of the potential productivity (Prod) of N1s, grouped by linking elements; colours and sizes encode the type frequencies with PL and NPL; axes are on a logarithmic scale">>=
 productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
 # par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,

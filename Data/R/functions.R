@@ -41,7 +41,7 @@ map.my.ramp <- function(p.between.0.and.1, my.color.ramp.with.100.colors) {
 }
 
 # Calculate frequency band from raw f and f_max.
-frequency.band <- function(f, f.max) {
+frequency.band <- function(f, f.max = 258507195) {
   floor(log(f.max/f, base = 2)+0.5)
 }
 
@@ -51,6 +51,11 @@ in.range <- function(x, low, high, inc.low = T, inc.high =T) {
   .op.low  <- ifelse(inc.low,  function(x,y) { x >= y }, function(x,y) { x > y })
   .op.high <- ifelse(inc.high, function(x,y) { x <= y }, function(x,y) { x < y })
   .op.low(x, low) & .op.high(x, high)
+}
+
+
+get.ppot <- function(N1, db, LE) {
+  db[[LE]][which(db[[LE]]$N1 == N1), c("With_Ppot", "Without_Ppot")]
 }
 
 # Function to get rid of blacklisted N1s in single df.

@@ -38,7 +38,7 @@ In Figure~\ref{fig:corpusselection}, which is parallel to Figure~\ref{fig:proddo
 The triangles mark those which were actually chosen for the corpus study.
 It is immediately obvious that the sample represents the overall spectrum of productivity quite well.
 
-<<corpusselection, fig.pos="htb!", fig.height=8, fig.cap="Scatterplot of p-values">>=
+<<corpusselection, fig.pos="htb!", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
 par(mfrow=c(3,3))
 for (le in prod.plot.order) {
 
@@ -56,7 +56,8 @@ for (le in prod.plot.order) {
        col = "darkorange",
        xlim = c(0.001, 1),
        ylim = c(0.001, 1),
-       main = paste0("Cand. for corpus study: ", .le.name),
+       # main = paste0("Cand. for corpus study: ", .le.name),
+       main = .le.name,
        xlab = paste0("Productivity with ", .le.name),
        ylab = paste0("Productivity without ", .le.name)
   )
@@ -137,7 +138,7 @@ extpl.resid <- extpl.chisq$stdres
 rownames(extpl.resid) <- c("NPL", "PL")
 colnames(extpl.resid) <- c("Pl.\ compound", "Sg.\ Compound")
 extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
-                         caption = "Residuals from chi square test of external plural (= plural agreement) hypothesis",
+                         caption = "Standardised residuals from chi square test of external plural (= plural agreement) hypothesis",
                          label = "tab:ctextpluralresid")
 align(extpl.resid.xt) <- c("l", "r", "r")
 print(extpl.resid.xt, floating = T, booktabs = T, rotate.colnames = F)
@@ -193,7 +194,7 @@ vioplot2(t.plot$phi.strict,
          side = "right",
          col = "orange",
          add = T)
-title("Signed effect strengths\nin the two plural conditions",
+title(#"Signed effect strengths\nin the two plural conditions",
       xlab = "Condition")
 legend("bottomright", fill = c("white", "orange"),
        legend = c("lax anno.", "strict anno."),
@@ -216,7 +217,7 @@ print(intpl.obs.xt, floating = T, booktabs = T, rotate.colnames = F)
 
 A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0$).
 However, the overall effect size is still not very high at $v=\Sexpr{nice.float(cramer.v(intpl.chisq))};\Sexpr{nice.float(cramer.v(intpl.chisq.lax))}$.
-At least for the lax annotation scheme, $v\geq 0.2$ and thus at least worthy of mention.
+At least for the lax annotation scheme $v\geq 0.2$, and the effect is thus worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural condition.
 Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural condition (left) and the internal plural condition (right) in the form of a split violin plot.%
 \footnote{Violin plots are standard box plots where the box is replaced by a polygon representing a kernel density estimate.
@@ -244,7 +245,7 @@ dotchart(t.plot$phi.strict,
          gcolor = "black",
          groups = t.plot$link,
          color = unlist(lapply(t.plot$p.sidak.strict, function(x) map.my.ramp(x, corpuseffects.colors))),
-         xlab=paste0("Cramer's phi (signed) derived from bootstrapped Chi-square (", num.reps, " repititions)")
+         xlab=paste0("Cramer's v (signed)")
          )
 
 abline(v = seq(-0.2, 0.6, 0.2), col = "lightgray", lty = 1, lwd=1)
@@ -305,6 +306,6 @@ This is not at all the distribution of $v$ scores one would expect if there were
 If there were no such preference, there should be roughly as many negative as positive $v$ scores, just like in the case of the external plural condition (see Figure~\ref{fig:differenceplcoll}).
 
 Finally, it is noteworthy that the order of the linking elements in Figure~\ref{fig:corpuseffects} is the mirror image of the order in Figure~\ref{fig:proddots} and Figure~\ref{fig:corpusselection}.
-The more unmarked and thus the more type-frequent a plural marker is, the stronger it tends to be interpreted as a plural marker even as a linking element.
+The more marked and thus the less type-frequent a plural marker is, the stronger it tends to be interpreted as a plural marker even as a linking element.
 We will return to all of these results in our theoretical interpretation in Section~ \ref{sec:functionandinterpretation}.
 Before that, we now report the results of a split-100 experiment in Section~\ref{sec:split100experiment}.
