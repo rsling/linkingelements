@@ -38,7 +38,7 @@ In Figure~\ref{fig:corpusselection}, which is parallel to Figure~\ref{fig:proddo
 The triangles mark those which were actually chosen for the corpus study.
 It is immediately obvious that the sample represents the overall spectrum of productivity quite well.
 
-<<corpusselection, fig.pos="htb!", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
+<<corpusselection, fig.pos="htbp", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
 par(mfrow=c(3,3))
 for (le in prod.plot.order) {
 
@@ -58,8 +58,8 @@ for (le in prod.plot.order) {
        ylim = c(0.001, 1),
        # main = paste0("Cand. for corpus study: ", .le.name),
        main = .le.name,
-       xlab = paste0("Pp with ", .le.name),
-       ylab = paste0("Pp without ", .le.name)
+       xlab = paste0("Productivity with ", .le.name),
+       ylab = paste0("Productivity without ", .le.name)
   )
   .orig <- which(corpus.candidates[[le]]$N1 %in% corpus.items[[le]]$N1)
   points(corpus.candidates[[le]][.orig,]$Without_Ppot ~ corpus.candidates[[le]][.orig,]$With_Ppot,
@@ -127,7 +127,11 @@ extpl.obs.xt <- xtable(nice.int(extpl.obs), booktabs = T,
                          caption = "Contingency table for external plural (= plural agreement) hypothesis",
                          label = "tab:ctextplural")
 align(extpl.obs.xt) <- c("l", "r", "r")
-print(extpl.obs.xt, floating = T, booktabs = T, rotate.colnames = F)
+print(extpl.obs.xt,
+      floating = T,
+      table.placement = 'htbp',
+      booktabs = T,
+      rotate.colnames = F)
 @
 
 Given the extremely large sample size, a $\chi^2$ test on the contingency table produces a significant result at $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(extpl.chisq$statistic)}$, $df=\Sexpr{min(dim(extpl.chisq$observed))-1}$, $p=\Sexpr{nice.float(extpl.chisq$p.value)}$).
@@ -141,7 +145,11 @@ extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
                          caption = "Standardised residuals from chi square test of external plural (= plural agreement) hypothesis",
                          label = "tab:ctextpluralresid")
 align(extpl.resid.xt) <- c("l", "r", "r")
-print(extpl.resid.xt, floating = T, booktabs = T, rotate.colnames = F)
+print(extpl.resid.xt,
+      floating = T,
+      table.placement = 'htbp',
+      booktabs = T,
+      rotate.colnames = F)
 @
 
 Thus, we have found no evidence to support the external plural hypothesis.%
@@ -169,7 +177,7 @@ We specify both values separated by a comma as \textit{strict};\textit{lax}.
 The sample contains $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Coll")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Coll")))}$ cases with an internal plural relation and $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Ind")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Ind")))}$ cases with no internal plural relation.
 Table~\ref{tab:ctintplural} shows the contingency table for the two variables.
 
-<<differenceplcoll, fig.pos="htb!", fig.height=8, fig.cap="Distribution of signed Cramérs v scores for the internal and external plural conditions">>=
+<<differenceplcoll, fig.pos="htbp", fig.height=8, fig.cap="Distribution of signed Cramérs v scores for the internal and external plural conditions">>=
 plot(x=NULL, y=NULL,
      xlim = c(0.5, 1.5),
      ylim=c(-0.5, 0.6),
@@ -192,11 +200,11 @@ vioplot2(t.plot$phi.lax,
 vioplot2(t.plot$phi.strict,
          at = 1,
          side = "right",
-         col = "orange",
+         col = "darkorange",
          add = T)
 title(#"Signed effect strengths\nin the two plural conditions",
       xlab = "Condition")
-legend("bottomright", fill = c("white", "orange"),
+legend("bottomright", fill = c("white", "darkorange"),
        legend = c("lax anno.", "strict anno."),
        box.lty=0,
        cex = 1)
@@ -212,7 +220,11 @@ intpl.obs.xt <- xtable(nice.int(intpl.obs), booktabs = T,
                          caption = "Contingency table for internal plural (= plural agreement) hypothesis",
                          label = "tab:ctintplural")
 align(intpl.obs.xt) <- c("l", "r", "r")
-print(intpl.obs.xt, floating = T, booktabs = T, rotate.colnames = F)
+print(intpl.obs.xt,
+      floating = T,
+      table.placement = 'htbp',
+      booktabs = T,
+      rotate.colnames = F)
 @
 
 A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0$).
@@ -225,15 +237,8 @@ See \textcite{HintzeNelson1998}.}
 For the internal plural condition, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on both of them.
 
-Even more informative is a closer look at the individual results.
-Figure~\ref{fig:corpuseffects} shows for each N1 the signed effect strength in the internal plural condition through its location on the horizontal dimension as well as the p-value through the colour coding.
-The darker the dot is, the lower is the p-value.
-The colour mapping is logarithmic such that any dot representing a p-value above $\mathrm{sig}=0.05$ is already significantly lighter than the darkest colour.
-The N1s are arranged in groups defined by their PL.
-The groups are sorted by their mean effect strengths, and within each group N1s are sorted by their effect strengths.
-
-<<corpuseffects, fig.pos="htb!", fig.height=10, fig.cap="Individual per-N1 effect strengths and corrected p-values for the internal plural condition">>=
-corpuseffects.colors <- colorRampPalette(c("orange", "darkgreen"))(100)
+<<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and corrected p-values for the internal plural condition">>=
+corpuseffects.colors <- colorRampPalette(c("darkorange", "darkgreen"))(100)
 
 # The dots are in fact invisible (pch="") so we can draw freely later.
 dotchart(t.plot$phi.strict,
@@ -266,7 +271,8 @@ for (l in rev(levels(t.plot$link))) {
   this.y <- this.y + 2
 }
 
-# Now add second level to dotchart. Unfortunately not supported by built-in function.
+# Now add second level to dotchart.
+# Unfortunately not supported by built-in function.
 this.y <- 1
 for (l in rev(levels(t.plot$link))) {
 
@@ -297,6 +303,14 @@ legend("bottomright",
       cex = 1.0
       )
 @
+
+
+Even more informative is a closer look at the individual results.
+Figure~\ref{fig:corpuseffects} shows for each N1 the signed effect strength in the internal plural condition through its location on the horizontal dimension as well as the p-value through the colour coding.
+The darker the dot is, the lower is the p-value.
+The colour mapping is logarithmic such that any dot representing a p-value above $\mathrm{sig}=0.05$ is already significantly lighter than the darkest colour.
+The N1s are arranged in groups defined by their PL.
+The groups are sorted by their mean effect strengths, and within each group N1s are sorted by their effect strengths.
 
 The detailed analysis shows that there are considerable differences between different linking elements.
 Especially N1s with \textit{=e} and \textit{=er} show both good effect strengths and reach reasonable significance levels.

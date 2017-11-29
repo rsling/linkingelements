@@ -59,7 +59,6 @@
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }
-%\newcommand{\eg}{e.\,g.,\ }
 \newcommand{\Eg}{E.\,g.,\ }
 \newcommand{\Sub}[1]{\ensuremath{\mathrm{_{#1}}}}
 \newcommand{\Sup}[1]{\ensuremath{\mathrm{^{#1}}}}

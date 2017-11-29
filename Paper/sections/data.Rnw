@@ -56,13 +56,13 @@ Therefore, we calculated measures of productivity for each N1 with PL and NPL.
 This measure was supposed to capture the probability that the given N1 would form a new compound with PL and NPL.
 The \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902, see also 906--907]{Baayen2009}.
 The potential productivity is appropriate for our purpose because some or even many compounds might be lexicalised either with PL or with NPL, and it would not make much sense to examine an alternation with N1s which occur mostly in lexicalised compounds.
-As specified in (\ref{eq:prod}), the potential productivity $Pp$ is simply the number of the hapax legomena ($f_1$) of compounds with $\mathrm{N1}_{le}$ divided by the token frequency ($f$) of compounds with $\mathrm{N1}_{le}$, where $le$ stands for either PL or NPL.
+As specified in (\ref{eq:prod}), the potential productivity $P^p$ is simply the number of the hapax legomena ($f_1$) of compounds with $\mathrm{N1}_{le}$ divided by the token frequency ($f$) of compounds with $\mathrm{N1}_{le}$, where $le$ stands for either PL or NPL.
 
 \begin{equation}\label{eq:prod}
-Pp(\mathrm{N1}_{le})=\frac{f_1(\mathrm{N1}_{le})}{f(\mathrm{N1}_{le})}
+P^p(\mathrm{N1}_{le})=\frac{f_1(\mathrm{N1}_{le})}{f(\mathrm{N1}_{le})}
 \end{equation}
 
-The interpretation of $Pp$ is intuitive, as it is $0$ when there is not a single hapax legomenon in the corpus (no productivity whatsoever), and it is $1$ if all tokens are hapax legomena (maximal productivity).
+The interpretation of $P^p$ is intuitive, as it is $0$ when there is not a single hapax legomenon in the corpus (no productivity whatsoever), and it is $1$ if all tokens are hapax legomena (maximal productivity).
 It can be regarded as a proportion, and its range is therefore $[0,1]$.
 
 % For final production, remove this figure and re-activate knitr proddots block.
@@ -70,13 +70,13 @@ It can be regarded as a proportion, and its range is therefore $[0,1]$.
 \begin{center}
     \includegraphics[scale=]{images/proddots_tmp}
 \end{center}
-\caption{Comparisons of the potential productivity (Pp) of first constituents, grouped by their PL; colors and sizes encode the type frequencies with PL and NPL}
+\caption{Comparisons of the potential productivity ($P^p$) of first constituents, grouped by their PL; colors and sizes encode the type frequencies with PL and NPL}
 \label{fig:proddots}
 \end{figure}
 
 
-<<proddots, fig.pos="htb!", fig.height=8, fig.cap="Comparisons of the potential productivity (Pp) of N1s, grouped by linking elements; colours and sizes encode the type frequencies with PL and NPL; axes are on a logarithmic scale">>=
-productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
+<<proddots, fig.pos="htbp", fig.height=8, fig.cap="Comparisons of the potential productivity of N1s, grouped by linking elements; colours and sizes encode the type frequencies with PL and NPL; axes are on a logarithmic scale">>=
+productivitydots.colors <- colorRampPalette(c("gold", "darkred"))(100)
 # par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,
               dots          = T,
@@ -86,8 +86,8 @@ productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
               zero.floor    = NULL,
               the.colors    = productivitydots.colors,
               main.chunk = "",
-              ylab.chunk = "Pp with NPL",
-              xlab.chunk = "Pp with PL")
+              ylab.chunk = "Productivity with NPL",
+              xlab.chunk = "Productivity with PL")
 # for (le in prod.plot.order)
 #   do.call(plot.productivities, c(list(le = le), .args))
 # par(mfrow=c(1,1))
@@ -104,7 +104,7 @@ This actually happened for the N1 \textit{Beere} `berry', where the concordance 
 We can thus be sure that the analyses which we interpret relative to our theoretical hypotheses are accurate and not distorted by problems of automatic annotation.
 }
 In this plot, each dot represents one N1.
-Its position is determined by its $Pp$ value with PL (x-axis) and with NPL (y-axis).
+Its position is determined by its $P^p$ value with PL (x-axis) and with NPL (y-axis).
 Additionally, the larger a dot is, the higher is its type frequency with PL, and the darker it is, the higher is its type frequency with NPL.
 From the panels for \textit{-n} and \mbox{\textit{-en}}, it is apparent that N1s with all sorts of ratios of high and low productivity with PL and NPL exist.
 The tendency for dots to be smaller towards the right-hand side (high productivity with PL) and lighter towards to top (higher productivity with NPL) is explained by the fact that a lower overall type frequency makes it more likely that the productivity score is high.
