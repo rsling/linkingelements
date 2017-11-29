@@ -58,8 +58,8 @@ for (le in prod.plot.order) {
        ylim = c(0.001, 1),
        # main = paste0("Cand. for corpus study: ", .le.name),
        main = .le.name,
-       xlab = paste0("Productivity with ", .le.name),
-       ylab = paste0("Productivity without ", .le.name)
+       xlab = paste0("Pp with ", .le.name),
+       ylab = paste0("Pp without ", .le.name)
   )
   .orig <- which(corpus.candidates[[le]]$N1 %in% corpus.items[[le]]$N1)
   points(corpus.candidates[[le]][.orig,]$Without_Ppot ~ corpus.candidates[[le]][.orig,]$With_Ppot,

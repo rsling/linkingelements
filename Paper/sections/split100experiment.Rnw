@@ -6,18 +6,31 @@ opts_knit$set(self.contained=FALSE)
 \section{Split-100 experiment}
 \label{sec:split100experiment}
 
-\subsection{Design}
-\label{sub:design}
+\subsection{Design, choice of stimuli, and participants}
+\label{sub:designchoiceofstimuliandparticipants}
 
 The experiment was designed to examine how strongly native speakers of German prefer a pluralic link in the two conditions (internal or external plural).
 A split-100 task was chosen because it is claimed that it allows participants to make subtler judgements compared to a binary forced-choice task (\citealt{FordBresnan2013}, \citealt{VerhoevenTemme2017}).
-In a split-100 task, subjects are offered two options (in the case at hand a compound with PL or NPL) and they can weigh their preference for either of them, assigning values between 100;0 (clear preference for option one) and 0;100 (clear preference for option two) to the tuple of options.
+In a split-100 task, subjects are offered two options (in the case at hand a compound with PL or NPL) and they can weigh their preference for either of them, assigning values between $100;0$ (clear preference for option one) and $0;100$ (clear preference for option two) to the tuple of options.
+
+The experiment was conducted using PsychoPy \parencite{Peirce2007} and contained two sub-experiments merged into one run for each subject.
+Subjects made eight decisions pertaining to the internal plural sub-experiment and eight decisions pertaining to the external plural sub-experiment.
+In addition to these 16 targets, there were 41 fillers, which results in a target-to-filler ratio of 1:2.5.
+Since the split-100 task is usually comparatively easy for subjects, there was a training phase with only five example decisions with additional on-screen hints.
+Subjects were presented with artificial sentences containing a blank where the compound should go.
+The two variants (with PL and NPL) were presented on the same screen below the sentence with a slider in between which could be moved freely to assign a preference between $100;0$ and $0;100$.
+The corresponding numbers were displayed dynamically as subjects moved the slider.
+When they were satisfied with their decision, subjects pressed a button to store it.
+After each sentence, subjects answered a simple distractor question by pressing any fo the digits 1--9.
+The questions were not related to the sentences and were simple arithmetic or counting exercises.
+Finally, it should be noted that the order of the stimuli and fillers was randomised for each participant.
 
 The choice of stimuli was guided by the exploratory data analysis described in Section~\ref{sec:data}.
 First of all, we chose N1s which have roughly equal productivity with PL and NPL.
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
 Finally, we checked the frequencies of the N1+N2 combinations with PL and NPL in the corpus because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be a cyclic one because compounds meeting the desired criteria were difficult to find.
+Table~\ref{tab:stimuli} shows the results of the selection process.
 
 <<results='asis'>>=
 exp.ppots <- as.data.frame(
@@ -56,6 +69,11 @@ print(stims.xt,
       hline.after = c(-1,0,8,16)
       )
 @
+
+The top eight compounds shown in the table were used as stimuli for the internal plural condition.
+The N2s \textit{Kooperation} `cooperation', \textit{Zusammenlegung} `merger\slash unification', \textit{Bündel} `bundle', and \textit{Sammlung} `collection' are clear triggers of internal plural.
+On the other hand, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', and \textit{Abdruck} `mark\slash impression (physical)' cannot trigger internal plural semantics at all.
+In order to control for item-specific effects related to concrete N2s, we
 
 \subsection{Results}
 \label{sub:results-split100}

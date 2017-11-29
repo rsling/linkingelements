@@ -65,6 +65,7 @@ Pp(\mathrm{N1}_{le})=\frac{f_1(\mathrm{N1}_{le})}{f(\mathrm{N1}_{le})}
 The interpretation of $Pp$ is intuitive, as it is $0$ when there is not a single hapax legomenon in the corpus (no productivity whatsoever), and it is $1$ if all tokens are hapax legomena (maximal productivity).
 It can be regarded as a proportion, and its range is therefore $[0,1]$.
 
+% For final production, remove this figure and re-activate knitr proddots block.
 \begin{figure}
 \begin{center}
     \includegraphics[scale=]{images/proddots_tmp}
@@ -85,8 +86,8 @@ productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
               zero.floor    = NULL,
               the.colors    = productivitydots.colors,
               main.chunk = "",
-              ylab.chunk = "Pp(N1) with NPL",
-              xlab.chunk = "Pp(N1) with PL")
+              ylab.chunk = "Pp with NPL",
+              xlab.chunk = "Pp with PL")
 # for (le in prod.plot.order)
 #   do.call(plot.productivities, c(list(le = le), .args))
 # par(mfrow=c(1,1))
