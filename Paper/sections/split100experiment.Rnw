@@ -21,7 +21,7 @@ Subjects were presented with artificial sentences containing a blank where the c
 The two variants (with PL and NPL) were presented on the same screen below the sentence with a slider in between which could be moved freely to assign a preference between $100;0$ and $0;100$.
 The corresponding numbers were displayed dynamically as subjects moved the slider.
 When they were satisfied with their decision, subjects pressed a button to store it.
-After each sentence, subjects answered a simple distractor question by pressing any fo the digits 1--9.
+After each sentence, subjects answered a simple distractor question by pressing any of the digits 1--9.
 The questions were not related to the sentences and were simple arithmetic or counting exercises.
 Finally, it should be noted that the order of the stimuli and fillers was randomised for each participant.
 
@@ -54,7 +54,7 @@ The process turned out to be a cyclic one because compounds meeting the desired 
 Table~\ref{tab:stimuli} shows the results of the selection process.
 The table shows the potential productivity $P^p$ for the N1 with PL and NPL, and they roughly match in many cases, for example $P^p_{PL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.
 The frequency classes $c$ of the full compound with PL and NPL is also given, where class $28$ corresponds to a token frequency of $1$, and no frequency class (--) is assigned to words with a token frequency of $0$.
-Additionally, the total difference in token frequency of the two compounds is specified ($\Delta_f$), where the maximum absolute difference is $63$, which is clearly not exrteme, given that the corpus contains 21 billion tokens and approximately 15 billion words.
+Additionally, the total difference in token frequency of the two compounds is specified ($\Delta_f$), where the maximum absolute difference is $63$, which is clearly not extreme, given that the corpus contains 21 billion tokens and approximately 15 billion words.
 
 <<results='asis'>>=
 stims.tab <- stims.freqs[, c("N1", "LE", "N2", "$P^p_{PL}$", "$P^p_{NPL}$", "FbandPL", "FbandNPL", "AbsFDiff", "Gloss")]
@@ -90,7 +90,7 @@ Participants declared themselves to be native speakers of German having no readi
 They were recruited in first-semester linguistics classes at our university during the first four weeks of the summer 2017 term.
 They were all majoring in German Language and Literature but had not yet had university-level introductions to linguistics.
 The experiment was completely anonymised and participants were granted the right to revoke their signed declaration of consent, which none of them did.
-No money was paid, but participants received credit in partial fulfilment of the requirements for the abovementioned classes.
+No money was paid, but participants received credit in partial fulfilment of the requirements for the above mentioned classes.
 We had $\Sexpr{length(levels(obs$participant))}$ participants.
 Gender was specified on a voluntary basis using no pre-formulated options.
 $24$ participants declared themselves to be female, seven to be male.
@@ -191,7 +191,7 @@ In comparison, a model without the predictor of interest (\texttt{Rating \textas
 In other words, the model confirms the results seen in Figure \ref{fig:conditions} using advanced inferential tools.
 
 In the present experiment, subjects showed very clear reactions.
-The external plural did not trigger PL more than NPL, but there is solid evidence that speakers favour a PL in compounds where an internal plural relation necessarily holds betweenN1 and N2.
+The external plural did not trigger PL more than NPL, but there is solid evidence that speakers favour a PL in compounds where an internal plural relation necessarily holds between N1 and N2.
 In Section~\ref{sec:functionandinterpretation} we will discuss the theoretical implications of this result and the corpus study reported in Section~\ref{sec:corpusstudy}.
 
 

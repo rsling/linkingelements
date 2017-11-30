@@ -18,7 +18,7 @@ Before turning to this annotation process in Section~\ref{sec:annotation}, this 
 First, a selection of N1s was required which represents the population of N1s well with regard to their productivities with PL and NPL, and a set of criteria was devised to make sure that that was the case.
 We required that the potential productivity score with PL and NPL not be $0$ or $1$, which excluded many very rare words.
 Furthermore, only N1s were used which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL.
-In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewehere, only N1s with a minimal token frequency outside of compounds were used.
+In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewhere, only N1s with a minimal token frequency outside of compounds were used.
 To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
 The frequency class $c$ of a word $w$ increases with the word's token frequency $f(w)$, but calculation of the frequency class relates an individual word's token frequency to the frequency of the most frequent word in the corpus ($f^{max}$) as well as the power law distribution of word frequencies.%
 \footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
@@ -89,10 +89,10 @@ Finally, it should be noticed that we extracted all exemplars matching the query
 \label{sec:annotation}
 
 From each of the query results of the fifty N1s described in Section~\ref{sec:queries}, we annotated approximately one hundred cases with PL and one hundred with NPL.
-Due to some minor cleanups in the quality control process, the final sample size is not exactly $n=10,000$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
+Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=10,000$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
 
 Annotating singular and plural was trivial, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate.
-Such cases were diascarded and not used for the study.%\
+Such cases were discarded and not used for the study.%\
 \footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
 Furthermore, the basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author, in order to minimise the amount of human annotation errors.}
 
@@ -104,7 +104,7 @@ Similar to these are N2s such as \textit{Distanz} `distance' as in \textit{Lochd
 Many other types of N2s also required annotators to take the context into account.
 Compounds with N2s like \textit{System} `system' as in \textit{Elementesystem} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
 
-In addition to these clear-cut cases there was a second group of compounds in which the plural-inducing quality of the N2 was evemn more strongly context-dependent.
+In addition to these clear-cut cases there was a second group of compounds in which the plural-inducing quality of the N2 was even more strongly context-dependent.
 Most prominently, the N2 denotes a container of some sort.
 Examples include \textit{Äpfellager} `storage for apples', \textit{Briefekatalog} `catalogue of letters', and \textit{Liederbuch} `book of songs\slash songbook'.
 In essence, this second large group contains compounds where the N2 might theoretically denote a container etc.\ for just one object, both world knowledge and the context exclude this possibility beyond doubt.
@@ -164,15 +164,15 @@ With low counts in some cells, the $\chi^2$ approximation becomes inexact, and w
 The procedure calculates the marginal sums and then generates random permutations for the contingency table based on the marginals.
 We used $b=\Sexpr{nice.int(num.reps)}$ permutations.
 Finally, the effect sizes ($v$) were calculated and multiplied by the sign of the top left cell of the residual table.
-This means that in addition to quantifying the magintude of the effect size, they reflect whether for each N1 the co-occurrence of PL and plural semantics on N1 is preferred (positive sign) or dispreferred (negative sign).
+This means that in addition to quantifying the magnitude of the effect size, they reflect whether for each N1 the co-occurrence of PL and plural semantics on N1 is preferred (positive sign) or dis-preferred (negative sign).
 
-The results confirm those of the overal test.
+The results confirm those of the overall test.
 Only $\Sexpr{length(which(p.plot$p.sidak <= 0.05))}$ test reaches $\mathrm{sig}=0.05$.
-The effect sizes are centered around $0$ with a mean of $\bar{v}=\Sexpr{nice.float(mean(p.plot$phi))}$ and a median of $\tilde{v}=\Sexpr{nice.float(median(p.plot$phi))}$ and a standard deviation of $s(v)=\Sexpr{nice.float(sd(p.plot$phi))}$.
+The effect sizes are centred around $0$ with a mean of $\bar{v}=\Sexpr{nice.float(mean(p.plot$phi))}$ and a median of $\tilde{v}=\Sexpr{nice.float(median(p.plot$phi))}$ and a standard deviation of $s(v)=\Sexpr{nice.float(sd(p.plot$phi))}$.
 This is expected in a situation where there are no effects.
 
 The picture changes when we move on to the analysis of the internal plural condition.
-It should be remembered from Section~\ref{sec:annotation} that we carefully distinguished between clear cases and leass clear cases, calling the two annotation schemes \textit{strict} and \textit{lax}.
+It should be remembered from Section~\ref{sec:annotation} that we carefully distinguished between clear cases and less clear cases, calling the two annotation schemes \textit{strict} and \textit{lax}.
 We specify both values separated by a comma as \textit{strict};\textit{lax}.
 The sample contains $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Coll")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Coll")))}$ cases with an internal plural relation and $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Ind")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Ind")))}$ cases with no internal plural relation.
 Table~\ref{tab:ctintplural} shows the contingency table for the two variables.

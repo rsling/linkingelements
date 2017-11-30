@@ -14,15 +14,15 @@ opts_knit$set(self.contained=FALSE)
 
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
 However, the total number of candidates for first constituents and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, data about the type frequencies, token frequencies, and the productivity of first constituents were required.
-This information tells us how stronlgy first constituents tend to appear pluralic linking elements and with non-pluralic links.
+This information tells us how strongly first constituents tend to appear pluralic linking elements and with non-pluralic links.
 This section describes the creation of these data.
 
 We began by extracting a very large database of all nominal compounds (not just N+N compounds) from the DECOW16A web corpus \parencite{SchaeferBildhauer2018}.%
 \footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available.}
-In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and prost-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
+In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
 \footnote{The analyses are formatted like \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
 Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first constituent.}
-While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analaysis we performed.
+While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
 What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.
 
 <<>>=
@@ -40,7 +40,7 @@ rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 
 First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N+N compounds.
 We therefore extracted all N+N compounds and all first constituents (N1s) from the large compound database.
-For each of the pluralic linking elements (PL), we generated exhaustive lists of the N1s occuring with it which fulfil the criteria mentioned in Section~\ref{sec:linkingelementsingerman} (prominently: no mass nouns, no weak masculine nouns).%
+For each of the pluralic linking elements (PL), we generated exhaustive lists of the N1s occurring with it which fulfil the criteria mentioned in Section~\ref{sec:linkingelementsingerman} (prominently: no mass nouns, no weak masculine nouns).%
 \footnote{The lists of these N1s were extracted automatically but were checked for erroneous entries manually.
 Both the first author of this paper and a student assistant checked the entire list in order to increase the precision of the manual clean up process.}
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
@@ -95,7 +95,7 @@ productivitydots.colors <- colorRampPalette(c("gold", "darkred"))(100)
 
 Figure~\ref{fig:proddots} shows the results of the productivity analyses for all chosen N1s.%
 \footnote{It was pointed out that the analysis of productivity is tainted by the low quality of automatic annotation in \textcite{EvertLuedeling2001} -- a point reiterated in \textcite[907]{Baayen2009}.
-Our analysis relies on the automatically generated annotaions by the SMOR tool and COW tool chain.
+Our analysis relies on the automatically generated annotations by the SMOR tool and COW tool chain.
 However, the list of N1 candidates was meticulously cleaned manually, as stated above.
 Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words.
 Finally, the N1s which were chosen for the studies presented in Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment} were manually checked again.
@@ -112,7 +112,7 @@ In the extreme case, a N1 has a type frequency of $1$, and there is only one occ
 Since the \textit{-n} and \textit{-en} plurals are often used with rare loan words, there are many items with low type frequency and a high productivity score.
 Examples include \textit{Ikonostase} (pl.\ \textit{Ikonostasen}) `iconostasis', which has a token frequency of $\Sexpr{analyses.full$n[which(analyses.full$n$N1 == "Ikonostase"),"With_Ftype"]}$ and a hapax count of $\Sexpr{analyses.full$n[which(analyses.full$n$N1 == "Ikonostase"),"With_Fhapax"]}$ with PL (thus a potential productivity of $\Sexpr{analyses.full$n[which(analyses.full$n$N1 == "Ikonostase"),"With_Ppot"]}$) and \textit{Testator} (pl. \textit{Testatoren}) `testator' with a token frequency of $\Sexpr{analyses.full$en[which(analyses.full$en$N1 == "Testator"),"With_Ftype"]}$ and a hapax count of $\Sexpr{analyses.full$en[which(analyses.full$en$N1 == "Testator"),"With_Fhapax"]}$ with PL (thus also a potential productivity of $\Sexpr{analyses.full$en[which(analyses.full$en$N1 == "Testator"),"With_Ppot"]}$).
 
-For N1s with \textit{-e} and \textit{=w}, and even more so for those with \textit{=er}, \textit{-er}, and \textit{=}, the overall pattern seems to be that the productivitiy scores with PL are spread out between $0$ and $1$.
+For N1s with \textit{-e} and \textit{=w}, and even more so for those with \textit{=er}, \textit{-er}, and \textit{=}, the overall pattern seems to be that the productivity scores with PL are spread out between $0$ and $1$.
 However, there are virtually no N1s in these classes which show a very high productivity (much higher than $0.1$) with NPL.
 The type frequencies are, however, still quite high for both PL and NPL, as reflected in the colour and the size of the dots.
 For \textit{=er}, for example, the 25th and 75th percentiles of the token frequencies with PL are at \Sexpr{nice.int(quantile(analyses.full$Uer$With_Ftype, probs = 0.25))} and \Sexpr{nice.int(quantile(analyses.full$Uer$With_Ftype, probs = 0.75))} types, respectively.

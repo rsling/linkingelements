@@ -165,7 +165,7 @@ stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), 
 We would like to thank (in alphabetical order) Ulrike Sayatz for valuable discussions and comments.
 Furthermore, we thank Ulrike Sayatz for helping us recruit the participants for the experiments.
 Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
-We are, of course, fully responsible for all residual inadequacies, errors, and ommissions.
+We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
 Roland Schäfer's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1).
 
 \printbibliography
