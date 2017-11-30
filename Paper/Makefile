@@ -8,7 +8,10 @@ all: pod cover
 complete: index leglossa.pdf
 
 index:  leglossa.snd
- 
+
+leglossa_biber.bib: leglossa.bcf
+	biber leglossa --output_format bibtex
+
 leglossa.pdf: leglossa.aux
 	xelatex leglossa 
 

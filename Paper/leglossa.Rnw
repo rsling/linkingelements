@@ -103,11 +103,14 @@ opts_chunk$set(cache.path='cache/',
 
 
 render_listings()
+@
 
+<<rinitialisation>>=
 require(gamlss)
 require(xtable)
 require(vioplot)
 require(pwr)
+library(data.table)
 
 source('../Data/R/functions.R')
 source('../Data/R/vioplot2.R')
