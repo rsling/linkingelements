@@ -12,15 +12,15 @@ opts_knit$set(self.contained=FALSE)
 As explained in Section~\ref{sec:linkingelementsingerman}, we try to determine whether two distinct factors increase the probability that N1 in an N1+N2 compound occurs with a pluralic linking element given that N1 alternates between a pluralic and a non-pluralic link.
 The first potential factor is a plural on the whole compound (formally on N2).
 The second factor is whether a semantic relation between N1 and N2 holds which forces N1 to have plural semantics.
-Therefore, we had to manually annotate corpus exemplars containing N+N compounds for whether they are plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
+Therefore, we had to manually annotate corpus exemplars containing N1+N2 compounds for whether they are plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
 Before turning to this annotation process in Section~\ref{sec:annotation}, this section describes how we extracted and prepared a concordance for the manual annotation.
 
-First, a selection of N1s was required which represents the population of N1s well with regard to their productivities with PL and NPL, and a set of criteria was devised to make sure that that was the case.
-We required that the potential productivity score with PL and NPL not be $0$ or $1$, which excluded many very rare words.
+First, a selection of N1s was required which represents the population of N1s well with regard to their productivity scores with PL and NPL, and a set of criteria was devised to make sure that that was the case.
+We required that the potential productivity score with PL and with NPL not be $0$ or $1$, which excluded many very rare words.
 Furthermore, only N1s were used which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL.
 In order to exclude nouns which occur with reasonable type frequency in compounds but not much elsewhere, only N1s with a minimal token frequency outside of compounds were used.
 To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
-The frequency class $c$ of a word $w$ increases with the word's token frequency $f(w)$, but calculation of the frequency class relates an individual word's token frequency to the frequency of the most frequent word in the corpus ($f^{max}$) as well as the power law distribution of word frequencies.%
+The frequency class $c$ of a word $w$ increases with the word's token frequency $f(w)$, but calculation of the frequency class additionally relates this frequency to the frequency of the most frequent word in the corpus ($f^{max}$) and accounts for the power law distribution of word frequencies.%
 \footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
 It is given by (\ref{eq:frequencyclass}).
 
@@ -29,13 +29,13 @@ It is given by (\ref{eq:frequencyclass}).
   c(w) = \left\lfloor{0.5 - log_2\left({\frac{f(w)}{f^{max}}}\right)}\right\rfloor
 \end{equation}
 
-The most frequent word in DECOW16A is \textit{und} `and' with $f(und)=\Sexpr{nice.int(decow16a.highest.f)}$.
+The most frequent word in DECOW16A according to the official frequency lists is \textit{und} `and' with $f(und)=\Sexpr{nice.int(decow16a.highest.f)}$.
 Relative to this, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
 
-From the set of N1s which fulfilled the given criteria, we sampled between five and ten per pluralic linking element.
+From the set of N1s which fulfilled the given criteria, we sampled between five and ten nouns per pluralic linking element.
 Sampling was a manual process, and it was made sure that the nouns were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
-In Figure~\ref{fig:corpusselection}, which is parallel to Figure~\ref{fig:proddots}, the small dots each represent an N1 which fulfils the selection criteria.
-The triangles mark those which were actually chosen for the corpus study.
+In Figure~\ref{fig:corpusselection} each of the dots represents one N1 which fulfils the selection criteria.
+The triangles mark those which were chosen for the corpus study.
 It is immediately obvious that the sample represents the overall spectrum of productivity quite well.
 
 <<corpusselection, fig.pos="htbp", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
@@ -82,7 +82,7 @@ Otherwise, highly frequent and typically lexicalised compounds would have accoun
 By allowing different word forms of the same compound into the concordances, however, singular and plural forms of the same compound might still be contained in it.
 In addition to the literal exemplar in its context, we extracted the corresponding document URL, the unique COW16 ID of that document, and the sentence ID.
 With the COW16 ID and the sentence ID, each exemplar can be located in the DECOW16A corpus for full reproducibility.
-Finally, it should be noticed that we extracted all exemplars matching the query, making random sub-samples for annotation.%
+We extracted all exemplars matching the query, making random sub-samples for annotation.%
 \footnote{The full query results are also included in the data package which accompanies this paper.}
 
 \subsection{Annotation}
@@ -96,18 +96,18 @@ Such cases were discarded and not used for the study.%\
 \footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
 Furthermore, the basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author, in order to minimise the amount of human annotation errors.}
 
-Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of such N2s.
+Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of N2s triggering it.
 A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kindergruppe} `group of children' or \textit{Armee} `army' as in \textit{Bauernarmee} `army of peasants'.
 Even metaphorical collectives are usually not problematic, for example \textit{Regen} `rain' in compounds like \textit{Zitateregen} `rain of quotations'.
-Another major group are reciprocals such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räderwechsel} `swapping of tyres'.
-Similar to these are N2s such as \textit{Distanz} `distance' as in \textit{Lochdistanz} `distance between (the) holes', which were annotated as plural-inducing N2s if it became clear from the context that a distance \textit{between} several objects was referenced.
+Another clearly discernible group are reciprocals such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räderwechsel} `swapping of tyres'.
+Similar to these are N2s such as \textit{Distanz} `distance' as in \textit{Lochdistanz} `distance between (the) holes', which were annotated as plural-inducing N2s (if it became clear from the context that a distance \textit{between} several objects was referenced).
 Many other types of N2s also required annotators to take the context into account.
 Compounds with N2s like \textit{System} `system' as in \textit{Elementesystem} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
 
-In addition to these clear-cut cases there was a second group of compounds in which the plural-inducing quality of the N2 was even more strongly context-dependent.
-Most prominently, the N2 denotes a container of some sort.
+In addition to these clear-cut cases there was a second group of compounds in which the plural-inducing quality of the N2 was strongly context-dependent.
+Most prominently, there are N2 which denote a container of some sort.
 Examples include \textit{Äpfellager} `storage for apples', \textit{Briefekatalog} `catalogue of letters', and \textit{Liederbuch} `book of songs\slash songbook'.
-In essence, this second large group contains compounds where the N2 might theoretically denote a container etc.\ for just one object, both world knowledge and the context exclude this possibility beyond doubt.
+In essence, this second large group contains compounds where the N2 might theoretically denote a container etc.\ for just one object, but both world knowledge and the context exclude this possibility beyond doubt.
 In the analysis of the final sample we present the results for only the first, clear-cut cases and the results of both the clear-cut and the extended cases separately under le labels of \textit{strict annotation} (only the clear-cut cases) and \textit{lax annotation} (including extended cases).
 
 \subsection{Results}
@@ -135,7 +135,8 @@ print(extpl.obs.xt,
 @
 
 Given the extremely large sample size, a $\chi^2$ test on the contingency table produces a significant result at $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(extpl.chisq$statistic)}$, $df=\Sexpr{min(dim(extpl.chisq$observed))-1}$, $p=\Sexpr{nice.float(extpl.chisq$p.value)}$).
-However, the effect size is quite low at $v=\Sexpr{nice.float(cramer.v(extpl.chisq))}$, and an inspection of the (standardised) residuals shows that the spurious effect even has the wrong direction, \ie PL is less frequent than expected under the null in plural compounds.
+However, despite the large sample, the p-value is relatively close to $0.05$, and the effect size is quite low at $v=\Sexpr{nice.float(cramer.v(extpl.chisq))}$.
+Even worse, an inspection of the (standardised) residuals in Table~\ref{tab:ctextpluralresid} shows that the spurious effect even has the wrong direction, \ie PL is less frequent than expected under the null in plural compounds.
 
 <<results="asis">>=
 extpl.resid <- extpl.chisq$stdres
@@ -152,7 +153,7 @@ print(extpl.resid.xt,
       rotate.colnames = F)
 @
 
-Thus, we have found no evidence to support the external plural hypothesis.%
+Thus, we have found no evidence to support the external plural hypothesis in the global analysis of the data set.%
 \footnote{Which is not the same as finding evidence \textit{against} it.}
 There might, however, be item-specific differences between N1s or groups of N1s which take different PLs.
 In order to check for this, we calculated one $\chi^2$ test for each N1 with an approximate sample size of $n=200$ for each test.
@@ -160,14 +161,14 @@ Since we are thus testing a family of connected hypotheses, p-values need to be 
 We used Šidák's method \parencite{Sidak1967}, which is only slightly less conservative than the well-known Bonferroni correction (for uncorrelated tests).%
 \footnote{We also tried Holm's and Hochberg's methods, but the differences between all those methods are small enough such that they do not lead to differences in the interpretation of the results.
 Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m=50$ is the number of tests.}
-With low counts in some cells, the $\chi^2$ approximation becomes inexact, and we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}).
-The procedure calculates the marginal sums and then generates random permutations for the contingency table based on the marginals.
+With low counts in some cells, the $\chi^2$ approximation becomes inexact, and we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}.
+The procedure calculates these marginal sums and then generates random permutations for the contingency table based on the marginals.
 We used $b=\Sexpr{nice.int(num.reps)}$ permutations.
 Finally, the effect sizes ($v$) were calculated and multiplied by the sign of the top left cell of the residual table.
 This means that in addition to quantifying the magnitude of the effect size, they reflect whether for each N1 the co-occurrence of PL and plural semantics on N1 is preferred (positive sign) or dis-preferred (negative sign).
 
 The results confirm those of the overall test.
-Only $\Sexpr{length(which(p.plot$p.sidak <= 0.05))}$ test reaches $\mathrm{sig}=0.05$.
+Only one test reaches $\mathrm{sig}=0.05$.
 The effect sizes are centred around $0$ with a mean of $\bar{v}=\Sexpr{nice.float(mean(p.plot$phi))}$ and a median of $\tilde{v}=\Sexpr{nice.float(median(p.plot$phi))}$ and a standard deviation of $s(v)=\Sexpr{nice.float(sd(p.plot$phi))}$.
 This is expected in a situation where there are no effects.
 
@@ -227,7 +228,7 @@ print(intpl.obs.xt,
       rotate.colnames = F)
 @
 
-A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0$).
+A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0;0$).
 However, the overall effect size is still not very high at $v=\Sexpr{nice.float(cramer.v(intpl.chisq))};\Sexpr{nice.float(cramer.v(intpl.chisq.lax))}$.
 At least for the lax annotation scheme $v\geq 0.2$, and the effect is thus worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural condition.
@@ -236,6 +237,7 @@ Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for th
 See \textcite{HintzeNelson1998}.}
 For the internal plural condition, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on both of them.
+While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.
 
 <<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and corrected p-values for the internal plural condition">>=
 corpuseffects.colors <- colorRampPalette(c("darkorange", "darkgreen"))(100)
@@ -304,9 +306,8 @@ legend("bottomright",
       )
 @
 
-
 Even more informative is a closer look at the individual results.
-Figure~\ref{fig:corpuseffects} shows for each N1 the signed effect strength in the internal plural condition through its location on the horizontal dimension as well as the p-value through the colour coding.
+Figure~\ref{fig:corpuseffects} shows for each N1 the signed effect strength in the internal plural condition as its location on the horizontal dimension as well as the p-value through the colour coding.
 The darker the dot is, the lower is the p-value.
 The colour mapping is logarithmic such that any dot representing a p-value above $\mathrm{sig}=0.05$ is already significantly lighter than the darkest colour.
 The N1s are arranged in groups defined by their PL.
@@ -315,11 +316,11 @@ The groups are sorted by their mean effect strengths, and within each group N1s 
 The detailed analysis shows that there are considerable differences between different linking elements.
 Especially N1s with \textit{=e} and \textit{=er} show both good effect strengths and reach reasonable significance levels.
 Those with \textit{-er} and \textit{=} show mixed results, and for \textit{-e}, \textit{-en}, and \textit{-n}, we find only very weak effects and non-significant p-values, which would normally be dismissed completely.
-However, even though the results for the last mentioned linking elements are negligible by themselves, it should still be noticed that \textit{all} N1s show a positive effect, and only \textit{Ei} `egg' and \textit{Katze} `cat' lean very slightly towards the negative side.
+However, even though the results for the last mentioned linking elements are negligible by themselves, it should still be noticed that \textit{all} N1s show a positive effect, except \textit{Ei} `egg' and \textit{Katze} `cat', which lean ever so slightly towards the negative side.
 This is not at all the distribution of $v$ scores one would expect if there were no general co-occurrence preference between PL and an internal plural relation.
 If there were no such preference, there should be roughly as many negative as positive $v$ scores, just like in the case of the external plural condition (see Figure~\ref{fig:differenceplcoll}).
 
 Finally, it is noteworthy that the order of the linking elements in Figure~\ref{fig:corpuseffects} is the mirror image of the order in Figure~\ref{fig:proddots} and Figure~\ref{fig:corpusselection}.
-The more marked and thus the less type-frequent a plural marker is, the stronger it tends to be interpreted as a plural marker even as a linking element.
+The more marked and thus the less type-frequent a plural marker is, the stronger it tends to be interpreted as a plural marker even when used as a linking element.
 We will return to all of these results in our theoretical interpretation in Section~ \ref{sec:functionandinterpretation}.
 Before that, we now report the results of a split-100 experiment in Section~\ref{sec:split100experiment}.
