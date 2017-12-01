@@ -136,7 +136,7 @@ Worse, however, subjects tend to assign ratings of $0$ and $100$ very often (see
 Since in the case at hand we should also account for subject-level variation by including a random effect, the appropriate model is be a \textit{zero- and one-inflated mixed beta model}.
 The fact that control for subject-level preferences is a good idea is illustrated by Figure~\ref{fig:participants}, where individual preferences in the internal plural sub-experiment are shown per condition.
 
-<<participants, fig.pos="htbp", fig.height=6, fig.cap="Distribution of individual split-100 responses in the internal plural sub-experiment by conditions; subjects were ordered by their mean ratings", message=FALSE, warning=FALSE, error=FALSE>>=
+<<participants, fig.pos="htbp", fig.height=6, fig.cap="Distribution of individual split-100 responses in the internal plural sub-experiment by conditions; subjects were ordered by their mean rating", message=FALSE, warning=FALSE, error=FALSE>>=
 # Reorder factor levels to reflect average rating of subject
 mean.ratings <- sapply(levels(obs.coll$participant), function(p) {
   mean(obs.coll[which(obs.coll$participant == p), "realRating"])
@@ -145,8 +145,8 @@ obs.coll$participant <- factor(obs.coll$participant,
                                levels = levels(obs.coll$participant)[order(mean.ratings)])
 
 par(mfrow=c(2,1))
-obs.coll.pl <- obs.coll[which(obs.coll$cond == "Individual"),]
-obs.coll.npl <- obs.coll[which(obs.coll$cond == "Collective"),]
+obs.coll.npl <- obs.coll[which(obs.coll$cond == "Individual"),]
+obs.coll.pl <- obs.coll[which(obs.coll$cond == "Collective"),]
 
 plot(obs.coll.pl$realRating~obs.coll.pl$participant,
      las = 2, col = "gold",
