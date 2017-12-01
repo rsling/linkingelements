@@ -174,7 +174,7 @@ This is expected in a situation where there are no effects.
 
 The picture changes when we move on to the analysis of the internal plural condition.
 It should be remembered from Section~\ref{sec:annotation} that we carefully distinguished between clear cases and less clear cases, calling the two annotation schemes \textit{strict} and \textit{lax}.
-We specify both values separated by a comma as \textit{strict};\textit{lax}.
+We therefore specify two values separated by a semicolon for the relevant statistics (\textit{strict};\textit{lax}).
 The sample contains $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Coll")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Coll")))}$ cases with an internal plural relation and $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Ind")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Ind")))}$ cases with no internal plural relation.
 Table~\ref{tab:ctintplural} shows the contingency table for the two variables.
 

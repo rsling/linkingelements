@@ -136,10 +136,18 @@ Worse, however, subjects tend to assign ratings of $0$ and $100$ very often (see
 Since in the case at hand we should also account for subject-level variation by including a random effect, the appropriate model is be a \textit{zero- and one-inflated mixed beta model}.
 The fact that control for subject-level preferences is a good idea is illustrated by Figure~\ref{fig:participants}, where individual preferences in the internal plural sub-experiment are shown per condition.
 
-<<participants, fig.pos="htbp", fig.height=6, fig.cap="Distribution of individual split-100 responses in the internal plural sub-experiment by conditions", message=FALSE, warning=FALSE, error=FALSE>>=
+<<participants, fig.pos="htbp", fig.height=6, fig.cap="Distribution of individual split-100 responses in the internal plural sub-experiment by conditions; subjects were ordered by their mean ratings", message=FALSE, warning=FALSE, error=FALSE>>=
+# Reorder factor levels to reflect average rating of subject
+mean.ratings <- sapply(levels(obs.coll$participant), function(p) {
+  mean(obs.coll[which(obs.coll$participant == p), "realRating"])
+})
+obs.coll$participant <- factor(obs.coll$participant,
+                               levels = levels(obs.coll$participant)[order(mean.ratings)])
+
 par(mfrow=c(2,1))
 obs.coll.pl <- obs.coll[which(obs.coll$cond == "Individual"),]
 obs.coll.npl <- obs.coll[which(obs.coll$cond == "Collective"),]
+
 plot(obs.coll.pl$realRating~obs.coll.pl$participant,
      las = 2, col = "gold",
      main = "Internal plural semantics",
@@ -150,23 +158,6 @@ plot(obs.coll.npl$realRating~obs.coll.npl$participant,
      main = "No internal plural semantics",
      xlab = "Participant ID", ylab = "Split-100 responses",
      frame = F)
-# plot(obs.pl$realRating~obs.pl$participant,
-#      las = 2, col = "gold",
-#      main = "Plural N2: distribution of responses",
-#      xlab = "Participant ID", ylab = "Split-100 responses",
-#      frame = F)
-
-#
-# Violin plot version. Unreadable.
-#
-# resp.parts <- lapply(levels(obs.coll$participant),
-#                      function(p) {obs.coll[which(obs.coll$participant==p), "realRating"]}
-#                      )
-# do.call(vioplot, c(unname(resp.parts), col='white', colMed = "darkred"))
-# resp.parts <- lapply(levels(obs.pl$participant),
-#                      function(p) {obs.pl[which(obs.pl$participant==p), "realRating"]}
-#                      )
-# do.call(vioplot, c(unname(resp.parts), col='white', colMed = "darkred"))
 par(mfrow=c(1,1))
 @
 
