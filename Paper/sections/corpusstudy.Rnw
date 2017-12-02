@@ -114,9 +114,11 @@ In the analysis of the final sample we present the results for only the first, c
 \label{sec:results}
 
 As pointed out in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.
-Among these, there are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds.
+All exemplars were annotated for internal and external plural, and we treat the two annotations as two sub-studies, starting with the external plural sub-study.
+
+There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.
 Also, there are $\Sexpr{nice.int(length(which(conc$LE==1)))}$ cases with PL and $\Sexpr{nice.int(length(which(conc$LE==0)))}$ with NPL.
-The corresponding contingency table is shown in Table~\ref{tab:ctextplural}.
+The contingency table showing their bivariate distribution is given in Table~\ref{tab:ctextplural}.
 
 <<results="asis">>=
 extpl.chisq <- chisq.test(table(conc$LE, conc$N2Num))
@@ -124,7 +126,7 @@ extpl.obs <- extpl.chisq$observed
 rownames(extpl.obs) <- c("NPL", "PL")
 colnames(extpl.obs) <- c("Pl.\ compound", "Sg.\ Compound")
 extpl.obs.xt <- xtable(nice.int(extpl.obs), booktabs = T,
-                         caption = "Contingency table for external plural (= plural agreement) hypothesis",
+                         caption = "Contingency table for external plural (= plural agreement) sub-study",
                          label = "tab:ctextplural")
 align(extpl.obs.xt) <- c("l", "r", "r")
 print(extpl.obs.xt,
@@ -143,14 +145,16 @@ extpl.resid <- extpl.chisq$stdres
 rownames(extpl.resid) <- c("NPL", "PL")
 colnames(extpl.resid) <- c("Pl.\ compound", "Sg.\ Compound")
 extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
-                         caption = "Standardised residuals from chi square test of external plural (= plural agreement) hypothesis",
+                         caption = "Standardised residuals from $\\chi^2$ test of external plural (= plural agreement) sub-study",
                          label = "tab:ctextpluralresid")
 align(extpl.resid.xt) <- c("l", "r", "r")
 print(extpl.resid.xt,
       floating = T,
       table.placement = 'htbp',
       booktabs = T,
-      rotate.colnames = F)
+      rotate.colnames = F,
+      sanitize.text.function = function(x){x}
+      )
 @
 
 Thus, we have found no evidence to support the external plural hypothesis in the global analysis of the data set.%
@@ -172,13 +176,13 @@ Only one test reaches $\mathrm{sig}=0.05$.
 The effect sizes are centred around $0$ with a mean of $\bar{v}=\Sexpr{nice.float(mean(p.plot$phi))}$ and a median of $\tilde{v}=\Sexpr{nice.float(median(p.plot$phi))}$ and a standard deviation of $s(v)=\Sexpr{nice.float(sd(p.plot$phi))}$.
 This is expected in a situation where there are no effects.
 
-The picture changes when we move on to the analysis of the internal plural condition.
+The picture changes when we move on to the analysis of the internal plural sub-study.
 It should be remembered from Section~\ref{sec:annotation} that we carefully distinguished between clear cases and less clear cases, calling the two annotation schemes \textit{strict} and \textit{lax}.
 We therefore specify two values separated by a semicolon for the relevant statistics (\textit{strict};\textit{lax}).
 The sample contains $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Coll")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Coll")))}$ cases with an internal plural relation and $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Ind")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Ind")))}$ cases with no internal plural relation.
 Table~\ref{tab:ctintplural} shows the contingency table for the two variables.
 
-<<differenceplcoll, fig.pos="htbp", fig.height=8, fig.cap="Distribution of signed Cramérs v scores for the internal and external plural conditions">>=
+<<differenceplcoll, fig.pos="htbp", fig.height=8, fig.cap="Distribution of signed Cramérs $v$ scores for the internal and external plural data">>=
 plot(x=NULL, y=NULL,
      xlim = c(0.5, 1.5),
      ylim=c(-0.5, 0.6),
@@ -203,8 +207,8 @@ vioplot2(t.plot$phi.strict,
          side = "right",
          col = "darkorange",
          add = T)
-title(#"Signed effect strengths\nin the two plural conditions",
-      xlab = "Condition")
+title(#"Signed effect strengths\nfor the internal and external plural data",
+      xlab = "Sub-study")
 legend("bottomright", fill = c("white", "darkorange"),
        legend = c("lax anno.", "strict anno."),
        box.lty=0,
@@ -218,7 +222,7 @@ intpl.obs <- intpl.chisq$observed
 rownames(intpl.obs) <- c("NPL", "PL")
 colnames(intpl.obs) <- c("Pl.\ compound", "Sg.\ Compound")
 intpl.obs.xt <- xtable(nice.int(intpl.obs), booktabs = T,
-                         caption = "Contingency table for internal plural (= plural agreement) hypothesis",
+                         caption = "Contingency table for internal plural sub-study",
                          label = "tab:ctintplural")
 align(intpl.obs.xt) <- c("l", "r", "r")
 print(intpl.obs.xt,
@@ -231,15 +235,15 @@ print(intpl.obs.xt,
 A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0;0$).
 However, the overall effect size is still not very high at $v=\Sexpr{nice.float(cramer.v(intpl.chisq))};\Sexpr{nice.float(cramer.v(intpl.chisq.lax))}$.
 At least for the lax annotation scheme $v\geq 0.2$, and the effect is thus worthy of mention.
-Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural condition.
-Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural condition (left) and the internal plural condition (right) in the form of a split violin plot.%
+Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural sub-study.
+Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.%
 \footnote{Violin plots are standard box plots where the box is replaced by a polygon representing a kernel density estimate.
 See \textcite{HintzeNelson1998}.}
-For the internal plural condition, strict and lax annotation are both shown.
+For the internal plural sub-study, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on both of them.
 While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.
 
-<<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and corrected p-values for the internal plural condition">>=
+<<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and corrected p-values for the internal plural sub-study">>=
 corpuseffects.colors <- colorRampPalette(c("darkorange", "darkgreen"))(100)
 
 # The dots are in fact invisible (pch="") so we can draw freely later.
@@ -307,7 +311,7 @@ legend("bottomright",
 @
 
 Even more informative is a closer look at the individual results.
-Figure~\ref{fig:corpuseffects} shows for each N1 the signed effect strength in the internal plural condition as its location on the horizontal dimension as well as the p-value through the colour coding.
+Figure~\ref{fig:corpuseffects} shows for each N1 the signed effect strength in the internal plural sub-study as its location on the horizontal dimension as well as the p-value through the colour coding.
 The darker the dot is, the lower is the p-value.
 The colour mapping is logarithmic such that any dot representing a p-value above $\mathrm{sig}=0.05$ is already significantly lighter than the darkest colour.
 The N1s are arranged in groups defined by their PL.
@@ -318,7 +322,7 @@ Especially N1s with \textit{=e} and \textit{=er} show both good effect strengths
 Those with \textit{-er} and \textit{=} show mixed results, and for \textit{-e}, \textit{-en}, and \textit{-n}, we find only very weak effects and non-significant p-values, which would normally be dismissed completely.
 However, even though the results for the last mentioned linking elements are negligible by themselves, it should still be noticed that \textit{all} N1s show a positive effect, except \textit{Ei} `egg' and \textit{Katze} `cat', which lean ever so slightly towards the negative side.
 This is not at all the distribution of $v$ scores one would expect if there were no general co-occurrence preference between PL and an internal plural relation.
-If there were no such preference, there should be roughly as many negative as positive $v$ scores, just like in the case of the external plural condition (see Figure~\ref{fig:differenceplcoll}).
+If there were no such preference, there should be roughly as many negative as positive $v$ scores, just like in the case of the external plural sub-study (see Figure~\ref{fig:differenceplcoll}).
 
 Finally, it is noteworthy that the order of the linking elements in Figure~\ref{fig:corpuseffects} is the mirror image of the order in Figure~\ref{fig:proddots} and Figure~\ref{fig:corpusselection}.
 The more marked and thus the less type-frequent a plural marker is, the stronger it tends to be interpreted as a plural marker even when used as a linking element.

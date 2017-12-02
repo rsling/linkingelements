@@ -78,14 +78,14 @@ print(stims.xt,
       )
 @
 
-The top eight compounds shown in the table were used as stimuli for the internal plural condition.
+The top eight compounds shown in the table were used as stimuli for the internal plural sub-experiment.
 The N2s \textit{Kooperation} `cooperation', \textit{Zusammenlegung} `merger\slash unification', \textit{Bündel} `bundle', and \textit{Sammlung} `collection' are clear triggers of internal plural.
 On the other hand, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', and \textit{Abdruck} `mark\slash impression (physical)' cannot trigger internal plural semantics at all.
-Because it is sensitive to the specific semantic relation between N1 and N2, the internal plural condition might show item-specific effects pertaining both to concrete combinations of N1 and N2.
+Because it is sensitive to the specific semantic relation between N1 and N2, the internal plural sub-experiment might be sensitive item-specific effects pertaining both to concrete combinations of N1 and N2.
 In order to control for such effects, we chose only four different N1s and combined each with an N2 triggering internal plural and one not triggering it.
-Since both combinations were used with PL and NPL, this would have meant exposing subjects to sixteen targets for the internal plural condition alone.
+Since both combinations were used with PL and NPL, this would have meant exposing subjects to sixteen targets for the internal plural sub-experiment alone.
 Therefore, randomisation was used, and participants saw either the version with PL or NPL.
-For the external plural condition, we only used N2s which could not trigger internal plural, and we therefore decided that increased variety of N1s was better, using eight different N1s.
+For the external plural sub-experiment, we only used N2s which could not trigger internal plural, and we therefore decided that increased variety of N1s was better, using eight different N1s.
 
 Participants declared themselves to be native speakers of German having no reading disorders.
 They were recruited in first-semester linguistics classes at our university during the first four weeks of the summer 2017 term.
@@ -104,7 +104,7 @@ The results are clearly in line with the findings from the corpus study reported
 Figure~\ref{fig:conditions} shows the distribution of the split-100 responses in the form of violin plots.
 Notice that all ratings were re-mapped such that $0$ represents a clear preference for NPL and $100$ a clear preference for PL, although in the actual experiment, the order was randomised.
 
-<<conditions, fig.pos="htbp", fig.height=5, fig.cap="Distribution of Split-100 responses by conditions">>=
+<<conditions, fig.pos="htbp", fig.height=5, fig.cap="Distribution of Split-100 responses in both sub-experiments by conditions">>=
 par(mfrow=c(1,2))
 vioplot(obs.coll[which(obs.coll$cond == "Collective"),]$realRating,
         obs.coll[which(obs.coll$cond == "Individual"),]$realRating,
@@ -122,10 +122,10 @@ par(mfrow=c(1,1))
 # title("Distribution of split-100 ratings")
 @
 
-The sub-experiment for the external plural condition (right panel of Figure~\ref{fig:conditions}) obviously had a negative result.
+The external plural sub-experiment (right panel of Figure~\ref{fig:conditions}) obviously had a negative result.
 For both singulars and plurals, subjects strongly prefer a NPL (for singular compounds, the median and mean are $\Sexpr{nice.float(median(obs.pl[which(obs.pl$cond == "Singular"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.pl[which(obs.pl$cond == "Singular"), "realRating"]))}$, and for plural compounds, they are $\Sexpr{nice.float(median(obs.pl[which(obs.pl$cond == "Plural"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.pl[which(obs.pl$cond == "Plural"), "realRating"]))}$).
 
-The sub-experiment for the internal plural condition (left panel of Figure~\ref{fig:conditions}) had a clearly positive outcome.
+The internal plural sub-experiment (left panel of Figure~\ref{fig:conditions}) had a clearly positive outcome.
 The median and mean with NPL are $\Sexpr{nice.float(median(obs.coll[which(obs.coll$cond == "Individual"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.coll[which(obs.coll$cond == "Individual"), "realRating"]))}$, but with PL, they are $\Sexpr{nice.float(median(obs.coll[which(obs.coll$cond == "Collective"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.coll[which(obs.coll$cond == "Collective"), "realRating"]))}$).
 Even a simple exploratory data analysis thus shows that a PL strongly co-occurs with forced plural semantics on N1.
 
@@ -136,7 +136,7 @@ Worse, however, subjects tend to assign ratings of $0$ and $100$ very often (see
 Since in the case at hand we should also account for subject-level variation by including a random effect, the appropriate model is be a \textit{zero- and one-inflated mixed beta model}.
 The fact that control for subject-level preferences is a good idea is illustrated by Figure~\ref{fig:participants}, where individual preferences in the internal plural sub-experiment are shown per condition.
 
-<<participants, fig.pos="htbp", fig.height=6, fig.cap="Distribution of individual split-100 responses in the internal plural sub-experiment by conditions; subjects were ordered by their mean rating", message=FALSE, warning=FALSE, error=FALSE>>=
+<<participants, fig.pos="htbp", fig.height=6, fig.cap="Boxplots of the distribution of individual (per-subject) split-100 responses in the internal plural sub-experiment by conditions; subjects were ordered from left to right by their mean rating across both conditions", message=FALSE, warning=FALSE, error=FALSE>>=
 # Reorder factor levels to reflect average rating of subject
 mean.ratings <- sapply(levels(obs.coll$participant), function(p) {
   mean(obs.coll[which(obs.coll$participant == p), "realRating"])
