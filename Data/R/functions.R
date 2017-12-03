@@ -63,6 +63,7 @@ clean.df.by.blacklist <- function(df, blacklist, column) {
   .blacked <- which(df[,column] %in% blacklist[,column])
   .blacked <- .blacked[which(!is.na(.blacked))]
   if (length(.blacked) > 0) {
+    cat("Here\n")
     df[-c(.blacked),]
   } else {
     df

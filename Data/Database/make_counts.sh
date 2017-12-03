@@ -87,12 +87,12 @@ do_it() {
   suffix='-e'
   get_all
 
-  snippet='_-ens_'
-  suffix='-ens'
+  snippet='_+ens_'
+  suffix='+ens'
   get_all
 
-  snippet='_-ns_'
-  suffix='-ns'
+  snippet='_+ns_'
+  suffix='+ns'
   get_all
 
   echo
@@ -109,7 +109,7 @@ do_it() {
   
   echo
   echo "NOTE: Getting the counts for 'NOT PLURAL' takes exceptionally long!"
-  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\|_-ens_\|_-ns_\)'
+  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\|_+ens_\|_+ns_\)'
   suffix='+NP'
   get_all
 }

@@ -45,6 +45,7 @@ Boden	3947
 System	3922
 Zwang	3899
 Land	3884
+Herz	3865
 Netz	3853
 Information	3814
 Beruf	3804
@@ -182,6 +183,7 @@ Kern	2622
 Party	2615
 Freizeit	2608
 Schutz	2606
+Glaube	2597
 Regel	2593
 Rum	2590
 Radio	2588
@@ -223,7 +225,6 @@ Stamm	2438
 Mode	2434
 Ausbildung	2434
 Design	2428
-Herz	2424
 Futter	2423
 Haut	2421
 Drachen	2416
@@ -275,6 +276,7 @@ Haar	2233
 Polit	2223
 Knochen	2217
 Strand	2215
+Name	2215
 Telefon	2214
 Netzwerk	2211
 Fleisch	2207
@@ -343,6 +345,7 @@ Praxis	2019
 Fenster	2015
 Leder	2011
 Heimat	2011
+Schmerz	2010
 Risiko	2010
 Objekt	2009
 Sonntag	1997
@@ -445,7 +448,7 @@ Scheiß	1770
 Flugzeug	1766
 Beitrag	1765
 Mutter	1763
-Segel	1761
+Segel	1762
 Süd	1760
 Tisch	1758
 Spannung	1758
@@ -516,7 +519,6 @@ Zucht	1650
 Universität	1650
 Jazz	1650
 Miniatur	1648
-Schmerz	1644
 Gewicht	1644
 Eisenbahn	1643
 Fels	1642
@@ -624,7 +626,7 @@ Gras	1486
 Sicherung	1483
 Plan	1482
 Dienstleistung	1481
-Nebel	1479
+Nebel	1480
 Erfahrung	1479
 Uni	1476
 Zwilling	1474
@@ -681,6 +683,7 @@ Empfang	1412
 Kalk	1410
 Bewertung	1408
 Saison	1407
+Friede	1406
 Kompetenz	1405
 Server	1404
 Anwendung	1403
@@ -723,8 +726,8 @@ Kammer	1363
 Mörder	1362
 Ecke	1360
 Bein	1360
+Möbel	1354
 Überwachung	1353
-Möbel	1353
 Unfall	1352
 Gedächtnis	1352
 Bildschirm	1352
@@ -760,8 +763,8 @@ Verteidigung	1301
 Anfänger	1301
 Vermögen	1300
 Währung	1299
+Gipfel	1299
 Orchester	1298
-Gipfel	1298
 Elbe	1298
 Gebiet	1297
 Fitness	1295
@@ -1433,6 +1436,7 @@ Los	861
 Eiweiß	861
 Bischof	861
 Anschlag	861
+Wille	860
 Franken	860
 Acker	860
 Menü	859
@@ -3055,6 +3059,7 @@ Kürzung	425
 Übersetzer	424
 Zeiger	424
 Watte	424
+Sponsor	424
 Schlepper	424
 Population	424
 Logo	424
@@ -3067,7 +3072,6 @@ Hort	423
 Fließband	423
 Diskus	423
 Unrecht	422
-Sponsor	422
 Sperma	422
 Referat	422
 Mädel	422
@@ -3262,6 +3266,7 @@ Zuschlag	396
 Controller	396
 Baseball	396
 Zapfen	395
+Wandel	395
 Verfügung	395
 Treue	395
 Reputation	395
@@ -3279,7 +3284,6 @@ Kiosk	394
 Joghurt	394
 Februar	394
 Erbschaft	394
-Wandel	393
 Tod	393
 Sucher	393
 Sponsoring	393
@@ -4268,6 +4272,7 @@ Horoskop	283
 Gebläse	283
 Erzähler	283
 Auswurf	283
+Zweifel	282
 Verschiebung	282
 Tänzer	282
 Steigung	282
@@ -4279,7 +4284,6 @@ Inzest	282
 Efeu	282
 Braten	282
 Bestellung	282
-Zweifel	281
 Zickzack	281
 Wirksamkeit	281
 Translation	281
@@ -7387,6 +7391,7 @@ Zeus	119
 Winder	119
 Wichtigkeit	119
 Wertschätzung	119
+Vorname	119
 Vogtei	119
 Veto	119
 Verarmung	119
@@ -8517,6 +8522,7 @@ Hader	91
 Gräuel	91
 Gradation	91
 Gelöbnis	91
+Gedanke	91
 Garderobe	91
 Fluegel	91
 Fauna	91
@@ -9086,7 +9092,6 @@ Idol	79
 Gratifikation	79
 Gnom	79
 Gefangenschaft	79
-Friede	79
 Flaum	79
 Fjell	79
 Epidemie	79
@@ -9334,6 +9339,7 @@ Passer	75
 Palisander	75
 Namibia	75
 Nachzahlung	75
+Nachname	75
 Möblierung	75
 Morast	75
 Metronom	75
@@ -9454,7 +9460,6 @@ Pater	73
 Passah	73
 Parser	73
 Palaver	73
-Name	73
 Nachzug	73
 Mogul	73
 Mitsprache	73
@@ -9690,6 +9695,7 @@ Schmatz	69
 Schleifstein	69
 Rücklage	69
 Rondell	69
+Reuss	69
 Ressentiment	69
 Referendariat	69
 Ratifikation	69
@@ -9711,6 +9717,7 @@ Heinrich	69
 Guano	69
 Gimmick	69
 Genitiv	69
+Funke	69
 Este	69
 Erwählung	69
 Erwerber	69
@@ -9741,7 +9748,6 @@ Skalar	68
 Sizilien	68
 Selbstbehalt	68
 Schoenheit	68
-Reuss	68
 Rekreation	68
 Quotierung	68
 Professor	68
@@ -9915,6 +9921,7 @@ Trunk	65
 Tradierung	65
 Tobel	65
 Taurin	65
+Tadel	65
 Strafprozess	65
 Stadium	65
 Staatssekretär	65
@@ -9988,7 +9995,6 @@ Umwälzung	64
 Umrandung	64
 Tolerierung	64
 Togo	64
-Tadel	64
 Sinngebung	64
 Sieder	64
 Schwellung	64
@@ -10467,7 +10473,6 @@ Horde	58
 Holzer	58
 Harakiri	58
 Fötus	58
-Funke	58
 Fundierung	58
 Freibetrag	58
 Flakon	58
@@ -10890,6 +10895,7 @@ Albanien	53
 Abzweigung	53
 Abschwächung	53
 Abführung	53
+Aberglaube	53
 Überläufer	52
 Überlebung	52
 Wojewodschaft	52
@@ -11059,7 +11065,6 @@ Zertrümmerung	50
 Zermürbung	50
 Zentrale	50
 Yucca	50
-Wille	50
 Wiedereröffnung	50
 Wiederaufarbeitung	50
 Werker	50
@@ -11399,7 +11404,6 @@ Graviton	47
 Geher	47
 Gegenkopplung	47
 Gegendarstellung	47
-Gedanke	47
 Fäule	47
 Fräulein	47
 Flockung	47
@@ -11749,6 +11753,7 @@ Schwinge	43
 Schrieb	43
 Schickeria	43
 Schemel	43
+Same	43
 Rückweg	43
 Rückverfolgbarkeit	43
 Rückdeckung	43
@@ -13194,6 +13199,7 @@ Denaturierung	32
 Delkredere	32
 Coup	32
 Campesino	32
+Buchstabe	32
 Blondierung	32
 Bietung	32
 Bejahung	32
@@ -13535,6 +13541,7 @@ Verhetzung	29
 Verguetung	29
 Vergreisung	29
 Variator	29
+Unglaube	29
 Umschrift	29
 Umgrenzung	29
 Tutsi	29
@@ -14072,7 +14079,6 @@ Schweigen	26
 Schröter	26
 Schlösschen	26
 Schlitzer	26
-Same	26
 Saddam	26
 Rücktausch	26
 Röhre	26
@@ -14869,7 +14875,6 @@ Nebensaison	22
 Nachvertonung	22
 Nachschuß	22
 Nachsatz	22
-Nachname	22
 Nachbelastung	22
 Monotheismus	22
 Mitbenutzer	22
@@ -14959,7 +14964,6 @@ Dampfung	22
 Chateau	22
 Casanova	22
 Buhmann	22
-Buchstabe	22
 Borneo	22
 Bezeichner	22
 Betonierung	22
@@ -15222,6 +15226,7 @@ Verirrung	20
 Verhärtung	20
 Verblutung	20
 Unterlag	20
+Unfriede	20
 Understatement	20
 Unbildung	20
 Umspannung	20
@@ -15268,6 +15273,7 @@ Räumer	20
 Russifizierung	20
 Rhoen	20
 Reversion	20
+Reuß	20
 Resümee	20
 Remigration	20
 Relativismus	20
@@ -15492,7 +15498,6 @@ Rückwurf	19
 Rückwanderer	19
 Rückfederung	19
 Rutscher	19
-Reuß	19
 Requirierung	19
 Reproduzierbarkeit	19
 Reminiszenz	19
@@ -17745,7 +17750,6 @@ Grammatikalität	12
 Gradierwerk	12
 Gote	12
 Globalität	12
-Glaube	12
 Gesetzmäßigkeit	12
 Gesetzlichkeit	12
 Gesetzbuch	12
@@ -19412,6 +19416,7 @@ Verarbeitbarkeit	8
 Vasektomie	8
 Vagabund	8
 Urteiler	8
+Unwille	8
 Untersteuerung	8
 Unterbruch	8
 Unsittlichkeit	8
@@ -21514,7 +21519,6 @@ Vorwärmung	5
 Vorweisung	5
 Vorverlängerung	5
 Vortreiber	5
-Vorname	5
 Vormischung	5
 Vorleister	5
 Vorkehrung	5
@@ -22441,7 +22445,6 @@ Abfänger	5
 Abfuehrung	5
 Abflutung	5
 Abfinanzierung	5
-Aberglaube	5
 Abdämmung	5
 Abbeizer	5
 Üppigkeit	4
@@ -25820,6 +25823,7 @@ Zurückverwandlung	2
 Zuruf	2
 Zurueckverweisung	2
 Zuritt	2
+Zuname	2
 Zumauerung	2
 Zuläufer	2
 Zuleiter	2
@@ -26264,6 +26268,7 @@ Verholer	2
 Verhohnepipelung	2
 Verheftung	2
 Verhantlung	2
+Verhandel	2
 Verhalter	2
 Verhakelung	2
 Vergärbarkeit	2
@@ -27911,6 +27916,7 @@ Entspeicherung	2
 Entspanner	2
 Entschub	2
 Entschränkung	2
+Entschlüssel	2
 Entschlafung	2
 Entschichter	2
 Entsamung	2
@@ -28355,6 +28361,7 @@ Beischlag	2
 Beirut	2
 Beipflichtung	2
 Beipackung	2
+Beiname	2
 Beinahefehler	2
 Beileitung	2
 Beileihung	2
@@ -28930,6 +28937,7 @@ Abarbeit	2
 Änschen	1
 Ähre	1
 Äffchen	1
+Zündfunke	1
 Zügler	1
 Zögerlichkeit	1
 Zöfchen	1
@@ -29447,6 +29455,7 @@ Wiederabschluss	1
 Wiederablagerung	1
 Wiederabkühlung	1
 Wiederabgabe	1
+Widerwille	1
 Widerverwendung	1
 Widerverkörperung	1
 Widerverheiratung	1
@@ -30026,6 +30035,7 @@ Vertüdelung	1
 Vertätigung	1
 Vertrotzung	1
 Vertretenheit	1
+Vertraur	1
 Vertracktheit	1
 Vertilger	1
 Vertafelung	1
@@ -30569,7 +30579,6 @@ Unglücklichkeit	1
 Ungestüm	1
 Ungeschick	1
 Unförmigkeit	1
-Unfriede	1
 Unersetzlichkeit	1
 Unerhörtheit	1
 Uneinbringlichkeit	1
@@ -30768,6 +30777,7 @@ Tunnelung	1
 Tummler	1
 Tuermer	1
 Tueftler	1
+Tu	1
 Tschibuk	1
 Tschechentum	1
 Trüger	1
@@ -31290,6 +31300,7 @@ Schnatterentchen	1
 Schnapschen	1
 Schmückler	1
 Schmunzler	1
+Schmunzel	1
 Schmuddeligkeit	1
 Schmoeker	1
 Schminker	1
@@ -31376,6 +31387,7 @@ Sardinier	1
 Sardelle	1
 Sarde	1
 Sarazene	1
+Sammel	1
 Salzburger	1
 Salvation	1
 Salutation	1
@@ -32758,8 +32770,10 @@ Miefer	1
 Mickrigkeit	1
 Mezzogiorno	1
 Meucheler	1
+Meuchel	1
 Metzig	1
 Metzgerer	1
+Metzel	1
 Metzchen	1
 Metrisierbarkeit	1
 Methodo	1
@@ -32876,6 +32890,7 @@ Lämmler	1
 Lämmer	1
 Lähmigkeit	1
 Lädierung	1
+Lächel	1
 Läber	1
 Lyoner	1
 Lynchung	1
@@ -33204,6 +33219,7 @@ Knäbchen	1
 Knutscher	1
 Knutchen	1
 Knurrer	1
+Knuddel	1
 Knubbelchen	1
 Knotung	1
 Knosper	1
@@ -33695,6 +33711,7 @@ Hildesheimer	1
 Hiesigkeit	1
 Hierzug	1
 Hierarchizität	1
+Heuchel	1
 Hetzung	1
 Herzustellung	1
 Herzung	1
@@ -35756,6 +35773,7 @@ Bengale	1
 Benetzer	1
 Benervung	1
 Bemöbelung	1
+Bemängel	1
 Bemerkbarkeit	1
 Bemeisterung	1
 Bemeierung	1
@@ -35779,6 +35797,7 @@ Belatscherung	1
 Belangbarkeit	1
 Belachung	1
 Bekämpfer	1
+Bekrittel	1
 Bekoestigung	1
 Bekochung	1
 Beklopfung	1
@@ -35789,6 +35808,7 @@ Beklagung	1
 Bekakelung	1
 Bejährung	1
 Bejublung	1
+Bejubel	1
 Beißerchen	1
 Beizeichnung	1
 Beizahlung	1
@@ -35853,6 +35873,7 @@ Begrüßer	1
 Begrüner	1
 Begruselung	1
 Begruesseung	1
+Begruess	1
 Begreifbarkeit	1
 Begraser	1
 Begonie	1
@@ -36097,6 +36118,7 @@ Aushoehlung	1
 Aushelfer	1
 Ausheizung	1
 Ausharmonisierung	1
+Aushandel	1
 Aushalter	1
 Aushaarung	1
 Ausgärung	1
@@ -36159,6 +36181,7 @@ Ausdampfung	1
 Ausbürgung	1
 Ausbüchser	1
 Ausbuergerung	1
+Ausbuddel	1
 Ausbuchstabierung	1
 Ausbruetung	1
 Ausbremser	1

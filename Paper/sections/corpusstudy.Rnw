@@ -162,7 +162,7 @@ Thus, we have found no evidence to support the external plural hypothesis in the
 There might, however, be item-specific differences between N1s or groups of N1s which take different PLs.
 In order to check for this, we calculated one $\chi^2$ test for each N1 with an approximate sample size of $n=200$ for each test.
 Since we are thus testing a family of connected hypotheses, p-values need to be corrected (correction for group-wise error).
-We used Šidák's method \parencite{Sidak1967}, which is only slightly less conservative than the well-known Bonferroni correction (for uncorrelated tests).%
+We used Šidák's method \parencite{Sidak1967}, which is only slightly less conservative than the well-known Bonferroni correction (at least for uncorrelated tests).%
 \footnote{We also tried Holm's and Hochberg's methods, but the differences between all those methods are small enough such that they do not lead to differences in the interpretation of the results.
 Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m=50$ is the number of tests.}
 With low counts in some cells, the $\chi^2$ approximation becomes inexact, and we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}.

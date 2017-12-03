@@ -21,6 +21,10 @@ nouns <- list(
   Uer = read.csv2(paste0(data.path, 'n1/n1+Uer.txt'),
                   header = FALSE, col.names = c("N1")),
   U   = read.csv2(paste0(data.path, 'n1/n1+U.txt'),
+                  header = FALSE, col.names = c("N1")),
+  ns  = read.csv2(paste0(data.path, 'n1/n1+ns.txt'),
+                  header = FALSE, col.names = c("N1")),
+  ens = read.csv2(paste0(data.path, 'n1/n1+ens.txt'),
                   header = FALSE, col.names = c("N1"))
 )
 
@@ -43,6 +47,10 @@ fhapax <- list(
   Uer  = read.csv2(paste0(data.path, 'fhapax/fhapax+Uer.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
   U    = read.csv2(paste0(data.path, 'fhapax/fhapax+U.csv'),
+                  sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
+  ns   = read.csv2(paste0(data.path, 'fhapax/fhapax+ns.csv'),
+                  sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
+  ens  = read.csv2(paste0(data.path, 'fhapax/fhapax+ens.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F"))
 )
 
@@ -65,6 +73,10 @@ ftoken <- list(
   Uer = read.csv2(paste0(data.path, 'ftoken/ftoken+Uer.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
   U   = read.csv2(paste0(data.path, 'ftoken/ftoken+U.csv'),
+                  sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
+  ns  = read.csv2(paste0(data.path, 'ftoken/ftoken+ns.csv'),
+                  sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
+  ens = read.csv2(paste0(data.path, 'ftoken/ftoken+ens.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F"))
 )
 
@@ -87,6 +99,10 @@ ftype <- list(
   Uer = read.csv2(paste0(data.path, 'ftype/ftype+Uer.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
   U   = read.csv2(paste0(data.path, 'ftype/ftype+U.csv'),
+                  sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
+  ns  = read.csv2(paste0(data.path, 'ftype/ftype+ns.csv'),
+                  sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F")),
+  ens = read.csv2(paste0(data.path, 'ftype/ftype+ens.csv'),
                   sep = "\t", colClasses = c("character", "integer"), header = FALSE, col.names = c("N1", "F"))
 )
 
@@ -109,6 +125,10 @@ compounds <- list(
   Uer = read.csv2(paste0(data.path, 'compounds/compounds+Uer.csv'),
                   sep = "\t", colClasses = c("character", "character", "integer"), header = FALSE, col.names = c("N1", "N2", "F")),
   U   = read.csv2(paste0(data.path, 'compounds/compounds+U.csv'),
+                  sep = "\t", colClasses = c("character", "character", "integer"), header = FALSE, col.names = c("N1", "N2", "F")),
+  ns  = read.csv2(paste0(data.path, 'compounds/compounds+ns.csv'),
+                  sep = "\t", colClasses = c("character", "character", "integer"), header = FALSE, col.names = c("N1", "N2", "F")),
+  ens = read.csv2(paste0(data.path, 'compounds/compounds+ens.csv'),
                   sep = "\t", colClasses = c("character", "character", "integer"), header = FALSE, col.names = c("N1", "N2", "F"))
 )
 
@@ -129,6 +149,10 @@ blacklists <- list(
   Uer = read.csv2(paste0(data.path, 'n1/real_blacklist+Uer.txt'),
                   sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
   U   = read.csv2(paste0(data.path, 'n1/real_blacklist+U.txt'),
+                  sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
+  ns  = read.csv2(paste0(data.path, 'n1/real_blacklist+ns.txt'),
+                  sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
+  ens = read.csv2(paste0(data.path, 'n1/real_blacklist+ens.txt'),
                   sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1"))
 )
 
