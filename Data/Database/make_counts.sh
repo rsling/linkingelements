@@ -87,6 +87,14 @@ do_it() {
   suffix='-e'
   get_all
 
+  snippet='_-ens_'
+  suffix='-ens'
+  get_all
+
+  snippet='_-ns_'
+  suffix='-ns'
+  get_all
+
   echo
   echo "NOTE: Getting the counts for '+' takes exceptionally long!"
   snippet='_'
@@ -101,7 +109,7 @@ do_it() {
   
   echo
   echo "NOTE: Getting the counts for 'NOT PLURAL' takes exceptionally long!"
-  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\)'
+  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\|_-ens_\|_-ns_\)'
   suffix='+NP'
   get_all
 }
@@ -110,7 +118,7 @@ do_it() {
 echo
 echo "*********************************************"
 echo "* This script may take many minutes to run. *"
-echo "* On my high-performance MacBook: 73 min.   *"
+echo "* On my high-performance MacBook: hours.    *"
 echo "*********************************************"
 echo
 

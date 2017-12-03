@@ -80,7 +80,7 @@ print(stims.xt,
 
 The top eight compounds shown in the table were used as stimuli for the internal plural sub-experiment.
 The N2s \textit{Kooperation} `cooperation', \textit{Zusammenlegung} `merger\slash unification', \textit{Bündel} `bundle', and \textit{Sammlung} `collection' are clear triggers of internal plural.
-On the other hand, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', and \textit{Abdruck} `mark\slash impression (physical)' cannot trigger internal plural semantics at all.
+On the other hand, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', as well as \textit{Abdruck} `mark\slash impression (physical)' cannot trigger internal plural semantics at all.
 Because it is sensitive to the specific semantic relation between N1 and N2, the internal plural sub-experiment might be sensitive item-specific effects pertaining both to concrete combinations of N1 and N2.
 In order to control for such effects, we chose only four different N1s and combined each with an N2 triggering internal plural and one not triggering it.
 Since both combinations were used with PL and NPL, this would have meant exposing subjects to sixteen targets for the internal plural sub-experiment alone.
@@ -151,12 +151,12 @@ obs.coll.pl <- obs.coll[which(obs.coll$cond == "Collective"),]
 plot(obs.coll.pl$realRating~obs.coll.pl$participant,
      las = 2, col = "gold",
      main = "Internal plural semantics",
-     xlab = "Participant ID", ylab = "Split-100 responses",
+     xlab = "Participant ID", ylab = "Split-100 preference for PL",
      frame = F)
 plot(obs.coll.npl$realRating~obs.coll.npl$participant,
      las = 2, col = "gold",
      main = "No internal plural semantics",
-     xlab = "Participant ID", ylab = "Split-100 responses",
+     xlab = "Participant ID", ylab = "Split-100 preference for PL",
      frame = F)
 par(mfrow=c(1,1))
 @

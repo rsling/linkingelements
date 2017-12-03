@@ -118,22 +118,29 @@ do_it() {
   snippet='_'
   suffix='+'
   get_all
+
+  snippet='_+ns_'
+  suffix='+ns'
+  get_all
   
+  snippet='_+ens_'
+  suffix='+ens'
+  get_all
+
   snippet='\(_(e)_+s_\|_+s_\)'
   suffix='+s'
   get_all
 
-  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\)'
+  snippet='\(_(e)_+s_\|_+s_\|_\|_-e_\|_+ns_\|_+ens_\)'
   suffix='+NP'
   get_all_NP
-
 }
 
 
 echo
 echo "*********************************************"
 echo "* This script may take many minutes to run. *"
-echo "* On my high-performance MacBook: 4 min.    *"
+echo "* On my high-performance MacBook: hours.    *"
 echo "*********************************************"
 echo
 

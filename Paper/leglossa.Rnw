@@ -83,8 +83,8 @@
   }
 }
 
-% \addbibresource{rs.bib}
-\addbibresource{leglossa_biber.bib} % Generate using: biber leglossa --output_format bibtex
+\addbibresource{rs.bib}
+% \addbibresource{leglossa_biber.bib} % Generate using: biber leglossa --output_format bibtex
 
 \begin{document}
 
