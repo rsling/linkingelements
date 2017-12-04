@@ -23,7 +23,12 @@ In the corpus, nominal compounds come with full structural analyses created auto
 \footnote{The analyses are formatted like \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
 Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first constituent.}
 While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
-What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.
+What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.%
+\footnote{We made an exception for the zero linkage because the number of N1s was much too high for full manual inspection.
+We therefore implemented an automatic approach where a N1 had to fulfil one of the following criteria to be included:
+(i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns published by the COW project.
+(ii) It occured at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
+These criteria led to !!!TODO!!! of !!!TODO!!! N1s being excluded from the list of zero linkage candidates.}
 
 <<results='asis'>>=
 aggregate.freqs <- function(fto, fty, ns, le) {
