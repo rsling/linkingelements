@@ -153,7 +153,8 @@ compounds <- list(
 
 blacklists <- list(
   no  = data.frame(N1 = c("Nonwort")),
-  nul = data.frame(N1 = c("Nonwort")),
+  nul = read.csv2(paste0(data.path, 'n1/real_blacklist+.txt'),
+                  sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
   e   = read.csv2(paste0(data.path, 'n1/real_blacklist+e.txt'),
                   sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
   e   = read.csv2(paste0(data.path, 'n1/real_blacklist+e.txt'),
@@ -181,7 +182,8 @@ blacklists <- list(
 
 blacklists.lax <- list(
   no  = data.frame(N1 = c("Nonwort")),
-  nul = data.frame(N1 = c("Nonwort")),
+  nul = read.csv2(paste0(data.path, 'n1/real_lax_blacklist+.txt'),
+                  sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
   e   = read.csv2(paste0(data.path, 'n1/real_lax_blacklist+e.txt'),
                   sep = "\t", colClasses = c("character"), header = FALSE, col.names = c("N1")),
   e   = read.csv2(paste0(data.path, 'n1/real_lax_blacklist+e.txt'),

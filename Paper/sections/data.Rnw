@@ -17,20 +17,7 @@ However, the total number of candidates for first constituents and compounds is 
 This information tells us how strongly first constituents tend to appear with pluralic links and with non-pluralic links.
 This section describes the creation of these data.
 
-We began by extracting a very large database of all nominal compounds (not just N1+N2 compounds) from the DECOW16A web corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}).%
-\footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available.}
-In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
-\footnote{The analyses are formatted like \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
-Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first constituent.}
-While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
-What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.%
-\footnote{We made an exception for the zero linkage because the number of N1s was much too high for full manual inspection.
-We therefore implemented an automatic approach where a N1 had to fulfil one of the following criteria to be included:
-(i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns published by the COW project.
-(ii) It occured at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
-These criteria led to !!!TODO!!! of !!!TODO!!! N1s being excluded from the list of zero linkage candidates.}
-
-<<results='asis'>>=
+<<>>=
 aggregate.freqs <- function(fto, fty, ns, le) {
   list(
     Ftype  = sum(fty[[le]]$F),
@@ -50,9 +37,24 @@ freq.ov$N1s      <- as.numeric(freq.ov$N1s)
 freq.ov$N1sPc    <- freq.ov$N1s / sum(freq.ov$N1s) * 100
 
 freq.ov <- freq.ov[order(freq.ov$Ftype, decreasing = T),]
+@
+
+We began by extracting a very large database of all nominal compounds (not just N1+N2 compounds) from the DECOW16A web corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}).%
+\footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available.}
+In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
+\footnote{The analyses are formatted like \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
+Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first constituent.}
+While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
+What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.%
+\footnote{We made an exception for the zero linkage because the number of N1s was much too high for full manual inspection.
+We therefore implemented an automatic approach where a N1 had to fulfil one of the following criteria to be included:
+(i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns published by the COW project.
+(ii) It occured at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
+These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linkage N1 candidates.}
+
+<<results='asis'>>=
 
 freq.ov["Σ", ] <- apply(freq.ov, 2, sum)
-
 freq.ov$Ftype    <- nice.int(freq.ov$Ftype)
 freq.ov$FtypePc  <- nice.float(freq.ov$FtypePc)
 freq.ov$Ftoken   <- nice.int(freq.ov$Ftoken)

@@ -36,6 +36,7 @@
 \usepackage{listings}
 \usepackage{booktabs}
 \usepackage{rotating}
+\usepackage{bbding}
 
 % Set listing style. knitr uses RStyle style. Which you have to know...
 \definecolor{listingbackground}{gray}{0.95}
@@ -127,6 +128,7 @@ decow.docs   <- 17116160
 <<loaddata>>=
 load(paste0(my.root, path.rdata, "n1.frequencies.RData"))
 load(paste0(my.root, path.rdata, "nouns.RData"))
+load(paste0(my.root, path.rdata, "blacklists.RData"))
 
 load(paste0(my.root, path.rdata, "analyses.full.plus.RData")) # Basic frequency and productivity data.
 load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpus study. Funny file name.

@@ -8,45 +8,76 @@ In this paper, we exclusively deal with determinative (endocentric) nominal comp
 While compounding is a recursive process in principle, we ignore complications involved with more complex structures and look only at binary compounds.
 We refer to these structures as \textit{N1+N2 compounds}.
 
+In most compounds, N1 and N2 are simply concatenated, and N1 appear in uninflected form, identical to (at least) the nominative singular form.
+A linking element (LE) is optional segmental material inserted between N1 and N2.
+LEs in compounds are not exclusive to German; see !!!XYZ!!! on linking elements in Dutch and !!!XYZ!!! on !!!XYZ!!!, for example.
+However, German speakers use an unusually high number of different LEs, and they also use other types of linkage.
+The list of segmental LEs is widely accepted to be: \textit{e}, \textit{er}, \textit{s}, \textit{es}, \textit{n}, \textit{en}, \textit{ens}, \textit{ens} (see \citealt[31]{Neef2015}, \citealt{KrottEa2007}).
+Also, \textit{e} and \textit{er} come with an optional umlaut on N1, and some compounds just have umlaut on N1 and no segmental LE at all.
+Last, N1s ending in schwa (graphemically \textit{$\langle$e$\rangle$}) can drop this schwa in compounds.
 
-We use the notation \textit{-X} to denote linking element \textit{X} attaching to N1 and \textit{=X} to denote a linking element attaching to N1 with additional umlaut.
-Furthermore, \textit{+} separates N1 (possibly with linking element) and N2 in our analyses.
+In concrete analyses, we do not mark zero linkages at all.
+Furthermore, \textit{-X} is the notation for linking element \textit{X} attaching to N1, and \textit{=X} denotes a linking element attaching to N1 with additional umlaut.
+An umlaut-only linkage is indicated by \textit{=} alone.
 The special notation \textit{*e} is used for a linkage where the final schwa of N1 is deleted.
-Orthographically, German compounds are usually spelled as one word.
-Table~\ref{tab:linkages} shows the different types of linkages in German.
+Furthermore, \textit{+} separates N1 (possibly with linking element) and N2 in our analyses.
+Graphemically, however, German compounds are usually spelled as one word.
+Table~\ref{tab:linkages} illustrates the different types of linkages in German.%
+\footnote{Different types of linkages are also found in other types of German compounds, for example N+A compounds such as \textit{herzensgut} (\textit{Herz-ens+gut}) `kindhearted' or \textit{lebensfreundlich} (\textit{Leben-s+freundlich}) `life-sustaining\slash livable' or \textit{hundelieb} (\textit{Hund-e+lieb} `dog-loving'.
+While their distribution, function, and interpretation in such compounds might be related to that in N1+N2 compounds, our studies reported in Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment} make use of diagnostic features exclusive to N1+N2 compounds, and we therefore excluded all other types of compounds.}
 
 \begin{table}[htbp]
   \resizebox{\textwidth}{!}{
-    \begin{tabular}{llll}
+    \begin{tabular}{lllll}
     \toprule
-    Linkage & example & literal gloss & translation \\
+    Linkage & Pl & example & literal gloss & translation \\
     \midrule
-    ∅    & \textit{Haus-tür}                & house door       & `front door' \\
-    -s   & \textit{Anfang-s+zeit}           & beginning time   & `initial period' \\
-    -n   & \textit{Katze-n+pfote}           & cat paw          & `cat's paw' \\
-    -en  & \textit{Frau-en+stimme}          & woman voice      & `female voice' \\
-    *e   & \textit{Kirsch+kuchen}           & cherry cake      & `cherry cake' \\
-    -e   & \textit{Geschenk-e+laden}        & gift store       & `gift store' \\
-    =e   & \textit{Händ=e+druck}            & hand press       & `handshake' \\
-    =    & \textit{Mütter=+zentrum}          & mother centre    & `centre for mothers' \\
-    -er  & \textit{Kind-er+buch}            & child book       & `children's book' \\
-    =er  & \textit{Büch=er+regal}           & book shelf       & `bookshelf' \\
-    -ns  & \textit{Name-ns+schutz}          & name protection  & `name protection' \\
-    -ens & \textit{Herz-ens+angelegenheit}  & heart matter     & `affair of the heart' \\
+    ∅    &            & \textit{Haus-tür}                & house door       & `front door' \\
+    -s   &            & \textit{Anfang-s+zeit}           & beginning time   & `initial period' \\
+    -n   & \Checkmark & \textit{Katze-n+pfote}           & cat paw          & `cat's paw' \\
+    -en  & \Checkmark & \textit{Frau-en+stimme}          & woman voice      & `female voice' \\
+    *e   &            & \textit{Kirsch+kuchen}           & cherry cake      & `cherry cake' \\
+    -e   & \Checkmark & \textit{Geschenk-e+laden}        & gift store       & `gift store' \\
+    =e   & \Checkmark & \textit{Händ=e+druck}            & hand press       & `handshake' \\
+    =    & \Checkmark & \textit{Mütter=+zentrum}         & mother centre    & `centre for mothers' \\
+    -er  & \Checkmark & \textit{Kind-er+buch}            & child book       & `children's book' \\
+    =er  & \Checkmark & \textit{Büch=er+regal}           & book shelf       & `bookshelf' \\
+    -ns  &            & \textit{Name-ns+schutz}          & name protection  & `name protection' \\
+    -ens &            & \textit{Herz-ens+angelegenheit}  & heart matter     & `affair of the heart' \\
     \bottomrule
     \end{tabular}
   }
-  \caption{Overview of the different linkages in German nominal compounds; \textit{=} is used to denote linking elements which trigger umlaut on N1, \textit{*e} denotes linkages where the final schwa of N1 is deleted}
+  \caption{Overview of the different linkages in German nominal compounds; \textit{=} is used to denote linking elements which trigger umlaut on N1, \textit{*e} denotes linkages where the final schwa of N1 is deleted; the column labelled \textit{Pl} indicates whether the linkage is formally identical to the plural of N1 (see below)}
   \label{tab:linkages}
 \end{table}
 
-Whether \textit{-en} and \textit{-n} and \textit{-ens} and \textit{-ns} are allomorphic variants is debated.
+Whether \textit{-en} and \textit{-n} and \textit{-ens} and \textit{-ns} should be described as allomorphic variants is debated.
 See Sections~3.2 and~3.6 of \textcite{NueblingSzczepaniak2013} for an argument in favour of this view and \textcite[33--36]{Neef2015} for an argument against it.
-This issue does not affect our study, and we separate the two potential alloforms in order to maximise the informativity of our results.
+This issue does not affect our study, and we separate the two potential allo-forms in order to maximise the informativity of our results.
+Since we do not look at \textit{-(e)s} linkages in detail, however, we conflated these two.
+\textcite[177]{Gallmann1999} reports that $70\%$ of all N1+N2 compounds have zero linkage, not specifying whether he refers to type or token frequency.
+\textcite[29]{KrottEa2007} report that the compound types with zero linkage make up for $65\%$ of all compounds in the CELEX database.
+See Section~ \ref{sec:databaseandproductivityassessment} for a detailed breakdown of the type and token frequencies in the 21 billion token DECOW16A corpus.
+
+The choice of linking element is not fully predictable, but the grammatical gender of N1, its declension class (which depends largely on gender), the phonotactics of N1, and possibly plural semantics limit the options severely (see \citealt{Fuhrhop1996,NueblingSzczepaniak2013}).
+All the morpho-phonological and lexical factors relate strictly to N1, such that the distribution of linking elements and linkages in general is unanimously treated as suffixation of N1.
+For example, derived nouns ending in suffixes like \textit{-ung}, \textit{-heit}, \textit{-tum}, etc.\ have a trong tendency to occur with an \textit{-s} linkage as in \textit{Heizung-s+wartung} `heating maintenance' \parencite{?WHOM?}.
+Simplex masculine and neuter nouns also optionally take the \textit{-(e)s} LE, in which case the form is identical to the genitive singular, for example \textit{Boot-s+fahrt} `boat trip' (with neuter \textit{Boot}) or \textit{Tag-es+form} `form of the day' (with masculine \textit{Tag}).
+N1s ending in non-reduced vowels such as \textit{Oma} `grandma' or \textit{Auto} `car' can never take the \textit{-s} LE (although \textit{-s} is their only inflectional suffix when used as a single noun) and tend to occur with a zero linkage as in \textit{Auto+wäsche} `car wash' \parencite{?WHOM?}.
+Feminine nouns ending in schwa virtually always occur with an \textit{-n} linkage \parencite[32]{LibbenEa2002}, which is also their plural morpheme.
+So-called weak masculine nouns and so-called mixed masculine and neuter nouns, which have an \textit{-(e)n} plural, often occur with an \textit{-(e)n} LE, for example \textit{Linguist-en+witz} `linguist's joke' or `joke about linguists' and \textit{Schwede-n+humor} `Swede humor'.%
+\footnote{For weak nouns, the \textit{-(e)n} LE is also identical to all non-nominative singular forms because they follow an otherwise unusual paradigm (see \citealt{Koepcke1995,Schaefer2016c}).}
+Finally, \textit{-ens} and \textit{-ns} are idiosyncratic and only used with a handful of N1s.
+In sum, while the zero linkage is some kind of default \parencite[30]{Neef2015}, N1s from different declension classes (often partially predetermined by gender and stem-final segements) have other preferences and are often blocked from occurring with certain linkages.
+Beyond the zero and \textit{-(e)s} linkages, the linking element a specific N1 can take is largely identical to its plural marker.
+
+However, it is by no means fully pre-determined which linkage will be chosen in a given compound.
+
 
 \subsection{Do linking elements have a function, semantics, or neither?}
 \label{sub:dolinkingelementshaveafunctionsemanticsorneither}
 
+Neef on "no alternation" (BA p. 10) here.
 
 \paragraph{Final statement, copied from elsewhere}
 
