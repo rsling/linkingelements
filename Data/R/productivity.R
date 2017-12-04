@@ -2,9 +2,7 @@ rm(list = ls())
 set.seed(183)
 source('functions.R')
 
-load("RData/fhapax.RData")
-load("RData/ftoken.RData")
-load("RData/ftype.RData")
+load("RData/n1.frequencies.RData")
 load("RData/nouns.RData")
 
 productivities <- list(

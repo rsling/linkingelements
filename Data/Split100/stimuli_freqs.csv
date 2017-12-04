@@ -1,0 +1,17 @@
+N1	N2	FtokenNPL	FdocNPL	FtokenPL	FdocPL	CompNPL	CompPL	Gloss	LE
+Bad	Kooperation	1	1	7	6	Badkooperation	Bäderkooperation	bath cooperation	Uer
+Bad	Eingang	28	28	1	1	Badeingang	Bädereingang	bathroom door	Uer
+Weg	Zusammenlegung	0	0	0	0	Wegzusammenlegung	Wegezusammlegung	path merger	e
+Weg	Beschriftung	3	3	0	0	Wegbeschriftung	Wegebeschriftung	pathway label	e
+Brett	Bündel	0	0	1	1	Brettbündel	Bretterbündel	board bundle	er
+Brett	Schliff	1	1	0	0	Brettschliff	Bretterschliff	board cut	er
+Schwert	Abdruck	1	1	0	0	Schwertabdruck	Schwerterabdruck	sword mark	er
+Schwert	Sammlung	5	5	10	8	Schwertsammlung	Schwertersammlung	sword collection	er
+Haus	Abbruch	78	69	26	24	Hausabbruch	Häuserabbruch	building demolition	Uer
+Kraft	Stärke	23	19	3	3	Kraftstärke	Kräftestärke	force strength	Ue
+Grab	Buchung	0	0	0	0	Grabbuchung	Gräberbuchung	grave reservation	Uer
+Punkt	Farbe	38	28	0	0	Punktfarbe	Punktefarbe	dot colour	e
+Blatt	Analyse	63	53	0	0	Blattanalyse	Blätteranalyse	leaf analysis	Uer
+Bett	Länge	137	118	107	38	Bettlänge	Bettenlänge	bed length	en
+Last	Berechnung	54	42	79	34	Lastberechnung	Lastenberechnung	load calculation	en
+Hemd	Schlitz	9	7	1	1	Hemdschlitz	Hemdenschlitz	shirt slit	en

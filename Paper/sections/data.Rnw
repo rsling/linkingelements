@@ -25,6 +25,58 @@ Underscores separate the constituents of the compound, the nominal elements are 
 While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating some ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
 What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.
 
+<<results='asis'>>=
+aggregate.freqs <- function(fto, fty, ns, le) {
+  list(
+    Ftype  = sum(fty[[le]]$F),
+    Ftoken = sum(fto[[le]]$F),
+    N1s    = nrow(ns[[le]])
+  )
+}
+freq.ov <- t(sapply(tail(names(ftoken), -1), function(le) {aggregate.freqs(ftoken.lax, ftype.lax, nouns.lax, le)}))
+rownames(freq.ov) <- le.name(rownames(freq.ov))
+freq.ov <- as.data.frame(freq.ov)
+
+freq.ov$Ftype    <- as.numeric(freq.ov$Ftype)
+freq.ov$FtypePc  <- freq.ov$Ftype / sum(freq.ov$Ftype) * 100
+freq.ov$Ftoken   <- as.numeric(freq.ov$Ftoken)
+freq.ov$FtokenPc <- freq.ov$Ftoken / sum(freq.ov$Ftoken) * 100
+freq.ov$N1s      <- as.numeric(freq.ov$N1s)
+freq.ov$N1sPc    <- freq.ov$N1s / sum(freq.ov$N1s) * 100
+
+freq.ov <- freq.ov[order(freq.ov$Ftype, decreasing = T),]
+
+freq.ov["Σ", ] <- apply(freq.ov, 2, sum)
+
+freq.ov$Ftype    <- nice.int(freq.ov$Ftype)
+freq.ov$FtypePc  <- nice.float(freq.ov$FtypePc)
+freq.ov$Ftoken   <- nice.int(freq.ov$Ftoken)
+freq.ov$FtokenPc <- nice.float(freq.ov$FtokenPc)
+freq.ov$N1s      <- nice.int(freq.ov$N1s)
+freq.ov$N1sPc    <- nice.float(freq.ov$N1sPc)
+
+freq.ov <- freq.ov[,c("Ftype", "FtypePc", "Ftoken", "FtokenPc", "N1s", "N1sPc")]
+colnames(freq.ov) <- c("Compound $F$", "\\%", "Compound $f$", "\\%", "N1 $F$", "\\%")
+rownames(freq.ov)[1] <- "∅"
+
+freq.ov.xt <- xtable(
+  freq.ov,
+  booktabs = T,
+  caption = "Type and token frequencies of all linkages in N1+N2 compounds in DECOW16A",
+  label = "tab:freqoverview"
+)
+align(freq.ov.xt) <- c("l", rep("r", 6))
+print(freq.ov.xt,
+      floating = T,
+      table.placement = 'htbp',
+      booktabs = T,
+      rotate.colnames = F,
+      scalebox = 0.95,
+      hline.after = c(-1,0,12,13),
+      sanitize.text.function = function(x){x}
+)
+@
+
 <<>>=
 aggregate.le <- function(df) {
   list(
@@ -46,6 +98,9 @@ Both the first author of this paper and a student assistant checked the entire l
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena containing it (\ie those compounds containing the N1 which occur only once in the corpus).
 Since we are interested in the alternation between N1s used with PLs and without them (either without any linking element, with deletion, or with a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a non-pluralic link (NPL).
+An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linkages in DECOW16A is given in Table \ref{tab:freqoverview}.%
+\footnote{In these counts, mass nouns and weak nouns were included.
+Since they were removed for the actual analysis reported below, the frequencies in the table are higher, espescially for \textit{-n} and \textit{-en}, which are the pluralic linking elements of the weak nouns.}
 
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.
 While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.

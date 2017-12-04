@@ -53,7 +53,7 @@ Finally, we checked the frequencies of the N1+N2 combinations with PL and NPL in
 The process turned out to be an iterative one because compounds meeting the desired criteria were difficult to find.
 Table~\ref{tab:stimuli} presents the results of the selection process.
 The table shows the potential productivity $P^p$ for the N1 with PL and NPL, and they roughly match in many cases, for example $P^p_{PL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.
-The frequency classes $c$ of the fuli compound with PL and NPL is also given, where class $28$ corresponds to a token frequency of $1$, and no frequency class (--) is assigned to words with a token frequency of $0$.
+The frequency classes $c$ of the full compound with PL and NPL is also given, where class $28$ corresponds to a token frequency of $1$, and no frequency class (--) is assigned to words with a token frequency of $0$.
 Additionally, the total difference in token frequency of the two compounds is specified ($\Delta_f$), where the maximum absolute difference is $63$, which is clearly not extreme, given that the corpus contains 21 billion tokens and approximately 15 billion words.
 
 <<results='asis'>>=

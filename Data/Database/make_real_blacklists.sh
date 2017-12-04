@@ -13,5 +13,8 @@ for f in $(ls -1 n1/blacklist*.txt)
 do
   out_file="$(dirname ${f})/real_$(basename ${f})"
   grep '^[#-]' ${f} | tr -d '-' | tr -d '#' > ${out_file}
+  out_file="$(dirname ${f})/real_lax_$(basename ${f})"
+  grep '^[-]' ${f} | tr -d '-' > ${out_file}
 done
+
 

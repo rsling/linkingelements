@@ -60,14 +60,16 @@ get.ppot <- function(N1, db, LE) {
 
 # Function to get rid of blacklisted N1s in single df.
 clean.df.by.blacklist <- function(df, blacklist, column) {
+  .cns <- colnames(df)
   .blacked <- which(df[,column] %in% blacklist[,column])
   .blacked <- .blacked[which(!is.na(.blacked))]
   if (length(.blacked) > 0) {
-    cat("Here\n")
-    df[-c(.blacked),]
+    .r <- as.data.frame(df[-c(.blacked),])
   } else {
-    df
+    .r <- as.data.frame(df)
   }
+  colnames(.r) <- .cns
+  .r
 }
 
 
@@ -121,7 +123,13 @@ map.log <-  function(x, x.max, to.max = 1.5) {
 
 
 le.name <- function(le) {
-  ifelse(startsWith(le, 'U'), paste0('=', substr(le, 2, nchar(le))), paste0('-', le))
+  ifelse(startsWith(le, 'U'), paste0('=', substr(le, 2, nchar(le))),
+         ifelse(startsWith(le, 'X'), paste0('*', substr(le, 2, nchar(le))),
+                ifelse(le == "nul", "0",
+                       paste0('-', le)
+                       )
+                )
+         )
 }
 
 
