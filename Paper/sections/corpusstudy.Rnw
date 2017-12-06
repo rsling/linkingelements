@@ -243,7 +243,7 @@ For the internal plural sub-study, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on both of them.
 While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.
 
-<<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and corrected p-values for the internal plural sub-study">>=
+<<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and Šidák-corrected p-values for the internal plural sub-study; groups (linking elements) are sorted by descending overall effect strength (strict); per group, N1s are sorted by descending effect strength (strict)">>=
 corpuseffects.colors <- colorRampPalette(c("darkorange", "darkgreen"))(100)
 
 # The dots are in fact invisible (pch="") so we can draw freely later.
