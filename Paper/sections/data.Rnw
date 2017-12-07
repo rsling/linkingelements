@@ -24,9 +24,10 @@ Web corpora can thus be regarded as an established source of data on a par with 
 \label{sec:databaseandproductivityassessment}
 
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
-However, the total number of candidates for first constituents and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, data about the type frequencies, token frequencies, and the productivity of first constituents were required.
-This information tells us how strongly first constituents tend to appear with pluralic links and with non-pluralic links.
-This section describes the creation of these data.
+However, the total number of candidates for first constituents and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, large-scale data about the type frequencies, token frequencies, and the productivity of first constituents were required.
+We used automatic approaches to create a set of databases, and demanding manual clean-up and selection steps in-between automatic steps were used to ensure that the results were reliable.
+The database tells us how strongly first constituents tend to appear with pluralic links and with non-pluralic links, including an assessment of their productivity with pluralic and non-pluralic linkages.
+This section describes the creation of the database.
 
 <<>>=
 aggregate.freqs <- function(fto, fty, ns, le) {

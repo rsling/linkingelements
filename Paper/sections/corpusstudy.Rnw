@@ -108,12 +108,23 @@ In addition to these clear-cut cases there was a second group of compounds in wh
 Most prominently, there are N2 which denote a container of some sort.
 Examples include \textit{Äpfellager} `storage for apples', \textit{Briefekatalog} `catalogue of letters', and \textit{Liederbuch} `book of songs\slash songbook'.
 In essence, this second large group contains compounds where the N2 might theoretically denote a container etc.\ for just one object, but both world knowledge and the context exclude this possibility beyond doubt.
-In the analysis of the final sample we present the results for only the first, clear-cut cases and the results of both the clear-cut and the extended cases separately under le labels of \textit{strict annotation} (only the clear-cut cases) and \textit{lax annotation} (including extended cases).
+In the analysis of the final sample we present the results for only the first, clear-cut cases and the results of both the clear-cut and the extended cases separately under le labels of \textit{strict annotation} (only the clear-cut cases) and \textit{lax annotation} (including extended cases).%
+\footnote{We think it is encouraging that \textcite{BangaEa2013b} found the stable and expected results even using a more cavalier operationalisation of what they call conceptual plurals.
+``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
+The problem with \textit{strawberry jam} is that \textit{strawberry} could address the generic meaning (`strawberry type') or a mass noun version (`strawberry substance'), in which case the numerosity of referents of N1 would be much weaker conceptually.
+Since in the corpus study we had to assume that there were more confounding factors anyway, we did not include such cases to be on the safe side.
+}
+
 
 \subsection{Results}
 \label{sec:results}
 
-As pointed out in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.
+As pointed out in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.%
+\footnote{In the recent years and decades, practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
+Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
+We feel that corpus linguists have not yet picked up on the debate fully to the effect that most papers do not make explicit which statistical philosophy they follow.
+We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalysis}.}
+
 All exemplars were annotated for internal and external plural, and we treat the two annotations as two sub-studies, starting with the external plural sub-study.
 
 There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.

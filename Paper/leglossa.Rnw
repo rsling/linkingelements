@@ -174,8 +174,8 @@ Luise Rißmann did sterling work helping with the annotation of the concordances
 We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
 Roland Schäfer's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1).
 
-\printbibliography
+\include{sections/onstatisticalanalysis}
 
-\include{onstatisticalanalysis}
+\printbibliography
 
 \end{document}

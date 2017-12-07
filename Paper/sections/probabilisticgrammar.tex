@@ -1,99 +1,10 @@
 \section{Probabilistic grammar}
 \label{sec:probabilisticgrammar}
 
-\subsection{Frameworks, theories, and probabilism}
-\label{sec:frameworkstheoriesandprobabilism}
+\subsection{Short intro to phenomenon}
 
-\paragraph{Short intro to phenomenon}
+\subsection{Morphological theories and frameworks (incl. Haspelmath)}
 
-\paragraph{Morphological theories and frameworks (incl. Haspelmath)}
-
-\paragraph{Probabilism}
+\subsection{Probabilism}
 
 
-\subsection{On statistical analyses}
-\label{sec:onstatisticalanalyses}
-
-In this section, we argue for our approach to exploratory and inferential data analysis.
-This has become a de facto requirement given that practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
-Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
-We feel that corpus linguists have not yet picked up on the debate fully.
-We adopt the statistical philosophy of Ronald A.\ Fisher, and readers familiar with the debate can skip this section, keeping that information in mind.
-
-In Section~\ref{sec:linkingelementsingerman}, we will derive two operationalisable working hypotheses from our main substantive hypothesis that there is a connection between pluralic links and plural interpretations of N1.
-We now explain our position on data analysis and so-called \textit{hypothesis testing}.
-The most widely used statistical system is \textit{Null Hypothesis Significance Testing} (NHST), and it is one of the \textit{frequentist} systems of statistical inference.
-In NHST, researchers attempt to substantiate the existence of an effect (such as a positive connection between plural semantics and pluralic linking elements) which is predicted to exist by their favoured theory, by means of conducting an experiment in which the effect is measured.
-Then, the probability $p$ (the so-called \textit{p-value}) of obtaining the observed measurements or more extreme measurements under the assumption that there is actually \textit{no} effect (the \textit{null hypothesis} or just the \textit{null}) is calculated.
-If this probability is lower than a certain threshold (usually called the $\alpha$-\textit{level}), the null hypothesis is \textit{rejected}, which is taken as evidence that the hypothesis derived from the theory is correct.
-It is often incorrectly stated that ``the experiment\slash test shows that the probability that the null is correct is $p$'' or ``is lower than $\alpha$''.
-This approach is riddled with philosophical and statistical problems and has led to the promotion of of bad scientific practice.
-Among the most ardent critics are \textcite{Gigerenzer2004}, \textcite{Colquhoun2014}, and \textcite{MunafoEa2017}, and the editors of the journal \textit{Basic and Applied Social Psychology} have even banned the use of p-values in an actionist attempt to tackle problems of bad science related to NHST \parencite{TrafimowMarks2016}.
-Critics often propose to abandon frequentist inference altogether and adopt a Bayesian approach, which itself is not without philosophical and practical problems (see, for example, \citealt{Mayo1996}, \citealt{Senn2011}).
-Other have proposed abandoning statistical inference proper in favour of confidence intervals and effect sizes \parencite{Cumming2014}, sometimes not noticing that NHST confidence intervals are not considerably different from NHST p-values, as \textcite{Perezgonzalez2015b} shows in reply to \textcite{Cumming2014}.
-
-However, there is no need to abandon frequentist inference or p-values simply because they have been abused.
-A great many statisticians and researchers have shown that the major problem with NHST is that it is a mixture of the statistical philosophies of Ronald A. Fisher on the one hand and Jerzy Neyman and Egon Pearson on the other hand (see \citealt{Goodman2008}, \citealt{Perezgonzalez2014}, \citealt{Perezgonzalez2015}, \citealt{GreenlandEa2016}; see also \citealt{Lehmann1993} and \citealt{Lehmann2011} for an overview of these two philosophies and the history of their development).
-We follow Fisher's statistical philosophy, and we briefly compare it to Neyman and Pearson's now.
-
-Neyman and Pearson developed a system where two hypotheses which exhaust the probability space are specified:
-the \textit{main hypothesis} (H\Sub{M}) and the \textit{alternative hypothesis} (H\Sub{A}).%
-\footnote{It is vital that $p(H_M\cup H_A)=1$.}
-The goal is to accept either of these hypotheses and reject the other, where typically H\Sub{M} is the hypothesis predicted by the experimenter's favoured theory and the one they would like to accept.
-The reason why the Neyman-Pearson approach can be hard to implement is that H\Sub{M} needs to be specified \textit{precisely}, \ie including the effect size.
-For example, if the experiment is a reading time experiment contrasting reading times under two distinct conditions, then the expected increase in reading times needs to specified numerically.
-If this is possible, then researchers can calculate the risk of incorrectly accepting H\Sub{M} when it is false ($\alpha$) and the risk of incorrectly accepting H\Sub{A} when it is false ($\beta$) \textit{given specific sample sizes}, then setting the optimal sample size and choosing the optimal test procedure.
-Especially Neyman designed this system explicitly with the idea in mind that researchers end up doing the right thing in $1-\alpha$ of all cases if they follow this protocol.
-No inference with respect to the ultimate truth of a specific hypothesis at hand was ever intended by Neyman.
-In empirical linguistics (both corpus-based and experimental), following the Neyman-Pearson protocol is often impossible because theories do not predict effect sizes.
-
-Fisher developed a system where the probability of a specific outcome of a random experiment (or a more extreme outcome) \textit{if there is no effect} (the H\Sub{0} or \textit{null hypothesis} or simply the \textit{null}) is calculated as the p-value.
-It cannot be stressed enough that this is the probability of obtaining such results \textit{before the experiment is conducted} and \textit{taking into account the design of the experiment}.%
-\footnote{It is \textit{not} a Bayesian posterior probability which allegedly quantifies the credibility of a hypothesis given the data.}
-\textcite[504]{Fisher1926} suggests an informal, adaptive, and approximate \textit{threshold of significance} (or \textit{sig}), for example $0.05$, below which researcher might suspect that there is something going on (see also Section~4.4 in \citealt{Lehmann2011} for a detailed summary of Fisher's positions).
-While Fisher did not directly recommend the inspection of p-values, he recommended that experimenters set \textit{sig} appropriately based on previous experimental or theoretical knowledge (see Chapter~4 of \citealt{Lehmann2011} and \citealt{Perezgonzalez2015}).
-Furthermore, p-values can be corrected after the experiment, for examples if many conceptually related tests are performed, which increases the actual error rates relative to the nominal ones.
-The most important pitfalls and misunderstandings (directly translating into some of the false assumptions common in NHST) in Fisher's framework are:
-
-\vspace{\baselineskip}
-\begin{enumerate}
-  \item \label{it:fisher01} Researchers take a significant result as a proof of something, usually the hypothesised effect.
-    In fact, significance only shows that either the null does not describe the actual world very well \textit{or a rare event has occurred}.
-    There is no way of knowing with any specifiably accuracy which of these is the case.
-  \item \label{it:fisher02} Practitioners take point~(\ref{it:fisher01}) even further and make an inference from a single significant result to some substantive hypothesis such as ``my whole theory is correct''.
-  \item \label{it:fisher03} Researchers assign high importance to some significant result although the data only suggests that the null might be rejected, but that the effect is rather small.
-  \item \label{it:fisher04} If one runs a series of experiments and performs the corresponding tests in which the nulls are conceptually related, the actual probabilities of just a rare event happening increase, and each $p$ or the \textit{sig} level are too optimistic if left uncorrected.
-  \item \label{it:fisher05} Finally, practitioners might not have conducted a proper random experiment (wilfully or out of ignorance), thus changing the sample space and invalidating the actual computations
-\end{enumerate}
-\vspace{\baselineskip}
-
-Points~(\ref{it:fisher01}) and~(\ref{it:fisher02}) can be remedied by researchers being aware of the actual (low) importance which can be attributed to a single significant result.
-Furthermore, good use of previous experimental and theoretical knowledge in interpreting actual p-values (although Fisher himself was not much interested in interpreting p-values) helps making the Fisher approach more sound in practice.
-It also helps to do replications and perform meta-analyses.
-Problems with point~(\ref{it:fisher03}) are easily avoided by looking at effect sizes (which are usually associated with the Neyman-Pearson approach but imported easily into a Fisherian procedure).
-Demanding that researchers should pay more attention to effect sizes is really just another way of saying that they should do proper exploratory\slash descriptive analysis of their data sets.
-Point~(\ref{it:fisher04}) can be dealt with by applying corrections for group-wise error (which should not be called ``$\alpha$-level correction'' under Fisher's approach even if the two are mathematically equivalent).
-
-Point~(\ref{it:fisher05}) poses the most serious threat to validity in corpus linguistics.
-Fisher's logic of experimental design presupposes that test subjects were randomly chosen from the population of interest and that confounding factors are thus distributed randomly (see Chapter~2 of \citealt{MaxwellDelaney2004} for a convenient overview).
-Experimentation in corpus linguistics but also in linguistics in general is marred by the fact that researchers often cannot specify their population of interest with high precision.
-The traditional discussion of the \textit{representativeness} of a corpus does not help because it is more often than not centred around the concept of a corpus being ``representative of a language'' (as a whole), using as points of reference:
-(i) the distribution of texts or text types in the output of all speakers of a language (production-based),
-(ii) the distribution of the relevance of texts or text types in the whole speech community (relevance-based), or
-(iii) the distribution of speakers' expositions to different texts or text types (perception-based).%
-\footnote{For overviews from different perspectives, see \textcite{Biber1993}, \textcite{MceneryEa2006}, \textcite{Leech2007}, \textcite{Hunston2008}.}
-Even in \textcite{StefanowitschFlach2016}, a recent contribution where the perception-based view is argued to be valid in cognitively oriented corpus linguistics, a global view of representativity is addressed.%
-\footnote{``In this wider context, large, register-mixed corpora such as the British National Corpus [\ldots] may not be perfect models of the linguistic experience of adult speakers, but they are reasonably close to the input of an idealized average member of the relevant speech community.'' \parencite[104]{StefanowitschFlach2016}}
-The population of interest has to be defined with regard to each experiment individually, and it might be something very specific (such as the written output of speakers of a certain age, in a specific register, etc.) instead of ``the language'' or ``the average speaker'' (across all communicative settings and modes).
-In social sciences, the concepts of \textit{global and specific representativeness} \citep[86]{Bortz2005} are used to describe the relevant distinction.
-
-If the population of interest cannot be specified precisely, as is often the case in corpus linguistics (including our study), and a global study is performed, then everything should be done to increase the validity of the study, prominently:
-(i) choose the most varied and large corpus available,
-(ii) regard the study as partly exploratory, even if statistical tests and previous theoretical knowledge (including predictions derived from theories) are used,
-(iii) be appropriately careful in the interpretation of the findings, ideally using additional sources of data such as experiments (see \citealt{BresnanEa2007} for pioneering work in this area).
-
-This is why we chose DECOW16A: it is very large but also contains a lot of variation (including non-standard writing).
-Also, as we show below, we consider the exploratory nature of our work more important than binary decisions of significance.
-Furthermore, we do not claim that our results generalise beyond the type of texts contained in DECOW16A, especially not to spoken language.
-What is more, as will be shown in Section~\ref{sec:corpusstudy}, careful data analysis reveals more fine-grained effects than audacious global hypothesis testing.
-Finally, the experimental results reported in Section~\ref{sec:split100experiment} are shown to be clearer than the corpus findings, which highlights the need to use corroborating evidence from several methods (see, for example, \citealt{ArppeJaervikivi2007}, \citealt{DivjakEa2016a}).
