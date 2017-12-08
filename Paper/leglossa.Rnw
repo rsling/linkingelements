@@ -37,6 +37,7 @@
 \usepackage{booktabs}
 \usepackage{rotating}
 \usepackage{bbding}
+\usepackage{soul}
 
 % Set listing style. knitr uses RStyle style. Which you have to know...
 \definecolor{listingbackground}{gray}{0.95}
@@ -66,10 +67,10 @@
 \newcommand{\Sup}[1]{\ensuremath{\mathrm{^{#1}}}}
 
 \pdfauthor{Roland Schaefer and Elizabeth Pankratz}
-\pdftitle{Function vs. interpretability of compound linking elements in German}
+\pdftitle{The interpretability of compound linking elements in German}
 \pdfkeywords{probabilistic grammar, compounding, linking elements, split-100 experiments, corpus data, German}
 
-\title{Function vs.\ interpretability of compound linking elements in German}
+\title{The interpretability of compound linking elements in German}
 
 \author{
   \spauthor{Roland Schäfer\\
@@ -141,6 +142,10 @@ stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), 
 
 \sffamily
 \maketitle
+
+\begin{center}
+  \hl{Please wrap sentences and passages which you think need further discussion or cross-checking into the \texttt{\textbackslash hl\{\}} command, for example after you edited them.}
+\end{center}
 
 \begin{abstract}
   \ldots
