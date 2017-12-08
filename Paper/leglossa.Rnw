@@ -158,7 +158,7 @@ stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), 
 
 \rmfamily
 
-\include{sections/probabilisticgrammar}
+\include{sections/germanlinkingelementsinprobabilisticmorphology}
 \include{sections/linkingelementsingerman}
 
 <<child="sections/data.Rnw">>=

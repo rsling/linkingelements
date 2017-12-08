@@ -139,7 +139,7 @@ extpl.obs <- extpl.chisq$observed
 rownames(extpl.obs) <- c("NPL", "PL")
 colnames(extpl.obs) <- c("Pl.\ compound", "Sg.\ Compound")
 extpl.obs.xt <- xtable(nice.int(extpl.obs), booktabs = T,
-                         caption = "Contingency table for external plural (= plural agreement) sub-study",
+                         caption = "Contingency table for external plural sub-study",
                          label = "tab:ctextplural")
 align(extpl.obs.xt) <- c("l", "r", "r")
 print(extpl.obs.xt,
@@ -158,7 +158,7 @@ extpl.resid <- extpl.chisq$stdres
 rownames(extpl.resid) <- c("NPL", "PL")
 colnames(extpl.resid) <- c("Pl.\ compound", "Sg.\ Compound")
 extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
-                         caption = "Standardised residuals from $\\chi^2$ test of external plural (= plural agreement) sub-study",
+                         caption = "Standardised residuals from $\\chi^2$ test of external plural sub-study",
                          label = "tab:ctextpluralresid")
 align(extpl.resid.xt) <- c("l", "r", "r")
 print(extpl.resid.xt,
