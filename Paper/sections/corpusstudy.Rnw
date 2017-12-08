@@ -251,8 +251,9 @@ However, the overall effect size is still not very high at $v=\Sexpr{nice.float(
 At least for the lax annotation scheme $v\geq 0.2$, making the effect is thus worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural sub-study.
 Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.%
-\footnote{Violin plots are standard box plots where the box is replaced by a polygon representing a kernel density estimate.
-See \textcite{HintzeNelson1998}.}
+\footnote{Violin plots are standard box plots with an added polygon representing the kernel density estimate.
+See \textcite{HintzeNelson1998}.
+The horizontal line represents the median, and the black vertical bar the interquartile range (\ie the range of the middle $50\%$ of the sample).}
 For the internal plural sub-study, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on either of them.
 While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.
