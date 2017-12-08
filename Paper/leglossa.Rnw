@@ -81,7 +81,7 @@
   \spauthor{Elizabeth Pankratz\\
   \institute{\small Deutsche Sprache und Linguistik, Humboldt Universität zu Berlin}\\
   \small{Dorotheenstraße 24, 10117 Berlin\\
-  pankrate@student.hu-berlin.de}
+  pankrate@hu-berlin.de}
   }
 }
 
