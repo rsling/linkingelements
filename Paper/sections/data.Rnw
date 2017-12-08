@@ -9,15 +9,16 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Corpus choice}
 \label{sec:corpuschoice}
 
-As pointed out in Section~\ref{sec:onstatisticalanalyses} already, we chose the web-crawled DECOW16A corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}) for all our corpus work.
+We chose the web-crawled DECOW16A corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}) for all our corpus work.%
+\footnote{See \url{http://corporafromtheweb.org/} for project information and \url{https://www.webcorpora.org/} for access to the corpora.}
 This corpus was the obvious choice for several reasons.
-First of all, which is available in an online query interface but also for scripted access and (in sentence-wise shuffled form) for download.%
+First of all, it is available in an online query interface but also for scripted access and (in sentence-wise shuffled form) for download.%
 \footnote{It is also available free of charge to anyone working in the academia.
-The same is also true for the English ENCOW16A ($1.6$ billion tokens), the French FRCOW16A ($10.8$ billion tokens). the Spanish ESCOW16A ($7.1$ billion tokens), as well as the older Swedish SVCOW14A (8.4 billion tokens) and Dutch NLCOW14A (6.7 billion tokens).}
+The same is also true for the English ENCOW16A ($16.5$ billion tokens), the French FRCOW16A ($10.8$ billion tokens). the Spanish ESCOW16A ($7.1$ billion tokens), as well as the older Swedish SVCOW14A (8.4 billion tokens) and Dutch NLCOW14A (6.7 billion tokens).}
 The large-scale productivity assessment to be reported in Section~\ref{sec:databaseandproductivityassessment} would not have been possible without scripted access.
-More importantly even, using large amounts of recently produced data, including data not written under strong normative pressure (such as forums and other community websites) is in our view ideal for research on productive processes from a synchronic perspective (be it descriptive, geared twoards competence grammar, or cognitively oriented).
-The only other available very large corpus containing recent German would be the \textit{Deutsches Refernzkorpus} (DeReKo) by the \textit{Institut für Deutsche Sprache} (IDS), but it is not available for scripted access as of today, and it mostly contains newspaper text.
-Finally, the COW corpora are based on an improved methodology also used to build the WaCky corpora \parencite{BaroniEa2009}, and there are other similar web-derived corpora actively used by many linguists, such as the SketchEngine corpora \parencite{KilgarriffEa2014}.
+More importantly, using large amounts of recently produced data, including data not written under strong normative pressure (such as forums and other community websites) is in our view ideal for research on productive processes from a synchronic perspective (be it descriptive, geared twoards competence grammar, or cognitively oriented).
+The only other available very large corpus containing recent German would be the \textit{Deutsches Refernzkorpus} (DeReKo) by the \textit{Institut für Deutsche Sprache} \parencite{KupietzEa2010}, but as of today it is not available for scripted access, and it mostly contains newspaper text.
+Finally, the COW corpora are based on an improved methodology also used to build the WaCky corpora \parencite{BaroniEa2009}, and there are other similar web-derived corpora also actively used by many linguists, such as the SketchEngine corpora \parencite{KilgarriffEa2014}.
 Web corpora can thus be regarded as an established source of data on a par with traditionally compiled corpora.
 
 \subsection{Database and productivity assessment}

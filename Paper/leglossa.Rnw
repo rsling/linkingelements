@@ -38,6 +38,7 @@
 \usepackage{rotating}
 \usepackage{bbding}
 \usepackage{soul}
+\usepackage[mark]{gitinfo2}
 
 % Set listing style. knitr uses RStyle style. Which you have to know...
 \definecolor{listingbackground}{gray}{0.95}

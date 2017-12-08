@@ -74,8 +74,7 @@ par(mfrow=c(1,1))
 @
 
 The queries we used to retrieve the exemplars of compounds containing the fifty chosen N1s were made in DECOW16A using Python through the RStudio Server interface provided by the COW project.%
-\footnote{See \url{https://www.webcorpora.org}.
-The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
+\footnote{The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
 For each N1, we made one query searching for compounds containing it with PL and one otherwise identical query searching for compounds containing it with NPL.
 Since at least some context is often needed to disambiguate the meaning of the compounds and their constituents, the whole sentence containing each compound as well as one sentence to the left and one sentence to the right were exported.
 Duplicate sentences were removed by setting the appropriate parameter in the COW project's Python wrappers for making queries.
@@ -115,7 +114,7 @@ The presentation of the final sample will show the results for only the first, c
 \footnote{We think it is encouraging that \textcite{BangaEa2013b} found the stable and expected results even using a more cavalier operationalisation of what they call conceptual plurals.
 ``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
 The problem with \textit{strawberry jam} is that \textit{strawberry} could address the generic meaning (`strawberry type') or a mass noun version (`strawberry substance'), in which case the numerosity of referents of N1 would be much weaker conceptually.
-Since in the corpus study we had to assume that there were more confounding factors anyway, we did not include such cases to be on the safe side.
+Since in the corpus study, we had to assume that there were more confounding factors than in a controlled experiment anyway, we did not count such hazy cases as internal plurals to be on the safe side.
 }
 
 
@@ -126,7 +125,7 @@ As mentioned in Section~\ref{sec:annotation}, the size of the manually annotated
 \footnote{In the recent years and decades, practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
 Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
 We feel that corpus linguists have not yet picked up on the debate fully to the effect that most papers do not make explicit which statistical philosophy they follow.
-We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalysis}.}
+We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different statistical traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalyses}.}
 All exemplars were annotated for internal and external plural, and we treat the two annotations as two sub-studies, starting with the external plural sub-study.
 
 There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.
@@ -178,7 +177,7 @@ In order to check for this, we calculated one $\chi^2$ test for each N1 with an 
 Since we are testing a family of connected hypotheses, p-values need to be corrected (correction for group-wise error).
 We used Šidák's method \parencite{Sidak1967}, which is only slightly less conservative than the well-known Bonferroni correction (at least for uncorrelated tests).%
 \footnote{We also tried Holm's and Hochberg's methods, but the differences between all those methods are small enough that they do not lead to different interpretations of the results.
-Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m=50$ is the number of tests.}
+Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m$ is the number of tests ($m=50$ in this case).}
 The low counts in some cells in our data make the $\chi^2$ approximation inexact, so we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}.
 The procedure calculates these marginal sums and then generates random permutations for the contingency table based on the marginals.
 We used $b=\Sexpr{nice.int(num.reps)}$ permutations.
