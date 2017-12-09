@@ -1,0 +1,139 @@
+\documentclass[natbib,final]{svjour3}
+
+\smartqed
+\usepackage{graphicx}
+\usepackage{mathptmx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{bbding}
+\usepackage{soul}
+\usepackage[mark]{gitinfo2}
+\usepackage{url}
+
+\newcommand{\ie}{i.\,e.,\ }
+\newcommand{\Ie}{I.\,e.,\ }
+\newcommand{\Eg}{E.\,g.,\ }
+\newcommand{\egg}{e.\,g.,\ }
+\newcommand{\Sub}[1]{\ensuremath{\mathrm{_{#1}}}}
+\newcommand{\Sup}[1]{\ensuremath{\mathrm{^{#1}}}}
+
+% Compatibility with biber citations.
+\newcommand{\textcite}[2][]{\citet[#1]{#2}}
+\newcommand{\parencite}[2][]{\citep[#1]{#2}}
+% \newcommand{\citealt}[2][]{\citealt[#1]{#2}}
+
+\journalname{Submitted to Morphology}
+\title{The interpretability of compound linking elements in German\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
+%\titlerunning{Short form of title}
+\author{Roland Schäfer \and Elizabeth Pankratz}
+%\authorrunning{Short form of author list} % if too long for running head
+\institute{Roland Schäfer \at
+              Deutsche und niederländische Philologie\\
+              Freie Universität Berlin \\
+              \email{roland.schaefer@fu-berlin.de}
+           \and
+           Elizabeth Pankratz \at
+              Deutsche Sprache und Linguistik\\
+              Humboldt Universität zu Berlin\\
+              \email{pankrate@hu-berlin.de}}
+\date{Received: date / Accepted: date}
+
+
+
+
+\begin{document}
+
+<< setup, cache=FALSE, echo=FALSE, include=FALSE, results='asis'>>=
+opts_knit$set(self.contained=FALSE)
+
+opts_chunk$set(cache.path='cache/',
+               fig.path='figures/',
+               fig.pos='H', message=FALSE,
+               cache=TRUE, warning=FALSE,
+               fig.align='center', comment ="",
+               background='#F7F7F7',
+               tidy=FALSE,
+               formatR.arrow = TRUE,
+               echo=FALSE)
+
+
+render_listings()
+@
+
+<<rinitialisation>>=
+require(gamlss)
+require(xtable)
+require(vioplot)
+require(pwr)
+require(data.table)
+
+source('../Data/R/functions.R')
+source('../Data/R/vioplot2.R')
+
+my.root = '~/Workingcopies/Linkingelements/Paper/'
+path.rdata <- "../Data/R/RData/"
+prod.plot.order <- c('n', 'en', 'EMPTY_PLOT', 'e', 'Ue', 'EMPTY_PLOT', 'Uer', 'er', 'U')
+
+decow.tokens <- 19835843151
+decow.words  <- 15687969372
+decow.docs   <- 17116160
+@
+
+<<loaddata>>=
+load(paste0(my.root, path.rdata, "n1.frequencies.RData"))
+load(paste0(my.root, path.rdata, "nouns.RData"))
+load(paste0(my.root, path.rdata, "blacklists.RData"))
+
+load(paste0(my.root, path.rdata, "analyses.full.plus.RData")) # Basic frequency and productivity data.
+load(paste0(my.root, path.rdata, "t.plot.RData"))        # Analysis of the corpus study. Funny file name.
+load(paste0(my.root, path.rdata, "p.plot.RData"))        # Analysis of the corpus study. Funny file name.
+load(paste0(my.root, path.rdata, "corpus.candidates.RData"))
+load(paste0(my.root, path.rdata, "observations.RData"))
+stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), header = T, sep = "\t", row.names = NULL)
+@
+
+
+
+\maketitle
+
+\begin{abstract}
+\keywords{First keyword \and Second keyword \and More}
+\end{abstract}
+
+\include{sections/germanlinkingelementsinprobabilisticmorphology}
+\include{sections/linkingelementsingerman}
+
+<<child="sections/data.Rnw">>=
+@
+
+<<child="sections/corpusstudy.Rnw">>=
+@
+
+<<child="sections/split100experiment.Rnw">>=
+@
+
+\include{sections/functionandinterpretation}
+
+
+\begin{acknowledgements}
+We would like to thank (in alphabetical order) Matthias B.\ Döring and Ulrike Sayatz for valuable discussions and comments.
+Furthermore, we thank Ulrike Sayatz for helping us recruit the participants for the experiments.
+Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
+We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
+\end{acknowledgements}
+
+\include{sections/onstatisticalanalysis}
+
+\bibliographystyle{spbasic}
+\bibliography{rs}
+
+
+\end{document}
+

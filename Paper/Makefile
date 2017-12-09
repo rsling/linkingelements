@@ -1,25 +1,22 @@
 FIGUREDIR = figures
 CACHEDIR = cache
 
-pdf: leglossa.bbl leglossa.pdf 
+pdf: lemorphology.bbl lemorphology.pdf
 
-all: pod cover
+complete: lemorphology.pdf
 
-complete: index leglossa.pdf
+lemorphology_biber.bib: lemorphology.bcf
+	biber lemorphology --output_format bibtex
 
-index:  leglossa.snd
+lemorphology.pdf: lemorphology.aux
+	pdflatex lemorphology
+	pdflatex lemorphology
 
-leglossa_biber.bib: leglossa.bcf
-	biber leglossa --output_format bibtex
-
-leglossa.pdf: leglossa.aux
-	xelatex leglossa 
-
-leglossa.aux: leglossa.tex $(wildcard local*.tex)
-	xelatex -no-pdf leglossa 
+lemorphology.aux: lemorphology.tex $(wildcard local*.tex)
+	pdflatex lemorphology
 
 # Before the XeTeX make begins, we need to make a TeX file from a Rnw file.
-leglossa.tex: leglossa.Rnw $(wildcard sections/*.Rnw) $(wildcard sections/*.tex)
+lemorphology.tex: lemorphology.Rnw $(wildcard sections/*.Rnw) $(wildcard sections/*.tex)
 	Rscript \
 	  -e "library(knitr)" \
 	  -e "knitr::knit('$<','$@')"
@@ -28,37 +25,22 @@ leglossa.tex: leglossa.Rnw $(wildcard sections/*.Rnw) $(wildcard sections/*.tex)
 %.R: %.Rnw
 	Rscript -e "Sweave('$^', driver=Rtangle())"
 
-# Create only the book.
-leglossa.bbl: leglossa.tex leglossa.bib  
-	xelatex -no-pdf leglossa
-	biber leglossa
-
-
-leglossa.snd: leglossa.bbl
-	touch leglossa.adx leglossa.sdx leglossa.ldx
-	sed -i s/.*\\emph.*// leglossa.adx 
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' leglossa.sdx
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' leglossa.adx
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' leglossa.ldx
-# 	python3 fixindex.py
-# 	mv mainmod.adx leglossa.adx
-	makeindex -o leglossa.and leglossa.adx
-	makeindex -o leglossa.lnd leglossa.ldx
-	makeindex -o leglossa.snd leglossa.sdx 
-	xelatex leglossa 
- 
+# Create bibtex file.
+lemorphology.bbl: lemorphology.tex
+	pdflatex lemorphology
+	bibtex lemorphology
 
 clean:
-	rm -f leglossa.tex leglossa-concordance.tex *.bcf *.bak *~ *.backup *.tmp \
+	rm -f lemorphology.tex lemorphology-concordance.tex *.bcf *.bak *~ *.backup *.tmp \
 	*.adx *.and *.idx *.ind *.ldx *.lnd *.sdx *.snd *.rdx *.rnd *.wdx *.wnd \
 	*.log *.blg *.ilg \
 	*.aux *.toc *.cut *.out *.tpm *.bbl *-blx.bib *_tmp.bib \
 	*.glg *.glo *.gls *.wrd *.wdv *.xdv *.mw *.clr \
-	*.run.xml leglossa.tex leglossa.pgs leglossa.bcf \
+	*.run.xml lemorphology.tex lemorphology.pgs lemorphology.bcf \
 	sections/*aux sections/*~ sections/*.bak sections/*.backup \
 	langsci/*/*aux langsci/*/*~ langsci/*/*.bak langsci/*/*.backup \
 	cache/* figures/* cache*.*
-	
+
 realclean: clean
 	rm -f *.dvi *.ps *.pdf
 

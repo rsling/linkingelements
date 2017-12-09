@@ -67,7 +67,7 @@ These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.i
 
 <<results='asis'>>=
 
-freq.ov["Σ", ] <- apply(freq.ov, 2, sum)
+freq.ov["$\\Sigma$", ] <- apply(freq.ov, 2, sum)
 freq.ov$Ftype    <- nice.int(freq.ov$Ftype)
 freq.ov$FtypePc  <- nice.float(freq.ov$FtypePc)
 freq.ov$Ftoken   <- nice.int(freq.ov$Ftoken)
@@ -77,7 +77,7 @@ freq.ov$N1sPc    <- nice.float(freq.ov$N1sPc)
 
 freq.ov <- freq.ov[,c("Ftype", "FtypePc", "Ftoken", "FtokenPc", "N1s", "N1sPc")]
 colnames(freq.ov) <- c("Compound $F$", "\\%", "Compound $f$", "\\%", "N1 $F$", "\\%")
-rownames(freq.ov)[1] <- "∅"
+rownames(freq.ov)[1] <- "$\\varnothing$"
 
 freq.ov.xt <- xtable(
   freq.ov,
