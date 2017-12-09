@@ -91,7 +91,6 @@ print(freq.ov.xt,
       table.placement = 'htbp',
       booktabs = T,
       rotate.colnames = F,
-      scalebox = 0.95,
       hline.after = c(-1,0,12,13),
       sanitize.text.function = function(x){x}
 )

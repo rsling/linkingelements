@@ -90,7 +90,7 @@ With the COW16 ID and the sentence ID, each exemplar can be located in the DECOW
 \label{sec:annotation}
 
 From each of the query results of the fifty N1s described in Section~\ref{sec:queries}, we annotated approximately one hundred cases with PL and approximately one hundred with NPL.
-Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=10,000$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
+Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=\Sexpr{nice.int(200*nrow(t.plot))}$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
 
 Annotating singular and plural was unproblematic, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate the two.
 Such cases were discarded and not used for the study.%\
@@ -177,7 +177,7 @@ In order to check for this, we calculated one $\chi^2$ test for each N1 with an 
 Since we are testing a family of connected hypotheses, p-values need to be corrected (correction for group-wise error).
 We used Šidák's method \parencite{Sidak1967}, which is only slightly less conservative than the well-known Bonferroni correction (at least for uncorrelated tests).%
 \footnote{We also tried Holm's and Hochberg's methods, but the differences between all those methods are small enough that they do not lead to different interpretations of the results.
-Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m$ is the number of tests ($m=50$ in this case).}
+Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m$ is the number of tests ($m=\Sexpr{nice.int(nrow(t.plot))}$ in this case).}
 The low counts in some cells in our data make the $\chi^2$ approximation inexact, so we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}.
 The procedure calculates these marginal sums and then generates random permutations for the contingency table based on the marginals.
 We used $b=\Sexpr{nice.int(num.reps)}$ permutations.

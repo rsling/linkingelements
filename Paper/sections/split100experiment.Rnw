@@ -73,7 +73,6 @@ print(stims.xt,
       floating = T,
       table.placement = 'htbp',
       booktabs = T,
-      floating.environment = "sidewaystable",
       hline.after = c(-1,0,8,16),
       sanitize.text.function = function(x){x}
       )
