@@ -1,18 +1,12 @@
 FIGUREDIR = figures
 CACHEDIR = cache
 
-pdf: lemorphology.bbl lemorphology.pdf
+all: lemorphology.pdf
 
-complete: lemorphology.pdf
-
-lemorphology_biber.bib: lemorphology.bcf
-	biber lemorphology --output_format bibtex
-
-lemorphology.pdf: lemorphology.aux
+lemorphology.pdf: lemorphology.tex $(wildcard local*.tex)
 	pdflatex lemorphology
+	bibtex lemorphology
 	pdflatex lemorphology
-
-lemorphology.aux: lemorphology.tex $(wildcard local*.tex)
 	pdflatex lemorphology
 
 # Before the XeTeX make begins, we need to make a TeX file from a Rnw file.
@@ -24,11 +18,6 @@ lemorphology.tex: lemorphology.Rnw $(wildcard sections/*.Rnw) $(wildcard section
 # Make R files.
 %.R: %.Rnw
 	Rscript -e "Sweave('$^', driver=Rtangle())"
-
-# Create bibtex file.
-lemorphology.bbl: lemorphology.tex
-	pdflatex lemorphology
-	bibtex lemorphology
 
 clean:
 	rm -f lemorphology.tex lemorphology-concordance.tex *.bcf *.bak *~ *.backup *.tmp \
