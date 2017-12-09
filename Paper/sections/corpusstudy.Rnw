@@ -24,7 +24,7 @@ To implement this restriction, we used the notion of the \textit{frequency class
 The frequency class $c$ of a word $w$ increases with the word's token frequency $f(w)$.
 Calculation of the frequency class additionally relates the token frequency of the word in question to the number of tokens of the most frequent word in the corpus ($f^{max}$) and accounts for the power law distribution of word frequencies.%
 \footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
-It is given by (\ref{eq:frequencyclass}).
+It is given by (\ref{eq:frequencyclass}), where $\lfloor~\rfloor$ denotes the function that rounds down to the next integer.
 
 \begin{equation}
   \label{eq:frequencyclass}

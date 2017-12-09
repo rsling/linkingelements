@@ -1,3 +1,4 @@
+\RequirePackage{rotating}
 \documentclass[natbib,final]{svjour3}
 
 \smartqed
@@ -104,7 +105,8 @@ stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), 
 \maketitle
 
 \begin{abstract}
-\keywords{First keyword \and Second keyword \and More}
+In this paper \ldots
+\keywords{{compounds} \and {linking elements} \and {German} \and {probabilistic morphology} \and {corpus data} \and {split-100 experiments}}
 \end{abstract}
 
 \include{sections/germanlinkingelementsinprobabilisticmorphology}
