@@ -8,7 +8,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-%\usepackage{latexsym}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
@@ -16,7 +15,7 @@
 \usepackage{bbding}
 \usepackage{soul}
 \usepackage[mark]{gitinfo2}
-\usepackage{url}
+\usepackage[hyphens]{url}
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }
@@ -28,13 +27,10 @@
 % Compatibility with biber citations.
 \newcommand{\textcite}[2][]{\citet[#1]{#2}}
 \newcommand{\parencite}[2][]{\citep[#1]{#2}}
-% \newcommand{\citealt}[2][]{\citealt[#1]{#2}}
 
 \journalname{Submitted to Morphology}
 \title{The interpretability of compound linking elements in German\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
-%\titlerunning{Short form of title}
 \author{Roland Schäfer \and Elizabeth Pankratz}
-%\authorrunning{Short form of author list} % if too long for running head
 \institute{Roland Schäfer \at
               Deutsche und niederländische Philologie\\
               Freie Universität Berlin \\
@@ -45,9 +41,6 @@
               Humboldt Universität zu Berlin\\
               \email{pankrate@hu-berlin.de}}
 \date{Received: date / Accepted: date}
-
-
-
 
 \begin{document}
 
@@ -100,8 +93,6 @@ load(paste0(my.root, path.rdata, "observations.RData"))
 stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), header = T, sep = "\t", row.names = NULL)
 @
 
-
-
 \maketitle
 
 \begin{abstract}
@@ -135,7 +126,6 @@ We are, of course, fully responsible for all residual inadequacies, errors, and 
 
 \bibliographystyle{spbasic}
 \bibliography{rs}
-
 
 \end{document}
 

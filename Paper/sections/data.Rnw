@@ -112,15 +112,18 @@ rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 
 First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N1+N2 compounds.
 We therefore extracted all N1+N2 compounds and all first constituents (N1s) from the large compound database.
-For each of the pluralic linking elements (PL), we generated exhaustive lists of the N1s with which it occurs and which fulfil the criteria mentioned in Section~\ref{sec:linkingelementsingerman} (prominently: no mass nouns, no weak masculine nouns).%
-\footnote{The lists of these N1s were extracted automatically but were checked for erroneous entries manually.
-Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.}
+For each of the pluralic linking elements (PL), we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially pluralic link attaches to a noun of a different declension class), are count nouns (because mass nouns undergo a significant change in meaning when pluralised), are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
+The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
+Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
+\footnote{Every single decision is documented in the data package for this paper.}
+When an N1 candidate looked suspicious, we inspected the compound database to check whether the actual compounds containig the candidate were misanalysed or otherwise noisy.
+
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
 Since we are interested in the alternation between N1s used with PLs and without them (either without any linking element, with deletion, or with a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a non-pluralic linkage (NPL).
 An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linkages in DECOW16A is given in Table \ref{tab:freqoverview}.%
-\footnote{In these counts, mass nouns and weak nouns were included.
-Since they were removed for the actual analysis reported below, the frequencies in the table are higher, espescially for \textit{-n} and \textit{-en}, which are the pluralic linking elements of the weak nouns.}
+\footnote{In these counts, mass nouns and weak nouns were included in order to provide a complete overview.
+Since they were removed for all further analysis reported below, the frequencies in the table are higher, espescially for \textit{-n} and \textit{-en}, which are the pluralic linking elements of the weak nouns.}
 The numbers are approximately in line with previous reports based on much smaller corpora such as \textcite{WellmannEa1974}, \textcite{Kuerschner2005}, or \textcite{KrottEa2007} (see also \citealt[9]{Schluecker2012}).
 
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.
