@@ -100,7 +100,7 @@ In this paper \ldots
 \keywords{{compounds} \and {linking elements} \and {German} \and {probabilistic morphology} \and {corpus data} \and {split-100 experiments}}
 \end{abstract}
 
-\include{sections/germanlinkingelementsinprobabilisticmorphology}
+\include{sections/linkingelementsinprobabilisticmorphology}
 \include{sections/linkingelementsingerman}
 
 <<child="sections/data.Rnw">>=
@@ -112,7 +112,7 @@ In this paper \ldots
 <<child="sections/split100experiment.Rnw">>=
 @
 
-\include{sections/functionandinterpretation}
+\include{sections/conclusion}
 
 
 \begin{acknowledgements}
