@@ -7,7 +7,7 @@ opts_knit$set(self.contained=FALSE)
 \label{sec:split100experiment}
 
 \subsection{Design, choice of stimuli, and participants}
-\label{sub:designchoiceofstimuliandparticipants}
+\label{sec:designchoiceofstimuliandparticipants}
 
 This experiment was designed to examine how strongly native speakers of German prefer a pluralic linkage through two sub-experiments investigating internal and external plural relations.
 A split-100 task was chosen because it is claimed that participants make subtler judgements compared to a binary forced-choice task (\citealt{FordBresnan2013}, \citealt{VerhoevenTemme2017}).
@@ -98,7 +98,7 @@ $24$ participants declared themselves to be female, seven to be male.
 Age varied between $19$ and $31$ with a median of $21$.
 
 \subsection{Results}
-\label{sub:results-split100}
+\label{sec:resultssplit100}
 
 The results are clearly in line with the findings from the corpus study reported in Section~\ref{sec:corpusstudy}.
 Figure~\ref{fig:conditions} shows the distribution of the split-100 responses in the form of violin plots.
