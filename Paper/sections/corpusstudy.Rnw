@@ -109,7 +109,7 @@ In addition to these clear-cut cases, there was a second group of compounds in w
 Most prominently, there are N2s which denote a container of some sort.
 Examples include \textit{Äpfellager} `storage for apples', \textit{Briefekatalog} `catalogue of letters', and \textit{Liederbuch} `book of songs\slash songbook'.
 In theory, the N2s in these compounds could denote some sort of container which holds only one object (for instance, it is conceivable -- if unlikely -- that the storage space for apples could have only one apple in it), but both world knowledge and the particular context in which the compound appears render this sort of interpretation impossible.
-However, since the interpretation of this kind of containment compound is strongly context- and world-knowledge-dependent, we refer to these as extended cases and will analyze them separately from the clear-cut cases shown above.
+However, since the interpretation of this kind of containment compound is strongly context- and world-knowledge-dependent, we refer to these as extended cases and will analyse them separately from the clear-cut cases shown above.
 The presentation of the final sample will show the results for only the first, clear-cut cases under the label of \textit{strict annotation} and the combined results for both the clear-cut and the extended cases under the label of \textit{lax annotation}.%
 \footnote{We think it is encouraging that \textcite{BangaEa2013b} found the stable and expected results even using a more cavalier operationalisation of what they call conceptual plurals.
 ``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
@@ -130,7 +130,7 @@ All exemplars were annotated for internal and external plural, and we treat the 
 
 There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.
 Also, there are $\Sexpr{nice.int(length(which(conc$LE==1)))}$ cases with PL and $\Sexpr{nice.int(length(which(conc$LE==0)))}$ with NPL.
-The question is whether there is a remarkably high number of exemplars with PL in a plural compound such that we might conlude that there is an external plural effect.
+The question is whether there is a remarkably high number of exemplars with PL in a plural compound such that we might conclude that there is an external plural effect.
 The contingency table showing the two variables' bivariate distribution is given in Table~\ref{tab:ctextplural}.
 
 <<results="asis">>=

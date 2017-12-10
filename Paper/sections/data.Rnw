@@ -12,11 +12,11 @@ opts_knit$set(self.contained=FALSE)
 We chose the web-crawled DECOW16A corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}) for all our corpus work.%
 \footnote{See \url{http://corporafromtheweb.org/} for project information and \url{https://www.webcorpora.org/} for access to the corpora.}
 This corpus was the obvious choice for several reasons.
-First of all, it is available in an online query interface but also for scripted access and (in sentence-wise shuffled form) for download.%
+First of all, it is available in an on-line query interface but also for scripted access and (in sentence-wise shuffled form) for download.%
 \footnote{It is also available free of charge to anyone working in the academia.
 The same is also true for the English ENCOW16A ($16.5$ billion tokens), the French FRCOW16A ($10.8$ billion tokens). the Spanish ESCOW16A ($7.1$ billion tokens), as well as the older Swedish SVCOW14A (8.4 billion tokens) and Dutch NLCOW14A (6.7 billion tokens).}
 The large-scale productivity assessment to be reported in Section~\ref{sec:databaseandproductivityassessment} would not have been possible without scripted access.
-More importantly, using large amounts of recently produced data, including data not written under strong normative pressure (such as forums and other community websites) is in our view ideal for research on productive processes from a synchronic perspective (be it descriptive, geared twoards competence grammar, or cognitively oriented).
+More importantly, using large amounts of recently produced data, including data not written under strong normative pressure (such as forums and other community websites) is in our view ideal for research on productive processes from a synchronic perspective (be it descriptive, geared towards competence grammar, or cognitively oriented).
 The only other available very large corpus containing recent German would be the \textit{Deutsches Refernzkorpus} (DeReKo) by the \textit{Institut für Deutsche Sprache} \parencite{KupietzEa2010}, but as of today it is not available for scripted access, and it mostly contains newspaper text.
 Finally, the COW corpora are based on an improved methodology also used to build the WaCky corpora \parencite{BaroniEa2009}, and there are other similar web-derived corpora also actively used by many linguists, such as the SketchEngine corpora \parencite{KilgarriffEa2014}.
 Web corpora can thus be regarded as an established source of data on a par with traditionally compiled corpora.
@@ -62,7 +62,7 @@ What is more, at each step of the analysis, we made sure through manual checks t
 \footnote{We made an exception for the zero linkage because the number of N1s was much too high for full manual inspection.
 We therefore implemented an automatic approach where a N1 had to fulfil one of the following criteria to be included:
 (i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns published by the COW project.
-(ii) It occured at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
+(ii) It occurred at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
 These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linkage N1 candidates.}
 
 <<results='asis'>>=
@@ -115,14 +115,14 @@ For each of the pluralic linkages (PL), we generated exhaustive lists of the N1s
 The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
 Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
 \footnote{Every single decision is documented in the data package for this paper.}
-When an N1 candidate looked suspicious, we inspected the compound database to check whether the actual compounds containig the candidate were misanalysed or otherwise noisy.
+When an N1 candidate looked suspicious, we inspected the compound database to check whether the actual compounds containing the candidate were misanalysed or otherwise noisy.
 
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
 Since we are interested in the alternation between N1s used with PLs and without them (either without any LE, with deletion, or with a non-pluralic LE such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a non-pluralic linkage (NPL).
 An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linkages in DECOW16A is given in Table \ref{tab:freqoverview}.%
 \footnote{In these counts, mass nouns and weak nouns were included in order to provide a complete overview.
-Since they were removed for all further analysis reported below, the frequencies in the table are higher, espescially for \textit{-n} and \textit{-en}, which are the hypothetical PLs of the weak nouns.}
+Since they were removed for all further analysis reported below, the frequencies in the table are higher, especially for \textit{-n} and \textit{-en}, which are the hypothetical PLs of the weak nouns.}
 The numbers are approximately in line with previous reports based on much smaller corpora such as \textcite{WellmannEa1974}, \textcite{Kuerschner2005}, or \textcite{KrottEa2007} (see also \citealt[9]{Schluecker2012}).
 
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.

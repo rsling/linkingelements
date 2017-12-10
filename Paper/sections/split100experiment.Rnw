@@ -175,7 +175,7 @@ We estimated the parameters of a GAMM specified as \texttt{Rating \textasciitild
 \footnote{Technically, the given formula is the formula for the $\mu$ parameter.}
 Ratings had to be mapped from $[0,100]$ to $[0,1]$.
 The only parameter of interest in the current setting is the coefficient for the \texttt{Condition} variable, which is estimated at $\Sexpr{nice.float(model.coll.sum$coef.table["ConditionIndividual","Estimate"])}$ with an estimated standard error of $\Sexpr{nice.float(model.coll.sum$coef.table["ConditionIndividual","Std. Error"])}$.
-It reaches $sig=0.05$ ($t=\Sexpr{nice.float(model.coll.sum$coef.table["ConditionIndividual","t value"])}$).
+It reaches $sig=0.05$ ($t=\Sexpr{nice.float(model.coll.sum$coef.table["ConditionIndividual","t value"])}$, $p\approx 0$).
 The model has an AIC of $\Sexpr{nice.float(model.coll$aic)}$.
 In comparison, a model without the predictor of interest (\texttt{Rating \textasciitilde\ random(Subject)}) has an AIC of $\Sexpr{nice.float(model.coll.0$aic)}$, which is worse by $\Sexpr{nice.float(model.coll.0$aic-model.coll$aic)}$.
 In other words, the model corroborates the descriptive analysis in Figure \ref{fig:conditions} using advanced inferential tools.
