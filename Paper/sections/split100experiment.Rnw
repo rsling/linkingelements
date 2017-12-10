@@ -185,7 +185,7 @@ In other words, the model corroborates the descriptive analysis in Figure \ref{f
 
 In the present experiment, subjects showed very clear reactions to different potential sources of plural semantics.
 The external plural condition did not trigger PLs more than NPLs, but there is solid evidence that speakers favour a PL in compounds where an internal plural relation holds between N1 and N2.
-In Section~\ref{sec:functionandinterpretation} we will discuss the theoretical implications of this result together with that of the corpus study reported in Section~\ref{sec:corpusstudy}.
+In Section~\ref{sec:conclusion} we will discuss the theoretical implications of this result together with that of the corpus study reported in Section~\ref{sec:corpusstudy}.
 
 
 
