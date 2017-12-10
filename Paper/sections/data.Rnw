@@ -27,7 +27,7 @@ Web corpora can thus be regarded as an established source of data on a par with 
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
 The total number of candidates for first constituents and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, large-scale data about the type frequencies, token frequencies, and the productivity of first constituents were required.
 We used automatic approaches to create a set of databases, and demanding manual clean-up and selection steps in-between automatic steps were used to ensure that the results were reliable.
-The database tells us how strongly first constituents tend to appear with pluralic linkages and with non-pluralic linkages, including an assessment of their productivity with pluralic and non-pluralic linkages.
+The database tells us how strongly first constituents tend to appear with PLs and with NPLs, including an assessment of their productivity with these linkages.
 This section describes the creation of the database.
 
 <<>>=
@@ -111,7 +111,7 @@ rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 
 First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N1+N2 compounds.
 We therefore extracted all N1+N2 compounds and all first constituents (N1s) from the large compound database.
-For each of the pluralic linkages (PL), we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially pluralic link attaches to a noun of a different declension class), are count nouns (because mass nouns undergo a significant change in meaning when pluralised), are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
+For each of the pluralic linkages (PL), we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), are count nouns (because mass nouns undergo a significant change in meaning when pluralised), are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
 The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
 Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
 \footnote{Every single decision is documented in the data package for this paper.}
@@ -127,7 +127,7 @@ The numbers are approximately in line with previous reports based on much smalle
 
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.
 While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.
-Readers should keep in mind that we searched for first constituents which at least sometimes occur with a pluralic linking element, but we also generated the relevant counts for these first constituents appearing with a non-pluralic link.
+Readers should keep in mind that we searched for first constituents which at least sometimes occur with a PL, but we also generated the relevant counts for these first constituents appearing with a NPL.
 
 While the type and token frequencies of N1s with PL and NPL are informative, a comparison of their productivity with PL and NPL is equally important for making decisions regarding the corpus sample and selection of stimuli.
 Therefore, we calculated measures of productivity for each N1 with PL and NPL.

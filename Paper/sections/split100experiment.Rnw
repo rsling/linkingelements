@@ -9,7 +9,7 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Design, choice of stimuli, and participants}
 \label{sec:designchoiceofstimuliandparticipants}
 
-This experiment was designed to examine how strongly native speakers of German prefer a pluralic linkage through two sub-experiments investigating internal and external plural relations.
+This experiment was designed to examine how strongly native speakers of German prefer a PL through two sub-experiments investigating internal and external plural relations.
 A split-100 task was chosen because it is claimed that participants make subtler judgements compared to a binary forced-choice task (\citealt{FordBresnan2013}, \citealt{VerhoevenTemme2017}).
 In a split-100 task, subjects are offered two options (here: a compound with PL or NPL) and they can weigh their preference for either of them, assigning integer values between $100;0$ (clear preference for option one) and $0;100$ (clear preference for option two) to the tuple of options.
 
@@ -90,10 +90,7 @@ For the external plural sub-experiment, we only used N2s which could not trigger
 Participants declared themselves to be native speakers of German with no reading disorders.
 They were recruited in first-semester linguistics classes at our university during the first four weeks of the summer 2017 term.
 They were all majoring in German Language and Literature but had not yet had a university-level introduction to linguistics.
-The experiment was completely anonymised and participants were granted the right to revoke their signed declaration of consent, which none of them did.
-Participants received credit in partial fulfilment of the requirements for the above mentioned classes.
 We had $\Sexpr{length(levels(obs$participant))}$ participants.
-Gender was specified on a voluntary basis using no pre-formulated options.
 $24$ participants declared themselves to be female, seven to be male.
 Age varied between $19$ and $31$ with a median of $21$.
 

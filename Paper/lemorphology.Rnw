@@ -15,7 +15,12 @@
 \usepackage{bbding}
 \usepackage{soul}
 \usepackage[mark]{gitinfo2}
-\usepackage[hyphens]{url}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{xcolor}
+\usepackage[printwatermark]{xwatermark}
+\newwatermark[firstpage,color=red!50, angle=45, scale=1, xpos=-15, ypos=12]{\sffamily DRAFT! Do not quote!}
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }
@@ -28,7 +33,7 @@
 \newcommand{\textcite}[2][]{\citet[#1]{#2}}
 \newcommand{\parencite}[2][]{\citep[#1]{#2}}
 
-\journalname{Submitted to Morphology}
+\journalname{Submitted to \textit{Morphology}}
 \title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
 \author{Roland Schäfer \and Elizabeth Pankratz}
 \institute{Roland Schäfer \at
@@ -121,6 +126,12 @@ Instead, we view our data as strengthening the general approach of probabilistic
 
 \include{sections/conclusion}
 
+\section*{Compliance with ethical standards}
+The split-100 rating experiment reported in this was completely anonymised.
+Participants signed standard consent forms and were given the option if asking questions about the nature of the experiment before and after it.
+They were granted the right to revoke their signed declaration of consent (through anonymised personal codes), which none of them did.
+Participants received no payment but credit in partial fulfilment of the requirements for the above mentioned classes.
+Gender was specified on a voluntary basis using no pre-formulated options.
 
 \begin{acknowledgements}
 We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
@@ -128,9 +139,6 @@ Furthermore, we thank Ulrike for helping us recruit the participants for the exp
 Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
 We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
 \end{acknowledgements}
-
-\noindent{\footnotesize\textbf{Compliance with ethical standards}
-}
 
 \include{sections/onstatisticalanalysis}
 
