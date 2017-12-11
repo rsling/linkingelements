@@ -127,10 +127,10 @@ Instead, we view our data as strengthening the general approach of probabilistic
 \include{sections/conclusion}
 
 \section*{Compliance with ethical standards}
-The split-100 rating experiment reported in this was completely anonymised.
+The split-100 rating experiment reported in this paper was completely anonymised.
 Participants signed standard consent forms and were given the option if asking questions about the nature of the experiment before and after it.
 They were granted the right to revoke their signed declaration of consent (through anonymised personal codes), which none of them did.
-Participants received no payment but credit in partial fulfilment of the requirements for a first-semester classes in German linguistics.
+Participants received no payment but credit in partial fulfilment of the requirements for a first-semester class in German linguistics.
 Gender was specified on a voluntary basis using no pre-formulated options.
 
 %\begin{acknowledgements}

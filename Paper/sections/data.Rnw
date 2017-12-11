@@ -124,12 +124,11 @@ An overview of the type frequencies ($F$) and token frequencies ($f$) of the dif
 \footnote{In these counts, mass nouns and weak nouns were included in order to provide a complete overview.
 Since they were removed for all further analysis reported below, the frequencies in the table are higher, especially for \textit{-n} and \textit{-en}, which are the hypothetical PLs of the weak nouns.}
 The numbers are approximately in line with previous reports based on much smaller corpora such as \textcite{WellmannEa1974}, \textcite{Kuerschner2005}, or \textcite{KrottEa2007} (see also \citealt[9]{Schluecker2012}).
-
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.
 While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.
-Readers should keep in mind that we searched for first constituents which at least sometimes occur with a PL, but we also generated the relevant counts for these first constituents appearing with a NPL.
 
-While the type and token frequencies of N1s with PL and NPL are informative, a comparison of their productivity with PL and NPL is equally important for making decisions regarding the corpus sample and selection of stimuli.
+Readers should keep in mind that we searched for N1s which at least sometimes occur with a PL, but we also generated the relevant counts for these first constituents appearing with a NPL.
+While raw type and token frequencies are informative to some extent, a comparison of their productivity with PL and NPL is equally important for making decisions regarding the corpus sample and selection of stimuli.
 Therefore, we calculated measures of productivity for each N1 with PL and NPL.
 This measure was supposed to capture the probability that the given N1 would form a new compound with PL and NPL.
 The \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902, see also 906--907]{Baayen2009}.

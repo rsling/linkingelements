@@ -32,7 +32,7 @@ It is given by (\ref{eq:frequencyclass}), where $\lfloor~\rfloor$ denotes the fu
 \end{equation}
 
 The most frequent word in DECOW16A, according to the official frequency lists, is \textit{und} `and' with $f(und)=\Sexpr{nice.int(decow16a.highest.f)}$.
-Relative to this $f^max$ value, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
+Relative to this $f^{max}$ value, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
 
 From the set of N1s which fulfilled the given criteria, we sampled between five and ten nouns per PL.
 Sampling was a manual process, and it was ensured that the nouns were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
@@ -98,16 +98,16 @@ Such cases were discarded and not used for the study.%\
 The basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author in order to minimise the amount of human annotation errors.}
 
 Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of N2s characteristic of this relation.
-A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kindergruppe} `group of children' or \textit{Armee} `army' as in \textit{Bauernarmee} `army of peasants'.
-Even metaphorical collectives are usually not problematic, for example \textit{Regen} `rain' in compounds like \textit{Zitateregen} `rain of quotations'.
-Another clearly discernible group are reciprocals such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räderwechsel}, `swapping of tyres'.
-Similar to these are N2s such as \textit{Distanz} `distance' as in \textit{Lochdistanz} `distance between (the) holes', which were annotated as plural-inducing N2s if it became clear from the context that a distance \textit{between} several objects was referenced.
+A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kind-er+gruppe} or \textit{Kind-gruppe} `group of children' or \textit{Haufen} `heap\slash pile' as in \textit{Brett-er+haufen} or \textit{Brett-haufen} `pile of boards'.
+Even metaphorical collectives are usually not problematic, for example \textit{Regen} `rain' in compounds like \textit{Zitat-e+regen} or \textit{Zitat-regen} `rain of quotations'.
+Another clearly discernible group are reciprocals such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räd=er+wechsel} or \textit{Rad+wechsel}, `swapping of tyres'.
+Furthermore, there are N2s such as \textit{Distanz} `distance' as in \textit{Löch=er+distanz} or \textit{Loch-distanz} `distance between (the) holes', which were annotated as plural-inducing N2s if it became clear from the context that a distance \textit{between} several objects was referenced.
 Many other types of N2s also required annotators to take the context into account.
-For example, compounds with N2s like \textit{System} `system' as in \textit{Elementesystem} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
+For example, compounds with N2s like \textit{System} `system' as in \textit{Element-e+system} or \textit{Element-system} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
 
 In addition to these clear-cut cases, there was a second group of compounds in which the plural-inducing quality of the N2 was strongly context-dependent.
 Most prominently, there are N2s which denote a container of some sort.
-Examples include \textit{Äpfellager} `storage for apples', \textit{Briefekatalog} `catalogue of letters', and \textit{Liederbuch} `book of songs\slash songbook'.
+Examples include \textit{Äpfel=+lager} or \textit{Apfel-lager} `storage for apples', \textit{Brief-e+katalog} or \textit{Brief-katalog} `catalogue of letters', and \textit{Lied-er+buch} or \textit{Lied+buch} `book of songs\slash songbook'.
 In theory, the N2s in these compounds could denote some sort of container which holds only one object (for instance, it is conceivable -- if unlikely -- that the storage space for apples could have only one apple in it), but both world knowledge and the particular context in which the compound appears render this sort of interpretation impossible.
 However, since the interpretation of this kind of containment compound is strongly context- and world-knowledge-dependent, we refer to these as extended cases and will analyse them separately from the clear-cut cases shown above.
 The presentation of the final sample will show the results for only the first, clear-cut cases under the label of \textit{strict annotation} and the combined results for both the clear-cut and the extended cases under the label of \textit{lax annotation}.%
