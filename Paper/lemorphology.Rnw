@@ -126,13 +126,6 @@ Instead, we view our data as strengthening the general approach of probabilistic
 
 \include{sections/conclusion}
 
-\section*{Compliance with ethical standards}
-The split-100 rating experiment reported in this paper was completely anonymised.
-Participants signed standard consent forms and were given the option of asking questions about the nature of the experiment before and after they took part in it.
-They were granted the right to revoke their signed declaration of consent (through anonymised personal codes), which none of them did.
-Participants received no payment, but they were awarded credit in partial fulfillment of the requirements for a first-semester class in German linguistics.
-The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
-
 %\begin{acknowledgements}
 \section*{Acknowledgements}
 We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
@@ -141,6 +134,14 @@ Luise Rißmann did sterling work helping with the annotation of the concordances
 We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
 %\end{acknowledgements}
 
+\section*{Compliance with ethical standards}
+The split-100 rating experiment reported in this paper was completely anonymised.
+Participants signed standard consent forms and were given the option of asking questions about the nature of the experiment before and after they took part in it.
+They were granted the right to revoke their signed declaration of consent (through anonymised personal codes), which none of them did.
+Participants received no payment, but they were awarded credit in partial fulfillment of the requirements for a first-semester class in German linguistics.
+The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
+
+\appendix
 \include{sections/onstatisticalanalysis}
 
 \bibliographystyle{spbasic}
