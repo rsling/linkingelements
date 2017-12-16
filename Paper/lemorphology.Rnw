@@ -14,7 +14,7 @@
 \usepackage{rotating}
 \usepackage{bbding}
 \usepackage{soul}
-\usepackage[mark]{gitinfo2}
+% \usepackage[mark]{gitinfo2}
 \usepackage{url}
 \usepackage{setspace}
 
@@ -154,6 +154,7 @@ The participants could specify their gender on a voluntary basis and they were g
 
 \bibliographystyle{spbasic}
 \bibliography{rs}
+
 
 \end{document}
 
