@@ -1,4 +1,4 @@
-## "Function vs. interpretability of compound linking elements in German"
+## "The plural interpretability of German linking elements"
 
 **Roland Schäfer¹ & Elizabeth Pankratz² (2017/2018)**
 
