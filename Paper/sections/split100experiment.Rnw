@@ -18,8 +18,8 @@ Subjects made eight decisions pertaining to the internal plural sub-experiment a
 In addition to these 16 targets, an experiment run contained 41 fillers, which results in a target-to-filler ratio of 1:2.5.
 A training phase with five sentences\slash decisions preceded the experiment.
 
-Subjects were presented with artificial sentences containing a blank where the compound should go.
-The two variants (with PL and NPL) were shown on the same screen below the sentence with a slider in between, which could be moved freely to assign a preference between $100;0$ and $0;100$.
+Subjects were presented with sentences containing a blank where a compound should go.
+The two variants of the compound (with PL and NPL) were shown on the same screen below the sentence with a slider in between, which could be moved freely to assign a preference between $100;0$ and $0;100$.
 The corresponding numbers were displayed dynamically as subjects moved the slider.
 When they were satisfied with their decision, subjects pressed a button to store it and continue on.
 After each sentence, subjects answered a simple distractor question by pressing one of the digits 1--9.
@@ -50,8 +50,8 @@ stims.freqs$FbandPL <- ifelse(stims.freqs$FbandPL == "NA", "--", stims.freqs$Fba
 The choice of stimuli was guided by the exploratory data analysis described in Section~\ref{sec:data}.
 First of all, we chose N1s which have roughly equal productivity with PL and NPL.
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
-Finally, we checked the frequencies of the N1+N2 combinations with PL and NPL in the corpus, because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
-The process turned out to be an iterative one because compounds meeting the desired criteria were difficult to find.
+Finally, we checked the frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
+The process turned out to be an iterative one because compounds meeting all desired criteria were difficult to find.
 Table~\ref{tab:stimuli} presents the results of the selection process.
 The table shows the potential productivity $P^p$ for the N1 with PL and NPL.
 These roughly match in many cases, for example $P^p_{PL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.

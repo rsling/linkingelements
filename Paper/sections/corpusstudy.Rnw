@@ -150,7 +150,7 @@ print(extpl.obs.xt,
 @
 
 A $\chi^2$ test on the contingency table produces a significant result at $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(extpl.chisq$statistic)}$, $df=\Sexpr{min(dim(extpl.chisq$observed))-1}$, $p=\Sexpr{nice.float(extpl.chisq$p.value)}$).
-However, despite the very large sample size, the p-value is relatively close to $0.05$, and the effect size is quite low at $v=\Sexpr{nice.float(cramer.v(extpl.chisq))}$, which indicates it is probably spurious.
+However, despite the very large sample size, the p-value is relatively close to $0.05$, and the effect size is quite low at $v=\Sexpr{nice.float(cramer.v(extpl.chisq))}$, which indicates that the effect is probably spurious.
 To make matters worse, an inspection of the (standardised) residuals in Table~\ref{tab:ctextpluralresid} shows that the spurious effect even has the wrong direction, \ie PL is less frequent in plural compounds than expected under the null.
 
 <<results="asis">>=
@@ -179,7 +179,7 @@ We used Šidák's method \parencite{Sidak1967}, which is only slightly less cons
 \footnote{We also tried Holm's and Hochberg's methods, but the differences between all those methods are small enough that they do not lead to different interpretations of the results.
 Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m$ is the number of tests ($m=\Sexpr{nice.int(nrow(t.plot))}$ in this case).}
 The low counts in some cells in our data make the $\chi^2$ approximation inexact, so we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}.
-The procedure calculates these marginal sums and then generates random permutations for the contingency table based on the marginals.
+The procedure calculates these marginal sums and then generates random permutations for the contingency table given the marginals.
 We used $b=\Sexpr{nice.int(num.reps)}$ permutations.
 Finally, the effect sizes ($v$) were calculated and multiplied by the sign of the top left cell of the residual table.
 This means that, in addition to quantifying the magnitude of the effect size, they also reflect whether for each N1 the co-occurrence of PL and plural semantics on N1 is preferred (positive sign) or dispreferred (negative sign).
@@ -248,7 +248,7 @@ print(intpl.obs.xt,
 
 A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0;0$).
 However, the overall effect size is still not very high at $v=\Sexpr{nice.float(cramer.v(intpl.chisq))};\Sexpr{nice.float(cramer.v(intpl.chisq.lax))}$.
-At least for the lax annotation scheme $v\geq 0.2$, making the effect is thus worthy of mention.
+At least for the lax annotation scheme $v\geq 0.2$, making the effect worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural sub-study.
 Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.%
 \footnote{Violin plots are standard box plots with an added polygon representing the kernel density estimate.

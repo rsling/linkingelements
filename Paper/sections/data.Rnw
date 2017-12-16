@@ -58,10 +58,10 @@ In the corpus, nominal compounds come with full structural analyses created auto
 \footnote{The analyses are formatted as \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
 Underscores separate the constituents of the compound, the nominal elements are given in their base form, and LEs begin with \texttt{+} followed by a \texttt{=} if the LE triggers stem umlaut on the first constituent.}
 While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
-What is more, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.%
+More importantly, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.%
 \footnote{We made an exception for the zero linkage because the number of N1s was much too high for full manual inspection.
 We therefore implemented an automatic approach where a N1 had to fulfil one of the following criteria to be included:
-(i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns published by the COW project.
+(i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns extracted from the DECOW corpus published by the COW project.
 (ii) It occurred at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
 These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linkage N1 candidates.}
 
@@ -146,7 +146,7 @@ It can be regarded as a proportion, and its range is therefore $[0,1]$.
 %%% IMPORTANT! For production, PNG/PDF should be changed in chunk below. %%%
 %%% ==================================================================== %%%
 
-<<proddots, png=TRUE, pdf=FALSE, fig.pos="htbp", fig.height=8, fig.cap="Comparisons of the potential productivity of N1s, grouped by PLs; colours and sizes encode the type frequencies with PL and NPL; axes are on a logarithmic scale">>=
+<<proddots, pdf=TRUE, fig.pos="htbp", fig.height=8, fig.cap="Comparisons of the potential productivity of N1s, grouped by PLs; colours and sizes encode the type frequencies with PL and NPL; axes are on a logarithmic scale">>=
 productivitydots.colors <- colorRampPalette(c("gold", "darkred"))(100)
 par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,

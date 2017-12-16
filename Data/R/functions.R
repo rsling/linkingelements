@@ -198,10 +198,10 @@ plot.productivities <- function(le, analyses, dots = F, max.plottable = 100,
              col = the.colors[round(map.log(.n1s[n,"Without_Ftype"], .fty.max.without, 100), 0)]
       )
       legend("topleft",
-             legend = c(paste0("f = 1; 1"),
-                        paste0("f = ", .fty.max.with, "; 1"),
-                        paste0("f = 1; ", .fty.max.without),
-                        paste0("f = ", .fty.max.with, "; ", .fty.max.without)
+             legend = c(paste0("F=1;1"),
+                        paste0("F=", .fty.max.with, ";1"),
+                        paste0("F=1;", .fty.max.without),
+                        paste0("F=", .fty.max.with, ";", .fty.max.without)
                         ),
              pch = 20,
              col = c(
