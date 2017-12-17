@@ -13,20 +13,20 @@ We chose the web-crawled DECOW16A corpus (\citealt{SchaeferBildhauer2012a}, \cit
 \footnote{See \url{http://corporafromtheweb.org/} for project information and \url{https://www.webcorpora.org/} for access to the corpora.}
 This corpus was the obvious choice for several reasons.
 First of all, it is available in an on-line query interface but also for scripted access and (in sentence-wise shuffled form) for download.%
-\footnote{It is also available free of charge to anyone working in the academia.
+\footnote{It is also available free of charge to anyone working in academia.
 The same is also true for the English ENCOW16A ($16.5$ billion tokens), the French FRCOW16A ($10.8$ billion tokens). the Spanish ESCOW16A ($7.1$ billion tokens), as well as the older Swedish SVCOW14A (8.4 billion tokens) and Dutch NLCOW14A (6.7 billion tokens).}
 The large-scale productivity assessment to be reported in Section~\ref{sec:databaseandproductivityassessment} would not have been possible without scripted access.
-More importantly, using large amounts of recently produced data, including data not written under strong normative pressure (such as forums and other community websites) is in our view ideal for research on productive processes from a synchronic perspective (be it descriptive, geared towards competence grammar, or cognitively oriented).
-The only other available very large corpus containing recent German would be the \textit{Deutsches Refernzkorpus} (DeReKo) by the \textit{Institut für Deutsche Sprache} \parencite{KupietzEa2010}, but as of today it is not available for scripted access, and it mostly contains newspaper text.
+More importantly, using large amounts of recently produced data, including data not written under strong normative pressure (such as text from forums and other community websites) is in our view ideal for research on productive processes from a synchronic perspective (be it descriptive, geared towards competence grammar, or cognitively oriented).
+The only other available very large corpus containing recent German would be the \textit{Deutsches Refernzkorpus} (DeReKo) by the \textit{Institut für Deutsche Sprache} \parencite{KupietzEa2010}, but (at least currently) it is not available for scripted access, and it mostly contains newspaper text.
 Finally, the COW corpora are based on an improved methodology also used to build the WaCky corpora \parencite{BaroniEa2009}, and there are other similar web-derived corpora also actively used by many linguists, such as the SketchEngine corpora \parencite{KilgarriffEa2014}.
-Web corpora can thus be regarded as an established source of data on a par with traditionally compiled corpora.
+Web corpora can thus be regarded as an established source of data on par with traditionally compiled corpora.
 
 \subsection{Database and productivity assessment}
 \label{sec:databaseandproductivityassessment}
 
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
 The total number of candidates for first constituents and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, large-scale data about the type frequencies, token frequencies, and the productivity of first constituents were required.
-We used automatic approaches to create a set of databases, and demanding manual clean-up and selection steps in-between automatic steps were used to ensure that the results were reliable.
+We used automatic approaches to create a set of databases, and manual clean-up and selection steps in-between automatic steps were used to ensure that the results were reliable.
 The database tells us how strongly first constituents tend to appear with PLs and with NPLs, including an assessment of their productivity with these linkages.
 This section describes the creation of the database.
 
@@ -111,7 +111,7 @@ rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 
 First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N1+N2 compounds.
 We therefore extracted all N1+N2 compounds and all first constituents (N1s) from the large compound database.
-For each of the pluralic linkages (PL), we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), are count nouns (because mass nouns undergo a significant change in meaning when pluralised), are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
+For each of the pluralic linkages (PL), we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), which are count nouns (because mass nouns undergo a significant change in meaning when pluralised) and which are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
 The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
 Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
 \footnote{Every single decision is documented in the data package for this paper.}
@@ -119,7 +119,7 @@ When an N1 candidate looked suspicious, we inspected the compound database to ch
 
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
-Since we are interested in the alternation between N1s used with PLs and without them (either without any LE, with deletion, or with a non-pluralic LE such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a non-pluralic linkage (NPL).
+Since we are interested in the alternation for each N1 of PLs and non-pluralic linkages (NPLS; these can manifest themselves as no LE at all, as deletion, or as a non-pluralic LE such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a NPL.
 An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linkages in DECOW16A is given in Table \ref{tab:freqoverview}.%
 \footnote{In these counts, mass nouns and weak nouns were included in order to provide a complete overview.
 Since they were removed for all further analysis reported below, the frequencies in the table are higher, especially for \textit{-n} and \textit{-en}, which are the hypothetical PLs of the weak nouns.}
@@ -127,12 +127,11 @@ The numbers are approximately in line with previous reports based on much smalle
 As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.
 While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.
 
-Readers should keep in mind that we searched for N1s which at least sometimes occur with a PL, but we also generated the relevant counts for these first constituents appearing with a NPL.
 While raw type and token frequencies are informative to some extent, a comparison of their productivity with PL and NPL is equally important for making decisions regarding the corpus sample and selection of stimuli.
 Therefore, we calculated measures of productivity for each N1 with PL and NPL.
 This measure was supposed to capture the probability that the given N1 would form a new compound with PL and NPL.
 The \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902, see also 906--907]{Baayen2009}.
-The potential productivity is appropriate for our purposes because some or even many compounds might be lexicalised either with PL or with NPL, and it would not make much sense to try to examine an alternation with N1s which occur mostly in lexicalised compounds.
+The potential productivity is appropriate for our purposes because some compounds might be lexicalised either with PL or with NPL, and it would not make much sense to try to examine an alternation with N1s which occur mostly in lexicalised compounds.
 As shown in (\ref{eq:prod}), the potential productivity $P^p$ is simply the number of the hapax legomena ($f_1$) of compounds with $\mathrm{N1}_{le}$ divided by the token frequency ($f$) of compounds with $\mathrm{N1}_{le}$, where $le$ stands for either PL or NPL.
 
 \begin{equation}\label{eq:prod}
@@ -165,17 +164,17 @@ par(mfrow=c(1,1))
 @
 
 Figure~\ref{fig:proddots} shows the results of the productivity analyses for all chosen N1s.%
-\footnote{It was pointed out that the analysis of productivity is tainted by the low quality of automatic annotation in \textcite{EvertLuedeling2001} -- a point reiterated in \textcite[907]{Baayen2009}.
+\footnote{It was pointed out that the analysis of productivity is often tainted by the low quality of automatic annotation in \textcite{EvertLuedeling2001} -- a point reiterated in \textcite[907]{Baayen2009}.
 Our analysis relies on the automatically generated annotations by the SMOR tool and COW tool chain.
 However, the list of N1 candidates was meticulously cleaned manually, as stated above.
-Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words.
+Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words, since we input them.
 Finally, the N1s which were chosen for the studies presented in Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment} were manually checked again.
-In the annotation of the \Sexpr{nice.int(sum(t.plot$n))} corpus exemplars, any systematic misanalysis would have shown.
+In the annotation of the \Sexpr{nice.int(sum(t.plot$n$))} corpus exemplars, any systematic misanalysis would have shown.
 This actually was the case for the N1 \textit{Beere} `berry', where the concordance for NPL contained mostly erroneously analysed words and proper names, and \textit{Beere} was subsequently excluded from further steps.
 We can thus be sure that the analyses which we interpret relative to our theoretical hypotheses are accurate and not distorted by problems of automatic annotation.
 }
 In this plot, each dot represents one N1.
-Its position is determined by its $P^p$ value with PL (x-axis) and with NPL (y-axis).
+The dot's position is determined by its $P^p$ value with PL (x-axis) and with NPL (y-axis).
 Additionally, the larger a dot is, the higher is its type frequency with PL, and the darker it is, the higher is its type frequency with NPL.
 From the panels for \textit{-n} and \mbox{\textit{-en}}, it is apparent that N1s with all sorts of ratios of high and low productivity with PL and NPL exist.
 The tendency for dots to be smaller towards the right-hand side (high productivity with PL) and lighter towards to top (higher productivity with NPL) is explained by the fact that a lower overall type frequency makes it is easier to achieve a high productivity score.
@@ -184,7 +183,7 @@ Since the \textit{-n} and \textit{-en} plurals are often used with rare loan wor
 Examples include \textit{Ikonostase} (pl.\ \textit{Ikonostasen}) `iconostasis', which has a token frequency and a hapax count of $\Sexpr{analyses.full$n[which(analyses.full$n$N1 == "Ikonostase"),"With_Fhapax"]}$ with PL (thus a potential productivity of $\Sexpr{analyses.full$n[which(analyses.full$n$N1 == "Ikonostase"),"With_Ppot"]}$) and \textit{Testator} (pl. \textit{Testatoren}) `testator' with a token frequency and a hapax count of $\Sexpr{analyses.full$en[which(analyses.full$en$N1 == "Testator"),"With_Fhapax"]}$ with PL (thus also a potential productivity of $\Sexpr{analyses.full$en[which(analyses.full$en$N1 == "Testator"),"With_Ppot"]}$).
 
 For N1s with \textit{-e} and \textit{=e}, and even more so for those with \textit{=er}, \textit{-er}, and \textit{=}, the productivity scores with PL are spread out between $0$ and $1$.
-However, there are virtually no N1s in these classes which show a very high productivity (much higher than $0.1$) with NPL.
+However, there are virtually no N1s in these classes which show a particularly high productivity (much higher than $0.1$) with NPL.
 The type frequencies are, however, still quite high for both PL and NPL, as reflected in the colour and the size of the dots.
 For \textit{=er}, for example, the 25th and 75th percentiles of the token frequencies with PL are at \Sexpr{nice.int(quantile(analyses.full$Uer$With_Ftype, probs = 0.25))} and \Sexpr{nice.int(quantile(analyses.full$Uer$With_Ftype, probs = 0.75))} types, respectively.
 With NPL, they are at \Sexpr{nice.int(quantile(analyses.full$Uer$Without_Ftype, probs = 0.25))} and \Sexpr{nice.int(quantile(analyses.full$Uer$Without_Ftype, probs = 0.75))} types.
