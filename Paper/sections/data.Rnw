@@ -169,7 +169,7 @@ Our analysis relies on the automatically generated annotations by the SMOR tool 
 However, the list of N1 candidates was meticulously cleaned manually, as stated above.
 Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words, since we input them.
 Finally, the N1s which were chosen for the studies presented in Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment} were manually checked again.
-In the annotation of the \Sexpr{nice.int(sum(t.plot$n$))} corpus exemplars, any systematic misanalysis would have shown.
+In the annotation of the \Sexpr{nice.int(sum(t.plot$n))} corpus exemplars, any systematic misanalysis would have shown.
 This actually was the case for the N1 \textit{Beere} `berry', where the concordance for NPL contained mostly erroneously analysed words and proper names, and \textit{Beere} was subsequently excluded from further steps.
 We can thus be sure that the analyses which we interpret relative to our theoretical hypotheses are accurate and not distorted by problems of automatic annotation.
 }
