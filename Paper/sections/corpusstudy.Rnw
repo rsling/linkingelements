@@ -114,7 +114,7 @@ The presentation of the final sample will show the results for only the first, c
 ``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
 The problem with \textit{strawberry jam} is that \textit{strawberry} could address the generic meaning (`strawberry type') or a mass noun version (`strawberry substance'), in which case the numerosity of referents of N1 would be much weaker conceptually.
 We had to assume that there would be more confounding factors in the corpus study than in a controlled experiment.
-Therefore, to be on the safe side, we did not consider hazy cases like these to be internal plurals in the narrow sense.
+Therefore, to be on the safe side, we did not consider hazy cases like these to be internal plurals.
 }
 
 
@@ -251,9 +251,9 @@ However, the overall effect size is still not very high at $v=\Sexpr{nice.float(
 At least for the lax annotation scheme $v\geq 0.2$, making the effect worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural sub-study.
 Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.%
-\footnote{Violin plots are standard box plots with an added \hl{polygon} representing the kernel density estimate.
-See \textcite{HintzeNelson1998}.
-The horizontal line represents the median, and the black vertical bar the interquartile range (\ie the range of the middle $50\%$ of the sample).}
+\footnote{Violin plots are extensions of standard box plots; see \textcite{HintzeNelson1998}.
+The horizontal line represents the median and the black vertical bar the interquartile range (\ie the range of the middle $50\%$ of the sample).
+The additional outer shape represents a kernel density estimate of the sample.}
 For the internal plural sub-study, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on either of them.
 While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.

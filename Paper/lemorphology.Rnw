@@ -14,14 +14,14 @@
 \usepackage{rotating}
 \usepackage{bbding}
 \usepackage{soul}
-% \usepackage[mark]{gitinfo2}
+\usepackage[mark]{gitinfo2}
 \usepackage{url}
 \usepackage{setspace}
 
 \usepackage{xcolor}
 
-% \usepackage[printwatermark]{xwatermark}
-% \newwatermark[firstpage,color=red!50, angle=45, scale=1.5, xpos=-15, ypos=12]{\sffamily SUBMITTED! Do not quote!}
+\usepackage[printwatermark]{xwatermark}
+\newwatermark[firstpage,color=red!50, angle=45, scale=1.5, xpos=-15, ypos=12]{\sffamily SUBMITTED! Do not quote!}
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }
@@ -34,26 +34,26 @@
 \newcommand{\textcite}[2][]{\citet[#1]{#2}}
 \newcommand{\parencite}[2][]{\citep[#1]{#2}}
 
-\journalname{}
+\journalname{Submitted to \textit{Morphology} (JOMO)}
 
-% \title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
-\title{The plural interpretability of German linking elements}
+\title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
+% \title{The plural interpretability of German linking elements}
 
-\author{}
-\date{}
-\institute{}
+% \author{}
+% \date{}
+% \institute{}
 
-% \author{Roland Schäfer \and Elizabeth Pankratz}
-% \institute{Roland Schäfer \at
-%               Deutsche und niederländische Philologie\\
-%               Freie Universität Berlin \\
-%               \email{roland.schaefer@fu-berlin.de}
-%            \and
-%            Elizabeth Pankratz \at
-%               Deutsche Sprache und Linguistik\\
-%               Humboldt Universität zu Berlin\\
-%               \email{pankrate@hu-berlin.de}}
-% \date{Received: date / Accepted: date}
+\author{Roland Schäfer \and Elizabeth Pankratz}
+\institute{Roland Schäfer \at
+              Deutsche und niederländische Philologie\\
+              Freie Universität Berlin \\
+              \email{roland.schaefer@fu-berlin.de}
+           \and
+           Elizabeth Pankratz \at
+              Deutsche Sprache und Linguistik\\
+              Humboldt Universität zu Berlin\\
+              \email{pankrate@hu-berlin.de}}
+\date{Received: date / Accepted: date}
 
 \begin{document}
 
@@ -112,12 +112,12 @@ stims.freqs <- read.csv2(paste0(my.root, '../Data/Split100/stimuli_freqs.csv'), 
 In this paper, we take a closer theoretical and empirical look at the linking elements in German N1+N2 compounds which are identical to the plural marker of N1 (such as \textit{-er} with umlaut, as in \textit{Häus-er-meer} `sea of houses').
 Various perspectives on the actual extent of plural interpretability of these pluralic linking elements are expressed in the literature.
 We aim to clarify this question by empirically examining to what extent there may be a relationship between plural form and meaning which informs in which sorts of compounds pluralic linking elements appear.
-Specifically, we investigate whether pluralic linking elements occur especially frequently in compounds with plural meaning induced either externally (through plural inflection of the entire compound) or internally (through a relation between the constituents such that N2 forces N1 to be conceptually plural, as in the example above).
+Specifically, we investigate whether pluralic linking elements occur especially frequently in compounds where a plural meaning of the first constituent is induced either externally (through plural inflection of the entire compound) or internally (through a relation between the constituents such that N2 forces N1 to be conceptually plural, as in the example above).
 The results of a corpus study using the DECOW16A corpus and a split-100 experiment show that in the internal but not external plural meaning conditions, a pluralic linking element is preferred over a non-pluralic one, though there is considerable inter-speaker variability, and limitations imposed by other constraints on linking element distribution also play a role.
 However, we show the overall tendency that German language users do use pluralic linking elements as cues to the plural interpretation of N1+N2 compounds.
 Our interpretation does not reference a specific morphological framework.
-Instead, we view our data as strengthening the general approach of probabilistic grammar.
-\keywords{{compounds} \and {linking elements} \and {German} \and {probabilistic morphology} \and {corpus data} \and {split-100 experiments}}
+Instead, we view our data as strengthening the general approach of probabilistic morphology.
+\keywords{{compounds} \and {linking elements} \and {German} \and {probabilistic morphology} \and {usage data} \and {split-100 task}}
 \end{abstract}
 
 \include{sections/linkingelementsinprobabilisticmorphology}
@@ -135,18 +135,18 @@ Instead, we view our data as strengthening the general approach of probabilistic
 \include{sections/conclusion}
 
 %\begin{acknowledgements}
-% \section*{Acknowledgements}
-% We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
-% Furthermore, we thank Ulrike for helping us recruit the participants for the experiment.
-% Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
-% We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
+\section*{Acknowledgements}
+We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
+Furthermore, we thank Ulrike for helping us recruit the participants for the experiment.
+Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
+We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
 %\end{acknowledgements}
 
 \section*{Compliance with ethical standards}
 The split-100 rating experiment reported in this paper was completely anonymised.
 Participants signed standard consent forms and were given the option of asking questions about the nature of the experiment before and after they took part in it.
 They were granted the right to revoke their signed declaration of consent (through anonymised personal codes), which none of them did.
-Participants received no payment, but they were awarded credit in partial fulfillment of the requirements for a first-semester class in German linguistics.
+Participants received no payment, but they were awarded credit in partial fulfillment of the requirements for a first-semester class in German linguistics at Freie Universität Berlin.
 The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
 
 \appendix
