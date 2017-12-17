@@ -113,7 +113,8 @@ The presentation of the final sample will show the results for only the first, c
 \footnote{We think it is encouraging that \textcite{BangaEa2013b} found the stable and expected results even using a more cavalier operationalisation of what they call conceptual plurals.
 ``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
 The problem with \textit{strawberry jam} is that \textit{strawberry} could address the generic meaning (`strawberry type') or a mass noun version (`strawberry substance'), in which case the numerosity of referents of N1 would be much weaker conceptually.
-%Since in the corpus study, we had to assume that there were more confounding factors than in a controlled experiment anyway, we did not count such hazy cases as internal plurals to be on the safe side.
+We had to assume that there would be more confounding factors in the corpus study than in a controlled experiment.
+Therefore, to be on the safe side, we did not consider hazy cases like these to be internal plurals in the narrow sense.
 }
 
 
