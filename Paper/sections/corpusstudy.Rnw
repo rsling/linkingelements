@@ -9,7 +9,7 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Queries}
 \label{sec:queries}
 
-As explained in Section~\ref{sec:linkingelementsingerman}, we determine whether two distinct factors increase the probability that N1 in an N1+N2 compound occurs with a PL, given that N1 alternates between a PL and a NPL.
+As explained in Section~\ref{sec:linkingelementsingerman}, we will determine whether two distinct factors increase the probability that N1 in an N1+N2 compound occurs with a PL, given that N1 alternates between a PL and a NPL.
 The first potential factor is a plural on the whole compound (formally on N2, which is the head).
 The second factor is whether a semantic relation between N1 and N2 holds which forces N1 to have plural semantics.
 Therefore, we manually annotated corpus exemplars containing N1+N2 compounds for whether they are plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
@@ -99,22 +99,21 @@ The basic annotations were made by the second author of this paper and a student
 
 Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of N2s characteristic of this relation.
 A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kind-er+gruppe} or \textit{Kind-gruppe} `group of children' or \textit{Haufen} `heap\slash pile' as in \textit{Brett-er+haufen} or \textit{Brett-haufen} `pile of boards'.
-Even metaphorical collectives are usually not problematic, for example \textit{Regen} `rain' in compounds like \textit{Zitat-e+regen} or \textit{Zitat-regen} `rain of quotations'.
+Even metaphorical collectives are usually unproblematic, for example \textit{Regen} `rain' in compounds like \textit{Zitat-e+regen} or \textit{Zitat-regen} `rain of quotations'.
 Another clearly discernible group are reciprocals such as \textit{Wechsel} `swap\slash exchange' as in \textit{Räd=er+wechsel} or \textit{Rad+wechsel}, `swapping of tyres'.
 Furthermore, there are N2s such as \textit{Distanz} `distance' as in \textit{Löch=er+distanz} or \textit{Loch-distanz} `distance between (the) holes', which were annotated as plural-inducing N2s if it became clear from the context that a distance \textit{between} several objects was referenced.
-Many other types of N2s also required annotators to take the context into account.
-For example, compounds with N2s like \textit{System} `system' as in \textit{Element-e+system} or \textit{Element-system} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
+Also, compounds with N2s like \textit{System} `system' as in \textit{Element-e+system} or \textit{Element-system} `system of elements\slash periodic system' were annotated as containing an N1 with a forced plural interpretation if the reading was clearly that of a `system of (several) elements'.
 
-In addition to these clear-cut cases, there was a second group of compounds in which the plural-inducing quality of the N2 was strongly context-dependent.
-Most prominently, there are N2s which denote a container of some sort.
+In addition to these fairly clear-cut cases, there was a second group of compounds in which the plural-inducing quality of the N2 was strongly dependent on context and world knowledge.
+Most prominent among these are N2s which denote a container of some sort.
 Examples include \textit{Äpfel=+lager} or \textit{Apfel-lager} `storage for apples', \textit{Brief-e+katalog} or \textit{Brief-katalog} `catalogue of letters', and \textit{Lied-er+buch} or \textit{Lied+buch} `book of songs\slash songbook'.
-In theory, the N2s in these compounds could denote some sort of container which holds only one object (for instance, it is conceivable -- if unlikely -- that the storage space for apples could have only one apple in it), but both world knowledge and the particular context in which the compound appears render this sort of interpretation impossible.
-However, since the interpretation of this kind of containment compound is strongly context- and world-knowledge-dependent, we refer to these as extended cases and will analyse them separately from the clear-cut cases shown above.
+In theory, the N2s in these compounds \textit{could} denote some sort of container which holds only one object (for instance, it is conceivable -- if unlikely -- that the storage space for apples could have only one apple in it), but both world knowledge and the particular context in which the compound appears render this sort of interpretation impossible.
+However, since the interpretation of this kind of containment compound is very context- and world-knowledge-dependent, we refer to these as extended cases and will analyse them separately from the clear-cut cases shown above.
 The presentation of the final sample will show the results for only the first, clear-cut cases under the label of \textit{strict annotation} and the combined results for both the clear-cut and the extended cases under the label of \textit{lax annotation}.%
 \footnote{We think it is encouraging that \textcite{BangaEa2013b} found the stable and expected results even using a more cavalier operationalisation of what they call conceptual plurals.
 ``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
 The problem with \textit{strawberry jam} is that \textit{strawberry} could address the generic meaning (`strawberry type') or a mass noun version (`strawberry substance'), in which case the numerosity of referents of N1 would be much weaker conceptually.
-Since in the corpus study, we had to assume that there were more confounding factors than in a controlled experiment anyway, we did not count such hazy cases as internal plurals to be on the safe side.
+%Since in the corpus study, we had to assume that there were more confounding factors than in a controlled experiment anyway, we did not count such hazy cases as internal plurals to be on the safe side.
 }
 
 
@@ -124,13 +123,13 @@ Since in the corpus study, we had to assume that there were more confounding fac
 As mentioned in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.%
 \footnote{In the recent years and decades, practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
 Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
-We feel that corpus linguists have not yet picked up on the debate fully to the effect that most papers do not make explicit which statistical philosophy they follow.
+We feel that corpus linguists have not yet picked up on the debate fully, with the effect that most papers do not make explicit which statistical philosophy they follow.
 We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different statistical traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalyses}.}
 All exemplars were annotated for internal and external plural, and we treat the two annotations as two sub-studies, starting with the external plural sub-study.
 
 There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.
 Also, there are $\Sexpr{nice.int(length(which(conc$LE==1)))}$ cases with PL and $\Sexpr{nice.int(length(which(conc$LE==0)))}$ with NPL.
-The question is whether there is a remarkably high number of exemplars with PL in a plural compound such that we might conclude that there is an external plural effect.
+The question is whether there is an considerably high number of exemplars with PL in a plural compound such that we might conclude that there is an external plural effect.
 The contingency table showing the two variables' bivariate distribution is given in Table~\ref{tab:ctextplural}.
 
 <<results="asis">>=
@@ -175,14 +174,14 @@ Thus, we have found no evidence to support the external plural hypothesis in the
 There might, however, be item-specific differences between N1s or groups of N1s which take different PLs.
 In order to check for this, we calculated one $\chi^2$ test for each N1 with an approximate sample size of $n=200$ for each test.
 Since we are testing a family of connected hypotheses, p-values need to be corrected (correction for group-wise error).
-We used Šidák's method \parencite{Sidak1967}, which is only slightly less conservative than the well-known Bonferroni correction (at least for uncorrelated tests).%
+We used Šidák's method \parencite{Sidak1967}, which is slightly less conservative than the well-known Bonferroni correction (at least for uncorrelated tests).%
 \footnote{We also tried Holm's and Hochberg's methods, but the differences between all those methods are small enough that they do not lead to different interpretations of the results.
 Instead of adapting the $\mathrm{sig}$ level, we corrected the p-value directly using $p_{S}=1-(1-p)^m$ where $m$ is the number of tests ($m=\Sexpr{nice.int(nrow(t.plot))}$ in this case).}
 The low counts in some cells in our data make the $\chi^2$ approximation inexact, so we used a Monte Carlo replacement for the traditional $\chi^2$ test \parencite{Hope1968} as implemented in the standard \texttt{chisq.test} function in R \parencite{R}.
 The procedure calculates these marginal sums and then generates random permutations for the contingency table given the marginals.
 We used $b=\Sexpr{nice.int(num.reps)}$ permutations.
 Finally, the effect sizes ($v$) were calculated and multiplied by the sign of the top left cell of the residual table.
-This means that, in addition to quantifying the magnitude of the effect size, they also reflect whether for each N1 the co-occurrence of PL and plural semantics on N1 is preferred (positive sign) or dispreferred (negative sign).
+This means that, in addition to quantifying the magnitude of the effect size, they also reflect whether, for each N1, the co-occurrence of PL and plural semantics on N1 is preferred (positive sign) or dispreferred (negative sign).
 
 These results confirm those of the global test reported above.
 Only one test reaches $\mathrm{sig}=0.05$.
@@ -251,7 +250,7 @@ However, the overall effect size is still not very high at $v=\Sexpr{nice.float(
 At least for the lax annotation scheme $v\geq 0.2$, making the effect worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural sub-study.
 Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.%
-\footnote{Violin plots are standard box plots with an added polygon representing the kernel density estimate.
+\footnote{Violin plots are standard box plots with an added \hl{polygon} representing the kernel density estimate.
 See \textcite{HintzeNelson1998}.
 The horizontal line represents the median, and the black vertical bar the interquartile range (\ie the range of the middle $50\%$ of the sample).}
 For the internal plural sub-study, strict and lax annotation are both shown.
