@@ -1,6 +1,6 @@
 ## "The plural interpretability of German linking elements"
 
-**Roland Schäfer¹ & Elizabeth Pankratz² (2017/2018)**
+**Roland Schäfer¹ & Elizabeth Pankratz² (accepted w/minor rev. on 3 June 2018 by Morphology [JOMO])**
 
 ¹Freie Universität Berlin, ²Humboldt Universität zu Berlin
 
