@@ -119,7 +119,7 @@ When an N1 candidate looked suspicious, we inspected the compound database to ch
 
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
-Since we are interested in the alternation for each N1 of PLs and non-pluralic linkages (NPLS; these can manifest themselves as no LE at all, as deletion, or as a non-pluralic LE such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a NPL.
+Since we are interested in the alternation for each N1 of PLs and non-pluralic linkages (NPLs; these can manifest themselves as no LE at all, as deletion, or as a non-pluralic LE such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a NPL.
 An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linkages in DECOW16A is given in Table \ref{tab:freqoverview}.%
 \footnote{In these counts, mass nouns and weak nouns were included in order to provide a complete overview.
 Since they were removed for all further analysis reported below, the frequencies in the table are higher, especially for \textit{-n} and \textit{-en}, which are the hypothetical PLs of the weak nouns.}

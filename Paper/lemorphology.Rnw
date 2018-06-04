@@ -4,10 +4,8 @@
 \smartqed
 \usepackage{graphicx}
 \usepackage{mathptmx}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
@@ -17,11 +15,10 @@
 \usepackage[mark]{gitinfo2}
 \usepackage{url}
 \usepackage{setspace}
-
 \usepackage{xcolor}
 
 \usepackage[printwatermark]{xwatermark}
-\newwatermark[firstpage,color=red!50, angle=45, scale=1.5, xpos=-15, ypos=12]{\sffamily SUBMITTED! Do not quote!}
+\newwatermark[firstpage,color=red!50, angle=45, scale=1, xpos=-15, ypos=12]{\parbox{16cm}{\sffamily\centering DRAFT, accepted by JOMO.\\Please quote as\\`accepted with minor revisions.'}}
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }
@@ -34,14 +31,9 @@
 \newcommand{\textcite}[2][]{\citet[#1]{#2}}
 \newcommand{\parencite}[2][]{\citep[#1]{#2}}
 
-\journalname{Submitted to \textit{Morphology} (JOMO)}
+\journalname{\textit{Morphology} (JOMO), accepted with minor revisions on 3 June 2018}
 
 \title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
-% \title{The plural interpretability of German linking elements}
-
-% \author{}
-% \date{}
-% \institute{}
 
 \author{Roland Schäfer \and Elizabeth Pankratz}
 \institute{Roland Schäfer \at
@@ -53,7 +45,7 @@
               Deutsche Sprache und Linguistik\\
               Humboldt Universität zu Berlin\\
               \email{pankrate@hu-berlin.de}}
-\date{Received: date / Accepted: date}
+\date{Received: 17 Dec 2017 / Accepted (minor rev.): 3 Jun 2018}
 
 \begin{document}
 
@@ -134,20 +126,20 @@ Instead, we view our data as strengthening the general approach of probabilistic
 
 \include{sections/conclusion}
 
-%\begin{acknowledgements}
-\section*{Acknowledgements}
+\begin{acknowledgements}
 We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
 Furthermore, we thank Ulrike for helping us recruit the participants for the experiment.
 Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
 We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
-%\end{acknowledgements}
+\end{acknowledgements}
 
-\section*{Compliance with ethical standards}
+\begin{ethicalstandards}
 The split-100 rating experiment reported in this paper was completely anonymised.
 Participants signed standard consent forms and were given the option of asking questions about the nature of the experiment before and after they took part in it.
 They were granted the right to revoke their signed declaration of consent (through anonymised personal codes), which none of them did.
 Participants received no payment, but they were awarded credit in partial fulfillment of the requirements for a first-semester class in German linguistics at Freie Universität Berlin.
 The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
+\end{ethicalstandards}
 
 \appendix
 \include{sections/onstatisticalanalysis}

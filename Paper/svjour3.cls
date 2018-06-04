@@ -1121,6 +1121,17 @@ to\hsize{\vrule\kern3pt\vbox{\kern3pt
     \@makesidecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
   \endgroup}
 
+
+% Define 'ethical standards' environment
+\def\ethicalstandard{\par\addvspace{17pt}\small\rmfamily
+\trivlist\if!\ethstaname!\item[]\else
+\item[\hskip\labelsep
+{\bfseries\ethstaname}]\fi}
+\def\endethicalstandard{\endtrivlist\addvspace{6pt}}
+\newenvironment{ethicalstandards}{\begin{ethicalstandard}}
+{\end{ethicalstandard}}
+
+
 % Define `acknowledgement' environment
 \def\acknowledgement{\par\addvspace{17pt}\small\rmfamily
 \trivlist\if!\ackname!\item[]\else
@@ -1281,6 +1292,7 @@ to\hsize{\vrule\kern3pt\vbox{\kern3pt
 \def\switcht@albion{%\typeout{English spoken.}%
  \def\abstractname{Abstract}%
  \def\ackname{Acknowledgements}%
+ \def\ethstaname{Compliance with ethical standards}%
  \def\andname{and}%
  \def\lastandname{, and}%
  \def\appendixname{Appendix}%
