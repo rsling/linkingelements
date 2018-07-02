@@ -35,10 +35,13 @@ The most frequent word in DECOW16A, according to the official frequency lists, i
 Relative to this $f^{max}$ value, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
 
 From the set of N1s which fulfilled the given criteria, we sampled between five and ten nouns per PL.
-Sampling was a manual process, and it was ensured that the nouns were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
+Ideally, we would have had ten per PL, but since some of the PLs occurred with relatively few N1s, there were not always ten nouns available which met our conditions.
+In those cases, we took as many as we could.
+The sampling process consisted of sorting manually through all nouns which occurred with a given PL and removing those which did not meet our requirements.
+At the end, we were left with a set of fifty nouns that were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
 In Figure~\ref{fig:corpusselection}, each of the dots represents one N1 which fulfils the selection criteria.
 The triangles mark those which were chosen for the corpus study.
-It is immediately obvious that the sample represents the overall spectrum of productivity quite well.
+Overall, the sample represents the spectrum of productivity quite well.
 
 <<corpusselection, fig.pos="htbp", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
 par(mfrow=c(3,3))
@@ -78,7 +81,7 @@ The queries we used to retrieve the exemplars of compounds containing the fifty 
 For each N1, we made one query searching for compounds containing it with PL and one otherwise identical query searching for compounds containing it with NPL.
 Since at least some context is often needed to disambiguate the meaning of the compounds and their constituents, the whole sentence containing each compound as well as one sentence to the left and one sentence to the right were exported.
 Duplicate sentences were removed by setting the appropriate parameter in the COW project's Python wrappers for making queries.
-Additionally, we performed deduplication on the compounds inasmuch as we only allowed one instance of each compound word form to pass.
+Additionally, we performed deduplication on the compounds inasmuch as we only allowed one instance of each identical compound word form to pass.
 Otherwise, highly frequent and typically lexicalised compounds would have accounted for the best part of the concordances.
 However, we did allow different word forms of the same compound in the concordances, in order to get both singular and plural forms.
 We extracted all exemplars matching the query, making random sub-samples for annotation.%
