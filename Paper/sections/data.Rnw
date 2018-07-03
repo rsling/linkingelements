@@ -27,7 +27,7 @@ Web corpora can thus be regarded as an established source of data on par with tr
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as stimuli in the split-100 experiment.
 The total number of candidates for first constituents and compounds is quite high (from thousands to tens of thousands), and in order to make an informed selection, large-scale data about the type frequencies, token frequencies, and the productivity of first constituents were required.
 We used automatic approaches to create a set of databases, and manual clean-up and selection steps in-between automatic steps were used to ensure that the results were reliable.
-The database tells us how strongly first constituents tend to appear with PLs and with NPLs, including an assessment of their productivity with these linkages.
+The database tells us how strongly first constituents tend to appear with pluralic linking elements (PLs) and with non-pluralic linking elements (NPLs), including an assessment of their productivity with these linking elements.
 This section describes the creation of the database.
 
 <<>>=
@@ -56,14 +56,14 @@ We began by extracting a very large database of all nominal compounds (not just 
 \footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available.}
 In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
 \footnote{The analyses are formatted as \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
-Underscores separate the constituents of the compound, the nominal elements are given in their base form, and LEs begin with \texttt{+} followed by a \texttt{=} if the LE triggers stem umlaut on the first constituent.}
+Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first constituent.}
 While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
 More importantly, at each step of the analysis, we made sure through manual checks that the data which we actually used for the studies were clean.%
-\footnote{We made an exception for the zero linkage because the number of N1s was much too high for full manual inspection.
+\footnote{We made an exception for the zero linking element because the number of N1s was much too high for full manual inspection.
 We therefore implemented an automatic approach where a N1 had to fulfil one of the following criteria to be included:
 (i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns extracted from the DECOW corpus published by the COW project.
 (ii) It occurred at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
-These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linkage N1 candidates.}
+These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linking element N1 candidates.}
 
 <<results='asis'>>=
 
@@ -82,7 +82,7 @@ rownames(freq.ov)[1] <- "$\\varnothing$"
 freq.ov.xt <- xtable(
   freq.ov,
   booktabs = T,
-  caption = "Type and token frequencies of all linkages in N1+N2 compounds in DECOW16A",
+  caption = "Type and token frequencies of all linking elements in N1+N2 compounds in DECOW16A",
   label = "tab:freqoverview"
 )
 align(freq.ov.xt) <- c("l", rep("r", 6))
@@ -111,7 +111,7 @@ rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 
 First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N1+N2 compounds.
 We therefore extracted all N1+N2 compounds and all first constituents (N1s) from the large compound database.
-For each of the pluralic linkages (PL), we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), which are count nouns (because mass nouns undergo a significant change in meaning when pluralised) and which are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
+For each of the PLs, we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), which are count nouns (because mass nouns undergo a significant change in meaning when pluralised), and which are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
 The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
 Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
 \footnote{Every single decision is documented in the data package for this paper.}
@@ -119,8 +119,8 @@ When an N1 candidate looked suspicious, we inspected the compound database to ch
 
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
-Since we are interested in the alternation for each N1 of PLs and non-pluralic linkages (NPLs; these can manifest themselves as no LE at all, as deletion, or as a non-pluralic LE such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a NPL.
-An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linkages in DECOW16A is given in Table \ref{tab:freqoverview}.%
+Since we are interested in the alternation for each N1 of PLs and NPLs (the latter can manifest themselves as no linking element at all, as deletion, or as a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a NPL.
+An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linking elements in DECOW16A is given in Table \ref{tab:freqoverview}.%
 \footnote{In these counts, mass nouns and weak nouns were included in order to provide a complete overview.
 Since they were removed for all further analysis reported below, the frequencies in the table are higher, especially for \textit{-n} and \textit{-en}, which are the hypothetical PLs of the weak nouns.}
 The numbers are approximately in line with previous reports based on much smaller corpora such as \textcite{WellmannEa1974}, \textcite{Kuerschner2005}, or \textcite{KrottEa2007} (see also \citealt[9]{Schluecker2012}).

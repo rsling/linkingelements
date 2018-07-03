@@ -96,9 +96,9 @@ From each of the query results of the fifty N1s described in Section~\ref{sec:qu
 Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=\Sexpr{nice.int(200*nrow(t.plot))}$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
 
 Annotating singular and plural was unproblematic, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate the two.
-Such cases were discarded and not used for the study.%\
-\footnote{Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
-The basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author in order to minimise the amount of human annotation errors.}
+Such cases were discarded and not used for the study.
+Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
+The basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author in order to minimise the amount of human annotation errors.
 
 Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of N2s characteristic of this relation.
 A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kind-er+gruppe} or \textit{Kind-gruppe} `group of children' or \textit{Haufen} `heap\slash pile' as in \textit{Brett-er+haufen} or \textit{Brett-haufen} `pile of boards'.
@@ -173,9 +173,8 @@ print(extpl.resid.xt,
       )
 @
 
-Thus, we have found no evidence to support the external plural hypothesis in the global analysis of the data set.%
-\footnote{Which is not the same as finding evidence \textit{against} it.}
-There might, however, be item-specific differences between N1s or groups of N1s which take different PLs.
+Thus, we have found no evidence to support the external plural hypothesis in the global analysis of the data set (which is not the same as finding evidence \textit{against} it).
+There might be item-specific differences between N1s or groups of N1s which take different PLs.
 In order to check for this, we calculated one $\chi^2$ test for each N1 with an approximate sample size of $n=200$ for each test.
 Since we are testing a family of connected hypotheses, p-values need to be corrected (correction for group-wise error).
 We used Šidák's method \parencite{Sidak1967}, which is slightly less conservative than the well-known Bonferroni correction (at least for uncorrelated tests).%
@@ -253,10 +252,10 @@ A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chi
 However, the overall effect size is still not very high at $v=\Sexpr{nice.float(cramer.v(intpl.chisq))};\Sexpr{nice.float(cramer.v(intpl.chisq.lax))}$.
 At least for the lax annotation scheme $v\geq 0.2$, making the effect worthy of mention.
 Individual (per-N1) tests were also calculated with the exact same parameters as described above for the external plural sub-study.
-Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.%
-\footnote{Violin plots are extensions of standard box plots; see \textcite{HintzeNelson1998}.
+Figure~\ref{fig:differenceplcoll} compares the distribution of $v$ values for the external plural sub-study (left) and the internal plural sub-study (right) in the form of a split violin plot.
+Violin plots are extensions of standard box plots; see \textcite{HintzeNelson1998}.
 The horizontal line represents the median and the black vertical bar the interquartile range (\ie the range of the middle $50\%$ of the sample).
-The additional outer shape represents a kernel density estimate of the sample.}
+The additional outer shape represents a kernel density estimate of the sample.
 For the internal plural sub-study, strict and lax annotation are both shown.
 Obviously, the difference between the two annotation schemes is not huge, and virtually identical conclusions can be drawn based on either of them.
 While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.
@@ -335,16 +334,16 @@ The colour mapping is logarithmic, such that any dot representing a p-value abov
 The N1s are arranged in groups defined by their PL.
 The groups are sorted by their mean effect strengths, and within each group N1s are sorted by their effect strengths.
 
-The detailed analysis shows that there are considerable differences between LEs.
+The detailed analysis shows that there are considerable differences between linking elements.
 N1s with \textit{=e} and \textit{=er} especially show good effect strengths as well as reaching reasonable significance levels.
 Those with \textit{-er} and \textit{=} show mixed results, and for \textit{-e}, \textit{-en}, and \textit{-n}, we find only very weak effects and non-significant p-values, which would normally be dismissed completely.
 However, even though the results for the last mentioned PLs are negligible by themselves, it should still be noticed that all N1s show a positive effect except \textit{Ei} `egg' and \textit{Katze} `cat', which lean ever so slightly towards the negative side.
 
-This strong positive trend is not at all the distribution of $v$ scores which one would expect if there were no general co-occurrence preference between PL and an internal plural relation.
+If there were no general co-occurrence preference between a PL and an internal plural relation, we would not expect this strong positive trend in the distribution of $v$ scores.
 Rather, roughly as many negative as positive $v$ scores distributed around $0$ would be expected, as was the case in the external plural condition; see Figure~\ref{fig:differenceplcoll}.
 These results thus support the hypothesis that there is a general co-occurrence preference between PL and an internal plural relation.
 
 Finally, it is noteworthy that the order of the PLs in Figure~\ref{fig:corpuseffects} is the mirror image of their order in Figure~\ref{fig:proddots} and Figure~\ref{fig:corpusselection}.
-The more marked and thus the less type-frequent a plural marker is, the stronger it tends to be interpreted as a plural marker even when used as a LE.
+The more unusual for an N1 and thus the less type-frequent a plural marker is, the more strongly it tends to be interpreted as a plural marker even when used as a linking element.
 We will return to all of these results in our theoretical interpretation in Section~ \ref{sec:conclusion}.
 But first, we report the results of a split-100 experiment in Section~\ref{sec:split100experiment}.
