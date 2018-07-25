@@ -43,7 +43,7 @@ In Figure~\ref{fig:corpusselection}, each of the dots represents one N1 which fu
 The triangles mark those which were chosen for the corpus study.
 Overall, the sample represents the spectrum of productivity quite well.
 
-<<corpusselection, fig.pos="htbp", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respecitvely; axes are on a logarithmic scale">>=
+<<corpusselection, fig.pos="htbp", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respectively (see Figure~\\ref{fig:proddots} for abbreviations); axes are on a logarithmic scale">>=
 par(mfrow=c(3,3))
 for (le in prod.plot.order) {
 
@@ -154,7 +154,7 @@ print(extpl.obs.xt,
 
 A $\chi^2$ test on the contingency table produces a significant result at $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(extpl.chisq$statistic)}$, $df=\Sexpr{min(dim(extpl.chisq$observed))-1}$, $p=\Sexpr{nice.float(extpl.chisq$p.value)}$).
 However, despite the very large sample size, the p-value is relatively close to $0.05$, and the effect size is quite low at $v=\Sexpr{nice.float(cramer.v(extpl.chisq))}$, which indicates that the effect is probably spurious.
-To make matters worse, an inspection of the (standardised) residuals in Table~\ref{tab:ctextpluralresid} shows that the spurious effect even has the wrong direction, \ie PL is less frequent in plural compounds than expected under the null.
+To make matters worse, an inspection of the (standardised) residuals in Table~\ref{tab:ctextpluralresid} shows that the spurious effect even has the wrong direction, \ie PL is less frequent in plural compounds than expected under the null hypothesis.
 
 <<results="asis">>=
 extpl.resid <- extpl.chisq$stdres

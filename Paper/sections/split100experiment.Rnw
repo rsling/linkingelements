@@ -52,12 +52,6 @@ First of all, we chose N1s which have roughly equal productivity with PL and NPL
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
 Finally, we checked the frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be an iterative one because compounds meeting all desired criteria were difficult to find.
-Table~\ref{tab:stimuli} presents the results of the selection process.
-The table shows the potential productivity $P^p$ for the N1 with PL and NPL.
-These roughly match in many cases, for example $P^p_{PL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.
-The frequency classes $c$ of the full compound with PL and NPL is also given, where class $28$ corresponds to a token frequency of $1$, and no frequency class (--) is assigned to words with a token frequency of $0$.
-Additionally, the total difference in token frequency of the two compounds is specified ($\Delta_f$), where the maximum absolute difference is $63$, which is clearly not extreme, given that the corpus contains 21 billion tokens and approximately 15 billion words.
-
 <<results='asis'>>=
 colnames(stims.freqs)[c(11,12)] <- c("$P^p_{PL}$", "$P^p_{NPL}$")
 stims.tab <- stims.freqs[, c("N1", "LE", "N2", "$P^p_{PL}$", "$P^p_{NPL}$", "FbandPL", "FbandNPL", "AbsFDiff", "Gloss")]
@@ -65,19 +59,25 @@ stims.tab[, c("$P^p_{PL}$")] <- nice.float(stims.tab[, c("$P^p_{PL}$")])
 stims.tab[, c("$P^p_{NPL}$")] <- nice.float(stims.tab[, c("$P^p_{NPL}$")])
 colnames(stims.tab)[c(6,7,8)] <- c("$c_{PL}$", "$c_{NPL}$", "$\\Delta_f$")
 stims.xt <- xtable(stims.tab,
-             caption = "Selection of stimuli for split-100 experiment; $P^p_{PL}$ and $P^p_{NPL}$ are the potential productivities of the N1 with PL and NPL, respectively; $c_{PL}$ and $c_{NPL}$ are the frequency bands of the compound with PL and NPL, respectively; $\\Delta_f$ is the difference in raw token frequency between the compound with PL and NPL",
+             caption = "Selection of stimuli for split-100 experiment; $P^p_{PL}$ and $P^p_{NPL}$ are the potential productivities of the N1 (non-head in a noun-noun compound) with pluralic linking element (PL) and non-pluralic linking element (NPL), respectively; $c_{PL}$ and $c_{NPL}$ are the frequency bands of the compound with PL and NPL, respectively; $\\Delta_f$ is the difference in raw token frequency between the compound with PL and NPL",
              label = "tab:stimuli")
 align(stims.xt) <- c("r", rep("l", 3), rep("r", 5), "l")
 print(stims.xt,
       include.rownames=F,
       floating = T,
-      table.placement = 'htbp',
+      table.placement = 'h!',
       booktabs = T,
       scalebox = 0.9,
       hline.after = c(-1,0,8,16),
       sanitize.text.function = function(x){x}
       )
 @
+
+Table~\ref{tab:stimuli} presents the results of the selection process.
+The table shows the potential productivity $P^p$ for the N1 with PL and NPL.
+These roughly match in many cases, for example $P^p_{PL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.
+The frequency classes $c$ of the full compound with PL and NPL is also given, where class $28$ corresponds to a token frequency of $1$, and no frequency class (--) is assigned to words with a token frequency of $0$.
+Additionally, the total difference in token frequency of the two compounds is specified ($\Delta_f$), where the maximum absolute difference is $63$, which is clearly not extreme, given that the corpus contains 21 billion tokens and approximately 15 billion words.
 
 The first eight compounds shown in the table were used as stimuli for the internal plural sub-experiment.
 The N2s \textit{Kooperation} `cooperation', \textit{Zusammenlegung} `merger\slash unification', \textit{Bündel} `bundle', and \textit{Sammlung} `collection' are clear triggers of internal plural.
@@ -107,7 +107,7 @@ par(mfrow=c(1,2))
 vioplot(obs.coll[which(obs.coll$cond == "Collective"),]$realRating,
         obs.coll[which(obs.coll$cond == "Individual"),]$realRating,
      col = "gold",
-     names = c("PL", "NPL")
+     names = c("Collective", "Individual")
      )
 title("Internal plural")
 vioplot(obs.pl[which(obs.pl$cond == "Singular"),]$realRating,

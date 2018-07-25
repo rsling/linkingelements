@@ -9,7 +9,7 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Corpus choice}
 \label{sec:corpuschoice}
 
-We chose the web-crawled DECOW16A corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}) for all our corpus work.%
+We chose the web-crawled DECOW16A corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2020}) for all our corpus work.%
 \footnote{See \url{http://corporafromtheweb.org/} for project information and \url{https://www.webcorpora.org/} for access to the corpora.}
 This corpus was the obvious choice for several reasons.
 First of all, it is available in an on-line query interface but also for scripted access and (in sentence-wise shuffled form) for download.%
@@ -52,9 +52,9 @@ freq.ov$N1sPc    <- freq.ov$N1s / sum(freq.ov$N1s) * 100
 freq.ov <- freq.ov[order(freq.ov$Ftype, decreasing = T),]
 @
 
-We began by extracting a very large database of all nominal compounds (not just N1+N2 compounds but any compound with a nominal head) from the DECOW16A web corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2018}).%
+We began by extracting a very large database of all nominal compounds (not just N1+N2 compounds but any compound with a nominal head) from the DECOW16A web corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2020}).%
 \footnote{In agreement with the creators of the DECOW16A corpus, our database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available.}
-In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2018}.%
+In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2020}.%
 \footnote{The analyses are formatted as \texttt{Zeit\_Punkt} for \textit{Zeitpunkt} `point in time\slash moment' (literally `time point') or \texttt{Wort\_+=er\_Buch} for \textit{Wörterbuch} `dictionary' (literally `word book').
 Underscores separate the constituents of the compound, the nominal elements are given in their base form, and linking elements begin with \texttt{+} followed by a \texttt{=} if the linking element triggers stem umlaut on the first constituent.}
 While we noticed that the automatic analyser (like all automatic annotation tools) makes some errors and sometimes fails in disambiguating ambiguous compounds, it also became clear that the quality of analysis is more than sufficient for the kind of large-scale pre-analysis we performed.
@@ -65,6 +65,14 @@ We therefore implemented an automatic approach where a N1 had to fulfil one of t
 (ii) It occurred at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
 These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linking element N1 candidates.}
 
+
+First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N1+N2 compounds.
+We therefore extracted all N1+N2 compounds and all first constituents (N1s) from the large compound database.
+For each of the PLs, we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), which are count nouns (because mass nouns undergo a significant change in meaning when pluralised), and which are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
+The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
+Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
+\footnote{Every single decision is documented in the data package for this paper.}
+When an N1 candidate looked suspicious, we inspected the compound database to check whether the actual compounds containing the candidate were misanalysed or otherwise noisy.
 <<results='asis'>>=
 
 freq.ov["$\\Sigma$", ] <- apply(freq.ov, 2, sum)
@@ -82,13 +90,13 @@ rownames(freq.ov)[1] <- "$\\varnothing$"
 freq.ov.xt <- xtable(
   freq.ov,
   booktabs = T,
-  caption = "Type and token frequencies of all linking elements in N1+N2 compounds in DECOW16A",
+  caption = "Type frequencies (F) and token frequencies (f) of all linking elements in N1+N2 compounds in DECOW16A; N1 is the non-head noun and N2 the head noun in noun-noun compounds",
   label = "tab:freqoverview"
 )
 align(freq.ov.xt) <- c("l", rep("r", 6))
 print(freq.ov.xt,
       floating = T,
-      table.placement = 'htbp',
+      table.placement = 'th!',
       booktabs = T,
       rotate.colnames = F,
       hline.after = c(-1,0,12,13),
@@ -108,14 +116,6 @@ le.aggregated <- sapply(analyses.full, aggregate.le)
 colnames(le.aggregated) <- unname(sapply(colnames(le.aggregated), le.name))
 rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 @
-
-First of all, as argued for in Section~\ref{sec:linkingelementsingerman}, we restrict our study to N1+N2 compounds.
-We therefore extracted all N1+N2 compounds and all first constituents (N1s) from the large compound database.
-For each of the PLs, we generated exhaustive lists of the N1s with which it occurs which have a plural identical to the PL (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), which are count nouns (because mass nouns undergo a significant change in meaning when pluralised), and which are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
-The lists of N1 candidates were extracted automatically, but they were checked for the aforementioned criteria and sporadic results of incorrect automatic analysis manually.
-Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.%
-\footnote{Every single decision is documented in the data package for this paper.}
-When an N1 candidate looked suspicious, we inspected the compound database to check whether the actual compounds containing the candidate were misanalysed or otherwise noisy.
 
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} different N1s which are used with a PL.
 Then, for each N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
@@ -145,7 +145,7 @@ It can be regarded as a proportion, and its range is therefore $[0,1]$.
 %%% IMPORTANT! For production, PNG/PDF should be changed in chunk below. %%%
 %%% ==================================================================== %%%
 
-<<proddots, pdf=TRUE, fig.pos="htbp", fig.height=8, fig.cap="Comparisons of the potential productivity of N1s, grouped by PLs; colours and sizes encode the type frequencies with PL and NPL; axes are on a logarithmic scale">>=
+<<proddots, pdf=TRUE, fig.pos="htbp", fig.height=8, fig.cap="Comparisons of the potential productivity of N1s (non-heads in noun-noun compounds), grouped by pluralic linking elements (PLs); colours and sizes encode the type frequencies (F) with PL and NPL (non-pluralic linking elements); axes are on a logarithmic scale">>=
 productivitydots.colors <- colorRampPalette(c("gold", "darkred"))(100)
 par(mfrow=c(3,3))
 .args <- list(analyses      = analyses.full,

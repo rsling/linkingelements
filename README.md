@@ -63,4 +63,4 @@ This is the README file for data package and paper LaTeX/knitr sources.
 ```
    Notice that it was not feasible to include the whole data generation
    and analysis process in the knitr file. Compiling the document
-   would have taken hours.
+   would take hours.
