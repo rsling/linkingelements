@@ -149,7 +149,8 @@ print(extpl.obs.xt,
       floating = T,
       table.placement = 'htbp',
       booktabs = T,
-      rotate.colnames = F)
+      rotate.colnames = F
+      )
 @
 
 <<results="hide">>=
@@ -215,14 +216,17 @@ We therefore specify two values separated by a semicolon for the relevant statis
 The sample contains $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Coll")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Coll")))}$ cases with an internal plural relation and $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Ind")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Ind")))}$ cases with no internal plural relation.
 Table~\ref{tab:ctintplural} shows the contingency table for the two variables PL vs.\ NPL and internal plural relation vs.\ no internal plural relation.
 
-<<differenceplcoll, fig.pos="h!", fig.height=4.5, fig.width=4.5, fig.cap="Distribution of signed Cramérs $v$ scores for the internal and external plural data">>=
+<<differenceplcoll, fig.pos="h!", fig.height=4, fig.width=4, fig.cap="Distribution of signed Cramérs $v$ scores for the internal and external plural data">>=
+the.cex <- 0.7
 plot(x=NULL, y=NULL,
      xlim = c(0.5, 1.5),
      ylim=c(-0.5, 0.6),
-     type="n", ann=FALSE, axes=F)
+     type="n", ann=FALSE, axes=F
+     )
 axis(1, at=c(0.85, 1.15), tick = F,
-     labels=c("external plural", "internal plural"))
-axis(2)
+     labels=c("external plural", "internal plural"),
+     cex.axis = the.cex)
+axis(2, cex.axis = the.cex)
 abline(h = 0, lwd = 2, lty = 2, col = "darkgray")
 vioplot2(p.plot$phi,
          frame = F,
@@ -240,12 +244,12 @@ vioplot2(t.plot$phi.strict,
          side = "right",
          col = "darkorange",
          add = T)
-title(#"Signed effect strengths\nfor the internal and external plural data",
+title(cex.lab = 0.7,
       xlab = "Sub-study")
 legend("bottomright", fill = c("white", "darkorange"),
        legend = c("lax annotation", "strict annotation"),
        box.lty=0,
-       cex = 1)
+       cex = the.cex)
 @
 
 A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0;0$).
@@ -344,6 +348,6 @@ Rather, roughly as many negative as positive $v$ scores distributed around $0$ w
 These results thus support the hypothesis that there is a general co-occurrence preference between PL and an internal plural relation.
 
 Finally, it is noteworthy that the order of the PLs in Figure~\ref{fig:corpuseffects} is the mirror image of their order in Figure~\ref{fig:proddots} and Figure~\ref{fig:corpusselection}.
-The more unusual for an N1 and thus the less type-frequent a plural marker is, the more strongly it tends to be interpreted as a plural marker even when used as a linking element.
+The less type-frequent a plural marker is, the more strongly it tends to be interpreted as a plural marker even when used as a linking element.
 We will return to all of these results in our theoretical interpretation in Section~ \ref{sec:conclusion}.
 But first, we report the results of a split-100 experiment in Section~\ref{sec:split100experiment}.

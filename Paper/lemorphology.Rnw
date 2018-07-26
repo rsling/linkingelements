@@ -17,8 +17,8 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 
-\usepackage[printwatermark]{xwatermark}
-\newwatermark[firstpage,color=red!50, angle=45, scale=1, xpos=-15, ypos=12]{\parbox{16cm}{\sffamily\centering DRAFT, accepted by JOMO.\\Please quote as\\`accepted with minor revisions.'}}
+%\usepackage[printwatermark]{xwatermark}
+%\newwatermark[firstpage,color=red!50, angle=45, scale=1, xpos=-15, ypos=12]{\parbox{16cm}{\sffamily\centering DRAFT, accepted by JOMO.\\Please quote as\\`accepted with minor revisions.'}}
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }

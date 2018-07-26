@@ -50,7 +50,7 @@ stims.freqs$FbandPL <- ifelse(stims.freqs$FbandPL == "NA", "--", stims.freqs$Fba
 The choice of stimuli was guided by the exploratory data analysis described in Section~\ref{sec:data}.
 First of all, we chose N1s which have roughly equal productivity with PL and NPL.
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
-Finally, we checked the frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
+Finally, we checked the token frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be an iterative one because compounds meeting all desired criteria were difficult to find.
 <<results='asis'>>=
 colnames(stims.freqs)[c(11,12)] <- c("$P^p_{PL}$", "$P^p_{NPL}$")
