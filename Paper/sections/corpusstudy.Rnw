@@ -15,10 +15,10 @@ The second factor is whether a semantic relation between N1 and N2 holds which f
 Therefore, we manually annotated corpus exemplars containing N1+N2 compounds for whether they are plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
 Before turning to this annotation process in Section~\ref{sec:annotation}, this section describes how we extracted and prepared a concordance for the manual annotation.
 
-First, a selection of N1s was required which represents the population of N1s well with regard to their productivity scores with PL and NPL.
-A set of criteria was devised to make sure that that was the case.
-We required that the potential productivity score with PL and with NPL not be $0$ or $1$, which excluded rare words.
-Furthermore, only N1s which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL were used.
+First, as explained at the beginning of Section~\ref{sec:databaseandproductivityassessment}, a selection of N1s was chosen which represents the population of N1s well with regard to their productivity scores with PL and NPL.
+%Concretely, we required that the potential productivity score with PL and with NPL not be $0$ or $1$, which excluded rare words.
+Furthermore, it was explained in Section~\ref{sec:databaseandproductivityassessment} that the productivity measures can be misleading in the case of low type frequencies.
+Therefore, only N1s which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL were used.
 In order to exclude nouns which occur with reasonable type frequency in compounds but infrequently as standalone nouns, only N1s with a minimal token frequency outside of compounds were included.
 To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
 The frequency class $c(w)$ of a word $w$ increases with the word's token frequency $f(w)$.
@@ -35,11 +35,11 @@ The most frequent word in DECOW16A, according to the official frequency lists, i
 Relative to this $f^{max}$ value, we only considered words with a frequency class up to and including $\Sexpr{n1itself.tokfreq.lim}$, a class where, for example, \textit{Lid} `eyelid' ($f=\Sexpr{nice.int(analyses.full$er[which(analyses.full$er$N1 == "Lid"),"N1alone_Ftoken"])}$), \textit{Seilschaft} `rope team' ($f=\Sexpr{nice.int(analyses.full$en[which(analyses.full$en$N1 == "Seilschaft"),"N1alone_Ftoken"])}$), and \textit{Verlies} `oubliette' ($f=\Sexpr{nice.int(analyses.full$e[which(analyses.full$e$N1 == "Verlies"),"N1alone_Ftoken"])}$) are found.
 
 From the set of N1s which fulfilled the given criteria, we sampled between five and ten nouns per PL.
-Ideally, we would have had ten per PL, but since some of the PLs occurred with relatively few N1s, there were not always ten nouns available which met our conditions.
-In those cases, we took as many as we could.
-The sampling process consisted of sorting manually through all nouns which occurred with a given PL and removing those which did not meet our requirements.
-At the end, we were left with a set of fifty nouns that were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
-In Figure~\ref{fig:corpusselection}, each of the dots represents one N1 which fulfils the selection criteria.
+Ideally, we would have had ten per PL, but since some of the PLs occurred with relatively few N1s, there were not always ten nouns available which met our criteria.
+%In those cases, we took as many as we could.
+%The sampling process consisted of sorting manually through all nouns which occurred with a given PL and removing those which did not meet our requirements.
+At the end, we were left with a set of 48 nouns that were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
+In Figure~\ref{fig:corpusselection}, each of the dots represents one N1 which fulfils the frequency-based selection criteria.
 The triangles mark those which were chosen for the corpus study.
 Overall, the sample represents the spectrum of productivity quite well.
 
@@ -76,29 +76,29 @@ for (le in prod.plot.order) {
 par(mfrow=c(1,1))
 @
 
-The queries we used to retrieve the exemplars of compounds containing the fifty chosen N1s were made in DECOW16A using Python through the RStudio Server interface provided by the COW project.%
-\footnote{The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
+The queries we used to retrieve the exemplars of compounds containing the 48 chosen N1s were made in DECOW16A.
+%using Python through the RStudio Server interface provided by the COW project.%
+%\footnote{The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
 For each N1, we made one query searching for compounds containing it with PL and one otherwise identical query searching for compounds containing it with NPL.
-Since at least some context is often needed to disambiguate the meaning of the compounds and their constituents, the whole sentence containing each compound as well as one sentence to the left and one sentence to the right were exported.
-Duplicate sentences were removed by setting the appropriate parameter in the COW project's Python wrappers for making queries.
-Additionally, we performed deduplication on the compounds inasmuch as we only allowed one instance of each identical compound word form to pass.
+%Since at least some context is often needed to disambiguate the meaning of the compounds and their constituents, the whole sentence containing each compound as well as one sentence to the left and one sentence to the right were exported.
+%Duplicate sentences were removed by setting the appropriate parameter in the COW project's Python wrappers for making queries.
+We performed deduplication on the compounds inasmuch as we only allowed one instance of each identical compound word form to pass.
 Otherwise, highly frequent and typically lexicalised compounds would have accounted for the best part of the concordances.
 However, we did allow different word forms of the same compound in the concordances, in order to get both singular and plural forms.
-We extracted all exemplars matching the query, making random sub-samples for annotation.%
-\footnote{The full query results are also included in the data package which accompanies this paper.}
-In addition to the exemplar in its context, we extracted the corresponding document URL, the unique COW16 ID of that document, and the sentence ID.
-With the COW16 ID and the sentence ID, each exemplar can be located in the DECOW16A corpus for full reproducibility.
+We extracted all exemplars matching the query, making random sub-samples for annotation.
+%\footnote{The full query results are also included in the data package which accompanies this paper.}
+%In addition to the exemplar in its context, we extracted the corresponding document URL, the unique COW16 ID of that document, and the sentence ID.
+%With the COW16 ID and the sentence ID, each exemplar can be located in the DECOW16A corpus for full reproducibility.
 
 \subsection{Annotation}
 \label{sec:annotation}
 
-From each of the query results of the fifty N1s described in Section~\ref{sec:queries}, we annotated approximately one hundred cases with PL and approximately one hundred with NPL.
+From each of the query results of the 48 N1s described in Section~\ref{sec:queries}, we annotated one hundred cases with PL and approximately one hundred with NPL.
 Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=\Sexpr{nice.int(200*nrow(t.plot))}$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
-
 Annotating singular and plural was unproblematic, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate the two.
 Such cases were discarded and not used for the study.
-Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
-The basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author in order to minimise the amount of human annotation errors.
+%Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
+%The basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author in order to minimise the amount of human annotation errors.
 
 Determining whether the semantics of N2 and the semantic relation holding between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of N2s characteristic of this relation.
 A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kind-er+gruppe} or \textit{Kind-gruppe} `group of children' or \textit{Haufen} `heap\slash pile' as in \textit{Brett-er+haufen} or \textit{Brett-haufen} `pile of boards'.
@@ -152,26 +152,26 @@ print(extpl.obs.xt,
       rotate.colnames = F)
 @
 
+<<results="hide">>=
+extpl.resid <- extpl.chisq$stdres
+# rownames(extpl.resid) <- c("NPL", "PL")
+# colnames(extpl.resid) <- c("Pl.\ compound", "Sg.\ Compound")
+# extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
+#                          caption = "Standardised residuals from $\\chi^2$ test of external plural sub-study",
+#                          label = "tab:ctextpluralresid")
+# align(extpl.resid.xt) <- c("l", "r", "r")
+# print(extpl.resid.xt,
+#       floating = T,
+#       table.placement = 'htbp',
+#       booktabs = T,
+#       rotate.colnames = F,
+#       sanitize.text.function = function(x){x}
+#       )
+@
+
 A $\chi^2$ test on the contingency table produces a significant result at $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(extpl.chisq$statistic)}$, $df=\Sexpr{min(dim(extpl.chisq$observed))-1}$, $p=\Sexpr{nice.float(extpl.chisq$p.value)}$).
 However, despite the very large sample size, the p-value is relatively close to $0.05$, and the effect size is quite low at $v=\Sexpr{nice.float(cramer.v(extpl.chisq))}$, which indicates that the effect is probably spurious.
-To make matters worse, an inspection of the (standardised) residuals in Table~\ref{tab:ctextpluralresid} shows that the spurious effect even has the wrong direction, \ie PL is less frequent in plural compounds than expected under the null hypothesis.
-
-<<results="asis">>=
-extpl.resid <- extpl.chisq$stdres
-rownames(extpl.resid) <- c("NPL", "PL")
-colnames(extpl.resid) <- c("Pl.\ compound", "Sg.\ Compound")
-extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
-                         caption = "Standardised residuals from $\\chi^2$ test of external plural sub-study",
-                         label = "tab:ctextpluralresid")
-align(extpl.resid.xt) <- c("l", "r", "r")
-print(extpl.resid.xt,
-      floating = T,
-      table.placement = 'htbp',
-      booktabs = T,
-      rotate.colnames = F,
-      sanitize.text.function = function(x){x}
-      )
-@
+To make matters worse, an inspection of the symmetrical (standardised) residuals (\Sexpr{nice.float(extpl.resid[1,1])} for plural compounds with NPL and singular compounds with PL as well as \Sexpr{nice.float(extpl.resid[2,1])} for plural compounds with PL and singular compounds with NPL) shows that the spurious effect even has the wrong direction, \ie PL is less frequent in plural compounds than expected under the null hypothesis.
 
 Thus, we have found no evidence to support the external plural hypothesis in the global analysis of the data set (which is not the same as finding evidence \textit{against} it).
 There might be item-specific differences between N1s or groups of N1s which take different PLs.
@@ -191,6 +191,23 @@ Only one test reaches $\mathrm{sig}=0.05$.
 The effect sizes are centred around $0$ with a mean of $\bar{v}=\Sexpr{nice.float(mean(p.plot$phi))}$, a median of $\tilde{v}=\Sexpr{nice.float(median(p.plot$phi))}$, and a standard deviation of $s(v)=\Sexpr{nice.float(sd(p.plot$phi))}$.
 This is expected in a situation where there are no effects.
 
+<<results="asis">>=
+intpl.chisq <- chisq.test(table(conc$LE, conc$N2TypStrict))
+intpl.chisq.lax <- chisq.test(table(conc$LE, conc$N2TypLax))
+intpl.obs <- intpl.chisq$observed
+rownames(intpl.obs) <- c("NPL", "PL")
+colnames(intpl.obs) <- c("Internal pl.\ relation", "No internal pl.\ relation")
+intpl.obs.xt <- xtable(nice.int(intpl.obs), booktabs = T,
+                         caption = "Contingency table for internal plural sub-study",
+                         label = "tab:ctintplural")
+align(intpl.obs.xt) <- c("l", "r", "r")
+print(intpl.obs.xt,
+      floating = T,
+      table.placement = 'h!',
+      booktabs = T,
+      rotate.colnames = F)
+@
+
 The picture changes when we move on to the analysis of the internal plural sub-study.
 Here, we examine whether the occurrence of PL is more frequent in internally plural compounds, \ie compounds with an N2 that forces plural semantics on the N1.
 Recall from Section~\ref{sec:annotation} that we carefully distinguished between clear cases and less clear cases, calling the two annotation schemes \textit{strict} and \textit{lax}.
@@ -198,13 +215,13 @@ We therefore specify two values separated by a semicolon for the relevant statis
 The sample contains $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Coll")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Coll")))}$ cases with an internal plural relation and $\Sexpr{nice.int(length(which(conc$N2TypStrict == "Ind")))};\Sexpr{nice.int(length(which(conc$N2TypLax == "Ind")))}$ cases with no internal plural relation.
 Table~\ref{tab:ctintplural} shows the contingency table for the two variables PL vs.\ NPL and internal plural relation vs.\ no internal plural relation.
 
-<<differenceplcoll, fig.pos="htbp", fig.height=8, fig.cap="Distribution of signed Cramérs $v$ scores for the internal and external plural data">>=
+<<differenceplcoll, fig.pos="h!", fig.height=4.5, fig.width=4.5, fig.cap="Distribution of signed Cramérs $v$ scores for the internal and external plural data">>=
 plot(x=NULL, y=NULL,
      xlim = c(0.5, 1.5),
      ylim=c(-0.5, 0.6),
      type="n", ann=FALSE, axes=F)
 axis(1, at=c(0.85, 1.15), tick = F,
-     labels=c("Ext. plural", "Int. plural"))
+     labels=c("external plural", "internal plural"))
 axis(2)
 abline(h = 0, lwd = 2, lty = 2, col = "darkgray")
 vioplot2(p.plot$phi,
@@ -226,26 +243,9 @@ vioplot2(t.plot$phi.strict,
 title(#"Signed effect strengths\nfor the internal and external plural data",
       xlab = "Sub-study")
 legend("bottomright", fill = c("white", "darkorange"),
-       legend = c("lax anno.", "strict anno."),
+       legend = c("lax annotation", "strict annotation"),
        box.lty=0,
        cex = 1)
-@
-
-<<results="asis">>=
-intpl.chisq <- chisq.test(table(conc$LE, conc$N2TypStrict))
-intpl.chisq.lax <- chisq.test(table(conc$LE, conc$N2TypLax))
-intpl.obs <- intpl.chisq$observed
-rownames(intpl.obs) <- c("NPL", "PL")
-colnames(intpl.obs) <- c("Internal pl.\ relation", "No internal pl.\ relation")
-intpl.obs.xt <- xtable(nice.int(intpl.obs), booktabs = T,
-                         caption = "Contingency table for internal plural sub-study",
-                         label = "tab:ctintplural")
-align(intpl.obs.xt) <- c("l", "r", "r")
-print(intpl.obs.xt,
-      floating = T,
-      table.placement = 'htbp',
-      booktabs = T,
-      rotate.colnames = F)
 @
 
 A $\chi^2$ test reaches $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(intpl.chisq$statistic)};\Sexpr{nice.float(intpl.chisq.lax$statistic)}$, $df=\Sexpr{min(dim(intpl.chisq$observed))-1};\Sexpr{min(dim(intpl.chisq$observed))-1}$, $p\approx 0;0$).

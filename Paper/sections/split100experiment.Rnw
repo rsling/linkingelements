@@ -171,7 +171,7 @@ model.coll.sum <- summary(model.coll, save = T)
 
 A package for R which implements zero- and one-inflated mixed beta models is \texttt{gamlss} \parencite{RigbyStasinopoulos2005}.
 It is actually suitable for fitting general additive mixed models (GAMMs), but GLMMs can be fitted as a special case of a GAMM.
-In this case, no smoothing function is estimated for the fixed parameters, and a special smoother (\texttt{random()} in \texttt{gamlss}) is used for grouping factors to be used as random effects.
+In this case, no smoothing function is fitted for the fixed parameters, and a special smoother (\texttt{random()} in \texttt{gamlss}) is used for grouping factors to be used as random effects.
 We estimated the parameters of a GAMM specified as \texttt{Rating \textasciitilde\ Condition + random(Subject)} based on the data from the internal plural sub-experiment with the \texttt{BEINF} family for inflated beta models ($n=\Sexpr{nice.int(model.coll$noObs)}$).%
 \footnote{Technically, the given formula is the formula for the $\mu$ parameter.}
 Ratings had to be mapped from $[0,100]$ to $[0,1]$.
