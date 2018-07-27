@@ -1,11 +1,9 @@
 \RequirePackage{rotating}
 
 \documentclass[natbib,final]{svjour3}
-\smartqed
 \input{jomo}
 
-% \documentclass[a4paper,12pt]{article}
-% \usepackage{natbib}
+% \documentclass[12pt]{article}
 % \input{generik}
 
 \usepackage{graphicx}
