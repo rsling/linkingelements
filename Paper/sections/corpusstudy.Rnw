@@ -70,7 +70,7 @@ for (le in prod.plot.order) {
   points(corpus.candidates[[le]][.orig,]$Without_Ppot ~ corpus.candidates[[le]][.orig,]$With_Ppot,
          pch = 17,
          cex = 1.5,
-         col = "darkgreen"
+         col = "darkred"
   )
 }
 par(mfrow=c(1,1))

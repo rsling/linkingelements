@@ -33,7 +33,7 @@
 
 \journalname{\textit{Morphology} (JOMO), accepted with minor revisions on 3 June 2018}
 
-\title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded in part by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
+\title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
 
 \author{Roland Schäfer \and Elizabeth Pankratz}
 \institute{Roland Schäfer \at

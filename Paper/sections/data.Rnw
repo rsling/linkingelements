@@ -35,9 +35,10 @@ For the experiment to be reported in Section~\ref{sec:split100experiment}, an ev
 However, choosing those relatively few items from the thousands of possible nouns functioning as N1 is not trivial.
 Most importantly, we had to find nouns which are used productively as N1 both with the pluralic linking element and without it, \ie which have the capability of forming new compounds with a pluralic or a non-pluralic linking element.
 Some N1s (like \textit{Kind} `child' or \textit{Huhn} `chicken') do not alternate between those two alternatives and always occur with the linking element, either by way of lexical preference or because of phonotactic constraints.
+In other cases, there is just a very strong preference for or against the pluralic linking element.
 Therefore, it was necessary to find those N1s which are used productively with both alternatives and to make an informed choice from among them.
 Because it is unlikely that enough N1s exist which have exactly the same productivity with a pluralic and a non-pluralic linking element, any sample should be representative of the whole spectrum of productivity.
-To obtain such a sample later, we used methods of automatic data extraction with manual quality control to analyse literally \textit{all} compounds in the DECOW16A corpus.
+To obtain such a sample later, we first used methods of automatic data extraction (with manual quality control) to analyse literally \textit{all} compounds in the DECOW16A corpus.
 The resulting database informs us about how strongly first constituents tend to appear with pluralic linking elements (PLs) and with non-pluralic linking elements (NPLs), and how productively they are used with these linking elements.
 
 <<>>=
@@ -123,7 +124,7 @@ colnames(le.aggregated) <- unname(sapply(colnames(le.aggregated), le.name))
 rownames(le.aggregated) <- c("N1 types", "N1+N2 types: PL", "N1+N2 types: NPL")
 @
 
-Then, for each of these N1 we counted the numbers of compound types, the number of compound tokens, and the number of compound hapax legomena (\ie those compounds containing the N1 which occur only once in the corpus) containing it.
+Then, for each of these N1 we counted its number of compound types, its number of compound tokens, and its number of compound hapax legomena (\ie those compounds containing it which occur only once in the corpus).
 Since we are interested in the alternation for each N1 of PLs and NPLs (the latter can manifest themselves as no linking element at all, as deletion, or as a non-pluralic linking element such as \textit{-s}), we also extracted the same counts for the N1s in compounds with a NPL.
 An overview of the type frequencies ($F$) and token frequencies ($f$) of the different linking elements in DECOW16A is given in Table \ref{tab:freqoverview}.
 In these counts, mass nouns and weak nouns (which do not have an unambiguous plural marker) were included in order to provide a complete overview.
