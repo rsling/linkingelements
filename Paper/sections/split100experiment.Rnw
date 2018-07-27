@@ -6,7 +6,7 @@ opts_knit$set(self.contained=FALSE)
 \section{Split-100 experiment}
 \label{sec:split100experiment}
 
-\subsection{Design, choice of stimuli, and participants}
+\subsection{Design, choice of items, and participants}
 \label{sec:designchoiceofstimuliandparticipants}
 
 This experiment was designed to examine how strongly native speakers of German prefer a PL through two sub-experiments investigating internal and external plural relations.
@@ -24,7 +24,7 @@ The corresponding numbers were displayed dynamically as subjects moved the slide
 When they were satisfied with their decision, subjects pressed a button to store it and continue on.
 After each sentence, subjects answered a simple distractor question by pressing one of the digits 1--9.
 The questions were not related to the sentences and were simple arithmetic or counting exercises.
-Finally, it should be noted that the order of the stimuli and fillers was randomised for each participant.
+Finally, it should be noted that the order of the items and fillers was randomised for each participant.
 
 <<results='hide'>>=
 exp.ppots <- as.data.frame(
@@ -47,10 +47,10 @@ stims.freqs$FbandNPL <- ifelse(stims.freqs$FbandNPL == "NA", "--", stims.freqs$F
 stims.freqs$FbandPL <- ifelse(stims.freqs$FbandPL == "NA", "--", stims.freqs$FbandPL)
 @
 
-The choice of stimuli was guided by the exploratory data analysis described in Section~\ref{sec:data}.
+The choice of items was guided by the exploratory data analysis described in Section~\ref{sec:data}.
 First of all, we chose N1s which have roughly equal productivity with PL and NPL.
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
-Finally, we checked the token frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as stimuli which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
+Finally, we checked the token frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as items which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be an iterative one because compounds meeting all desired criteria were difficult to find.
 <<results='asis'>>=
 colnames(stims.freqs)[c(11,12)] <- c("$P^p_{PL}$", "$P^p_{NPL}$")
@@ -59,8 +59,8 @@ stims.tab[, c("$P^p_{PL}$")] <- nice.float(stims.tab[, c("$P^p_{PL}$")])
 stims.tab[, c("$P^p_{NPL}$")] <- nice.float(stims.tab[, c("$P^p_{NPL}$")])
 colnames(stims.tab)[c(6,7,8)] <- c("$c_{PL}$", "$c_{NPL}$", "$\\Delta_f$")
 stims.xt <- xtable(stims.tab,
-             caption = "Selection of stimuli for split-100 experiment; $P^p_{PL}$ and $P^p_{NPL}$ are the potential productivities of the N1 (non-head in a noun-noun compound) with pluralic linking element (PL) and non-pluralic linking element (NPL), respectively; $c_{PL}$ and $c_{NPL}$ are the frequency bands of the compound with PL and NPL, respectively; $\\Delta_f$ is the difference in raw token frequency between the compound with PL and NPL",
-             label = "tab:stimuli")
+             caption = "Selection of items for split-100 experiment; $P^p_{PL}$ and $P^p_{NPL}$ are the potential productivities of the N1 (non-head in a noun-noun compound) with pluralic linking element (PL) and non-pluralic linking element (NPL), respectively; $c_{PL}$ and $c_{NPL}$ are the frequency bands of the compound with PL and NPL, respectively; $\\Delta_f$ is the difference in raw token frequency between the compound with PL and NPL",
+             label = "tab:items")
 align(stims.xt) <- c("r", rep("l", 3), rep("r", 5), "l")
 print(stims.xt,
       include.rownames=F,
@@ -73,19 +73,19 @@ print(stims.xt,
       )
 @
 
-Table~\ref{tab:stimuli} presents the results of the selection process.
+Table~\ref{tab:items} presents the results of the selection process.
 The table shows the potential productivity $P^p$ for the N1 with PL and NPL.
-These roughly match in many cases, for example $P^p_{PL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathrm{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.
+These roughly match in many cases, for example $P^p_{PL}(\mathit{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-PL"])}$ and $P^p_{NPL}(\mathit{Bad})=\Sexpr{nice.float(stims.freqs[head(which(stims.freqs$N1=="Bad"),1),"Pp-NPL"])}$.
 The frequency classes $c$ of the full compound with PL and NPL is also given, where class $28$ corresponds to a token frequency of $1$, and no frequency class (--) is assigned to words with a token frequency of $0$.
 Additionally, the total difference in token frequency of the two compounds is specified ($\Delta_f$), where the maximum absolute difference is $63$, which is clearly not extreme, given that the corpus contains 21 billion tokens and approximately 15 billion words.
 
-The first eight compounds shown in the table were used as stimuli for the internal plural sub-experiment.
+The first eight compounds shown in the table were used as items for the internal plural sub-experiment.
 The N2s \textit{Kooperation} `cooperation', \textit{Zusammenlegung} `merger\slash unification', \textit{Bündel} `bundle', and \textit{Sammlung} `collection' are clear triggers of internal plural.
 In contrast, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', as well as \textit{Abdruck} `mark\slash impression (physical)' cannot trigger internal plural semantics at all.
 Because it is sensitive to the specific semantic relation between N1 and N2, the internal plural sub-experiment might be sensitive item-specific effects pertaining both to concrete combinations of N1 and N2.
 In order to control for such effects, we chose only four different N1s and combined each with an N2 triggering internal plural and one not triggering it.
 Given the four N1s, combining internal-plural N2s and non-internal-plural N2s with PL and NPL created sixteen targets for the initial plural sub-experiment alone.
-So that participants were not exposed to all sixteen of these, we randomised the stimuli and participants saw either the version with PL or with NPL of any one N1+N2 combination.
+So that participants were not exposed to all sixteen of these, we randomised the items and participants saw either the version with PL or with NPL of any one N1+N2 combination.
 For the external plural sub-experiment, we only used N2s which could not trigger internal plural meaning, and we therefore decided that increased variety of N1s was better and used eight different N1s.
 
 Participants declared themselves to be native speakers of German with no reading disorders.
@@ -128,7 +128,7 @@ The median and mean with NPL are $\Sexpr{nice.float(median(obs.coll[which(obs.co
 Even a simple exploratory data analysis thus shows that a PL strongly co-occurs with forced plural semantics on N1.
 
 Analysing split-100 experiments with inferential tools such as generalised linear mixed models (GLMMs) is not as straightforward as \textcite{FordBresnan2013} seem to suggest.
-First, the dependent variable is something like a proportion or a percentage and cannot be treated as a count or a numeric variable for modelling purposes, because assumptions underlying the modelling algorithms (such as homogeneity of variance) would be violated.
+First, the dependent variable is something like a proportion or a percentage at each data point and cannot be treated as a count or a numeric variable for modelling purposes, because assumptions underlying the modelling algorithms (such as homogeneity of variance) would be violated.
 For proportions, beta regression can be used.
 However, subjects tend to assign ratings of $0$ and $100$ very often (see Figure~\ref{fig:participants}), which leads to so-called \textit{zero inflation} and \textit{one inflation} (see \citealt{ZuurEa2009} for a detailed account of practical modelling with zero inflation targeted at practitioners).
 Since in the case at hand, we should also account for subject-level variation by including a random effect, the appropriate model is a \textit{zero- and one-inflated mixed beta model}.

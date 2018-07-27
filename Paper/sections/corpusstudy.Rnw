@@ -9,7 +9,7 @@ opts_knit$set(self.contained=FALSE)
 \subsection{Queries}
 \label{sec:queries}
 
-As explained in Section~\ref{sec:linkingelementsingerman}, we will determine whether two distinct factors increase the probability that N1 in an N1+N2 compound occurs with a PL, given that N1 alternates between a PL and a NPL.
+As explained in Section~\ref{sec:linkingelementsingerman}, we will determine whether two distinct factors increase the probability that N1 in N1+N2 compounds occurs with a PL, given that N1 alternates between a PL and a NPL.
 The first potential factor is a plural on the whole compound (formally on N2, which is the head).
 The second factor is whether a semantic relation between N1 and N2 holds which forces N1 to have plural semantics.
 Therefore, we manually annotated corpus exemplars containing N1+N2 compounds for whether they are plurals and whether a plural-enforcing semantic relation holds between N1 and N2.
@@ -17,10 +17,10 @@ Before turning to this annotation process in Section~\ref{sec:annotation}, this 
 
 First, as explained at the beginning of Section~\ref{sec:databaseandproductivityassessment}, a selection of N1s was chosen which represents the population of N1s well with regard to their productivity scores with PL and NPL.
 %Concretely, we required that the potential productivity score with PL and with NPL not be $0$ or $1$, which excluded rare words.
-Furthermore, it was explained in Section~\ref{sec:databaseandproductivityassessment} that the productivity measures can be misleading in the case of low type frequencies.
+Furthermore, it was explained that the productivity measures can be misleading in the case of low type frequencies.
 Therefore, only N1s which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL were used.
 In order to exclude nouns which occur with reasonable type frequency in compounds but infrequently as standalone nouns, only N1s with a minimal token frequency outside of compounds were included.
-To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word (see \citealt[80]{PerkuhnEa2012}).
+To implement this restriction, we used the notion of the \textit{frequency class} (or \textit{frequency band}) of a word \parencite[80]{PerkuhnEa2012}.
 The frequency class $c(w)$ of a word $w$ increases with the word's token frequency $f(w)$.
 Calculation of the frequency class additionally relates the token frequency of the word in question to the number of tokens of the most frequent word in the corpus ($f^{max}$) and accounts for the power law distribution of word frequencies.%
 \footnote{See \textcite{Piantadosi2014} for a recent overview, including the many problems with actual word frequency distributions.}
@@ -40,7 +40,7 @@ Ideally, we would have had ten per PL, but since some of the PLs occurred with r
 %The sampling process consisted of sorting manually through all nouns which occurred with a given PL and removing those which did not meet our requirements.
 At the end, we were left with a set of 48 nouns that were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
 In Figure~\ref{fig:corpusselection}, each of the dots represents one N1 which fulfils the frequency-based selection criteria.
-The triangles mark those which were chosen for the corpus study.
+The triangles mark those which were chosen for the corpus study based on the additional criteria.
 Overall, the sample represents the spectrum of productivity quite well.
 
 <<corpusselection, fig.pos="htbp", fig.height=8, fig.cap="Selection of the N1s for the corpus study (triangles) in the context of all possible N1 candidates meeting the minimal criteria (dots); the x-axis and y-axis plot the potential productivity of N1 with PL and NPL, respectively (see Figure~\\ref{fig:proddots} for abbreviations); axes are on a logarithmic scale">>=
@@ -58,7 +58,7 @@ for (le in prod.plot.order) {
        log="xy",
        pch = 20,
        cex = 1,
-       col = "darkorange",
+       col = "gray",
        xlim = c(0.001, 1),
        ylim = c(0.001, 1),
        # main = paste0("Cand. for corpus study: ", .le.name),
@@ -93,7 +93,7 @@ We extracted all exemplars matching the query, making random sub-samples for ann
 \subsection{Annotation}
 \label{sec:annotation}
 
-From each of the query results of the 48 N1s described in Section~\ref{sec:queries}, we annotated one hundred cases with PL and approximately one hundred with NPL.
+From each of the query results of the 48 N1s described in Section~\ref{sec:queries}, we annotated one hundred randomly chosen cases with PL and approximately one hundred with NPL.
 Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=\Sexpr{nice.int(200*nrow(t.plot))}$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
 Annotating singular and plural was unproblematic, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate the two.
 Such cases were discarded and not used for the study.
@@ -111,7 +111,7 @@ In addition to these fairly clear-cut cases, there was a second group of compoun
 Most prominent among these are N2s which denote a container of some sort.
 Examples include \textit{Äpfel=+lager} or \textit{Apfel-lager} `storage for apples', \textit{Brief-e+katalog} or \textit{Brief-katalog} `catalogue of letters', and \textit{Lied-er+buch} or \textit{Lied+buch} `book of songs\slash songbook'.
 In theory, the N2s in these compounds \textit{could} denote some sort of container which holds only one object (for instance, it is conceivable -- if unlikely -- that the storage space for apples could have only one apple in it), but both world knowledge and the particular context in which the compound appears render this sort of interpretation impossible.
-However, since the interpretation of this kind of containment compound is very context- and world-knowledge-dependent, we refer to these as extended cases and will analyse them separately from the clear-cut cases shown above.
+However, since the interpretation of this kind of containment compound is context- and world-knowledge-dependent, we refer to these as extended cases and will analyse them separately from the clear-cut cases shown above.
 The presentation of the final sample will show the results for only the first, clear-cut cases under the label of \textit{strict annotation} and the combined results for both the clear-cut and the extended cases under the label of \textit{lax annotation}.%
 \footnote{We think it is encouraging that \textcite{BangaEa2013b} found the stable and expected results even using a more cavalier operationalisation of what they call conceptual plurals.
 ``These form types could be divided into two conceptual types: the modifier of the compound was either conceptually singular (\egg \textit{bananenschil} `banana skin' and \textit{ballonvaart} `balloon ride') or conceptually plural (\egg \textit{aardbeienjam} ‘strawberry jam’ and \textit{appeltaart} ‘apple pie’)''.
@@ -124,11 +124,11 @@ Therefore, to be on the safe side, we did not consider hazy cases like these to 
 \subsection{Results}
 \label{sec:results}
 
-As mentioned in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.%
-\footnote{In the recent years and decades, practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
-Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
-We feel that corpus linguists have not yet picked up on the debate fully, with the effect that most papers do not make explicit which statistical philosophy they follow.
-We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different statistical traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalyses}.}
+As mentioned in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.
+% \footnote{In the recent years and decades, practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
+% Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
+% We feel that corpus linguists have not yet picked up on the debate fully, with the effect that most papers do not make explicit which statistical philosophy they follow.
+% We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different statistical traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalyses}.}
 All exemplars were annotated for internal and external plural, and we treat the two annotations as two sub-studies, starting with the external plural sub-study.
 
 There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.
@@ -196,10 +196,13 @@ This is expected in a situation where there are no effects.
 intpl.chisq <- chisq.test(table(conc$LE, conc$N2TypStrict))
 intpl.chisq.lax <- chisq.test(table(conc$LE, conc$N2TypLax))
 intpl.obs <- intpl.chisq$observed
-rownames(intpl.obs) <- c("NPL", "PL")
-colnames(intpl.obs) <- c("Internal pl.\ relation", "No internal pl.\ relation")
-intpl.obs.xt <- xtable(nice.int(intpl.obs), booktabs = T,
-                         caption = "Contingency table for internal plural sub-study",
+intpl.obs.lax <- intpl.chisq.lax$observed
+intpl.obs.both <- matrix(paste(as.character(nice.int(intpl.obs)), as.character(nice.int(intpl.obs.lax)), sep = ";"),
+                         nrow = 2, byrow = F)
+rownames(intpl.obs.both) <- c("NPL", "PL")
+colnames(intpl.obs.both) <- c("Internal pl.\ relation", "No internal pl.\ relation")
+intpl.obs.xt <- xtable(intpl.obs.both, booktabs = T,
+                         caption = "Contingency table for internal plural sub-study; the tuples represent the values for \\textit{strict};\\textit{lax} annotation",
                          label = "tab:ctintplural")
 align(intpl.obs.xt) <- c("l", "r", "r")
 print(intpl.obs.xt,
@@ -224,7 +227,7 @@ plot(x=NULL, y=NULL,
      type="n", ann=FALSE, axes=F
      )
 axis(1, at=c(0.85, 1.15), tick = F,
-     labels=c("external plural", "internal plural"),
+     labels=c("external pl.", "internal pl."),
      cex.axis = the.cex)
 axis(2, cex.axis = the.cex)
 abline(h = 0, lwd = 2, lty = 2, col = "darkgray")
@@ -232,7 +235,7 @@ vioplot2(p.plot$phi,
          frame = F,
          at = 1,
          side = "left",
-         col = "gold",
+         col = "yellow",
          add = T)
 vioplot2(t.plot$phi.lax,
          at = 1,
@@ -265,7 +268,7 @@ Obviously, the difference between the two annotation schemes is not huge, and vi
 While the external plural has zero average effect, the internal plural has an average effect of roughly $0.2$.
 
 <<corpuseffects, fig.pos="htbp", fig.height=10, fig.cap="Individual per-N1 effect strengths and Šidák-corrected p-values for the internal plural sub-study; groups (PLs) are sorted by descending overall effect strength (strict); per group, N1s are sorted by descending effect strength (strict)">>=
-corpuseffects.colors <- colorRampPalette(c("darkorange", "darkgreen"))(100)
+corpuseffects.colors <- colorRampPalette(c("gray", "darkgreen"))(100)
 
 # The dots are in fact invisible (pch="") so we can draw freely later.
 dotchart(t.plot$phi.strict,

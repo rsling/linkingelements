@@ -141,8 +141,8 @@ Participants received no payment, but they were awarded credit in partial fulfil
 The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
 \end{ethicalstandards}
 
-\appendix
-\include{sections/onstatisticalanalysis}
+% \appendix
+% \include{sections/onstatisticalanalysis}
 
 \bibliographystyle{spbasic}
 \bibliography{rs}
