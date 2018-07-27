@@ -1,7 +1,13 @@
 \RequirePackage{rotating}
-\documentclass[natbib,final]{svjour3}
 
+\documentclass[natbib,final]{svjour3}
 \smartqed
+\input{jomo}
+
+% \documentclass[a4paper,12pt]{article}
+% \usepackage{natbib}
+% \input{generik}
+
 \usepackage{graphicx}
 \usepackage{mathptmx}
 \usepackage[utf8]{inputenc}
@@ -12,13 +18,9 @@
 \usepackage{rotating}
 \usepackage{bbding}
 \usepackage{soul}
-\usepackage[mark]{gitinfo2}
 \usepackage{url}
 \usepackage{setspace}
 \usepackage{xcolor}
-
-%\usepackage[printwatermark]{xwatermark}
-%\newwatermark[firstpage,color=red!50, angle=45, scale=1, xpos=-15, ypos=12]{\parbox{16cm}{\sffamily\centering DRAFT, accepted by JOMO.\\Please quote as\\`accepted with minor revisions.'}}
 
 \newcommand{\ie}{i.\,e.,\ }
 \newcommand{\Ie}{I.\,e.,\ }
@@ -30,22 +32,6 @@
 % Compatibility with biber citations.
 \newcommand{\textcite}[2][]{\citet[#1]{#2}}
 \newcommand{\parencite}[2][]{\citep[#1]{#2}}
-
-\journalname{\textit{Morphology} (JOMO), accepted with minor revisions on 3 June 2018}
-
-\title{The plural interpretability of German linking elements\thanks{The first author's work on this project was funded by the German Research Council (Deutsche Forschungsgemeinschaft, DFG, personal grant SCHA1916/1-1}}
-
-\author{Roland Schäfer \and Elizabeth Pankratz}
-\institute{Roland Schäfer \at
-              Deutsche und niederländische Philologie\\
-              Freie Universität Berlin \\
-              \email{roland.schaefer@fu-berlin.de}
-           \and
-           Elizabeth Pankratz \at
-              Deutsche Sprache und Linguistik\\
-              Humboldt Universität zu Berlin\\
-              \email{pankrate@hu-berlin.de}}
-\date{Received: 17 Dec 2017 / Accepted (minor rev.): 3 Jun 2018}
 
 \begin{document}
 

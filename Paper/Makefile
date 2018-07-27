@@ -22,7 +22,7 @@ lemorphology.tex: lemorphology.Rnw $(wildcard sections/*.Rnw) $(wildcard section
 clean:
 	rm -f lemorphology.tex lemorphology-concordance.tex *.bcf *.bak *~ *.backup *.tmp \
 	*.adx *.and *.idx *.ind *.ldx *.lnd *.sdx *.snd *.rdx *.rnd *.wdx *.wnd \
-	*.log *.blg *.ilg \
+	*.log *.blg *.ilg *.xwm *.dvi \
 	*.aux *.toc *.cut *.out *.tpm *.bbl *-blx.bib *_tmp.bib \
 	*.glg *.glo *.gls *.wrd *.wdv *.xdv *.mw *.clr \
 	*.run.xml lemorphology.tex lemorphology.pgs lemorphology.bcf \
