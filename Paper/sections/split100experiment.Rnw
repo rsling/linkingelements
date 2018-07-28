@@ -81,15 +81,15 @@ Additionally, the total difference in token frequency of the two compounds is sp
 
 The first eight compounds shown in the table were used as items for the internal plural sub-experiment.
 The N2s \textit{Kooperation} `cooperation', \textit{Zusammenlegung} `merger\slash unification', \textit{Bündel} `bundle', and \textit{Sammlung} `collection' are clear triggers of internal plural.
-In contrast, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', as well as \textit{Abdruck} `mark\slash impression (physical)' cannot trigger internal plural semantics at all.
-Because it is sensitive to the specific semantic relation between N1 and N2, the internal plural sub-experiment might be sensitive item-specific effects pertaining both to concrete combinations of N1 and N2.
+In contrast, \textit{Eingang} `entry', \textit{Beschriftung} `label(ling)', \textit{Schliff} `cut\slash sharpening', as well as \textit{Abdruck} `(physical) mark\slash impression' cannot trigger internal plural semantics at all.
+Because the internal plural sub-experiment is sensitive to the specific semantic relation between N1 and N2, it might be sensitive to item-specific effects pertaining to concrete combinations of N1s and N2s.
 In order to control for such effects, we chose only four different N1s and combined each with an N2 triggering internal plural and one not triggering it.
 Given the four N1s, combining internal-plural N2s and non-internal-plural N2s with PL and NPL created sixteen targets for the initial plural sub-experiment alone.
 So that participants were not exposed to all sixteen of these, we randomised the items and participants saw either the version with PL or with NPL of any one N1+N2 combination.
 For the external plural sub-experiment, we only used N2s which could not trigger internal plural meaning, and we therefore decided that increased variety of N1s was better and used eight different N1s.
 
 Participants declared themselves to be native speakers of German with no reading disorders.
-They were recruited in first-semester linguistics classes at our university during the first four weeks of the summer 2017 term.
+They were recruited in first-semester linguistics classes at Freie Universität Berlin during the first four weeks of the summer 2017 term.
 They were all majoring in German Language and Literature but had not yet had a university-level introduction to linguistics.
 We had $\Sexpr{length(levels(obs$participant))}$ participants.
 $24$ participants declared themselves to be female, seven to be male.
