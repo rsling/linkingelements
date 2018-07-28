@@ -125,9 +125,6 @@ Participants received no payment, but they were awarded credit in partial fulfil
 The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
 \end{ethicalstandards}
 
-
 \bibliography{rs}
 
-
 \end{document}
-
