@@ -1,10 +1,10 @@
 \RequirePackage{rotating}
 
-\documentclass[natbib,final]{svjour3}
-\input{jomo}
+% \documentclass[natbib,final]{svjour3}
+% \input{jomo}
 
-% \documentclass[12pt]{article}
-% \input{generik}
+\documentclass[12pt]{article}
+\input{generik}
 
 \usepackage{graphicx}
 \usepackage{mathptmx}
@@ -125,10 +125,7 @@ Participants received no payment, but they were awarded credit in partial fulfil
 The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
 \end{ethicalstandards}
 
-% \appendix
-% \include{sections/onstatisticalanalysis}
 
-\bibliographystyle{spbasic}
 \bibliography{rs}
 
 

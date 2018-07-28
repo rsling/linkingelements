@@ -67,19 +67,9 @@ freq.ov <- freq.ov[order(freq.ov$Ftype, decreasing = T),]
 We began by extracting all compounds with a nominal head from the DECOW16A web corpus (\citealt{SchaeferBildhauer2012a}, \citealt{SchaeferBildhauer2020}).%
 \footnote{The resulting database, which contains comprehensive aggregated information about the 22,380,133 compound types accounting for 478,342,305 tokens in the corpus, will be made publicly available by the COW project.}
 In the corpus, nominal compounds come with full structural analyses created automatically using the SMOR finite-state morphological analyser \parencite{SchmidEa2004} and extensive pre- and post-processing implemented by the COW creators \parencite{SchaeferBildhauer2020}.
-%
-%\footnote{We made an exception for the zero linking element because the number of N1s was much too high for %full manual inspection.
-%We therefore implemented an automatic approach where an N1 had to fulfil one of the following criteria to be included:
-%(i) It was a word known to the aspell spell checker (in the mixed capitalisation typical of German nouns) and not in the list of proper nouns extracted from the DECOW corpus published by the COW project.
-%(ii) It occurred at least $50$ times in DECOW16A in mixed capitalisation spelling and was not in the list of proper nouns.
-%These criteria led to $\Sexpr{nice.int(nrow(blacklists$nul))}$ of $\Sexpr{nice.int(freq.ov["0","N1s"]+nrow(blacklists$nul))}$ nouns being excluded from the list of zero linking element N1 candidates.}
 We then went on to extract all N1+N2 compounds and all N1s from that compound database.
 For each of the PLs, we generated exhaustive lists of the N1s with which it occurs and which have a plural identical to the PL.
-% (to exclude the few cases where a potentially PL attaches to a noun of a different declension class), which are count nouns (because mass nouns undergo a significant change in meaning when pluralised), and which are not weak masculine nouns (because these do not differentiate between singular non-nominative forms and plural forms).
 These lists of N1 candidates were extracted automatically, but they were checked manually to remove the erroneous matches common with methods of automatic extraction.
-%Both the first author of this paper and a student assistant checked the entire list in order to increase the accuracy of the manual clean up process.
-%\footnote{Every single decision is documented in the data package for this paper.}
-%When an N1 candidate looked suspicious, we inspected the compound database to check whether the actual compounds containing the candidate were misanalysed or otherwise noisy.
 
 <<results='asis'>>=
 
@@ -132,12 +122,9 @@ In these counts, mass nouns and weak nouns (which do not have an unambiguous plu
 Since they were removed for all further analysis reported below, reported frequencies in later sections might be lower, especially for \textit{-n} and \textit{-en}.
 Table~\ref{tab:freqoverview} is important inasmuch as the numbers reported in it are in line with previous reports based on much smaller corpora such as \textcite{WellmannEa1974}, \textcite{Kuerschner2005}, or \textcite{KrottEa2007} (see also \citealt[9]{Schluecker2012}).
 This is evidence showing that the automatic methods of data extraction which we used likely did not affect the quality of the results in a serious way.
-%As explained in Section~\ref{sec:linkingelementsingerman}, the classes of words with the plural morphemes \textit{=er}, \textit{-er}, and \textit{=} are rather small with \Sexpr{nice.int(unlist(le.aggregated[1, "=er"]))}, \Sexpr{nice.int(unlist(le.aggregated[1, "-er"]))} and \Sexpr{nice.int(unlist(le.aggregated[1, "="]))} different N1 types in our database, respectively.
-%While \textit{=e} has an intermediate type frequency of \Sexpr{nice.int(unlist(le.aggregated[1, "=e"]))}, \textit{-n} (\Sexpr{nice.int(unlist(le.aggregated[1, "-n"]))} types), \textit{-en} (\Sexpr{nice.int(unlist(le.aggregated[1, "-en"]))} types), and \textit{-e} (\Sexpr{nice.int(unlist(le.aggregated[1, "-e"]))} types) are highly type-frequent.
 
 As pointed out at the beginning of this section, an informed choice of items for the corpus study and the experiment required ensuring that the chosen N1s have the capability of forming new compounds with PL and NPL.
 Therefore, we calculated measures of productivity for each N1 with PL and NPL.
-%This measure was supposed to capture the probability that the given N1 would form a new compound with PL and NPL.
 The \textit{potential productivity} is the measure of choice for this as it ``gauges the extent to which the market for a category is saturated'' \parencite[902, see also 906--907]{Baayen2009}.
 The potential productivity is appropriate for our purposes because some compounds might be lexicalised either with PL or with NPL, and it would not make much sense to try to examine an alternation with N1s which occur mostly in lexicalised compounds.
 As shown in (\ref{eq:prod}), the potential productivity $P^p$ is simply the number of the hapax legomena $f_1$ of compounds with $\mathrm{N1}_{\lambda}$ divided by the token frequency $f$ of compounds with $\mathrm{N1}_{\lambda}$, where $\lambda$ is a variable standing for either PL or NPL.
@@ -149,10 +136,6 @@ P^p(\mathrm{N1}_{\lambda})=\frac{f_1(\mathrm{N1}_{\lambda})}{f(\mathrm{N1}_{\lam
 The interpretation of $P^p$ is intuitive, as it is $0$ when there are no hapax legomena in the corpus, in which case  $f_1(\mathrm{N1}_{\lambda})=0$ (no productivity whatsoever).
 Furthermore, it is $1$ if all tokens are hapax legomena, in which case $f_1(\mathrm{N1}_{\lambda})=f(\mathrm{N1}_{\lambda})$ (maximal productivity).
 It can be regarded as a proportion, and its range is therefore $[0,1]$.
-
-%%% ==================================================================== %%%
-%%% IMPORTANT! For production, PNG/PDF should be changed in chunk below. %%%
-%%% ==================================================================== %%%
 
 <<proddots, pdf=TRUE, fig.pos="htbp", fig.height=8, fig.cap="Comparisons of the potential productivity of N1s (non-heads in noun-noun compounds), grouped by pluralic linking elements (PLs); colours and sizes encode the type frequencies (F) with PL and NPL (non-pluralic linking elements); axes are on a logarithmic scale">>=
 productivitydots.colors <- colorRampPalette(c("yellow", "darkred"))(100)
@@ -173,15 +156,6 @@ par(mfrow=c(1,1))
 @
 
 Figure~\ref{fig:proddots} shows the results of the productivity analyses for all  \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} chosen N1s.
-%\footnote{It was pointed out that the analysis of productivity is often tainted by the low quality of automatic annotation in \textcite{EvertLuedeling2001} -- a point reiterated in \textcite[907]{Baayen2009}.
-%Our analysis relies on the automatically generated annotations by the SMOR tool and COW tool chain.
-%However, the list of N1 candidates was meticulously cleaned manually, as stated above.
-%Also, we have found that the compound analyses by the SMOR tool are highly accurate when it does not have to guess the lemma of a compound's elements, and the N1s actually used are obviously known words, since we input them.
-%Finally, the N1s which were chosen for the studies presented in Sections~\ref{sec:corpusstudy} and~\ref{sec:split100experiment} were manually checked again.
-%In the annotation of the \Sexpr{nice.int(sum(t.plot$n))} corpus exemplars, any systematic misanalysis would have shown.
-%This actually was the case for the N1 \textit{Beere} `berry', where the concordance for NPL contained mostly erroneously analysed words and proper names, and \textit{Beere} was subsequently excluded from further steps.
-%We can thus be sure that the analyses which we interpret relative to our theoretical hypotheses are accurate and not distorted by problems of automatic annotation.
-%}
 In this plot, each dot represents one N1.
 The dot's position is determined by its $P^p$ value with PL (x-axis) and with NPL (y-axis).
 Additionally, the larger a dot is, the higher is its type frequency with PL, and the darker it is, the higher is its type frequency with NPL.

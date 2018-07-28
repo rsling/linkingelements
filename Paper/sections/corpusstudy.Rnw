@@ -16,7 +16,6 @@ To this end, we manually annotated corpus exemplars containing N1+N2 compounds f
 Before turning to this annotation process in Section~\ref{sec:annotation}, the current section describes how we extracted and prepared a concordance for the manual annotation.
 
 First, as explained at the beginning of Section~\ref{sec:databaseandproductivityassessment}, a selection of N1s was chosen which represents the population of N1s well with regard to their productivity scores with PL and NPL.
-%Concretely, we required that the potential productivity score with PL and with NPL not be $0$ or $1$, which excluded rare words.
 Furthermore, it was explained that the productivity measures can be misleading in the case of low type frequencies.
 Therefore, only N1s which had a minimal type frequency of $\Sexpr{n1asn1.typfreq.lim}$ as N1 with PL and NPL were used.
 In order to exclude nouns which occur with reasonable type frequency in compounds but infrequently as standalone nouns, only N1s with a minimal token frequency outside of compounds were included.
@@ -36,8 +35,6 @@ Relative to this $f^{max}$ value, we only considered words with a frequency clas
 
 From the set of N1s which fulfilled the given criteria, we sampled between five and ten nouns per PL.
 Ideally, we would have had ten per PL, but since some of the PLs occurred with relatively few N1s, there were not always ten nouns available which met our criteria.
-%In those cases, we took as many as we could.
-%The sampling process consisted of sorting manually through all nouns which occurred with a given PL and removing those which did not meet our requirements.
 At the end, we were left with a set of 48 nouns that were countable (\ie no mass nouns), not collectives, and distributed approximately uniformly across the productivity spectrum as it was visualised in Figure~\ref{fig:proddots}.
 In Figure~\ref{fig:corpusselection}, each of the dots represents one N1 which fulfils the frequency-based selection criteria.
 The triangles mark those which were chosen for the corpus study based on the additional criteria.
@@ -77,18 +74,11 @@ par(mfrow=c(1,1))
 @
 
 The queries we used to retrieve the compound exemplars containing the 48 chosen N1s were made in DECOW16A.
-%using Python through the RStudio Server interface provided by the COW project.%
-%\footnote{The Python scripts showing the exact queries will be published openly as part of the data package for this paper.}
 For each N1, we made one query searching for compounds containing it with PL and one otherwise identical query searching for compounds containing it with NPL.
-%Since at least some context is often needed to disambiguate the meaning of the compounds and their constituents, the whole sentence containing each compound as well as one sentence to the left and one sentence to the right were exported.
-%Duplicate sentences were removed by setting the appropriate parameter in the COW project's Python wrappers for making queries.
 We performed deduplication on the compounds inasmuch as we only allowed one instance of each identical compound word form to pass.
 Otherwise, highly frequent and typically lexicalised compounds would have accounted for the best part of the concordances.
 However, we did allow different word forms of the same compound in the concordances, in order to get both singular and plural forms.
 We extracted all exemplars matching the query, making random sub-samples for annotation.
-%\footnote{The full query results are also included in the data package which accompanies this paper.}
-%In addition to the exemplar in its context, we extracted the corresponding document URL, the unique COW16 ID of that document, and the sentence ID.
-%With the COW16 ID and the sentence ID, each exemplar can be located in the DECOW16A corpus for full reproducibility.
 
 \subsection{Annotation}
 \label{sec:annotation}
@@ -97,8 +87,6 @@ From each of the query results of the 48 N1s described in Section~\ref{sec:queri
 Due to some minor clean-ups in the quality control process, the final sample size is not exactly $n=\Sexpr{nice.int(200*nrow(t.plot))}$ but $n=\Sexpr{nice.int(sum(t.plot$n))}$.
 Annotating singular and plural was unproblematic, except where singular and plural forms were homographic \textit{and} the context did not help to disambiguate the two.
 Such cases were discarded and not used for the study.
-%Since this part of the study is crucial and strongly related to the scientific inferences we are going to draw, we did not rely on the automatic annotation for plural (and other morphological categories) available in DECOW16A.
-%The basic annotations were made by the second author of this paper and a student assistant, but they were \textit{all} cross-checked by the first author in order to minimise the amount of human annotation errors.
 
 Determining whether the semantics of N2 and the semantic relation between N1 and N2 forces N1 to have plural semantics was more intricate, and we found several classes of N2s characteristic of this relation.
 A clear case of plural-inducing N2s are collectives such as \textit{Gruppe} `group' as in \textit{Kind-er+gruppe} or \textit{Kind+gruppe} `group of children' or \textit{Haufen} `heap\slash pile' as in \textit{Brett-er+haufen} or \textit{Brett+haufen} `pile of boards'.
@@ -125,10 +113,6 @@ Therefore, to be on the safe side, we did not consider hazy cases like these to 
 \label{sec:results}
 
 As mentioned in Section~\ref{sec:annotation}, the size of the manually annotated sample of $\Sexpr{nice.int(nrow(t.plot))}$ N1s was $n=\Sexpr{nice.int(sum(t.plot$n))}$.
-% \footnote{In the recent years and decades, practitioners, statisticians, and philosophers of science have been divided over the essential question of how to analyse quantitative data.
-% Some have even been proclaiming a \textit{statistical crisis} to both wider audiences \parencite{GelmanLoken2014} and to more restricted communities of practitioners \parencite{GelmanGeurts2017}.
-% We feel that corpus linguists have not yet picked up on the debate fully, with the effect that most papers do not make explicit which statistical philosophy they follow.
-% We adopt the statistical philosophy of Ronald A.\ Fisher, and readers not familiar with the debate or the different statistical traditions are encouraged to read Appendix~\ref{sec:onstatisticalanalyses}.}
 All exemplars were annotated for internal and external plural, and we treat the two annotations as two sub-studies, starting with the external plural sub-study.
 
 There are $\Sexpr{nice.int(length(which(conc$N2Num=="Sg")))}$ singular compounds and $\Sexpr{nice.int(length(which(conc$N2Num=="Pl")))}$ plural compounds in the sample.
@@ -155,19 +139,6 @@ print(extpl.obs.xt,
 
 <<results="hide">>=
 extpl.resid <- extpl.chisq$stdres
-# rownames(extpl.resid) <- c("NPL", "PL")
-# colnames(extpl.resid) <- c("Pl.\ compound", "Sg.\ Compound")
-# extpl.resid.xt <- xtable(nice.float(extpl.resid), booktabs = T,
-#                          caption = "Standardised residuals from $\\chi^2$ test of external plural sub-study",
-#                          label = "tab:ctextpluralresid")
-# align(extpl.resid.xt) <- c("l", "r", "r")
-# print(extpl.resid.xt,
-#       floating = T,
-#       table.placement = 'htbp',
-#       booktabs = T,
-#       rotate.colnames = F,
-#       sanitize.text.function = function(x){x}
-#       )
 @
 
 A $\chi^2$ test on the contingency table produces a significant result at $\mathrm{sig}=0.05$ ($\chi^2=\Sexpr{nice.float(extpl.chisq$statistic)}$, $df=\Sexpr{min(dim(extpl.chisq$observed))-1}$, $p=\Sexpr{nice.float(extpl.chisq$p.value)}$).

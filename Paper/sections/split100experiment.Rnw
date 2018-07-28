@@ -52,6 +52,7 @@ First of all, we chose N1s which have roughly equal productivity with PL and NPL
 We then tried to find for each N1 some semantically appropriate N2s which clearly trigger internal plural semantics and ones which clearly do not.
 Finally, we checked the token frequencies of the resulting N1+N2 compounds with PL and NPL in the corpus, because we wanted to use compounds as items which were productively formed for the subjects inasmuch as they had never used or heard\slash read them before (at least with a high probability).
 The process turned out to be an iterative one because compounds meeting all desired criteria were difficult to find.
+
 <<results='asis'>>=
 colnames(stims.freqs)[c(11,12)] <- c("$P^p_{PL}$", "$P^p_{NPL}$")
 stims.tab <- stims.freqs[, c("N1", "LE", "N2", "$P^p_{PL}$", "$P^p_{NPL}$", "FbandPL", "FbandNPL", "AbsFDiff", "Gloss")]
@@ -184,8 +185,3 @@ In other words, the model corroborates the descriptive analysis in Figure \ref{f
 In the present experiment, subjects showed very clear reactions to different potential sources of plural semantics.
 The external plural condition did not trigger PLs more than NPLs, but there is solid evidence that speakers favour a PL in compounds where an internal plural relation holds between N1 and N2.
 In Section~\ref{sec:conclusion} we will discuss the theoretical implications of this result together with that of the corpus study reported in Section~\ref{sec:corpusstudy}.
-
-
-
-
-
