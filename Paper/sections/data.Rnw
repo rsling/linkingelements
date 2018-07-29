@@ -25,7 +25,7 @@ Web corpora can thus be regarded as an established source of data on par with tr
 \label{sec:databaseandproductivityassessment}
 
 For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as the items in the split-100 experiment.%
-\footnote{See \url{https://dx.doi.org/10.5281/zenodo.1322791} for a copy of the full data set and all scripts used in the research presented here.}
+\footnote{See \url{https://doi.org/10.5281/zenodo.1323211} for a copy of the full data set and all scripts used in the research presented here.}
 Seven different potentially pluralic linking elements had to be considered (\textit{=e}, \textit{=er}, \textit{-er}, \textit{=}, \textit{-e}, \textit{-en}, \textit{-n}).
 In the case of the corpus study, we wanted to select ten N1s occurring with each of those linking elements.
 For each of the resulting seventy N1s, the design of the study consisted of drawing samples of one hundred occurrences with that pluralic linking element and one hundred occurrences without that linking element.

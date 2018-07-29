@@ -1,10 +1,10 @@
 \RequirePackage{rotating}
 
-% \documentclass[natbib,final]{svjour3}
-% \input{jomo}
+\documentclass[natbib,final]{svjour3}
+\input{jomo}
 
-\documentclass[12pt]{article}
-\input{generik}
+% \documentclass[12pt]{article}
+% \input{generik}
 
 \usepackage{graphicx}
 \usepackage{mathptmx}
