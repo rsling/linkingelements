@@ -90,7 +90,7 @@ So that participants were not exposed to all sixteen of these, we randomised the
 For the external plural sub-experiment, we only used N2s which could not trigger internal plural meaning, and we therefore decided that increased variety of N1s was better and used eight different N1s.
 
 Participants declared themselves to be native speakers of German with no reading disorders.
-They were recruited in first-semester linguistics classes at Freie Universität Berlin during the first four weeks of the summer 2017 term.
+They were recruited in first-semester linguistics classes at \TheUniversity\ during the first four weeks of the summer 2017 term.
 They were all majoring in German Language and Literature but had not yet had a university-level introduction to linguistics.
 We had $\Sexpr{length(levels(obs$participant))}$ participants.
 $24$ participants declared themselves to be female, seven to be male.
