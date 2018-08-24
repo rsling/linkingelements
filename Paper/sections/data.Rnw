@@ -156,7 +156,7 @@ par(mfrow=c(1,1))
 @
 
 In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} N1s which occur with both PL and NPL.
-Figure~\ref{fig:proddots} shows the productivity analyses for all of these N1s, and each dot represents one of them.
+Figure~\ref{fig:proddots} shows the productivity analyses for all of these N1s, and each dot represents one N1.
 The dot's position is determined by its $P^p$ value with PL (x-axis) and with NPL (y-axis).
 Additionally, the larger a dot is, the higher is its type frequency with PL, and the darker it is, the higher is its type frequency with NPL.
 From the panels for \textit{-n} and \mbox{\textit{-en}}, it is apparent that N1s with all sorts of ratios of high and low productivity with PL and NPL exist.
