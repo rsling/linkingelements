@@ -24,7 +24,7 @@ Web corpora can thus be regarded as an established source of data on par with tr
 \subsection{Productivity assessment}
 \label{sec:databaseandproductivityassessment}
 
-For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of first constituents (N1s) to be examined more thoroughly using corpus data and a set of compounds to be used as the items in the split-100 experiment.%
+For the studies reported in Section~\ref{sec:corpusstudy} and~\ref{sec:split100experiment}, we had to choose a set of N1s to be examined more thoroughly using corpus data and a set of compounds to be used as the items in the split-100 experiment.%
 \footnote{See \TheDOI\ for a copy of the full data set and all scripts used in the research presented here.}
 Seven different potentially pluralic linking elements had to be considered (\textit{=e}, \textit{=er}, \textit{-er}, \textit{=}, \textit{-e}, \textit{-en}, \textit{-n}).
 In the case of the corpus study, we wanted to select ten N1s occurring with each of those linking elements.
@@ -39,7 +39,7 @@ Some N1s (like \textit{Kind} `child' or \textit{Huhn} `chicken') do not alternat
 In other cases, there is just a very strong preference for or against the pluralic linking element.
 Therefore, it was necessary to find those N1s which are used productively with both alternatives and to make an informed choice from among them.
 Because it is unlikely that enough N1s exist which have exactly the same productivity with a pluralic and a non-pluralic linking element, any sample should be representative of the whole spectrum of productivity.
-To obtain such a sample later, we first used methods of automatic data extraction (with manual quality control) to analyse literally \textit{all} compounds in the DECOW16A corpus.
+To obtain such a sample, we first used methods of automatic data extraction (with manual quality control) to analyse literally \textit{all} compounds in the DECOW16A corpus.
 The resulting database informs us about how strongly N1s tend to appear with pluralic linking elements (PLs) and with non-pluralic linking elements (NPLs), and how productively they are used with these linking elements.
 
 <<>>=
@@ -155,8 +155,8 @@ for (le in prod.plot.order)
 par(mfrow=c(1,1))
 @
 
-Figure~\ref{fig:proddots} shows the results of the productivity analyses for all  \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} chosen N1s.
-In this plot, each dot represents one N1.
+In total, we found \Sexpr{nice.int(sum(unlist(le.aggregated[1,])))} N1s which occur with both PL and NPL.
+Figure~\ref{fig:proddots} shows the productivity analyses for all of these N1s, and each dot represents one of them.
 The dot's position is determined by its $P^p$ value with PL (x-axis) and with NPL (y-axis).
 Additionally, the larger a dot is, the higher is its type frequency with PL, and the darker it is, the higher is its type frequency with NPL.
 From the panels for \textit{-n} and \mbox{\textit{-en}}, it is apparent that N1s with all sorts of ratios of high and low productivity with PL and NPL exist.

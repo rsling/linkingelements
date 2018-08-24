@@ -323,5 +323,6 @@ These results thus support the hypothesis that there is a general co-occurrence 
 
 Finally, it is noteworthy that the order of the PLs in Figure~\ref{fig:corpuseffects} is the mirror image of their order in Figure~\ref{fig:proddots} and Figure~\ref{fig:corpusselection}.
 The less type-frequent a plural marker is, the more strongly it tends to be interpreted as a plural marker even when used as a linking element.
-We will return to all of these results in our theoretical interpretation in Section~ \ref{sec:conclusion}.
+It should be noted that these less type-frequent plural markers are those with an umlaut on N1.
+We return to these results in our theoretical interpretation in Section~ \ref{sec:conclusion}.
 But first, we report the results of a split-100 experiment in Section~\ref{sec:split100experiment}.

@@ -122,10 +122,10 @@ par(mfrow=c(1,1))
 @
 
 The external plural sub-experiment (right panel of Figure~\ref{fig:conditions}) clearly had a negative result.
-For both singulars and plurals, subjects strongly prefer a NPL (for singular compounds, the median and mean rating are $\Sexpr{nice.float(median(obs.pl[which(obs.pl$cond == "Singular"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.pl[which(obs.pl$cond == "Singular"), "realRating"]))}$, and for plural compounds, they are $\Sexpr{nice.float(median(obs.pl[which(obs.pl$cond == "Plural"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.pl[which(obs.pl$cond == "Plural"), "realRating"]))}$).
+For both singulars and plurals, subjects strongly prefer a NPL (for singular compounds, the median and mean rating are $\Sexpr{nice.float(median(obs.pl[which(obs.pl$cond == "Singular"), "realRating"]), d=1)}$ and $\Sexpr{nice.float(mean(obs.pl[which(obs.pl$cond == "Singular"), "realRating"]), d=1)}$, and for plural compounds, they are $\Sexpr{nice.float(median(obs.pl[which(obs.pl$cond == "Plural"), "realRating"]), d=1)}$ and $\Sexpr{nice.float(mean(obs.pl[which(obs.pl$cond == "Plural"), "realRating"]), d=1)}$).
 
 The internal plural sub-experiment (left panel of Figure~\ref{fig:conditions}) had a clearly positive outcome.
-The median and mean with NPL are $\Sexpr{nice.float(median(obs.coll[which(obs.coll$cond == "Individual"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.coll[which(obs.coll$cond == "Individual"), "realRating"]))}$, but with PL, they are $\Sexpr{nice.float(median(obs.coll[which(obs.coll$cond == "Collective"), "realRating"]))}$ and $\Sexpr{nice.float(mean(obs.coll[which(obs.coll$cond == "Collective"), "realRating"]))}$).
+The median and mean with NPL are $\Sexpr{nice.float(median(obs.coll[which(obs.coll$cond == "Individual"), "realRating"]), d=1)}$ and $\Sexpr{nice.float(mean(obs.coll[which(obs.coll$cond == "Individual"), "realRating"]), d=1)}$, but with PL, they are $\Sexpr{nice.float(median(obs.coll[which(obs.coll$cond == "Collective"), "realRating"]), d=1)}$ and $\Sexpr{nice.float(mean(obs.coll[which(obs.coll$cond == "Collective"), "realRating"]), d=1)}$).
 Even a simple exploratory data analysis thus shows that a PL strongly co-occurs with forced plural semantics on N1.
 
 Analysing split-100 experiments with inferential tools such as generalised linear mixed models (GLMMs) is not as straightforward as \textcite{FordBresnan2013} seem to suggest.
