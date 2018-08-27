@@ -3,11 +3,11 @@
 % \documentclass[natbib,final]{svjour3}
 % \input{anonymous}
 
-\documentclass[natbib,final]{svjour3}
-\input{jomo}
+% \documentclass[natbib,final]{svjour3}
+% \input{jomo}
 
-% \documentclass[12pt]{article}
-% \input{generik}
+\documentclass[12pt]{article}
+\input{generik}
 
 \usepackage{graphicx}
 \usepackage{mathptmx}
@@ -113,12 +113,12 @@ Instead, we view our data as strengthening the general approach of probabilistic
 
 \include{sections/conclusion}
 
-% \begin{acknowledgements}
-% We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
-% Furthermore, we thank Ulrike for helping us recruit the participants for the experiment.
-% Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
-% We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
-% \end{acknowledgements}
+\begin{acknowledgements}
+We would like to thank (in alphabetical order) Jennifer Dailey-O'Cain, Matthias B.\ Döring, Jordan Lachler, and Ulrike Sa\-yatz for valuable discussions and comments.
+Furthermore, we thank Ulrike for helping us recruit the participants for the experiment.
+Luise Rißmann did sterling work helping with the annotation of the concordances and supervising a majority of the experiments.
+We are, of course, fully responsible for all residual inadequacies, errors, and omissions.
+\end{acknowledgements}
 
 \begin{ethicalstandards}
 The split-100 rating experiment reported in this paper was completely anonymised.
@@ -128,6 +128,6 @@ Participants received no payment, but they were awarded credit in partial fulfil
 The participants could specify their gender on a voluntary basis and they were given no pre-formulated options.
 \end{ethicalstandards}
 
-\bibliography{rs}
+\bibliography{lemorphology}
 
 \end{document}
